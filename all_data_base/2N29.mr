@@ -1,0 +1,1567 @@
+*HEADER    VIRAL PROTEIN                           01-MAY-15   2N29              
+*TITLE     SOLUTION-STATE NMR STRUCTURE OF VPU CYTOPLASMIC DOMAIN                
+*COMPND    MOL_ID: 1;                                                            
+*COMPND   2 MOLECULE: PROTEIN VPU;                                               
+*COMPND   3 CHAIN: A;                                                            
+*COMPND   4 FRAGMENT: CYTOPLASMIC DOMAIN (UNP RESIDUES 28-81);                   
+*COMPND   5 SYNONYM: U ORF PROTEIN, VIRAL PROTEIN U;                             
+*COMPND   6 ENGINEERED: YES                                                      
+*SOURCE    MOL_ID: 1;                                                            
+*SOURCE   2 ORGANISM_SCIENTIFIC: HUMAN IMMUNODEFICIENCY VIRUS 1;                 
+*SOURCE   3 ORGANISM_COMMON: HIV-1;                                              
+*SOURCE   4 ORGANISM_TAXID: 11676;                                               
+*SOURCE   5 GENE: VPU;                                                           
+*SOURCE   6 EXPRESSION_SYSTEM: ESCHERICHIA COLI;                                 
+*SOURCE   7 EXPRESSION_SYSTEM_TAXID: 562;                                        
+*SOURCE   8 EXPRESSION_SYSTEM_STRAIN: C41;                                       
+*SOURCE   9 EXPRESSION_SYSTEM_VECTOR_TYPE: PLASMID;                              
+*SOURCE  10 EXPRESSION_SYSTEM_PLASMID: PET31B+                                   
+*KEYWDS    ALPHA HELIX, VIRAL PROTEIN                                            
+*EXPDTA    SOLUTION NMR                                                          
+*NUMMDL    1                                                                     
+*AUTHOR    H.ZHANG, E.C.LIN, Y.TIAN, B.B.DAS, S.J.OPELLA                         
+*REVDAT   1   30-SEP-15 2N29    0                                                
+
+
+ATOM    878  PA1 ANI B5000     -71.228 -48.251   7.466  1.00  0.00
+ATOM    879  PA2 ANI B5000     -70.044 -47.283   7.824  1.00  0.00
+ATOM    880 OO   ANI B5000     -70.978 -47.283   7.466  1.00  0.00
+ATOM    881 OO2  ANI B5000     -70.978 -47.283   7.466  1.00  0.00
+ATOM    882  X   ANI B5000     -69.978 -47.283   7.466  1.00  0.00
+ATOM    883  Y   ANI B5000     -70.978 -46.283   7.466  1.00  0.00
+ATOM    884  Z   ANI B5000     -70.978 -47.283   8.466  1.00  0.00
+
+
+assign (resid    7 and name C    ) (resid    8 and name N    )
+       (resid    8 and name CA   ) (resid    8 and name C    )    1.0  -64.4   30.0 2
+assign (resid    8 and name N    ) (resid    8 and name CA   )
+       (resid    8 and name C    ) (resid    9 and name N    )    1.0  -36.3   30.0 2
+assign (resid    8 and name C    ) (resid    9 and name N    )
+       (resid    9 and name CA   ) (resid    9 and name C    )    1.0  -66.0   30.0 2
+assign (resid    9 and name N    ) (resid    9 and name CA   )
+       (resid    9 and name C    ) (resid   10 and name N    )    1.0  -38.0   30.0 2
+assign (resid    9 and name C    ) (resid   10 and name N    )
+       (resid   10 and name CA   ) (resid   10 and name C    )    1.0  -62.9   30.0 2
+assign (resid   10 and name N    ) (resid   10 and name CA   )
+       (resid   10 and name C    ) (resid   11 and name N    )    1.0  -35.3   30.0 2
+assign (resid   10 and name C    ) (resid   11 and name N    )
+       (resid   11 and name CA   ) (resid   11 and name C    )    1.0  -63.1   20.0 2
+assign (resid   11 and name N    ) (resid   11 and name CA   )
+       (resid   11 and name C    ) (resid   12 and name N    )    1.0  -43.7   10.0 2
+assign (resid   11 and name C    ) (resid   12 and name N    )
+       (resid   12 and name CA   ) (resid   12 and name C    )    1.0  -65.1   10.0 2
+assign (resid   12 and name N    ) (resid   12 and name CA   )
+       (resid   12 and name C    ) (resid   13 and name N    )    1.0  -36.5   10.0 2
+assign (resid   12 and name C    ) (resid   13 and name N    )
+       (resid   13 and name CA   ) (resid   13 and name C    )    1.0  -66.0   10.0 2
+assign (resid   13 and name N    ) (resid   13 and name CA   )
+       (resid   13 and name C    ) (resid   14 and name N    )    1.0  -39.9   10.0 2
+assign (resid   13 and name C    ) (resid   14 and name N    )
+       (resid   14 and name CA   ) (resid   14 and name C    )    1.0  -64.2   10.0 2
+assign (resid   14 and name N    ) (resid   14 and name CA   )
+       (resid   14 and name C    ) (resid   15 and name N    )    1.0  -44.9   10.0 2
+assign (resid   14 and name C    ) (resid   15 and name N    )
+       (resid   15 and name CA   ) (resid   15 and name C    )    1.0  -61.7   10.0 2
+assign (resid   15 and name N    ) (resid   15 and name CA   )
+       (resid   15 and name C    ) (resid   16 and name N    )    1.0  -43.5   10.0 2
+assign (resid   15 and name C    ) (resid   16 and name N    )
+       (resid   16 and name CA   ) (resid   16 and name C    )    1.0  -60.0   10.0 2
+assign (resid   16 and name N    ) (resid   16 and name CA   )
+       (resid   16 and name C    ) (resid   17 and name N    )    1.0  -40.3   10.0 2
+assign (resid   16 and name C    ) (resid   17 and name N    )
+       (resid   17 and name CA   ) (resid   17 and name C    )    1.0  -64.0   10.0 2
+assign (resid   17 and name N    ) (resid   17 and name CA   )
+       (resid   17 and name C    ) (resid   18 and name N    )    1.0  -41.2   10.0 2
+assign (resid   17 and name C    ) (resid   18 and name N    )
+       (resid   18 and name CA   ) (resid   18 and name C    )    1.0  -65.3   10.0 2
+assign (resid   18 and name N    ) (resid   18 and name CA   )
+       (resid   18 and name C    ) (resid   19 and name N    )    1.0  -43.0   10.0 2
+assign (resid   18 and name C    ) (resid   19 and name N    )
+       (resid   19 and name CA   ) (resid   19 and name C    )    1.0  -63.2   10.0 2
+assign (resid   19 and name N    ) (resid   19 and name CA   )
+       (resid   19 and name C    ) (resid   20 and name N    )    1.0  -41.2   10.0 2
+assign (resid   19 and name C    ) (resid   20 and name N    )
+       (resid   20 and name CA   ) (resid   20 and name C    )    1.0  -59.4   20.0 2
+assign (resid   20 and name N    ) (resid   20 and name CA   )
+       (resid   20 and name C    ) (resid   21 and name N    )    1.0  -43.5   20.0 2
+assign (resid   20 and name C    ) (resid   21 and name N    )
+       (resid   21 and name CA   ) (resid   21 and name C    )    1.0  -63.7   20.0 2
+assign (resid   21 and name N    ) (resid   21 and name CA   )
+       (resid   21 and name C    ) (resid   22 and name N    )    1.0  -42.7   20.0 2
+assign (resid   21 and name C    ) (resid   22 and name N    )
+       (resid   22 and name CA   ) (resid   22 and name C    )    1.0  -63.0   30.0 2
+assign (resid   22 and name N    ) (resid   22 and name CA   )
+       (resid   22 and name C    ) (resid   23 and name N    )    1.0  -36.4   30.0 2
+assign (resid   22 and name C    ) (resid   23 and name N    )
+       (resid   23 and name CA   ) (resid   23 and name C    )    1.0  -71.0   30.0 2
+assign (resid   23 and name N    ) (resid   23 and name CA   )
+       (resid   23 and name C    ) (resid   24 and name N    )    1.0  -25.6   30.4 2
+assign (resid   29 and name C    ) (resid   30 and name N    )
+       (resid   30 and name CA   ) (resid   30 and name C    )    1.0  -62.7   30.0 2
+assign (resid   30 and name N    ) (resid   30 and name CA   )
+       (resid   30 and name C    ) (resid   31 and name N    )    1.0  -36.7   30.0 2
+assign (resid   30 and name C    ) (resid   31 and name N    )
+       (resid   31 and name CA   ) (resid   31 and name C    )    1.0  -62.3   30.0 2
+assign (resid   31 and name N    ) (resid   31 and name CA   )
+       (resid   31 and name C    ) (resid   32 and name N    )    1.0  -42.2   30.0 2
+assign (resid   31 and name C    ) (resid   32 and name N    )
+       (resid   32 and name CA   ) (resid   32 and name C    )    1.0  -64.2   20.0 2
+assign (resid   32 and name N    ) (resid   32 and name CA   )
+       (resid   32 and name C    ) (resid   33 and name N    )    1.0  -42.3   20.0 2
+assign (resid   32 and name C    ) (resid   33 and name N    )
+       (resid   33 and name CA   ) (resid   33 and name C    )    1.0  -63.4   20.0 2
+assign (resid   33 and name N    ) (resid   33 and name CA   )
+       (resid   33 and name C    ) (resid   34 and name N    )    1.0  -41.0   20.0 2
+assign (resid   33 and name C    ) (resid   34 and name N    )
+       (resid   34 and name CA   ) (resid   34 and name C    )    1.0  -62.1   20.0 2
+assign (resid   34 and name N    ) (resid   34 and name CA   )
+       (resid   34 and name C    ) (resid   35 and name N    )    1.0  -40.6   20.0 2
+assign (resid   34 and name C    ) (resid   35 and name N    )
+       (resid   35 and name CA   ) (resid   35 and name C    )    1.0  -60.6   20.0 2
+assign (resid   35 and name N    ) (resid   35 and name CA   )
+       (resid   35 and name C    ) (resid   36 and name N    )    1.0  -45.2   20.0 2
+assign (resid   35 and name C    ) (resid   36 and name N    )
+       (resid   36 and name CA   ) (resid   36 and name C    )    1.0  -65.8   20.0 2
+assign (resid   36 and name N    ) (resid   36 and name CA   )
+       (resid   36 and name C    ) (resid   37 and name N    )    1.0  -43.8   20.0 2
+assign (resid   36 and name C    ) (resid   37 and name N    )
+       (resid   37 and name CA   ) (resid   37 and name C    )    1.0  -65.1   20.0 2
+assign (resid   37 and name N    ) (resid   37 and name CA   )
+       (resid   37 and name C    ) (resid   38 and name N    )    1.0  -41.9   20.0 2
+assign (resid   37 and name C    ) (resid   38 and name N    )
+       (resid   38 and name CA   ) (resid   38 and name C    )    1.0  -58.8   20.0 2
+assign (resid   38 and name N    ) (resid   38 and name CA   )
+       (resid   38 and name C    ) (resid   39 and name N    )    1.0  -43.9   20.0 2
+assign (resid   38 and name C    ) (resid   39 and name N    )
+       (resid   39 and name CA   ) (resid   39 and name C    )    1.0  -64.0   20.0 2
+assign (resid   39 and name N    ) (resid   39 and name CA   )
+       (resid   39 and name C    ) (resid   40 and name N    )    1.0  -38.4   20.9 2
+assign (resid   39 and name C    ) (resid   40 and name N    )
+       (resid   40 and name CA   ) (resid   40 and name C    )    1.0  -64.1   20.0 2
+assign (resid   40 and name N    ) (resid   40 and name CA   )
+       (resid   40 and name C    ) (resid   41 and name N    )    1.0  -41.8   20.0 2
+assign (resid   40 and name C    ) (resid   41 and name N    )
+       (resid   41 and name CA   ) (resid   41 and name C    )    1.0  -61.4   20.0 2
+assign (resid   41 and name N    ) (resid   41 and name CA   )
+       (resid   41 and name C    ) (resid   42 and name N    )    1.0  -45.8   20.0 2
+assign (resid   41 and name C    ) (resid   42 and name N    )
+       (resid   42 and name CA   ) (resid   42 and name C    )    1.0  -63.0   20.0 2
+assign (resid   42 and name N    ) (resid   42 and name CA   )
+       (resid   42 and name C    ) (resid   43 and name N    )    1.0  -34.6   30.0 2
+assign (resid   42 and name C    ) (resid   43 and name N    )
+       (resid   43 and name CA   ) (resid   43 and name C    )    1.0  -69.4   30.0 2
+assign (resid   43 and name N    ) (resid   43 and name CA   )
+       (resid   43 and name C    ) (resid   44 and name N    )    1.0  -36.3   30.0 2
+assign (resid   48 and name C    ) (resid   49 and name N    )
+       (resid   49 and name CA   ) (resid   49 and name C    )    1.0 -100.1   30.0 2
+assign (resid   49 and name N    ) (resid   49 and name CA   )
+       (resid   49 and name C    ) (resid   50 and name N    )    1.0    7.6   30.0 2
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 3    and name N   )
+       ( resid 3    and name HN  )  2.4614  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 4    and name N   )
+       ( resid 4    and name HN  )  1.5111  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 5    and name N   )
+       ( resid 5    and name HN  )  -0.4662  0.2000
+
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 6    and name N   )
+       ( resid 6    and name HN  )  -0.2016  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 7    and name N   )
+       ( resid 7    and name HN  )  1.8128  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 8    and name N   )
+       ( resid 8    and name HN  )  2.2660  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 9    and name N   )
+       ( resid 9    and name HN  )  3.4228  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 10    and name N   )
+       ( resid 10   and name HN  )  4.0832  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 13   and name N   )
+       ( resid 13   and name HN  )  -2.8639  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 17   and name N   )
+       ( resid 17   and name HN  )  9.0925  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 18   and name N   )
+       ( resid 18   and name HN  )  2.1931  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 20   and name N   )
+       ( resid 20   and name HN  )  1.2384  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 21   and name N   )
+       ( resid 21   and name HN  )  9.0251  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 22   and name N   )
+       ( resid 22   and name HN  )  3.4741  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 23   and name N   )
+       ( resid 23   and name HN  )  2.5072  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 25   and name N   )
+       ( resid 25   and name HN  )  3.9935  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 26   and name N   )
+       ( resid 26   and name HN  )  0.6511  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 28   and name N   )
+       ( resid 28   and name HN  )  2.0379  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 29   and name N   )
+       ( resid 29   and name HN  )  -1.5371  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 30   and name N   )
+       ( resid 30   and name HN  )  4.1227  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 31   and name N   )
+       ( resid 31   and name HN  )  7.6581  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 32   and name N   )
+       ( resid 32   and name HN  )  8.4965  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 33   and name N   )
+       ( resid 33   and name HN  )  5.0446  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 34   and name N   )
+       ( resid 34   and name HN  )  11.2596  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 35   and name N   )
+       ( resid 35   and name HN  )  14.1853  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 36   and name N   )
+       ( resid 36   and name HN  )  2.8800  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 39   and name N   )
+       ( resid 39   and name HN  )  18.6005  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 40   and name N   )
+       ( resid 40   and name HN  )  7.0955  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 41   and name N   )
+       ( resid 41   and name HN  )  16.5905  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 43   and name N   )
+       ( resid 43   and name HN  )  5.4978  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 44   and name N   )
+       ( resid 44   and name HN  )  5.0607  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 45   and name N   )
+       ( resid 45   and name HN  )  -2.6611  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 46   and name N   )
+       ( resid 46   and name HN  )  8.5911  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 47   and name N   )
+       ( resid 47   and name HN  )  2.7174  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 49   and name N   )
+       ( resid 49   and name HN  )  1.8586  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 50   and name N   )
+       ( resid 50   and name HN  )  2.1931  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 51   and name N   )
+       ( resid 51   and name HN  )  -0.4019  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 52   and name N   )
+       ( resid 52   and name HN  )  -0.0272  0.2000
+
+assign ( resid 500  and name OO  )
+       ( resid 500  and name Z   )
+       ( resid 500  and name X   )
+       ( resid 500  and name Y   )
+       ( resid 54   and name N   )
+       ( resid 54   and name HN  )  1.9012  0.2000
+
+set echo=false end
+set wrnlev=0 end
+!strong
+assign (resid 3 and name HN) (resid 2 and name HA) 2.5 1.0 1.0
+assign (resid 3 and name HN) (resid 3 and name HA) 2.5 1.0 1.0
+or (resid 3 and name HN) (resid 1 and name HA) !ambiguous
+assign (resid 5 and name HN) (resid 3 and name HA) 2.5 1.0 1.0
+or (resid 5 and name HN) (resid 4 and name HA) !ambiguous
+or (resid 5 and name HN) (resid 5 and name HA) !ambiguous
+assign (resid 3 and name HN) (resid 3 and name HB*) 2.5 1.0 1.0
+or (resid 3 and name HN) (resid 4 and name HB*) !ambiguous
+assign (resid 4 and name HN) (resid 3 and name HB*) 2.5 1.0 1.0
+or (resid 4 and name HN) (resid 4 and name HB*) !ambiguous
+assign (resid 3 and name HN) (resid 3 and name HG*) 2.5 1.0 1.0
+or (resid 3 and name HN) (resid 5 and name HG1*) !ambiguous
+assign (resid 5 and name HN) (resid 4 and name HN) 2.5 1.0 1.0
+or (resid 5 and name HN) (resid 7 and name HN) !ambiguous
+assign (resid 4 and name HN) (resid 4 and name HA) 2.5 1.0 1.0
+or (resid 4 and name HN) (resid 3 and name HA) !ambiguous
+assign (resid 6 and name HN) (resid 5 and name HA) 2.5 1.0 1.0
+or (resid 6 and name HN) (resid 1 and name HA) !ambiguous
+assign (resid 5 and name HN) (resid 5 and name HB) 2.5 1.0 1.0
+or (resid 5 and name HN) (resid 7 and name HB*) !ambiguous
+assign (resid 5 and name HN) (resid 5 and name HD*) 2.5 1.0 1.0
+or (resid 5 and name HN) (resid 6 and name HD*) !ambiguous
+assign (resid 5 and name HN) (resid 5 and name HG1*) 2.5 1.0 1.0
+or (resid 5 and name HN) (resid 3 and name HG*) !ambiguous
+assign (resid 6 and name HN) (resid 6 and name HA) 2.5 1.0 1.0
+or (resid 6 and name HN) (resid 7 and name HA) !ambiguous
+assign (resid 6 and name HN) (resid 6 and name HB*) 2.5 1.0 1.0
+or (resid 6 and name HN) (resid 7 and name HB*) !ambiguous
+assign (resid 6 and name HN) (resid 6 and name HD*) 2.5 1.0 1.0
+or (resid 6 and name HN) (resid 5 and name HD*) !ambiguous
+assign (resid 7 and name HN) (resid 7 and name HA) 2.5 1.0 1.0
+or (resid 7 and name HN) (resid 6 and name HA) !ambiguous
+or (resid 7 and name HN) (resid 8 and name HA) !ambiguous
+assign (resid 7 and name HN) (resid 7 and name HB*) 2.5 1.0 1.0
+or (resid 7 and name HN) (resid 5 and name HB) !ambiguous
+assign (resid 8 and name HN) (resid 7 and name HB*) 2.5 1.0 1.0
+or (resid 8 and name HN) (resid 5 and name HB) !ambiguous
+assign (resid 7 and name HN) (resid 7 and name HG#) 2.5 1.0 1.0
+assign (resid 8 and name HN) (resid 8 and name HA) 2.5 1.0 1.0
+or (resid 8 and name HN) (resid 6 and name HA) !ambiguous
+or (resid 8 and name HN) (resid 7 and name HA) !ambiguous
+assign (resid 8 and name HN) (resid 8 and name HB#) 2.5 1.0 1.0
+assign (resid 9 and name HN) (resid 9 and name HA) 2.5 1.0 1.0
+assign (resid 9 and name HN) (resid 9 and name HB#) 2.5 1.0 1.0
+assign (resid 14 and name HN) (resid 11 and name HB) 2.5 1.0 1.0
+assign (resid 12 and name HN) (resid 12 and name HB#) 2.5 1.0 1.0
+assign (resid 13 and name HN) (resid 12 and name HB#) 2.5 1.0 1.0
+assign (resid 14 and name HN) (resid 13 and name HA) 2.5 1.0 1.0
+or (resid 14 and name HN) (resid 10 and name HA) !ambiguous
+assign (resid 13 and name HN) (resid 13 and name HB#) 2.5 1.0 1.0
+or (resid 13 and name HN) (resid 11 and name HB) !ambiguous
+assign (resid 14 and name HN) (resid 14 and name HB#) 2.5 1.0 1.0
+assign (resid 14 and name HN) (resid 15 and name HN) 2.5 1.0 1.0
+assign (resid 16 and name HN) (resid 16 and name HA) 2.5 1.0 1.0
+assign (resid 16 and name HN) (resid 16 and name HB#) 2.5 1.0 1.0
+assign (resid 17 and name HN) (resid 17 and name HA) 2.5 1.0 1.0
+assign (resid 17 and name HN) (resid 17 and name HB*) 2.5 1.0 1.0
+or (resid 17 and name HN) (resid 15 and name HB*) !ambiguous
+or (resid 17 and name HN) (resid 19 and name HB) !ambiguous
+assign (resid 17 and name HN) (resid 17 and name HG*) 2.5 1.0 1.0
+or (resid 17 and name HN) (resid 14 and name HB*) !ambiguous
+assign (resid 19 and name HN) (resid 19 and name HA) 2.5 1.0 1.0
+assign (resid 19 and name HN) (resid 19 and name HB) 2.5 1.0 1.0
+or (resid 19 and name HN) (resid 17 and name HB*) !ambiguous
+or (resid 19 and name HN) (resid 21 and name HB*) !ambiguous
+assign (resid 20 and name HN) (resid 19 and name HB) 2.5 1.0 1.0
+or (resid 20 and name HN) (resid 21 and name HB*) !ambiguous
+or (resid 20 and name HN) (resid 17 and name HB*) !ambiguous
+assign (resid 20 and name HN) (resid 19 and name HD*) 2.5 1.0 1.0
+or (resid 20 and name HN) (resid 18 and name HD*) !ambiguous
+or (resid 20 and name HN) (resid 36 and name HD*) !ambiguous
+or (resid 20 and name HN) (resid 33 and name HD*) !ambiguous
+assign (resid 20 and name HN) (resid 20 and name HA) 2.5 1.0 1.0
+or (resid 20 and name HN) (resid 18 and name HA) !ambiguous
+or (resid 20 and name HN) (resid 17 and name HA) !ambiguous
+assign (resid 20 and name HN) (resid 20 and name HB*) 2.5 1.0 1.0
+or (resid 20 and name HN) (resid 23 and name HB*) !ambiguous
+assign (resid 21 and name HN) (resid 20 and name HB*) 2.5 1.0 1.0
+or (resid 21 and name HN) (resid 23 and name HB*) !ambiguous
+assign (resid 20 and name HN) (resid 20 and name HG#) 2.5 1.0 1.0
+assign (resid 21 and name HN) (resid 21 and name HA) 2.5 1.0 1.0
+or (resid 21 and name HN) (resid 22 and name HA) !ambiguous
+or (resid 21 and name HN) (resid 23 and name HA) !ambiguous
+assign (resid 21 and name HN) (resid 21 and name HB*) 2.5 1.0 1.0
+or (resid 21 and name HN) (resid 19 and name HB) !ambiguous
+or (resid 21 and name HN) (resid 18 and name HB) !ambiguous
+or (resid 21 and name HN) (resid 17 and name HB*) !ambiguous
+assign (resid 22 and name HN) (resid 21 and name HB*) 2.5 1.0 1.0
+or (resid 22 and name HN) (resid 19 and name HB) !ambiguous
+or (resid 22 and name HN) (resid 18 and name HB*) !ambiguous
+assign (resid 21 and name HN) (resid 21 and name HG*) 2.5 1.0 1.0
+or (resid 21 and name HN) (resid 19 and name HG1*) !ambiguous
+or (resid 21 and name HN) (resid 17 and name HG*) !ambiguous
+assign (resid 22 and name HN) (resid 22 and name HA) 2.5 1.0 1.0
+or (resid 22 and name HN) (resid 21 and name HA) !ambiguous
+or (resid 22 and name HN) (resid 23 and name HA) !ambiguous
+assign (resid 22 and name HN) (resid 22 and name HB#) 2.5 1.0 1.0
+assign (resid 23 and name HN) (resid 22 and name HB#) 2.5 1.0 1.0
+assign (resid 23 and name HN) (resid 23 and name HA) 2.5 1.0 1.0
+or (resid 23 and name HN) (resid 22 and name HA) !ambiguous
+or (resid 23 and name HN) (resid 21 and name HA) !ambiguous
+assign (resid 24 and name HN) (resid 23 and name HA) 2.5 1.0 1.0
+or (resid 24 and name HN) (resid 22 and name HA) !ambiguous
+or (resid 24 and name HN) (resid 21 and name HA) !ambiguous
+assign (resid 23 and name HN) (resid 23 and name HB*) 2.5 1.0 1.0
+or (resid 23 and name HN) (resid 20 and name HB*) !ambiguous
+assign (resid 24 and name HN) (resid 23 and name HB*) 2.5 1.0 1.0
+or (resid 24 and name HN) (resid 20 and name HB*) !ambiguous
+or (resid 24 and name HN) (resid 28 and name HB*) !ambiguous
+assign (resid 24 and name HN) (resid 24 and name HA) 2.5 1.0 1.0
+or (resid 24 and name HN) (resid 27 and name HA) !ambiguous
+assign (resid 25 and name HN) (resid 24 and name HA) 2.5 1.0 1.0
+or (resid 24 and name HN) (resid 27 and name HA) !ambiguous
+assign (resid 24 and name HN) (resid 24 and name HB#) 2.5 1.0 1.0
+assign (resid 26 and name HN) (resid 25 and name HN) 2.5 1.0 1.0
+assign (resid 25 and name HN) (resid 25 and name HA) 2.5 1.0 1.0
+or (resid 25 and name HN) (resid 29 and name HA) !ambiguous
+assign (resid 26 and name HN) (resid 25 and name HA) 2.5 1.0 1.0
+or (resid 26 and name HN) (resid 29 and name HA) !ambiguous
+assign (resid 25 and name HN) (resid 25 and name HB*) 2.5 1.0 1.0
+or (resid 25 and name HN) (resid 26 and name HA*) !ambiguous
+or (resid 25 and name HN) (resid 20 and name HA) !ambiguous
+assign (resid 26 and name HN) (resid 26 and name HA*) 2.5 1.0 1.0
+or (resid 26 and name HN) (resid 25 and name HB*) !ambiguous
+assign (resid 27 and name HN) (resid 27 and name HA) 2.5 1.0 1.0
+assign (resid 28 and name HN) (resid 27 and name HA) 2.5 1.0 1.0
+or (resid 28 and name HN) (resid 24 and name HA) !ambiguous
+assign (resid 27 and name HN) (resid 27 and name HB#) 2.5 1.0 1.0
+assign (resid 28 and name HN) (resid 28 and name HA) 2.5 1.0 1.0
+assign (resid 29 and name HN) (resid 28 and name HA) 2.5 1.0 1.0
+or (resid 29 and name HN) (resid 29 and name HA) !ambiguous
+or (resid 29 and name HN) (resid 25 and name HA) !ambiguous
+assign (resid 28 and name HN) (resid 28 and name HB*) 2.5 1.0 1.0
+or (resid 28 and name HN) (resid 30 and name HB*) !ambiguous
+or (resid 28 and name HN) (resid 32 and name HB*) !ambiguous
+or (resid 28 and name HN) (resid 23 and name HB*) !ambiguous
+assign (resid 29 and name HN) (resid 28 and name HB*) 2.5 1.0 1.0
+or (resid 29 and name HN) (resid 30 and name HB*) !ambiguous
+or (resid 29 and name HN) (resid 32 and name HB*) !ambiguous
+assign (resid 28 and name HN) (resid 28 and name HB2) 2.5 1.0 1.0
+assign (resid 28 and name HN) (resid 28 and name HG*) 2.5 1.0 1.0
+or (resid 28 and name HN) (resid 30 and name HG*) !ambiguous
+or (resid 28 and name HN) (resid 32 and name HG*) !ambiguous
+assign (resid 30 and name HN) (resid 29 and name HN) 2.5 1.0 1.0
+assign (resid 30 and name HN) (resid 29 and name HA) 2.5 1.0 1.0
+or (resid 30 and name HN) (resid 25 and name HA) !ambiguous
+or (resid 29 and name HN) (resid 29 and name HB*)!ambiguous
+or (resid 29 and name HN) (resid 31 and name HA*) !ambiguous
+or (resid 29 and name HN) (resid 25 and name HB*) !ambiguous
+assign (resid 30 and name HN) (resid 29 and name HB*) 2.5 1.0 1.0
+or (resid 30 and name HN) (resid 31 and name HA*) !ambiguous
+or (resid 30 and name HN) (resid 25 and name HB*) !ambiguous
+assign (resid 29 and name HN) (resid 30 and name HN) 2.5 1.0 1.0
+assign (resid 30 and name HN) (resid 30 and name HA) 2.5 1.0 1.0
+or (resid 30 and name HN) (resid 32 and name HA) !ambiguous
+assign (resid 30 and name HN) (resid 30 and name HB*) 2.5 1.0 1.0
+or (resid 30 and name HN) (resid 28 and name HB*) !ambiguous
+or (resid 30 and name HN) (resid 32 and name HB*) !ambiguous
+assign (resid 31 and name HN) (resid 30 and name HB*) 2.5 1.0 1.0
+or (resid 31 and name HN) (resid 32 and name HB*) !ambiguous
+assign (resid 32 and name HN) (resid 31 and name HN) 2.5 1.0 1.0
+assign (resid 31 and name HN) (resid 31 and name HA*) 2.5 1.0 1.0
+or (resid 31 and name HN) (resid 29 and name HB*) !ambiguous
+assign (resid 32 and name HN) (resid 31 and name HA*) 2.5 1.0 1.0
+or (resid 32 and name HN) (resid 29 and name HB*) !ambiguous
+assign (resid 31 and name HN) (resid 32 and name HN) 2.5 1.0 1.0
+or (resid 31 and name HN) (resid 33 and name HN) !ambiguous
+assign (resid 32 and name HN) (resid 32 and name HA) 2.5 1.0 1.0
+or (resid 32 and name HN) (resid 30 and name HA) !ambiguous
+or (resid 32 and name HN) (resid 35 and name HA) !ambiguous
+assign (resid 32 and name HN) (resid 32 and name HB*) 2.5 1.0 1.0
+or (resid 32 and name HN) (resid 30 and name HB*) !ambiguous
+or (resid 32 and name HN) (resid 28 and name HB*) !ambiguous
+assign (resid 33 and name HN) (resid 33 and name HA) 2.5 1.0 1.0
+assign (resid 33 and name HN) (resid 33 and name HB) 2.5 1.0 1.0
+assign (resid 34 and name HN) (resid 33 and name HB) 2.5 1.0 1.0
+assign (resid 34 and name HN) (resid 33 and name HD*) 2.5 1.0 1.0
+or (resid 34 and name HN) (resid 33 and name HG*) !ambiguous
+assign (resid 33 and name HN) (resid 33 and name HG11) 2.5 1.0 1.0
+assign (resid 35 and name HN) (resid 34 and name HN) 2.5 1.0 1.0
+assign (resid 34 and name HN) (resid 34 and name HA) 2.5 1.0 1.0
+or (resid 32 and name HN) (resid 34 and name HB*) !ambiguous
+or (resid 32 and name HN) (resid 29 and name HB*) !ambiguous
+or (resid 32 and name HN) (resid 36 and name HA) !ambiguous
+assign (resid 34 and name HN) (resid 35 and name HN) 2.5 1.0 1.0
+assign (resid 35 and name HN) (resid 35 and name HA) 2.5 1.0 1.0
+or (resid 35 and name HN) (resid 32 and name HA) !ambiguous
+assign (resid 35 and name HN) (resid 35 and name HB#) 2.5 1.0 1.0
+assign (resid 36 and name HN) (resid 35 and name HB#) 2.5 1.0 1.0
+assign (resid 36 and name HN) (resid 36 and name HA) 2.5 1.0 1.0
+or (resid 36 and name HN) (resid 34 and name HA) !ambiguous
+or (resid 36 and name HN) (resid 34 and name HB*) !ambiguous
+assign (resid 36 and name HN) (resid 36 and name HB#) 2.5 1.0 1.0
+assign (resid 36 and name HN) (resid 36 and name HD*) 2.5 1.0 1.0
+or (resid 36 and name HN) (resid 33 and name HD*) !ambiguous
+or (resid 36 and name HN) (resid 39 and name HD*) !ambiguous
+assign (resid 39 and name HN) (resid 39 and name HA) 2.5 1.0 1.0
+assign (resid 39 and name HN) (resid 39 and name HB#) 2.5 1.0 1.0
+assign (resid 40 and name HN) (resid 39 and name HB#) 2.5 1.0 1.0
+assign (resid 40 and name HN) (resid 40 and name HA#) 2.5 1.0 1.0
+assign (resid 41 and name HN) (resid 41 and name HA) 2.5 1.0 1.0
+or (resid 41 and name HN) (resid 40 and name HA*) !ambiguous
+assign (resid 41 and name HN) (resid 41 and name HB) 2.5 1.0 1.0
+or (resid 41 and name HN) (resid 42 and name HB*) !ambiguous
+or (resid 41 and name HN) (resid 37 and name HB) !ambiguous
+assign (resid 41 and name HN) (resid 41 and name HG1#) 2.5 1.0 1.0
+assign (resid 42 and name HN) (resid 42 and name HB*) 2.5 1.0 1.0
+or (resid 42 and name HN) (resid 41 and name HB) !ambiguous
+or (resid 42 and name HN) (resid 48 and name HB*) !ambiguous
+assign (resid 42 and name HN) (resid 42 and name HG#) 2.5 1.0 1.0
+assign (resid 42 and name HN) (resid 43 and name HN) 2.5 1.0 1.0
+or (resid 42 and name HN) (resid 41 and name HN) !ambiguous
+assign (resid 44 and name HN) (resid 43 and name HN) 2.5 1.0 1.0
+assign (resid 43 and name HN) (resid 43 and name HA) 2.5 1.0 1.0
+or (resid 43 and name HN) (resid 42 and name HB*) !ambiguous
+assign (resid 43 and name HN) (resid 43 and name HB2) 2.5 1.0 1.0
+assign (resid 43 and name HN) (resid 44 and name HN) 2.5 1.0 1.0
+assign (resid 44 and name HN) (resid 44 and name HA#) 2.5 1.0 1.0
+assign (resid 45 and name HN) (resid 44 and name HA#) 2.5 1.0 1.0
+assign (resid 45 and name HN) (resid 45 and name HA) 2.5 1.0 1.0
+or (resid 45 and name HN) (resid 46 and name HA) !ambiguous
+assign (resid 47 and name HN) (resid 45 and name HA) 2.5 1.0 1.0
+or (resid 47 and name HN) (resid 46 and name HA) !ambiguous
+assign (resid 45 and name HN) (resid 45 and name HB*) 2.5 1.0 1.0
+or (resid 45 and name HN) (resid 46 and name HB*) !ambiguous
+assign (resid 46 and name HN) (resid 46 and name HA) 2.5 1.0 1.0
+or (resid 46 and name HN) (resid 45 and name HA) !ambiguous
+assign (resid 46 and name HN) (resid 46 and name HB1) 2.5 1.0 1.0
+assign (resid 46 and name HN) (resid 46 and name HB*) 2.5 1.0 1.0
+or (resid 46 and name HN) (resid 45 and name HB*) !ambiguous
+assign (resid 47 and name HN) (resid 47 and name HB#) 2.5 1.0 1.0
+assign (resid 49 and name HN) (resid 48 and name HA) 2.5 1.0 1.0
+or (resid 49 and name HN) (resid 47 and name HA) !ambiguous
+assign (resid 50 and name HN) (resid 49 and name HN) 2.5 1.0 1.0
+assign (resid 49 and name HN) (resid 49 and name HA) 2.5 1.0 1.0
+or (resid 49 and name HN) (resid 46 and name HA) !ambiguous
+assign (resid 50 and name HN) (resid 49 and name HB*) 2.5 1.0 1.0
+or (resid 50 and name HN) (resid 48 and name HD*) !ambiguous
+or (resid 50 and name HN) (resid 45 and name HB*) !ambiguous
+assign (resid 49 and name HN) (resid 49 and name HB*) 2.5 1.0 1.0
+or (resid 49 and name HN) (resid 48 and name HD*) !ambiguous
+or (resid 49 and name HN) (resid 46 and name HB*) !ambiguous
+or (resid 49 and name HN) (resid 45 and name HB*) !ambiguous
+assign (resid 50 and name HN) (resid 50 and name HA) 2.5 1.0 1.0
+or (resid 50 and name HN) (resid 49 and name HA) !ambiguous
+or (resid 50 and name HN) (resid 53 and name HA) !ambiguous
+assign (resid 51 and name HN) (resid 50 and name HA) 2.5 1.0 1.0
+or (resid 51 and name HN) (resid 53 and name HA) !ambiguous
+assign (resid 50 and name HN) (resid 50 and name HB1) 2.5 1.0 1.0
+assign (resid 50 and name HN) (resid 50 and name HB2) 2.5 1.0 1.0
+assign (resid 52 and name HN) (resid 51 and name HN) 2.5 1.0 1.0
+assign (resid 51 and name HN) (resid 51 and name HB) 2.5 1.0 1.0
+assign (resid 51 and name HN) (resid 51 and name HG#) 2.5 1.0 1.0
+assign (resid 51 and name HN) (resid 52 and name HN) 2.5 1.0 1.0
+assign (resid 52 and name HN) (resid 52 and name HA) 2.5 1.0 1.0
+assign (resid 52 and name HN) (resid 52 and name HB*) 2.5 1.0 1.0
+or (resid 52 and name HN) (resid 50 and name HB*) !ambiguous
+or (resid 52 and name HN) (resid 53 and name HB*) !ambiguous
+assign (resid 54 and name HN) (resid 53 and name HN) 2.5 1.0 1.0
+assign (resid 53 and name HN) (resid 53 and name HA) 2.5 1.0 1.0
+or (resid 53 and name HN) (resid 52 and name HA) !ambiguous
+or (resid 53 and name HN) (resid 49 and name HA) !ambiguous
+assign (resid 54 and name HN) (resid 53 and name HA) 2.5 1.0 1.0
+or (resid 54 and name HN) (resid 49 and name HA) !ambiguous
+assign (resid 53 and name HN) (resid 53 and name HB#) 2.5 1.0 1.0
+or (resid 53 and name HN) (resid 52 and name HB#) !ambiguous
+assign (resid 53 and name HN) (resid 54 and name HN) 2.5 1.0 1.0
+assign (resid 54 and name HN) (resid 54 and name HA) 2.5 1.0 1.0
+assign (resid 54 and name HN) (resid 54 and name HB#) 2.5 1.0 1.0
+! medium
+assign (resid 3 and name HN) (resid 2 and name HB#) 4.0 1.5 0.5
+assign (resid 4 and name HN) (resid 3 and name HN) 4.0 1.5 0.5
+assign (resid 7 and name HN) (resid 3 and name HN) 4.0 1.5 0.5
+assign (resid 3 and name HN) (resid 4 and name HN) 4.0 1.5 0.5
+or (resid 3 and name HN) (resid 7 and name HN) !ambiguous
+assign (resid 4 and name HN) (resid 4 and name HG2) 4.0 1.5 0.5
+assign (resid 4 and name HN) (resid 5 and name HN) 4.0 1.5 0.5
+assign (resid 7 and name HN) (resid 5 and name HN) 4.0 1.5 0.5
+assign (resid 6 and name HN) (resid 5 and name HB) 4.0 1.5 0.5
+or (resid 6 and name HN) (resid 7 and name HB*) !ambiguous
+assign (resid 5 and name HN) (resid 5 and name HG2#) 4.0 1.5 0.5
+assign (resid 4 and name HN) (resid 5 and name HG1*) 4.0 1.5 0.5
+or (resid 4 and name HN) (resid 4 and name HG1) !ambiguous
+assign (resid 8 and name HN) (resid 8 and name HG#) 4.0 1.5 0.5
+assign (resid 11 and name HN) (resid 11 and name HA) 4.0 1.5 0.5
+assign (resid 12 and name HN) (resid 11 and name HA) 4.0 1.5 0.5
+assign (resid 12 and name HN) (resid 11 and name HB) 4.0 1.5 0.5
+assign (resid 12 and name HN) (resid 12 and name HA) 4.0 1.5 0.5
+assign (resid 13 and name HN) (resid 12 and name HA) 4.0 1.5 0.5
+!assign (resid 14 and name HN) (resid 14 and name HD#) 4.0 1.5 0.5
+assign (resid 17 and name HN) (resid 16 and name HA) 4.0 1.5 0.5
+assign (resid 17 and name HN) (resid 16 and name HB#) 4.0 1.5 0.5
+assign (resid 20 and name HN) (resid 19 and name HA) 4.0 1.5 0.5
+assign (resid 22 and name HN) (resid 19 and name HA) 4.0 1.5 0.5
+assign (resid 21 and name HN) (resid 19 and name HD*) 4.0 1.5 0.5
+or (resid 21 and name HN) (resid 18 and name HD*) !ambiguous
+or (resid 21 and name HN) (resid 33 and name HD*) !ambiguous
+assign (resid 21 and name HN) (resid 20 and name HA) 4.0 1.5 0.5
+or (resid 21 and name HN) (resid 18 and name HA) !ambiguous
+assign (resid 23 and name HN) (resid 20 and name HA) 4.0 1.5 0.5
+or (resid 23 and name HN) (resid 26 and name HA*) !ambiguous
+or (resid 23 and name HN) (resid 25 and name HB*) !ambiguous
+assign (resid 24 and name HN) (resid 20 and name HA) 4.0 1.5 0.5
+or (resid 24 and name HN) (resid 25 and name HB*) !ambiguous
+or (resid 24 and name HN) (resid 26 and name HA*) !ambiguous
+assign (resid 22 and name HN) (resid 21 and name HG*) 4.0 1.5 0.5
+or (resid 22 and name HN) (resid 19 and name HG1*) !ambiguous
+or (resid 22 and name HN) (resid 17 and name HG*) !ambiguous
+assign (resid 25 and name HN) (resid 23 and name HA) 4.0 1.5 0.5
+or (resid 25 and name HN) (resid 22 and name HA) !ambiguous
+or (resid 25 and name HN) (resid 21 and name HA) !ambiguous
+assign (resid 23 and name HN) (resid 23 and name HG*) 4.0 1.5 0.5
+or (resid 23 and name HN) (resid 20 and name HG*) !ambiguous
+assign (resid 25 and name HN) (resid 24 and name HB#) 4.0 1.5 0.5
+assign (resid 28 and name HN) (resid 27 and name HB#) 4.0 1.5 0.5
+assign (resid 23 and name HN) (resid 28 and name HG*) 4.0 1.5 0.5
+or (resid 23 and name HN) (resid 30 and name HG*) !ambiguous
+or (resid 23 and name HN) (resid 32 and name HG*) !ambiguous
+assign (resid 29 and name HN) (resid 28 and name HG*) 4.0 1.5 0.5
+or (resid 29 and name HN) (resid 30 and name HG*) !ambiguous
+or (resid 29 and name HN) (resid 32 and name HG*) !ambiguous
+assign (resid 28 and name HN) (resid 29 and name HB*) 4.0 1.5 0.5
+or (resid 28 and name HN) (resid 25 and name HB*) !ambiguous
+or (resid 28 and name HN) (resid 26 and name HA*) !ambiguous
+or (resid 28 and name HN) (resid 31 and name HA*) !ambiguous
+assign (resid 31 and name HN) (resid 30 and name HA) 4.0 1.5 0.5
+assign (resid 30 and name HN) (resid 30 and name HG*) 4.0 1.5 0.5
+or (resid 30 and name HN) (resid 28 and name HG*) !ambiguous
+or (resid 30 and name HN) (resid 32 and name HG*) !ambiguous
+assign (resid 33 and name HN) (resid 32 and name HA) 4.0 1.5 0.5
+or (resid 33 and name HN) (resid 30 and name HA) !ambiguous
+or (resid 33 and name HN) (resid 35 and name HA) !ambiguous
+assign (resid 33 and name HN) (resid 32 and name HB#) 4.0 1.5 0.5
+assign (resid 32 and name HN) (resid 32 and name HG*) 4.0 1.5 0.5
+or (resid 32 and name HN) (resid 30 and name HG*) !ambiguous
+or (resid 32 and name HN) (resid 28 and name HG*) !ambiguous
+assign (resid 34 and name HN) (resid 33 and name HN) 4.0 1.5 0.5
+assign (resid 36 and name HN) (resid 33 and name HA) 4.0 1.5 0.5
+assign (resid 32 and name HN) (resid 33 and name HD1#) 4.0 1.5 0.5
+assign (resid 33 and name HN) (resid 33 and name HG12) 4.0 1.5 0.5
+assign (resid 33 and name HN) (resid 34 and name HN) 4.0 1.5 0.5
+assign (resid 39 and name HN) (resid 36 and name HA) 4.0 1.5 0.5
+assign (resid 36 and name HN) (resid 36 and name HG) 4.0 1.5 0.5
+or (resid 36 and name HN) (resid 36 and name HB*) !ambiguous
+assign (resid 39 and name HN) (resid 37 and name HB) 4.0 1.5 0.5
+or (resid 39 and name HN) (resid 41 and name HB) !ambiguous
+or (resid 39 and name HN) (resid 42 and name HB*) !ambiguous
+assign (resid 36 and name HN) (resid 37 and name HB) 4.0 1.5 0.5
+or (resid 36 and name HN) (resid 32 and name HB*) !ambiguous
+assign (resid 41 and name HN) (resid 38 and name HA) 4.0 1.5 0.5
+assign (resid 39 and name HN) (resid 38 and name HB#) 4.0 1.5 0.5
+assign (resid 40 and name HN) (resid 39 and name HA) 4.0 1.5 0.5
+or (resid 40 and name HN) (resid 38 and name HA) !ambiguous
+assign (resid 39 and name HN) (resid 39 and name HD#) 4.0 1.5 0.5
+assign (resid 40 and name HN) (resid 39 and name HD*) 4.0 1.5 0.5
+or (resid 40 and name HN) (resid 43 and name HD*) !ambiguous
+assign (resid 42 and name HN) (resid 41 and name HA) 4.0 1.5 0.5
+assign (resid 43 and name HN) (resid 41 and name HB ) 4.0 1.5 0.5
+or (resid 43 and name HN) (resid 42 and name HB*) !ambiguous
+or (resid 43 and name HN) (resid 48 and name HB) !ambiguous
+assign (resid 42 and name HN) (resid 41 and name HG1#) 4.0 1.5 0.5
+assign (resid 41 and name HN) (resid 41 and name HG2#) 4.0 1.5 0.5
+assign (resid 42 and name HN) (resid 41 and name HG2#) 4.0 1.5 0.5
+assign (resid 42 and name HN) (resid 42 and name HA) 4.0 1.5 0.5
+assign (resid 44 and name HN) (resid 43 and name HA) 4.0 1.5 0.5
+or (resid 44 and name HN) (resid 42 and name HA) !ambiguous
+assign (resid 44 and name HN) (resid 43 and name HB2) 4.0 1.5 0.5
+assign (resid 43 and name HN) (resid 43 and name HD*) 4.0 1.5 0.5
+or (resid 43 and name HN) (resid 39 and name HD*) !ambiguous
+assign (resid 44 and name HN) (resid 43 and name HD#) 4.0 1.5 0.5
+assign (resid 43 and name HN) (resid 43 and name HG) 4.0 1.5 0.5
+or (resid 43 and name HN) (resid 43 and name HB*) !ambiguous
+assign (resid 45 and name HN) (resid 45 and name HB*) 4.0 1.5 0.5
+or (resid 45 and name HN) (resid 48 and name HD*) !ambiguous
+or (resid 45 and name HN) (resid 49 and name HB*) !ambiguous
+assign (resid 47 and name HN) (resid 46 and name HB*) 4.0 1.5 0.5
+or (resid 47 and name HN) (resid 48 and name HD*) !ambiguous
+assign (resid 47 and name HN) (resid 46 and name HB2) 4.0 1.5 0.5
+assign (resid 47 and name HN) (resid 47 and name HA) 4.0 1.5 0.5
+or (resid 47 and name HN) (resid 48 and name HA) !ambiguous
+assign (resid 49 and name HN) (resid 47 and name HB#) 4.0 1.5 0.5
+or (resid 49 and name HN) (resid 51 and name HG*) !ambiguous
+assign (resid 49 and name HN) (resid 48 and name HB#) 4.0 1.5 0.5
+assign (resid 49 and name HN) (resid 48 and name HG*) 4.0 1.5 0.5
+or (resid 49 and name HN) (resid 43 and name HB*) !ambiguous
+assign (resid 49 and name HN) (resid 50 and name HN) 4.0 1.5 0.5
+or (resid 49 and name HN) (resid 45 and name HN) !ambiguous
+assign (resid 51 and name HN) (resid 50 and name HB2) 4.0 1.5 0.5
+assign (resid 54 and name HN) (resid 53 and name HB*) 4.0 1.5 0.5
+or (resid 54 and name HN) (resid 52 and name HB*) !ambiguous
+or (resid 54 and name HN) (resid 50 and name HB*) !ambiguous
+assign (resid 54 and name HN) (resid 54 and name HD#) 4.0 1.5 0.5
+! weak 
+assign (resid 2 and name HN) (resid 1 and name HA) 5.0 1.0 1.0
+assign (resid 3 and name HN) (resid 1 and name HB#) 5.0 1.0 1.0
+assign (resid 5 and name HN) (resid 1 and name HB#) 5.0 1.0 1.0
+or (resid 5 and name HN) (resid 8 and name HB*) 5.0 1.0 1.0
+assign (resid 3 and name HN) (resid 1 and name HG#) 5.0 1.0 1.0
+assign (resid 4 and name HN) (resid 1 and name HG*) 5.0 1.0 1.0
+or (resid 4 and name HN) (resid 8 and name HG*)  ! ambiguity
+assign (resid 2 and name HN) (resid 2 and name HA) 5.0 1.0 1.0
+assign (resid 4 and name HN) (resid 2 and name HA) 5.0 1.0 1.0
+assign (resid 5 and name HN) (resid 2 and name HA) 5.0 1.0 1.0
+assign (resid 3 and name HN) (resid 3 and name HE) 5.0 1.0 1.0
+assign (resid 4 and name HN) (resid 4 and name HE*) 5.0 1.0 1.0
+or (resid 4 and name HN) (resid 2 and name HB#) 5.0 1.0 1.0
+assign (resid 5 and name HN) (resid 4 and name HE*) 5.0 1.0 1.0
+or (resid 5 and name HN) (resid 2 and name HB#)  ! ambiguity
+assign (resid 6 and name HN) (resid 4 and name HE*) 5.0 1.0 1.0
+or (resid 6 and name HN) (resid 2 and name HB#)  ! ambiguity
+assign (resid 4 and name HN) (resid 5 and name HD1#) 5.0 1.0 1.0
+or (resid 4 and name HN) (resid 6 and name HD*)  ! ambiguity
+assign (resid 3 and name HN) (resid 6 and name HD*) 5.0 1.0 1.0
+or (resid 3 and name HN) (resid 5 and name HD*) ! ambiguity
+assign (resid 8 and name HN) (resid 6 and name HD*) 5.0 1.0 1.0
+or (resid 8 and name HN) (resid 5 and name HD1#)  ! ambiguity
+assign (resid 6 and name HN) (resid 7 and name HD#) 5.0 1.0 1.0
+assign (resid 8 and name HN) (resid 7 and name HD*) 5.0 1.0 1.0
+or (resid 6 and name HN) (resid 9 and name HD*)  ! ambiguity
+assign (resid 8 and name HN) (resid 7 and name HG*) 5.0 1.0 1.0
+or (resid 6 and name HN) (resid 6 and name HB*)  ! ambiguity
+or (resid 6 and name HN) (resid 6 and name HG)  ! ambiguity
+assign (resid 11 and name HN) (resid 9 and name HA) 5.0 1.0 1.0
+assign (resid 9 and name HN) (resid 9 and name HD#) 5.0 1.0 1.0
+assign (resid 14 and name HN) (resid 11 and name HA) 5.0 1.0 1.0
+assign (resid 12 and name HN) (resid 11 and name HG1#) 5.0 1.0 1.0
+assign (resid 12 and name HN) (resid 11 and name HG2#) 5.0 1.0 1.0
+assign (resid 14 and name HN) (resid 11 and name HG2#) 5.0 1.0 1.0
+assign (resid 14 and name HN) (resid 12 and name HA) 5.0 1.0 1.0
+assign (resid 11 and name HN) (resid 12 and name HB#) 5.0 1.0 1.0
+assign (resid 14 and name HN) (resid 12 and name HB*) 5.0 1.0 1.0
+or (resid 14 and name HN) (resid 16 and name HB*)  ! ambiguity
+assign (resid 14 and name HN) (resid 13 and name HD#) 5.0 1.0 1.0
+assign (resid 14 and name HN) (resid 15 and name HA) 5.0 1.0 1.0
+assign (resid 17 and name HN) (resid 15 and name HA) 5.0 1.0 1.0
+assign (resid 20 and name HN) (resid 16 and name HA) 5.0 1.0 1.0
+assign (resid 17 and name HN) (resid 17 and name HD*) 5.0 1.0 1.0
+or (resid 17 and name HN) (resid 13 and name HD*)  ! ambiguity
+assign (resid 21 and name HN) (resid 19 and name HA) 5.0 1.0 1.0
+assign (resid 23 and name HN) (resid 19 and name HA) 5.0 1.0 1.0
+assign (resid 22 and name HN) (resid 19 and name HD*) 5.0 1.0 1.0
+or (resid 22 and name HN) (resid 18 and name HD*)  ! ambiguity
+or (resid 22 and name HN) (resid 33 and name HD)  ! ambiguity
+assign (resid 23 and name HN) (resid 19 and name HD*) 5.0 1.0 1.0
+or (resid 23 and name HN) (resid 18 and name HD*)  ! ambiguity
+or (resid 23 and name HN) (resid 33 and name HD*)  ! ambiguity
+assign (resid 20 and name HN) (resid 19 and name HG2#) 5.0 1.0 1.0
+assign (resid 22 and name HN) (resid 20 and name HA) 5.0 1.0 1.0
+or (resid 22 and name HN) (resid 25 and name HB*)  ! ambiguity
+or (resid 22 and name HN) (resid 26 and name HA*)  ! ambiguity
+assign (resid 22 and name HN) (resid 20 and name HB*) 5.0 1.0 1.0
+or (resid 22 and name HN) (resid 23 and name HB*)  ! ambiguity
+assign (resid 21 and name HN) (resid 20 and name HG*) 5.0 1.0 1.0
+or (resid 21 and name HN) (resid 23 and name HG*)  ! ambiguity
+assign (resid 22 and name HN) (resid 20 and name HG#) 5.0 1.0 1.0
+assign (resid 20 and name HN) (resid 21 and name HD*) 5.0 1.0 1.0
+or (resid 20 and name HN) (resid 17 and name HD*)  ! ambiguity
+assign (resid 21 and name HN) (resid 21 and name HD*) 5.0 1.0 1.0
+or (resid 21 and name HN) (resid 17 and name HD*)  ! ambiguity
+assign (resid 22 and name HN) (resid 21 and name HD#) 5.0 1.0 1.0
+assign (resid 26 and name HN) (resid 21 and name HD#) 5.0 1.0 1.0
+assign (resid 20 and name HN) (resid 21 and name HG*) 5.0 1.0 1.0
+or (resid 20 and name HN) (resid 17 and name HG*)  ! ambiguity
+assign (resid 25 and name HN) (resid 21 and name HG#) 5.0 1.0 1.0
+assign (resid 26 and name HN) (resid 22 and name HA) 5.0 1.0 1.0
+or (resid 26 and name HN) (resid 21 and name HA) ! ambiguity
+or (resid 26 and name HN) (resid 30 and name HA) ! ambiguity
+assign (resid 21 and name HN) (resid 22 and name HB#) 5.0 1.0 1.0
+assign (resid 24 and name HN) (resid 22 and name HB#) 5.0 1.0 1.0
+assign (resid 25 and name HN) (resid 22 and name HB#) 5.0 1.0 1.0
+assign (resid 26 and name HN) (resid 22 and name HB#) 5.0 1.0 1.0
+assign (resid 25 and name HN) (resid 23 and name HB*) 5.0 1.0 1.0
+or (resid 25 and name HN) (resid 28 and name HB*)  ! ambiguity
+or (resid 25 and name HN) (resid 30 and name HB*)  ! ambiguity
+assign (resid 26 and name HN) (resid 23 and name HB*) 5.0 1.0 1.0
+or (resid 26 and name HN) (resid 28 and name HB*)  ! ambiguity
+or (resid 26 and name HN) (resid 30 and name HB*)  ! ambiguity
+assign (resid 24 and name HN) (resid 23 and name HG*) 5.0 1.0 1.0
+or (resid 24 and name HN) (resid 20 and name HG*)  ! ambiguity
+assign (resid 26 and name HN) (resid 24 and name HA) 5.0 1.0 1.0
+or (resid 26 and name HN) (resid 27 and name HA)  ! ambiguity
+assign (resid 22 and name HN) (resid 24 and name HB*) 5.0 1.0 1.0
+assign (resid 23 and name HN) (resid 24 and name HB*) 5.0 1.0 1.0
+assign (resid 26 and name HN) (resid 24 and name HB*) 5.0 1.0 1.0
+or (resid 26 and name HN) (resid 27 and name HB*)  ! ambiguity
+assign (resid 23 and name HN) (resid 27 and name HA) 5.0 1.0 1.0
+or (resid 23 and name HN) (resid 24 and name HA)  ! ambiguity
+assign (resid 29 and name HN) (resid 27 and name HB*) 5.0 1.0 1.0
+or (resid 29 and name HN) (resid 24 and name HB*)  ! ambiguity
+assign (resid 30 and name HN) (resid 27 and name HB#) 5.0 1.0 1.0
+assign (resid 22 and name HN) (resid 28 and name HG*) 5.0 1.0 1.0
+or (resid 22 and name HN) (resid 30 and name HG*)  ! ambiguity
+or (resid 22 and name HN) (resid 32 and name HG*)  ! ambiguity
+assign (resid 25 and name HN) (resid 28 and name HG#) 5.0 1.0 1.0
+assign (resid 26 and name HN) (resid 28 and name HG*) 5.0 1.0 1.0
+or (resid 26 and name HN) (resid 30 and name HG*)  ! ambiguity
+assign (resid 31 and name HN) (resid 29 and name HA) 5.0 1.0 1.0
+assign (resid 29 and name HN) (resid 30 and name HA) 5.0 1.0 1.0
+or (resid 29 and name HN) (resid 32 and name HA)  ! ambiguity
+assign (resid 31 and name HN) (resid 30 and name HG*) 5.0 1.0 1.0
+or (resid 31 and name HN) (resid 28 and name HG*)  ! ambiguity
+or (resid 31 and name HN) (resid 32 and name HG*)  ! ambiguity
+assign (resid 33 and name HN) (resid 31 and name HN) 5.0 1.0 1.0
+assign (resid 33 and name HN) (resid 31 and name HA*) 5.0 1.0 1.0
+or (resid 33 and name HN) (resid 29 and name HB*)  ! ambiguity
+assign (resid 34 and name HN) (resid 32 and name HB*) 5.0 1.0 1.0
+or (resid 34 and name HN) (resid 37 and name HB*) ! ambiguity
+assign (resid 35 and name HN) (resid 32 and name HB*) 5.0 1.0 1.0
+or (resid 35 and name HN) (resid 37 and name HB*) ! ambiguity
+assign (resid 33 and name HN) (resid 32 and name HG*) 5.0 1.0 1.0
+or (resid 33 and name HN) (resid 30 and name HG*) ! ambiguity
+assign (resid 34 and name HN) (resid 32 and name HG*) 5.0 1.0 1.0
+or (resid 34 and name HN) (resid 38 and name HG*) ! ambiguity
+or (resid 34 and name HN) (resid 30 and name HG*) ! ambiguity
+assign (resid 35 and name HN) (resid 32 and name HG*) 5.0 1.0 1.0
+or (resid 34 and name HN) (resid 38 and name HG*) ! ambiguity
+or (resid 34 and name HN) (resid 30 and name HG*) ! ambiguity
+assign (resid 35 and name HN) (resid 33 and name HB) 5.0 1.0 1.0
+assign (resid 28 and name HN) (resid 33 and name HD1#) 5.0 1.0 1.0
+assign (resid 29 and name HN) (resid 33 and name HD1#) 5.0 1.0 1.0
+assign (resid 30 and name HN) (resid 33 and name HD1#) 5.0 1.0 1.0
+assign (resid 31 and name HN) (resid 33 and name HD1#) 5.0 1.0 1.0
+assign (resid 25 and name HN) (resid 33 and name HD*) 5.0 1.0 1.0
+or (resid 25 and name HN) (resid 19 and name HD*) ! ambiguity
+or (resid 25 and name HN) (resid 18 and name HD1*) ! ambiguity
+assign (resid 26 and name HN) (resid 33 and name HD*) 5.0 1.0 1.0
+or (resid 26 and name HN) (resid 19 and name HD*) ! ambiguity
+or (resid 26 and name HN) (resid 18 and name HD1*) ! ambiguity
+assign (resid 30 and name HN) (resid 33 and name HG1#) 5.0 1.0 1.0
+assign (resid 34 and name HN) (resid 33 and name HG1#) 5.0 1.0 1.0
+assign (resid 21 and name HN) (resid 33 and name HG1#) 5.0 1.0 1.0
+assign (resid 29 and name HN) (resid 33 and name HG1#) 5.0 1.0 1.0
+assign (resid 34 and name HN) (resid 33 and name HG1#) 5.0 1.0 1.0
+assign (resid 31 and name HN) (resid 33 and name HG2#) 5.0 1.0 1.0
+assign (resid 32 and name HN) (resid 33 and name HG2#) 5.0 1.0 1.0
+assign (resid 30 and name HN) (resid 35 and name HB#) 5.0 1.0 1.0
+assign (resid 31 and name HN) (resid 35 and name HB#) 5.0 1.0 1.0
+or (resid 31 and name HN) (resid 22 and name HB*) ! ambiguity
+assign (resid 34 and name HN) (resid 35 and name HB#) 5.0 1.0 1.0
+assign (resid 39 and name HN) (resid 35 and name HB#) 5.0 1.0 1.0
+!assign (resid 35 and name HN) (resid 36 and name "HD1,2 or HD1/HG2) 5.0 1.0 1.0 
+assign (resid 39 and name HN) (resid 38 and name HG*) 5.0 1.0 1.0
+or (resid 39 and name HN) (resid 42 and name HG*) ! ambiguity
+assign (resid 40 and name HN) (resid 38 and name HG*) 5.0 1.0 1.0
+or (resid 40 and name HN) (resid 42 and name HB*) ! ambiguity
+assign (resid 39 and name HN) (resid 40 and name HA#) 5.0 1.0 1.0
+assign (resid 46 and name HN) (resid 41 and name HA) 5.0 1.0 1.0
+assign (resid 43 and name HN) (resid 41 and name HA) 5.0 1.0 1.0
+or (resid 43 and name HN) (resid 40 and name HA*) ! ambiguity
+assign (resid 40 and name HN) (resid 41 and name HB) 5.0 1.0 1.0
+or (resid 40 and name HN) (resid 37 and name HB) ! ambiguity
+or (resid 40 and name HN) (resid 42 and name HB*) ! ambiguity
+assign (resid 40 and name HN) (resid 41 and name HG2#) 5.0 1.0 1.0
+assign (resid 44 and name HN) (resid 41 and name HG2#) 5.0 1.0 1.0
+assign (resid 45 and name HN) (resid 41 and name HG*) 5.0 1.0 1.0
+or (resid 45 and name HN) (resid 47 and name HB*) ! ambiguity
+or (resid 45 and name HN) (resid 51 and name HG1*) ! ambiguity
+assign (resid 43 and name HN) (resid 42 and name HN) 5.0 1.0 1.0
+assign (resid 45 and name HN) (resid 42 and name HB*) 5.0 1.0 1.0
+or (resid 45 and name HN) (resid 48 and name HB*) ! ambiguity
+assign (resid 44 and name HN) (resid 42 and name HB*) 5.0 1.0 1.0
+or (resid 44 and name HN) (resid 51 and name HB) ! ambiguity
+or (resid 44 and name HN) (resid 48 and name HB) ! ambiguity
+assign (resid 41 and name HN) (resid 42 and name HG*) 5.0 1.0 1.0
+or (resid 41 and name HN) (resid 38 and name HG*) ! ambiguity
+assign (resid 43 and name HN) (resid 42 and name HG#) 5.0 1.0 1.0
+assign (resid 44 and name HN) (resid 42 and name HG#) 5.0 1.0 1.0
+assign (resid 45 and name HN) (resid 43 and name HA) 5.0 1.0 1.0
+or (resid 45 and name HN) (resid 42 and name HA)  ! ambiguity
+assign (resid 46 and name HN) (resid 43 and name HA) 5.0 1.0 1.0
+or (resid 46 and name HN) (resid 42 and name HA)  ! ambiguity
+assign (resid 45 and name HN) (resid 43 and name HB2) 5.0 1.0 1.0
+assign (resid 40 and name HN) (resid 43 and name HG) 5.0 1.0 1.0
+or (resid 40 and name HN) (resid 43 and name HB*) ! ambiguity
+assign (resid 45 and name HN) (resid 43 and name HG) 5.0 1.0 1.0
+or (resid 45 and name HN) (resid 43 and name HB*) ! ambiguity
+assign (resid 47 and name HN) (resid 43 and name HG) 5.0 1.0 1.0
+or (resid 47 and name HN) (resid 43 and name HB*) ! ambiguity
+assign (resid 44 and name HN) (resid 43 and name HG) 5.0 1.0 1.0
+or (resid 44 and name HN) (resid 43 and name HB*) ! ambiguity
+assign (resid 43 and name HN) (resid 44 and name HA#) 5.0 1.0 1.0
+assign (resid 46 and name HN) (resid 44 and name HA#) 5.0 1.0 1.0
+assign (resid 47 and name HN) (resid 44 and name HA#) 5.0 1.0 1.0
+assign (resid 44 and name HN) (resid 45 and name HA) 5.0 1.0 1.0
+or (resid 44 and name HN) (resid 46 and name HA)  ! ambiguity
+assign (resid 54 and name HN) (resid 45 and name HB*) 5.0 1.0 1.0
+or (resid 54 and name HN) (resid 48 and name HD*)  ! ambiguity
+assign (resid 46 and name HN) (resid 47 and name HB#) 5.0 1.0 1.0
+or (resid 46 and name HN) (resid 51 and name HG#)  ! ambiguity
+assign (resid 50 and name HN) (resid 48 and name HA) 5.0 1.0 1.0
+or (resid 50 and name HN) (resid 47 and name HA)  ! ambiguity
+assign (resid 50 and name HN) (resid 48 and name HB#) 5.0 1.0 1.0
+assign (resid 47 and name HN) (resid 48 and name HD2) 5.0 1.0 1.0
+assign (resid 49 and name HN) (resid 48 and name HD2) 5.0 1.0 1.0
+assign (resid 47 and name HN) (resid 48 and name HG#) 5.0 1.0 1.0
+or (resid 47 and name HN) (resid 43 and name HB*)  ! ambiguity
+assign (resid 45 and name HN) (resid 49 and name HN) 5.0 1.0 1.0
+assign (resid 47 and name HN) (resid 49 and name HN) 5.0 1.0 1.0
+assign (resid 46 and name HN) (resid 49 and name HN) 5.0 1.0 1.0
+assign (resid 47 and name HN) (resid 50 and name HB2) 5.0 1.0 1.0
+assign (resid 49 and name HN) (resid 50 and name HB2) 5.0 1.0 1.0
+assign (resid 54 and name HN) (resid 51 and name HA) 5.0 1.0 1.0
+assign (resid 53 and name HN) (resid 51 and name HG*) 5.0 1.0 1.0
+or (resid 53 and name HN) (resid 54 and name HD*)  ! ambiguity
+assign (resid 53 and name HN) (resid 54 and name HB#) 5.0 1.0 1.0
+assign (resid 14 and name OS1) (resid 3 and name HN) 26.0 0.0 50.0
+assign (resid 14 and name OS1) (resid 4 and name HN) 26.0 0.0 50.0
+assign (resid 14 and name OS1) (resid 5 and name HN) 20.8 4.0 4.0
+assign (resid 14 and name OS1) (resid 6 and name HN) 14.1 4.0 4.0
+assign (resid 14 and name OS1) (resid 7 and name HN) 15.6 4.0 4.0
+assign (resid 14 and name OS1) (resid 8 and name HN) 14.9 4.0 4.0
+assign (resid 14 and name OS1) (resid 9 and name HN) 14.1 4.0 4.0
+assign (resid 14 and name OS1) (resid 10 and name HN) 14.1 4.0 4.0
+assign (resid 14 and name OS1) (resid 12 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 13 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 15 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 16 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 17 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 18 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 20 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 21 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 22 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 23 and name HN) 18.2 4.0 4.0
+assign (resid 14 and name OS1) (resid 24 and name HN) 13.9 4.0 4.0
+assign (resid 14 and name OS1) (resid 25 and name HN) 26.0 0.0 50.0
+assign (resid 14 and name OS1) (resid 26 and name HN) 22.7 4.0 4.0
+assign (resid 14 and name OS1) (resid 28 and name HN) 21.6 4.0 4.0
+assign (resid 14 and name OS1) (resid 29 and name HN) 19.6 4.0 4.0
+assign (resid 14 and name OS1) (resid 30 and name HN) 17.9 4.0 4.0
+assign (resid 14 and name OS1) (resid 31 and name HN) 18.6 4.0 4.0
+assign (resid 14 and name OS1) (resid 32 and name HN) 14.6 4.0 4.0
+assign (resid 14 and name OS1) (resid 33 and name HN) 15.9 4.0 4.0
+assign (resid 14 and name OS1) (resid 34 and name HN) 14.6 4.0 4.0
+assign (resid 14 and name OS1) (resid 35 and name HN) 14.8 4.0 4.0
+assign (resid 14 and name OS1) (resid 36 and name HN) 14.8 4.0 4.0
+assign (resid 14 and name OS1) (resid 39 and name HN) 13.1 4.0 4.0
+assign (resid 14 and name OS1) (resid 40 and name HN) 13.2 4.0 4.0
+assign (resid 14 and name OS1) (resid 41 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 42 and name HN) 13.3 4.0 4.0
+assign (resid 14 and name OS1) (resid 43 and name HN) 15.0 15.0 0.0
+assign (resid 14 and name OS1) (resid 44 and name HN) 13.3 4.0 4.0
+assign (resid 14 and name OS1) (resid 45 and name HN) 15.3 4.0 4.0
+assign (resid 14 and name OS1) (resid 46 and name HN) 15.5 4.0 4.0
+assign (resid 14 and name OS1) (resid 47 and name HN) 13.3 4.0 4.0
+assign (resid 14 and name OS1) (resid 50 and name HN) 13.0 4.0 4.0
+assign (resid 14 and name OS1) (resid 51 and name HN) 13.5 4.0 4.0
+assign (resid 14 and name OS1) (resid 52 and name HN) 13.8 4.0 4.0
+assign (resid 14 and name OS1) (resid 53 and name HN) 14.6 4.0 4.0
+assign (resid 14 and name OS1) (resid 54 and name HN) 13.7 4.0 4.0
+assign (resid 47 and name OS1) (resid 3 and name HN) 17.7 4.0 4.0
+assign (resid 47 and name OS1) (resid 4 and name HN) 17.9 4.0 4.0
+assign (resid 47 and name OS1) (resid 5 and name HN) 16.1 4.0 4.0
+assign (resid 47 and name OS1) (resid 6 and name HN) 15.0 15.0 0.0
+assign (resid 47 and name OS1) (resid 7 and name HN) 16.6 4.0 4.0
+assign (resid 47 and name OS1) (resid 8 and name HN) 15.6 4.0 4.0
+assign (resid 47 and name OS1) (resid 9 and name HN) 15.7 4.0 4.0
+assign (resid 47 and name OS1) (resid 10 and name HN) 15.7 4.0 4.0
+assign (resid 47 and name OS1) (resid 13 and name HN) 14.2 4.0 4.0
+assign (resid 47 and name OS1) (resid 14 and name HN) 14.8 4.0 4.0
+assign (resid 47 and name OS1) (resid 17 and name HN) 18.0 4.0 4.0
+assign (resid 47 and name OS1) (resid 18 and name HN) 16.7 4.0 4.0
+assign (resid 47 and name OS1) (resid 20 and name HN) 18.0 4.0 4.0
+assign (resid 47 and name OS1) (resid 21 and name HN) 21.2 4.0 4.0
+assign (resid 47 and name OS1) (resid 22 and name HN) 21.1 4.0 4.0
+assign (resid 47 and name OS1) (resid 23 and name HN) 23.6 4.0 4.0
+assign (resid 47 and name OS1) (resid 24 and name HN) 26.0 0.0 50.0
+assign (resid 47 and name OS1) (resid 25 and name HN) 26.0 0.0 50.0
+assign (resid 47 and name OS1) (resid 26 and name HN) 26.0 0.0 50.0
+assign (resid 47 and name OS1) (resid 28 and name HN) 26.0 0.0 50.0
+assign (resid 47 and name OS1) (resid 29 and name HN) 26.0 0.0 50.0
+assign (resid 47 and name OS1) (resid 30 and name HN) 26.0 0.0 50.0
+assign (resid 47 and name OS1) (resid 31 and name HN) 26.0 0.0 50.0
+assign (resid 47 and name OS1) (resid 32 and name HN) 23.0 4.0 4.0
+assign (resid 47 and name OS1) (resid 33 and name HN) 18.2 4.0 4.0
+assign (resid 47 and name OS1) (resid 34 and name HN) 18.1 4.0 4.0
+assign (resid 47 and name OS1) (resid 35 and name HN) 18.8 4.0 4.0
+assign (resid 47 and name OS1) (resid 36 and name HN) 15.4 4.0 4.0
+assign (resid 47 and name OS1) (resid 39 and name HN) 14.0 4.0 4.0
+assign (resid 47 and name OS1) (resid 40 and name HN) 13.5 4.0 4.0
+assign (resid 47 and name OS1) (resid 41 and name HN) 15.0 15.0 0.0
+assign (resid 47 and name OS1) (resid 42 and name HN) 13.7 4.0 4.0
+assign (resid 47 and name OS1) (resid 43 and name HN) 14.0 4.0 4.0
+assign (resid 47 and name OS1) (resid 44 and name HN) 15.0 15.0 0.0
+assign (resid 47 and name OS1) (resid 45 and name HN) 15.0 15.0 0.0
+assign (resid 47 and name OS1) (resid 46 and name HN) 15.0 15.0 0.0
+assign (resid 47 and name OS1) (resid 49 and name HN) 15.0 15.0 0.0
+assign (resid 47 and name OS1) (resid 50 and name HN) 15.0 15.0 0.0
+assign (resid 47 and name OS1) (resid 51 and name HN) 15.8 4.0 4.0
+assign (resid 47 and name OS1) (resid 52 and name HN) 15.0 4.0 4.0
+assign (resid 47 and name OS1) (resid 53 and name HN) 15.0 15.0 0.0
+assign (resid 47 and name OS1) (resid 54 and name HN) 14.7 4.0 4.0
+
+
+set echo=true end
+set wrnlev=5 end
+
+  Entry H atom name         Submitted Coord H atom name
+    1    H1   GLU   1           HT1      GLU   1 -18.097  23.718  16.335
+    2    H2   GLU   1           HT2      GLU   1 -18.464  23.797  17.992
+    3    H3   GLU   1           HT3      GLU   1 -17.812  25.150  17.198
+    4    HA   GLU   1           HA       GLU   1 -19.756  25.726  16.192
+    5    HB2  GLU   1           HB2      GLU   1 -19.963  23.520  15.056
+    6    HB3  GLU   1           HB1      GLU   1 -20.638  22.832  16.533
+    7    HG2  GLU   1           HG2      GLU   1 -22.513  24.410  16.441
+    8    HG3  GLU   1           HG1      GLU   1 -21.829  25.162  15.001
+    9    H    TYR   2           HN       TYR   2 -20.444  23.104  18.639
+   10    HA   TYR   2           HA       TYR   2 -22.443  24.743  19.989
+   11    HB2  TYR   2           HB2      TYR   2 -20.941  22.250  20.871
+   12    HB3  TYR   2           HB1      TYR   2 -22.294  22.971  21.742
+   13    HD1  TYR   2           HD1      TYR   2 -24.565  22.945  20.799
+   14    HD2  TYR   2           HD2      TYR   2 -21.271  21.094  18.755
+   15    HE1  TYR   2           HE1      TYR   2 -26.156  21.740  19.326
+   16    HE2  TYR   2           HE2      TYR   2 -22.862  19.889  17.283
+   17    HH   TYR   2           HH       TYR   2 -25.368  20.382  16.493
+   18    H    ARG   3           HN       ARG   3 -19.018  24.018  20.544
+   19    HA   ARG   3           HA       ARG   3 -18.961  25.760  22.906
+   20    HB2  ARG   3           HB2      ARG   3 -16.897  23.954  21.629
+   21    HB3  ARG   3           HB1      ARG   3 -16.570  24.983  23.025
+   22    HG2  ARG   3           HG2      ARG   3 -18.361  23.863  24.286
+   23    HG3  ARG   3           HG1      ARG   3 -18.719  22.847  22.890
+   24    HD2  ARG   3           HD2      ARG   3 -16.439  21.914  22.981
+   25    HD3  ARG   3           HD1      ARG   3 -16.077  22.930  24.373
+   26    HE   ARG   3           HE       ARG   3 -18.378  21.418  24.957
+   27   HH11  ARG   3          HH21      ARG   3 -14.994  21.037  24.347
+   28   HH12  ARG   3          HH22      ARG   3 -14.835  19.622  25.334
+   29   HH21  ARG   3          HH11      ARG   3 -18.178  19.564  26.252
+   30   HH22  ARG   3          HH12      ARG   3 -16.638  18.788  26.413
+   31    H    LYS   4           HN       LYS   4 -19.598  27.393  20.994
+   32    HA   LYS   4           HA       LYS   4 -18.980  29.081  19.558
+   33    HB2  LYS   4           HB2      LYS   4 -18.623  29.997  21.808
+   34    HB3  LYS   4           HB1      LYS   4 -16.961  29.405  21.786
+   35    HG2  LYS   4           HG2      LYS   4 -16.488  30.795  19.816
+   36    HG3  LYS   4           HG1      LYS   4 -18.145  31.383  19.819
+   37    HD2  LYS   4           HD2      LYS   4 -17.800  32.363  22.049
+   38    HD3  LYS   4           HD1      LYS   4 -16.142  31.757  22.064
+   39    HE2  LYS   4           HE2      LYS   4 -15.625  33.098  20.063
+   40    HE3  LYS   4           HE1      LYS   4 -17.282  33.704  20.037
+   41    HZ1  LYS   4           HZ1      LYS   4 -15.764  33.991  22.519
+   42    HZ2  LYS   4           HZ2      LYS   4 -16.939  35.014  21.841
+   43    HZ3  LYS   4           HZ3      LYS   4 -15.354  35.013  21.229
+   44    H    ILE   5           HN       ILE   5 -18.196  28.316  17.669
+   45    HA   ILE   5           HA       ILE   5 -16.700  27.435  16.128
+   46    HB   ILE   5           HB       ILE   5 -15.171  29.829  17.178
+   47   HG12  ILE   5          HG12      ILE   5 -17.464  29.756  15.185
+   48   HG13  ILE   5          HG11      ILE   5 -17.635  30.253  16.867
+   49   HG21  ILE   5          HG21      ILE   5 -13.857  29.526  15.330
+   50   HG22  ILE   5          HG22      ILE   5 -15.272  29.625  14.289
+   51   HG23  ILE   5          HG23      ILE   5 -14.753  28.066  14.919
+   52   HD11  ILE   5          HD11      ILE   5 -17.335  32.189  15.364
+   53   HD12  ILE   5          HD12      ILE   5 -15.771  31.544  14.867
+   54   HD13  ILE   5          HD13      ILE   5 -16.027  32.052  16.537
+   55    H    LEU   6           HN       LEU   6 -13.715  28.074  16.381
+   56    HA   LEU   6           HA       LEU   6 -11.810  27.059  17.165
+   57    HB2  LEU   6           HB2      LEU   6 -13.454  25.803  19.408
+   58    HB3  LEU   6           HB1      LEU   6 -11.703  25.908  19.297
+   59    HG   LEU   6           HG       LEU   6 -13.549  28.307  19.427
+   60   HD11  LEU   6          HD11      LEU   6 -13.525  27.040  21.539
+   61   HD12  LEU   6          HD12      LEU   6 -12.655  28.563  21.720
+   62   HD13  LEU   6          HD13      LEU   6 -11.761  27.054  21.533
+   63   HD21  LEU   6          HD21      LEU   6 -11.232  29.373  20.024
+   64   HD22  LEU   6          HD22      LEU   6 -11.602  29.049  18.334
+   65   HD23  LEU   6          HD23      LEU   6 -10.559  27.947  19.234
+   66    H    ARG   7           HN       ARG   7 -14.797  25.099  17.144
+   67    HA   ARG   7           HA       ARG   7 -13.513  22.630  16.592
+   68    HB2  ARG   7           HB2      ARG   7 -16.215  23.533  15.563
+   69    HB3  ARG   7           HB1      ARG   7 -15.666  21.874  15.770
+   70    HG2  ARG   7           HG2      ARG   7 -16.232  23.901  17.957
+   71    HG3  ARG   7           HG1      ARG   7 -17.104  22.407  17.636
+   72    HD2  ARG   7           HD2      ARG   7 -14.285  22.699  18.702
+   73    HD3  ARG   7           HD1      ARG   7 -15.674  21.985  19.502
+   74    HE   ARG   7           HE       ARG   7 -15.320  20.505  17.189
+   75   HH11  ARG   7          HH21      ARG   7 -13.500  21.361  20.004
+   76   HH12  ARG   7          HH22      ARG   7 -12.582  19.892  20.027
+   77   HH21  ARG   7          HH11      ARG   7 -14.120  18.574  17.213
+   78   HH22  ARG   7          HH12      ARG   7 -12.933  18.315  18.448
+   79    H    GLN   8           HN       GLN   8 -13.448  25.442  14.872
+   80    HA   GLN   8           HA       GLN   8 -13.514  24.362  12.181
+   81    HB2  GLN   8           HB2      GLN   8 -14.126  26.733  12.703
+   82    HB3  GLN   8           HB1      GLN   8 -12.445  27.031  13.140
+   83    HG2  GLN   8           HG2      GLN   8 -12.819  27.742  10.835
+   84    HG3  GLN   8           HG1      GLN   8 -11.756  26.337  10.848
+   85   HE21  GLN   8          HE21      GLN   8 -12.314  24.948   9.172
+   86   HE22  GLN   8          HE22      GLN   8 -13.901  24.611   8.672
+   87    H    ARG   9           HN       ARG   9 -10.983  25.898  14.142
+   88    HA   ARG   9           HA       ARG   9  -8.731  25.531  12.733
+   89    HB2  ARG   9           HB2      ARG   9  -8.963  26.498  15.053
+   90    HB3  ARG   9           HB1      ARG   9  -8.843  24.853  15.672
+   91    HG2  ARG   9           HG2      ARG   9  -6.635  24.583  14.735
+   92    HG3  ARG   9           HG1      ARG   9  -6.763  26.109  13.860
+   93    HD2  ARG   9           HD2      ARG   9  -6.815  25.828  16.877
+   94    HD3  ARG   9           HD1      ARG   9  -5.408  26.316  15.937
+   95    HE   ARG   9           HE       ARG   9  -7.503  28.030  15.235
+   96   HH11  ARG   9          HH21      ARG   9  -5.631  27.157  18.012
+   97   HH12  ARG   9          HH22      ARG   9  -5.756  28.716  18.757
+   98   HH21  ARG   9          HH11      ARG   9  -7.674  30.074  16.207
+   99   HH22  ARG   9          HH12      ARG   9  -6.913  30.367  17.735
+  100    H    LYS  10           HN       LYS  10 -10.694  22.934  13.561
+  101    HA   LYS  10           HA       LYS  10  -8.867  20.849  14.048
+  102    HB2  LYS  10           HB2      LYS  10 -11.308  20.606  14.323
+  103    HB3  LYS  10           HB1      LYS  10 -11.513  20.727  12.576
+  104    HG2  LYS  10           HG2      LYS  10 -10.158  18.699  12.257
+  105    HG3  LYS  10           HG1      LYS  10  -9.892  18.591  13.997
+  106    HD2  LYS  10           HD2      LYS  10 -12.330  18.359  14.347
+  107    HD3  LYS  10           HD1      LYS  10 -12.581  18.439  12.603
+  108    HE2  LYS  10           HE2      LYS  10 -10.896  16.347  14.011
+  109    HE3  LYS  10           HE1      LYS  10 -12.547  16.095  13.444
+  110    HZ1  LYS  10           HZ1      LYS  10 -11.399  17.072  11.250
+  111    HZ2  LYS  10           HZ2      LYS  10 -11.504  15.412  11.594
+  112    HZ3  LYS  10           HZ3      LYS  10 -10.075  16.265  11.938
+  113    H    ILE  11           HN       ILE  11 -10.087  22.238  11.010
+  114    HA   ILE  11           HA       ILE  11  -8.985  20.396   9.271
+  115    HB   ILE  11           HB       ILE  11  -8.793  22.420   7.612
+  116   HG12  ILE  11          HG12      ILE  11 -10.190  24.303   8.118
+  117   HG13  ILE  11          HG11      ILE  11 -10.790  23.566   9.600
+  118   HG21  ILE  11          HG21      ILE  11 -11.275  22.224   7.232
+  119   HG22  ILE  11          HG22      ILE  11 -11.386  21.320   8.742
+  120   HG23  ILE  11          HG23      ILE  11 -10.449  20.674   7.394
+  121   HD11  ILE  11          HD11      ILE  11  -8.705  23.893  10.718
+  122   HD12  ILE  11          HD12      ILE  11  -8.977  25.392   9.834
+  123   HD13  ILE  11          HD13      ILE  11  -7.855  24.190   9.203
+  124    H    ASP  12           HN       ASP  12  -7.264  22.864  11.079
+  125    HA   ASP  12           HA       ASP  12  -5.086  23.429   9.509
+  126    HB2  ASP  12           HB2      ASP  12  -5.517  24.283  11.830
+  127    HB3  ASP  12           HB1      ASP  12  -4.927  22.743  12.453
+  128    H    ARG  13           HN       ARG  13  -5.972  20.429  10.978
+  129    HA   ARG  13           HA       ARG  13  -3.545  19.062  11.067
+  130    HB2  ARG  13           HB2      ARG  13  -6.359  18.093  10.560
+  131    HB3  ARG  13           HB1      ARG  13  -4.988  17.008  10.796
+  132    HG2  ARG  13           HG2      ARG  13  -4.545  18.018  12.993
+  133    HG3  ARG  13           HG1      ARG  13  -5.890  19.135  12.760
+  134    HD2  ARG  13           HD2      ARG  13  -7.451  17.231  12.623
+  135    HD3  ARG  13           HD1      ARG  13  -6.110  16.113  12.855
+  136    HE   ARG  13           HE       ARG  13  -6.109  17.947  14.990
+  137   HH11  ARG  13          HH21      ARG  13  -8.021  15.399  13.638
+  138   HH12  ARG  13          HH22      ARG  13  -8.700  14.916  15.156
+  139   HH21  ARG  13          HH11      ARG  13  -6.995  17.320  16.984
+  140   HH22  ARG  13          HH12      ARG  13  -8.119  16.003  17.051
+  141    H    LEU  14           H        LEU  14  -5.517  19.911   8.285
+  142    HA   LEU  14           HA       LEU  14  -4.775  17.950   6.433
+  143    HB2  LEU  14           3HB      LEU  14  -5.191  20.985   6.012
+  144    HB3  LEU  14           2HB      LEU  14  -5.016  19.849   4.690
+  145    HG   LEU  14           HG       LEU  14  -7.292  19.799   6.764
+  146   HD11  LEU  14          1HD1      LEU  14  -7.376  21.818   5.270
+  147   HD12  LEU  14          2HD1      LEU  14  -7.295  20.780   3.826
+  148   HD13  LEU  14          3HD1      LEU  14  -8.707  20.705   4.907
+  149   HD21  LEU  14          3HD2      LEU  14  -8.420  18.201   5.139
+  150   HD22  LEU  14          1HD2      LEU  14  -6.921  18.139   4.171
+  151   HD23  LEU  14          2HD2      LEU  14  -6.949  17.519   5.840
+  152    H    ILE  15           HN       ILE  15  -2.853  20.708   7.561
+  153    HA   ILE  15           HA       ILE  15  -0.875  20.587   5.565
+  154    HB   ILE  15           HB       ILE  15  -1.124  22.379   7.336
+  155   HG12  ILE  15          HG12      ILE  15   1.655  21.177   7.204
+  156   HG13  ILE  15          HG11      ILE  15   0.918  22.043   5.856
+  157   HG21  ILE  15          HG21      ILE  15  -1.242  20.596   9.199
+  158   HG22  ILE  15          HG22      ILE  15  -0.277  22.035   9.523
+  159   HG23  ILE  15          HG23      ILE  15   0.515  20.526   9.071
+  160   HD11  ILE  15          HD11      ILE  15   2.360  23.517   7.259
+  161   HD12  ILE  15          HD12      ILE  15   1.304  23.194   8.634
+  162   HD13  ILE  15          HD13      ILE  15   0.679  24.050   7.225
+  163    H    ASP  16           HN       ASP  16  -1.252  18.811   8.597
+  164    HA   ASP  16           HA       ASP  16   1.222  17.424   8.501
+  165    HB2  ASP  16           HB2      ASP  16  -0.171  17.658  10.542
+  166    HB3  ASP  16           HB1      ASP  16  -1.360  16.571   9.825
+  167    H    ARG  17           HN       ARG  17  -2.023  16.646   7.327
+  168    HA   ARG  17           HA       ARG  17  -1.452  13.995   6.487
+  169    HB2  ARG  17           HB2      ARG  17  -3.733  14.871   6.916
+  170    HB3  ARG  17           HB1      ARG  17  -3.580  15.903   5.493
+  171    HG2  ARG  17           HG2      ARG  17  -3.291  13.944   4.066
+  172    HG3  ARG  17           HG1      ARG  17  -3.352  12.886   5.475
+  173    HD2  ARG  17           HD2      ARG  17  -5.647  13.675   5.957
+  174    HD3  ARG  17           HD1      ARG  17  -5.587  14.705   4.530
+  175    HE   ARG  17           HE       ARG  17  -5.941  11.820   4.575
+  176   HH11  ARG  17          HH21      ARG  17  -5.050  14.637   2.774
+  177   HH12  ARG  17          HH22      ARG  17  -5.381  13.924   1.231
+  178   HH21  ARG  17          HH11      ARG  17  -6.379  10.879   2.555
+  179   HH22  ARG  17          HH12      ARG  17  -6.134  11.796   1.107
+  180    H    LEU  18           HN       LEU  18  -1.315  17.124   4.952
+  181    HA   LEU  18           HA       LEU  18  -0.973  16.318   2.280
+  182    HB2  LEU  18           HB2      LEU  18  -1.505  18.621   2.883
+  183    HB3  LEU  18           HB1      LEU  18   0.058  18.797   3.676
+  184    HG   LEU  18           HG       LEU  18   1.206  18.444   1.517
+  185   HD11  LEU  18          HD11      LEU  18  -0.414  18.603  -0.546
+  186   HD12  LEU  18          HD12      LEU  18  -1.623  17.980   0.577
+  187   HD13  LEU  18          HD13      LEU  18  -0.171  17.041   0.231
+  188   HD21  LEU  18          HD21      LEU  18   0.745  20.727   2.050
+  189   HD22  LEU  18          HD22      LEU  18  -0.957  20.556   1.620
+  190   HD23  LEU  18          HD23      LEU  18   0.278  20.524   0.361
+  191    H    ILE  19           HN       ILE  19   1.470  16.971   4.790
+  192    HA   ILE  19           HA       ILE  19   3.688  16.496   3.057
+  193    HB   ILE  19           HB       ILE  19   4.992  16.455   5.187
+  194   HG12  ILE  19          HG12      ILE  19   2.302  16.993   6.470
+  195   HG13  ILE  19          HG11      ILE  19   3.098  15.425   6.518
+  196   HG21  ILE  19          HG21      ILE  19   2.969  18.684   4.805
+  197   HG22  ILE  19          HG22      ILE  19   4.560  18.572   4.052
+  198   HG23  ILE  19          HG23      ILE  19   4.424  18.813   5.794
+  199   HD11  ILE  19          HD11      ILE  19   3.526  16.854   8.539
+  200   HD12  ILE  19          HD12      ILE  19   4.395  17.973   7.488
+  201   HD13  ILE  19          HD13      ILE  19   4.982  16.324   7.700
+  202    H    GLU  20           HN       GLU  20   1.853  14.426   5.252
+  203    HA   GLU  20           HA       GLU  20   3.677  12.260   5.311
+  204    HB2  GLU  20           HB2      GLU  20   0.674  12.343   5.641
+  205    HB3  GLU  20           HB1      GLU  20   1.629  10.877   5.859
+  206    HG2  GLU  20           HG2      GLU  20   2.180  13.454   7.347
+  207    HG3  GLU  20           HG1      GLU  20   1.171  12.162   7.990
+  208    H    ARG  21           HN       ARG  21   0.963  12.973   3.168
+  209    HA   ARG  21           HA       ARG  21   0.847  10.667   1.712
+  210    HB2  ARG  21           HB2      ARG  21  -0.755  12.446   1.390
+  211    HB3  ARG  21           HB1      ARG  21   0.486  13.490   0.708
+  212    HG2  ARG  21           HG2      ARG  21  -0.851  12.526  -1.094
+  213    HG3  ARG  21           HG1      ARG  21   0.775  11.873  -1.170
+  214    HD2  ARG  21           HD2      ARG  21   0.087   9.795  -0.210
+  215    HD3  ARG  21           HD1      ARG  21  -1.493  10.443   0.226
+  216    HE   ARG  21           HE       ARG  21  -0.649   9.489  -2.380
+  217   HH11  ARG  21          HH21      ARG  21  -2.828  11.478  -0.573
+  218   HH12  ARG  21          HH22      ARG  21  -4.077  11.439  -1.772
+  219   HH21  ARG  21          HH11      ARG  21  -2.282   9.432  -3.957
+  220   HH22  ARG  21          HH12      ARG  21  -3.768  10.280  -3.689
+  221    H    ALA  22           HN       ALA  22   3.216  13.264   1.307
+  222    HA   ALA  22           HA       ALA  22   4.302  12.312  -1.156
+  223    HB1  ALA  22           HB1      ALA  22   4.838  14.549  -0.229
+  224    HB2  ALA  22           HB2      ALA  22   6.286  13.608  -0.592
+  225    HB3  ALA  22           HB3      ALA  22   5.733  13.767   1.074
+  226    H    GLU  23           HN       GLU  23   5.100  11.774   2.225
+  227    HA   GLU  23           HA       GLU  23   7.192   9.894   1.766
+  228    HB2  GLU  23           HB2      GLU  23   5.473  10.482   4.185
+  229    HB3  GLU  23           HB1      GLU  23   6.762   9.279   4.192
+  230    HG2  GLU  23           HG2      GLU  23   8.423  10.957   3.675
+  231    HG3  GLU  23           HG1      GLU  23   7.184  12.181   3.418
+  232    H    ASP  24           HN       ASP  24   3.715   9.711   2.260
+  233    HA   ASP  24           HA       ASP  24   3.791   6.759   2.046
+  234    HB2  ASP  24           HB2      ASP  24   1.608   8.726   2.735
+  235    HB3  ASP  24           HB1      ASP  24   1.298   7.014   2.459
+  236    H    SER  25           HN       SER  25   4.344   6.532  -0.177
+  237    HA   SER  25           HA       SER  25   2.194   6.409  -1.967
+  238    HB2  SER  25           HB2      SER  25   2.225   8.783  -2.183
+  239    HB3  SER  25           HB1      SER  25   3.985   8.829  -2.227
+  240    HG   SER  25           HG       SER  25   2.143   8.131  -4.202
+  241    H    GLY  26           HN       GLY  26   5.643   6.968  -1.604
+  242    HA2  GLY  26           HA2      GLY  26   7.229   5.175  -2.066
+  243    HA3  GLY  26           HA1      GLY  26   6.219   4.692  -3.426
+  244    H    ASN  27           HN       ASN  27   5.786   6.692  -4.945
+  245    HA   ASN  27           HA       ASN  27   8.434   7.781  -5.685
+  246    HB2  ASN  27           HB2      ASN  27   7.505   8.055  -7.912
+  247    HB3  ASN  27           HB1      ASN  27   7.221   6.403  -7.371
+  248   HD21  ASN  27          HD21      ASN  27   5.450   6.718  -9.182
+  249   HD22  ASN  27          HD22      ASN  27   3.944   7.292  -8.649
+  250    H    GLU  28           HN       GLU  28   6.447   8.768  -3.617
+  251    HA   GLU  28           HA       GLU  28   5.645  10.750  -2.832
+  252    HB2  GLU  28           HB2      GLU  28   7.608  11.772  -4.888
+  253    HB3  GLU  28           HB1      GLU  28   6.665  12.851  -3.863
+  254    HG2  GLU  28           HG2      GLU  28   7.605  11.891  -1.857
+  255    HG3  GLU  28           HG1      GLU  28   8.392  10.611  -2.781
+  256    H    SER  29           HN       SER  29   5.974  11.516  -6.312
+  257    HA   SER  29           HA       SER  29   4.347  11.761  -7.914
+  258    HB2  SER  29           HB2      SER  29   2.207  10.958  -7.614
+  259    HB3  SER  29           HB1      SER  29   3.051  10.102  -6.332
+  260    HG   SER  29           HG       SER  29   2.091  11.316  -4.869
+  261    H    GLU  30           HN       GLU  30   5.522  13.918  -7.155
+  262    HA   GLU  30           HA       GLU  30   4.113  15.945  -5.810
+  263    HB2  GLU  30           HB2      GLU  30   6.274  16.099  -7.916
+  264    HB3  GLU  30           HB1      GLU  30   5.604  17.528  -7.133
+  265    HG2  GLU  30           HG2      GLU  30   6.324  16.759  -4.957
+  266    HG3  GLU  30           HG1      GLU  30   6.815  15.199  -5.609
+  267    H    GLY  31           HN       GLY  31   4.331  15.186  -9.265
+  268    HA2  GLY  31           HA2      GLY  31   2.835  17.198 -10.347
+  269    HA3  GLY  31           HA1      GLY  31   2.835  15.550 -10.964
+  270    H    GLU  32           HN       GLU  32   1.695  14.309  -8.611
+  271    HA   GLU  32           HA       GLU  32  -1.099  14.985  -9.102
+  272    HB2  GLU  32           HB2      GLU  32   0.247  12.810  -7.493
+  273    HB3  GLU  32           HB1      GLU  32  -1.503  13.012  -7.584
+  274    HG2  GLU  32           HG2      GLU  32  -1.464  12.718  -9.997
+  275    HG3  GLU  32           HG1      GLU  32   0.298  12.673 -10.000
+  276    H    ILE  33           HN       ILE  33   1.190  15.043  -6.413
+  277    HA   ILE  33           HA       ILE  33  -0.730  15.961  -4.481
+  278    HB   ILE  33           HB       ILE  33   2.237  15.464  -4.500
+  279   HG12  ILE  33          HG12      ILE  33   0.062  14.025  -2.971
+  280   HG13  ILE  33          HG11      ILE  33   0.485  13.573  -4.623
+  281   HG21  ILE  33          HG21      ILE  33   2.005  17.130  -2.853
+  282   HG22  ILE  33          HG22      ILE  33   1.952  15.611  -1.959
+  283   HG23  ILE  33          HG23      ILE  33   0.459  16.488  -2.296
+  284   HD11  ILE  33          HD11      ILE  33   1.789  12.160  -3.219
+  285   HD12  ILE  33          HD12      ILE  33   2.250  13.500  -2.168
+  286   HD13  ILE  33          HD13      ILE  33   2.902  13.393  -3.804
+  287    H    SER  34           HN       SER  34   2.396  17.368  -5.511
+  288    HA   SER  34           HA       SER  34   1.936  19.883  -4.327
+  289    HB2  SER  34           HB2      SER  34   4.174  19.152  -4.998
+  290    HB3  SER  34           HB1      SER  34   3.701  19.209  -6.693
+  291    HG   SER  34           HG       SER  34   3.934  21.338  -4.839
+  292    H    ALA  35           HN       ALA  35   1.636  18.917  -7.717
+  293    HA   ALA  35           HA       ALA  35   0.719  21.312  -8.747
+  294    HB1  ALA  35           HB1      ALA  35  -0.404  18.909 -10.028
+  295    HB2  ALA  35           HB2      ALA  35   1.332  18.815  -9.715
+  296    HB3  ALA  35           HB3      ALA  35   0.681  20.134 -10.689
+  297    H    LEU  36           HN       LEU  36  -0.994  19.073  -6.739
+  298    HA   LEU  36           HA       LEU  36  -3.649  19.670  -7.618
+  299    HB2  LEU  36           HB2      LEU  36  -3.165  17.699  -6.201
+  300    HB3  LEU  36           HB1      LEU  36  -2.677  18.765  -4.885
+  301    HG   LEU  36           HG       LEU  36  -4.955  19.731  -4.833
+  302   HD11  LEU  36          HD11      LEU  36  -5.306  17.876  -7.180
+  303   HD12  LEU  36          HD12      LEU  36  -5.865  19.536  -6.977
+  304   HD13  LEU  36          HD13      LEU  36  -6.689  18.225  -6.140
+  305   HD21  LEU  36          HD21      LEU  36  -5.990  17.848  -3.762
+  306   HD22  LEU  36          HD22      LEU  36  -4.252  17.672  -3.515
+  307   HD23  LEU  36          HD23      LEU  36  -5.069  16.707  -4.743
+  308    H    VAL  37           HN       VAL  37  -1.443  20.994  -5.224
+  309    HA   VAL  37           HA       VAL  37  -3.152  22.875  -4.017
+  310    HB   VAL  37           HB       VAL  37  -0.151  22.834  -4.375
+  311   HG11  VAL  37          HG11      VAL  37  -0.675  25.124  -3.985
+  312   HG12  VAL  37          HG12      VAL  37  -0.257  24.474  -2.400
+  313   HG13  VAL  37          HG13      VAL  37  -1.949  24.715  -2.836
+  314   HG21  VAL  37          HG21      VAL  37  -0.139  22.017  -2.097
+  315   HG22  VAL  37          HG22      VAL  37  -1.265  21.020  -3.018
+  316   HG23  VAL  37          HG23      VAL  37  -1.876  22.279  -1.945
+  317    H    GLU  38           HN       GLU  38  -1.124  23.044  -6.901
+  318    HA   GLU  38           HA       GLU  38  -1.208  25.792  -7.374
+  319    HB2  GLU  38           HB2      GLU  38  -1.100  23.457  -9.290
+  320    HB3  GLU  38           HB1      GLU  38  -0.933  25.135  -9.804
+  321    HG2  GLU  38           HG2      GLU  38   1.020  25.434  -8.402
+  322    HG3  GLU  38           HG1      GLU  38   0.804  23.838  -7.686
+  323    H    LEU  39           HN       LEU  39  -3.615  23.288  -8.054
+  324    HA   LEU  39           HA       LEU  39  -5.274  24.703  -9.776
+  325    HB2  LEU  39           HB2      LEU  39  -5.587  22.322  -9.250
+  326    HB3  LEU  39           HB1      LEU  39  -6.056  22.739  -7.604
+  327    HG   LEU  39           HG       LEU  39  -8.000  24.003  -8.477
+  328   HD11  LEU  39          HD11      LEU  39  -6.765  23.227 -11.115
+  329   HD12  LEU  39          HD12      LEU  39  -7.429  24.782 -10.613
+  330   HD13  LEU  39          HD13      LEU  39  -8.511  23.449 -11.000
+  331   HD21  LEU  39          HD21      LEU  39  -9.266  22.030  -9.322
+  332   HD22  LEU  39          HD22      LEU  39  -8.292  21.643  -7.904
+  333   HD23  LEU  39          HD23      LEU  39  -7.742  21.162  -9.509
+  334    H    GLY  40           HN       GLY  40  -5.053  24.825  -6.224
+  335    HA2  GLY  40           HA2      GLY  40  -7.334  26.397  -5.728
+  336    HA3  GLY  40           HA1      GLY  40  -5.909  26.295  -4.704
+  337    H    VAL  41           HN       VAL  41  -4.013  27.219  -6.564
+  338    HA   VAL  41           HA       VAL  41  -4.146  30.012  -6.147
+  339    HB   VAL  41           HB       VAL  41  -2.338  28.295  -7.856
+  340   HG11  VAL  41          HG11      VAL  41  -0.889  30.413  -7.853
+  341   HG12  VAL  41          HG12      VAL  41  -2.360  31.280  -7.411
+  342   HG13  VAL  41          HG13      VAL  41  -2.277  30.407  -8.940
+  343   HG21  VAL  41          HG21      VAL  41  -2.327  28.298  -5.243
+  344   HG22  VAL  41          HG22      VAL  41  -1.631  29.906  -5.399
+  345   HG23  VAL  41          HG23      VAL  41  -0.792  28.516  -6.080
+  346    H    GLU  42           HN       GLU  42  -4.634  28.063  -9.101
+  347    HA   GLU  42           HA       GLU  42  -4.896  30.146 -10.934
+  348    HB2  GLU  42           HB2      GLU  42  -6.191  27.425 -10.886
+  349    HB3  GLU  42           HB1      GLU  42  -6.270  28.514 -12.272
+  350    HG2  GLU  42           HG2      GLU  42  -3.670  27.651 -10.984
+  351    HG3  GLU  42           HG1      GLU  42  -4.388  26.822 -12.363
+  352    H    LEU  43           HN       LEU  43  -7.519  28.879  -8.837
+  353    HA   LEU  43           HA       LEU  43  -9.467  30.585 -10.110
+  354    HB2  LEU  43           HB2      LEU  43  -9.670  28.473  -7.955
+  355    HB3  LEU  43           HB1      LEU  43 -10.929  29.695  -8.088
+  356    HG   LEU  43           HG       LEU  43 -11.413  27.607  -9.373
+  357   HD11  LEU  43          HD11      LEU  43 -12.057  30.121 -10.068
+  358   HD12  LEU  43          HD12      LEU  43 -12.494  28.735 -11.060
+  359   HD13  LEU  43          HD13      LEU  43 -11.090  29.707 -11.485
+  360   HD21  LEU  43          HD21      LEU  43  -9.059  27.126 -10.031
+  361   HD22  LEU  43          HD22      LEU  43  -9.107  28.505 -11.131
+  362   HD23  LEU  43          HD23      LEU  43 -10.158  27.119 -11.409
+  363    H    GLY  44           HN       GLY  44  -6.980  31.216  -8.026
+  364    HA2  GLY  44           HA2      GLY  44  -6.570  33.209  -6.906
+  365    HA3  GLY  44           HA1      GLY  44  -8.254  33.663  -7.133
+  366    H    HIS  45           HN       HIS  45  -6.920  30.749  -5.645
+  367    HA   HIS  45           HA       HIS  45  -7.525  29.729  -3.672
+  368    HB2  HIS  45           HB2      HIS  45  -6.657  32.482  -2.792
+  369    HB3  HIS  45           HB1      HIS  45  -6.905  31.122  -1.702
+  370    HD1  HIS  45           HD1      HIS  45  -5.417  28.906  -2.339
+  371    HD2  HIS  45           HD2      HIS  45  -4.126  32.544  -3.909
+  372    HE1  HIS  45           HE1      HIS  45  -2.999  28.577  -3.013
+  373    HE2  HIS  45           HE2      HIS  45  -2.194  30.792  -3.959
+  374    H    HIS  46           HN       HIS  46  -9.793  29.470  -4.004
+  375    HA   HIS  46           HA       HIS  46 -11.809  31.300  -3.673
+  376    HB2  HIS  46           HB2      HIS  46 -12.059  28.808  -4.140
+  377    HB3  HIS  46           HB1      HIS  46 -11.926  28.558  -2.399
+  378    HD1  HIS  46           HD1      HIS  46 -13.805  29.715  -0.897
+  379    HD2  HIS  46           HD2      HIS  46 -14.563  29.726  -4.997
+  380    HE1  HIS  46           HE1      HIS  46 -16.258  30.281  -1.170
+  381    HE2  HIS  46           HE2      HIS  46 -16.736  30.292  -3.664
+  382    H    ALA  47           H        ALA  47  -9.599  30.082  -1.323
+  383    HA   ALA  47           HA       ALA  47 -11.051  31.191   0.975
+  384    HB1  ALA  47           3HB      ALA  47  -9.105  30.177   2.266
+  385    HB2  ALA  47           1HB      ALA  47  -9.839  28.981   1.179
+  386    HB3  ALA  47           2HB      ALA  47  -8.300  29.757   0.735
+  387    HA   PRO  48           HA       PRO  48  -9.127  35.090   1.123
+  388    HB2  PRO  48           HB2      PRO  48  -8.294  35.344   3.745
+  389    HB3  PRO  48           HB1      PRO  48  -9.985  35.448   3.222
+  390    HG2  PRO  48           HG2      PRO  48  -8.508  33.113   4.368
+  391    HG3  PRO  48           HG1      PRO  48 -10.128  33.722   4.761
+  392    HD2  PRO  48           HD2      PRO  48  -9.806  31.596   3.146
+  393    HD3  PRO  48           HD1      PRO  48 -11.093  32.783   2.848
+  394    H    TRP  49           HN       TRP  49  -7.183  32.886   0.247
+  395    HA   TRP  49           HA       TRP  49  -4.671  33.872   1.492
+  396    HB2  TRP  49           HB2      TRP  49  -5.193  31.472  -0.252
+  397    HB3  TRP  49           HB1      TRP  49  -3.588  31.989   0.240
+  398    HD1  TRP  49           HD1      TRP  49  -6.270  29.779   1.283
+  399    HE1  TRP  49           HE1      TRP  49  -6.038  29.114   3.763
+  400    HE3  TRP  49           HE3      TRP  49  -2.827  33.230   2.799
+  401    HZ2  TRP  49           HZ2      TRP  49  -4.583  29.940   6.083
+  402    HZ3  TRP  49           HZ3      TRP  49  -2.035  33.268   5.147
+  403    HH2  TRP  49           HH2      TRP  49  -2.908  31.629   6.789
+  404    H    ASP  50           HN       ASP  50  -6.464  34.362  -1.404
+  405    HA   ASP  50           HA       ASP  50  -4.387  34.777  -3.249
+  406    HB2  ASP  50           HB2      ASP  50  -6.874  34.611  -3.737
+  407    HB3  ASP  50           HB1      ASP  50  -7.005  36.279  -3.187
+  408    H    VAL  51           HN       VAL  51  -4.861  36.331  -0.384
+  409    HA   VAL  51           HA       VAL  51  -3.941  38.168   0.564
+  410    HB   VAL  51           HB       VAL  51  -2.670  38.783  -2.093
+  411   HG11  VAL  51          HG11      VAL  51  -1.024  39.932  -0.738
+  412   HG12  VAL  51          HG12      VAL  51  -1.780  39.344   0.743
+  413   HG13  VAL  51          HG13      VAL  51  -2.625  40.511  -0.274
+  414   HG21  VAL  51          HG21      VAL  51  -2.042  36.524  -1.648
+  415   HG22  VAL  51          HG22      VAL  51  -1.880  36.838   0.080
+  416   HG23  VAL  51          HG23      VAL  51  -0.704  37.506  -1.051
+  417    H    ASP  52           HN       ASP  52  -5.069  38.794  -2.760
+  418    HA   ASP  52           HA       ASP  52  -6.072  41.421  -1.979
+  419    HB2  ASP  52           HB2      ASP  52  -6.067  39.891  -4.588
+  420    HB3  ASP  52           HB1      ASP  52  -6.833  41.466  -4.390
+  421    H    ASP  53           HN       ASP  53  -7.104  38.448  -1.366
+  422    HA   ASP  53           HA       ASP  53  -9.124  37.462  -0.919
+  423    HB2  ASP  53           HB2      ASP  53  -9.943  40.373  -0.842
+  424    HB3  ASP  53           HB1      ASP  53 -11.011  39.047  -0.387
+  425    H    LEU  54           HN       LEU  54  -8.325  37.653  -3.620
+  426    HA   LEU  54           HA       LEU  54  -9.129  37.387  -5.753
+  427    HB2  LEU  54           HB2      LEU  54 -10.565  35.752  -4.227
+  428    HB3  LEU  54           HB1      LEU  54 -11.879  36.837  -4.667
+  429    HG   LEU  54           HG       LEU  54 -10.046  35.467  -6.666
+  430   HD11  LEU  54          HD11      LEU  54 -11.493  33.877  -5.406
+  431   HD12  LEU  54          HD12      LEU  54 -11.928  33.980  -7.112
+  432   HD13  LEU  54          HD13      LEU  54 -12.905  34.810  -5.901
+  433   HD21  LEU  54          HD21      LEU  54 -11.988  36.152  -8.204
+  434   HD22  LEU  54          HD22      LEU  54 -10.940  37.454  -7.642
+  435   HD23  LEU  54          HD23      LEU  54 -12.516  37.203  -6.890

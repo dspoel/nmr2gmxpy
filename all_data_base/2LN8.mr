@@ -1,0 +1,538 @@
+*HEADER    ANTIMICROBIAL PROTEIN                   20-DEC-11   2LN8              
+*TITLE     THE SOLUTION STRUCTURE OF THERMOMACIN                                 
+*COMPND    MOL_ID: 1;                                                            
+*COMPND   2 MOLECULE: THEROMACIN;                                                
+*COMPND   3 CHAIN: A;                                                            
+*COMPND   4 ENGINEERED: YES                                                      
+*SOURCE    MOL_ID: 1;                                                            
+*SOURCE   2 ORGANISM_SCIENTIFIC: HIRUDO MEDICINALIS;                             
+*SOURCE   3 ORGANISM_COMMON: MEDICINAL LEECH;                                    
+*SOURCE   4 ORGANISM_TAXID: 6421;                                                
+*SOURCE   5 EXPRESSION_SYSTEM: ESCHERICHIA COLI;                                 
+*SOURCE   6 EXPRESSION_SYSTEM_TAXID: 562;                                        
+*SOURCE   7 EXPRESSION_SYSTEM_VECTOR: PET-32A                                    
+*KEYWDS    ANTIMICROBIAL PEPTIDE, ANTIMICROBIAL PROTEIN                          
+*EXPDTA    SOLUTION NMR                                                          
+*NUMMDL    10                                                                    
+*AUTHOR    S.JUNG, F.D.SOENNICHSEN, C.HUNG, A.THOELY, C.BOIDIN-WICHLACZ,         
+*AUTHOR   2 C.GELHAUS, R.PODSCHUN, A.TASIEMSKI, M.LEIPPE, J.GROETZINGER          
+*REVDAT   1   14-MAR-12 2LN8    0                                                
+
+
+ 27 TYR  H      27 TYR  QD      5.12            #peak     2
+ 22 ARG  HA     27 TYR  H       5.02            #peak     3
+ 27 TYR  H      28 CYSS H       4.01            #peak     4
+ 26 SER  H      27 TYR  H       4.24            #peak     5
+ 27 TYR  H      27 TYR  HB3     4.13            #peak     8
+ 24 CYSS H      25 ASP  H       4.00            #peak    11
+ 25 ASP  H      37 GLY  HA2     5.50            #peak    14
+ 26 SER  H      27 TYR  HB2     5.50            #peak    15
+ 25 ASP  HB3    26 SER  H       3.91            #peak    16
+ 25 ASP  HB2    26 SER  H       4.35            #peak    19
+ 28 CYSS H      28 CYSS HB2     3.45            #peak    21
+ 28 CYSS H      28 CYSS HB3     3.73            #peak    22
+ 27 TYR  HB2    28 CYSS H       4.06            #peak    23
+ 27 TYR  HB3    28 CYSS H       3.85            #peak    24
+ 29 LYS  H      34 ALA  H       5.50            #peak    26
+ 28 CYSS H      34 ALA  QB      5.50            #peak    29
+ 27 TYR  QD     28 CYSS H       3.96            #peak    30
+ 27 TYR  HE1    28 CYSS H       5.50            #peak    31
+ 28 CYSS H      29 LYS  H       3.59            #peak    32
+ 28 CYSS H      32 PHE  QD      5.50            #peak    33
+ 28 CYSS H      37 GLY  HA2     5.50            #peak    34
+ 28 CYSS H      37 GLY  HA3     5.50            #peak    36
+ 25 ASP  HA     28 CYSS H       5.05            #peak    38
+ 20 LEU  H      21 TRP  H       5.50            #peak    40
+ 19 VAL  H      20 LEU  H       5.50            #peak    43
+ 20 LEU  QB     21 TRP  H       5.08            #peak    44
+ 20 LEU  HA     21 TRP  H       3.11            #peak    45
+ 19 VAL  HA     21 TRP  H       5.50            #peak    48
+ 19 VAL  HB     20 LEU  H       5.50            #peak    54
+ 21 TRP  H      22 ARG  H       5.50            #peak    58
+ 24 CYSS H      27 TYR  HB2     5.50            #peak    59
+ 24 CYSS H      24 CYSS HB3     3.97            #peak    61
+ 24 CYSS H      24 CYSS HB2     3.80            #peak    62
+ 25 ASP  H      37 GLY  HA3     5.50            #peak    65
+ 25 ASP  H      25 ASP  HB3     4.07            #peak    66
+ 24 CYSS HB3    25 ASP  H       3.81            #peak    67
+  8 ARG  QB     24 CYSS H       4.84            #peak    73
+ 32 PHE  HB3    33 LYS  H       4.98            #peak    78
+ 32 PHE  HB2    33 LYS  H       5.50            #peak    79
+ 30 VAL  HA     33 LYS  H       5.50            #peak    82
+ 32 PHE  H      33 LYS  H       2.84            #peak    84
+ 29 LYS  HA     33 LYS  H       5.47            #peak    85
+ 33 LYS  H      33 LYS  HA      2.70            #peak    86
+ 31 CYSS HB2    32 PHE  H       4.00            #peak    87
+ 31 CYSS HB3    32 PHE  H       4.37            #peak    88
+ 32 PHE  H      32 PHE  HB2     4.04            #peak    89
+ 32 PHE  H      62 ALA  QB      5.50            #peak    91
+ 32 PHE  H      34 ALA  QB      4.89            #peak    94
+ 33 LYS  H      64 THR  QG2     5.03            #peak    95
+ 31 CYSS H      33 LYS  H       4.84            #peak    96
+ 33 LYS  HB2    34 ALA  H       5.22            #peak    97
+ 28 CYSS HB3    34 ALA  H       5.50            #peak   100
+ 34 ALA  H      62 ALA  QB      4.72            #peak   101
+ 34 ALA  QB     35 ASP  H       3.37            #peak   102
+ 34 ALA  H      34 ALA  QB      3.20            #peak   104
+ 35 ASP  H      60 ILE  QG2     5.41            #peak   105
+ 32 PHE  H      34 ALA  H       4.27            #peak   106
+ 32 PHE  HA     34 ALA  H       5.50            #peak   107
+ 30 VAL  H      33 LYS  H       5.50            #peak   108
+ 33 LYS  H      34 ALA  H       3.33            #peak   109
+ 33 LYS  HA     34 ALA  H       3.21            #peak   110
+ 32 PHE  HB2    34 ALA  H       5.12            #peak   111
+ 32 PHE  HB3    34 ALA  H       4.56            #peak   112
+ 29 LYS  HA     34 ALA  H       3.24            #peak   113
+ 34 ALA  H      62 ALA  HA      4.96            #peak   114
+ 29 LYS  HA     32 PHE  H       5.50            #peak   115
+ 30 VAL  H      32 PHE  H       5.50            #peak   116
+ 30 VAL  H      31 CYSS H       3.49            #peak   118
+ 29 LYS  H      30 VAL  H       3.58            #peak   119
+ 27 TYR  HA     30 VAL  H       5.44            #peak   120
+ 30 VAL  H      30 VAL  HB      3.12            #peak   124
+ 28 CYSS HB2    29 LYS  H       3.97            #peak   125
+ 28 CYSS HB3    29 LYS  H       4.69            #peak   126
+ 27 TYR  HA     29 LYS  H       5.50            #peak   127
+ 27 TYR  HB2    29 LYS  H       5.50            #peak   128
+ 29 LYS  H      30 VAL  HB      5.50            #peak   129
+ 30 VAL  HB     31 CYSS H       3.79            #peak   135
+ 30 VAL  QG2    31 CYSS H       4.66            #peak   136
+ 31 CYSS H      31 CYSS HB2     3.59            #peak   138
+ 30 VAL  QG1    31 CYSS H       4.66            #peak   139
+ 31 CYSS HA     32 PHE  H       3.44            #peak   141
+ 28 CYSS HA     32 PHE  H       4.36            #peak   142
+ 32 PHE  H      32 PHE  QD      3.14            #peak   143
+ 31 CYSS H      32 PHE  QD      4.75            #peak   144
+ 31 CYSS H      32 PHE  H       3.18            #peak   145
+ 30 VAL  H      30 VAL  QG2     3.85            #peak   146
+ 30 VAL  H      30 VAL  QG1     3.85            #peak   147
+ 31 CYSS H      32 PHE  HA      5.50            #peak   148
+ 29 LYS  HA     31 CYSS H       5.50            #peak   149
+ 27 TYR  HA     31 CYSS H       4.72            #peak   150
+ 28 CYSS HA     31 CYSS H       5.50            #peak   152
+ 21 TRP  HE1    53 ASN  HD22    5.50            #peak   155
+  6 TRP  H      56 GLN  HE21    5.50            #peak   162
+  6 TRP  HA     56 GLN  HE21    4.91            #peak   164
+  6 TRP  H      56 GLN  HE22    5.50            #peak   166
+ 21 TRP  HE1    53 ASN  HD21    5.50            #peak   168
+ 21 TRP  HE1    52 PRO  HB3     4.42            #peak   172
+ 21 TRP  HE1    55 LYS  HB2     5.50            #peak   175
+ 21 TRP  HE1    52 PRO  HD2     5.50            #peak   176
+ 21 TRP  HE1    55 LYS  H       4.96            #peak   178
+ 21 TRP  HE1    52 PRO  HA      5.50            #peak   179
+ 21 TRP  HE1    53 ASN  HA      5.50            #peak   180
+ 74 TRP  H      74 TRP  HE1     5.50            #peak   183
+ 69 ARG  HA     74 TRP  HE1     5.50            #peak   188
+ 68 ASN  HA     74 TRP  HE1     3.60            #peak   189
+  6 TRP  HA     56 GLN  HE22    4.91            #peak   190
+ 21 TRP  HA     54 ASN  HD22    5.10            #peak   192
+ 21 TRP  HA     54 ASN  HD21    5.10            #peak   195
+ 60 ILE  QG2    61 ASN  HD21    5.17            #peak   197
+ 54 ASN  HA     54 ASN  HD21    5.50            #peak   198
+ 54 ASN  HA     54 ASN  HD22    5.50            #peak   199
+ 29 LYS  H      34 ALA  QB      5.34            #peak   201
+  5 ASP  HA      9 CYSS H       5.45            #peak   202
+  5 ASP  HA      7 SER  H       5.18            #peak   203
+ 40 TYR  HE2    42 SER  H       5.50            #peak   204
+ 59 CYSS H      60 ILE  QD1     5.50            #peak   208
+ 60 ILE  QG2    61 ASN  HD22    5.17            #peak   209
+  6 TRP  HB2    56 GLN  HE21    5.50            #peak   215
+  6 TRP  HB2    56 GLN  HE22    5.50            #peak   216
+  6 TRP  HB3    56 GLN  HE22    5.18            #peak   217
+  6 TRP  HB3    56 GLN  HE21    5.18            #peak   218
+  8 ARG  QB      9 CYSS H       5.01            #peak   229
+  9 CYSS H       9 CYSS HB3     3.54            #peak   230
+  6 TRP  HA      8 ARG  H       5.14            #peak   231
+  9 CYSS H      10 SER  HB3     5.50            #peak   233
+  7 SER  HA      9 CYSS H       5.50            #peak   234
+  9 CYSS H       9 CYSS HB2     4.01            #peak   236
+  9 CYSS H      10 SER  HB2     5.50            #peak   237
+  6 TRP  H       7 SER  H       3.61            #peak   238
+  3 PHE  HA      7 SER  H       5.50            #peak   240
+  7 SER  H       8 ARG  H       4.38            #peak   241
+  8 ARG  H       8 ARG  QB      3.37            #peak   242
+  7 SER  QB      8 ARG  H       4.83            #peak   243
+  8 ARG  HA     10 SER  H       5.50            #peak   251
+ 19 VAL  H      19 VAL  HB      4.12            #peak   256
+  9 CYSS H      10 SER  H       3.37            #peak   257
+  8 ARG  H       9 CYSS H       5.50            #peak   258
+  6 TRP  HA      9 CYSS H       5.50            #peak   259
+  9 CYSS HB3    10 SER  H       5.28            #peak   261
+ 10 SER  H      10 SER  HB2     4.03            #peak   262
+  7 SER  HA     10 SER  H       4.78            #peak   263
+ 10 SER  H      10 SER  HB3     3.89            #peak   264
+  9 CYSS HB2    10 SER  H       5.50            #peak   265
+  3 PHE  H       4 GLU  H       5.50            #peak   267
+  4 GLU  HB3     5 ASP  H       4.43            #peak   268
+  3 PHE  QD      4 GLU  H       5.50            #peak   269
+  4 GLU  H       5 ASP  H       4.70            #peak   270
+  4 GLU  HB2     5 ASP  H       4.57            #peak   271
+  5 ASP  H       5 ASP  HB2     3.15            #peak   272
+  5 ASP  H       6 TRP  HB3     5.50            #peak   273
+  5 ASP  H       5 ASP  HB3     3.48            #peak   275
+  4 GLU  H       4 GLU  QG      5.50            #peak   280
+  6 TRP  H      40 TYR  HA      5.50            #peak   286
+  3 PHE  HA      6 TRP  H       4.37            #peak   289
+  6 TRP  HB3     7 SER  H       5.00            #peak   290
+  4 GLU  HA      7 SER  H       5.29            #peak   292
+  6 TRP  HB2     7 SER  H       4.72            #peak   294
+  5 ASP  H       6 TRP  H       3.76            #peak   295
+  5 ASP  HB3     6 TRP  H       4.50            #peak   299
+  6 TRP  H       6 TRP  HB2     3.20            #peak   300
+  4 GLU  HA      6 TRP  H       5.00            #peak   301
+  5 ASP  HB2     6 TRP  H       3.96            #peak   302
+  6 TRP  H       6 TRP  HB3     3.37            #peak   303
+ 35 ASP  H      60 ILE  HB      5.04            #peak   304
+ 63 ARG  H      64 THR  H       3.43            #peak   306
+ 62 ALA  HA     63 ARG  H       3.00            #peak   308
+ 62 ALA  H      63 ARG  H       5.50            #peak   309
+ 63 ARG  HB3    64 THR  H       3.88            #peak   310
+ 63 ARG  HB2    64 THR  H       3.93            #peak   311
+ 64 THR  H      64 THR  QG2     3.46            #peak   312
+ 62 ALA  QB     64 THR  H       3.70            #peak   313
+ 32 PHE  HB2    63 ARG  H       4.76            #peak   314
+ 62 ALA  QB     63 ARG  H       3.53            #peak   315
+ 61 ASN  HA     62 ALA  H       3.09            #peak   317
+ 63 ARG  H      63 ARG  QG      4.59            #peak   319
+ 32 PHE  HB3    63 ARG  H       5.45            #peak   320
+ 63 ARG  H      63 ARG  HB3     3.64            #peak   321
+ 63 ARG  H      63 ARG  HB2     3.51            #peak   322
+ 65 ALA  H      66 LYS  H       5.50            #peak   324
+ 64 THR  HA     65 ALA  H       3.35            #peak   327
+ 66 LYS  H      66 LYS  QG      5.50            #peak   328
+ 65 ALA  HA     66 LYS  H       3.28            #peak   330
+ 62 ALA  HA     64 THR  H       4.09            #peak   333
+ 64 THR  H      64 THR  HB      4.00            #peak   334
+ 32 PHE  HB3    64 THR  H       5.50            #peak   335
+ 32 PHE  HB2    64 THR  H       4.65            #peak   336
+ 65 ALA  H      65 ALA  QB      3.08            #peak   338
+ 64 THR  HB     65 ALA  H       2.92            #peak   339
+ 64 THR  QG2    65 ALA  H       4.10            #peak   341
+ 61 ASN  HB2    62 ALA  H       5.50            #peak   342
+ 34 ALA  QB     60 ILE  H       4.02            #peak   343
+ 60 ILE  H      60 ILE  QD1     4.48            #peak   345
+ 60 ILE  H      60 ILE  QG2     5.24            #peak   346
+ 28 CYSS HB2    60 ILE  H       5.50            #peak   349
+ 60 ILE  H      60 ILE  HB      3.32            #peak   350
+ 28 CYSS HB3    60 ILE  H       5.29            #peak   351
+ 58 ARG  QG     59 CYSS H       5.50            #peak   353
+ 59 CYSS H      60 ILE  H       5.50            #peak   354
+ 34 ALA  QB     59 CYSS H       5.50            #peak   355
+ 58 ARG  HA     59 CYSS H       3.22            #peak   357
+ 37 GLY  HA3    60 ILE  H       5.41            #peak   361
+ 60 ILE  HA     61 ASN  H       3.46            #peak   362
+ 61 ASN  H      62 ALA  H       4.50            #peak   366
+ 61 ASN  HB3    62 ALA  H       5.50            #peak   368
+ 60 ILE  QG2    62 ALA  H       5.50            #peak   369
+ 62 ALA  H      62 ALA  QB      2.59            #peak   370
+ 59 CYSS HA     60 ILE  H       2.89            #peak   371
+ 36 ARG  H      60 ILE  H       4.17            #peak   372
+ 36 ARG  HA     60 ILE  H       5.50            #peak   374
+ 35 ASP  H      60 ILE  H       5.50            #peak   375
+ 60 ILE  HB     61 ASN  H       5.50            #peak   377
+ 60 ILE  QD1    61 ASN  H       5.50            #peak   378
+ 60 ILE  QG2    61 ASN  H       4.62            #peak   379
+ 32 PHE  HE2    66 LYS  H       4.41            #peak   380
+ 72 THR  H      74 TRP  H       5.50            #peak   381
+ 72 THR  H      72 THR  QG2     3.79            #peak   382
+ 70 ASN  HA     72 THR  H       5.30            #peak   384
+ 73 CYSS H      73 CYSS HB3     4.12            #peak   386
+ 70 ASN  HB2    73 CYSS H       4.20            #peak   387
+ 72 THR  QG2    73 CYSS H       5.50            #peak   388
+ 70 ASN  HB3    73 CYSS H       5.50            #peak   389
+ 68 ASN  HA     70 ASN  H       4.91            #peak   390
+ 70 ASN  H      71 PRO  QD      5.50            #peak   392
+ 72 THR  HB     73 CYSS H       5.36            #peak   394
+ 72 THR  H      72 THR  HB      3.90            #peak   397
+ 71 PRO  HB3    72 THR  H       4.51            #peak   398
+ 73 CYSS H      73 CYSS HB2     3.20            #peak   399
+ 73 CYSS HB2    75 ALA  H       5.50            #peak   400
+ 74 TRP  HB3    75 ALA  H       4.59            #peak   401
+ 73 CYSS HB3    75 ALA  H       5.50            #peak   403
+ 74 TRP  HB2    75 ALA  H       4.57            #peak   404
+ 75 ALA  H      75 ALA  QB      3.48            #peak   405
+ 74 TRP  HA     75 ALA  H       3.52            #peak   407
+ 73 CYSS H      74 TRP  H       3.55            #peak   409
+ 72 THR  H      73 CYSS H       3.95            #peak   410
+ 73 CYSS H      74 TRP  HD1     5.47            #peak   412
+ 73 CYSS HB3    74 TRP  H       4.84            #peak   413
+ 74 TRP  H      74 TRP  HB2     3.62            #peak   414
+ 72 THR  HA     74 TRP  H       4.41            #peak   415
+ 73 CYSS HB2    74 TRP  H       3.73            #peak   416
+ 32 PHE  HA     67 ASP  H       5.17            #peak   419
+ 32 PHE  HE2    67 ASP  H       5.50            #peak   420
+ 31 CYSS HA     67 ASP  H       4.25            #peak   421
+ 32 PHE  QD     67 ASP  H       5.50            #peak   423
+ 67 ASP  HB2    68 ASN  H       5.50            #peak   425
+ 66 LYS  H      67 ASP  H       5.50            #peak   426
+ 67 ASP  HB3    68 ASN  H       5.50            #peak   427
+ 66 LYS  QG     67 ASP  H       4.01            #peak   428
+ 32 PHE  QD     66 LYS  H       5.18            #peak   430
+ 31 CYSS HB3    67 ASP  H       4.62            #peak   432
+ 31 CYSS HB2    67 ASP  H       5.32            #peak   435
+ 67 ASP  H      67 ASP  HB3     3.18            #peak   436
+ 67 ASP  HA     68 ASN  H       3.21            #peak   437
+ 67 ASP  HA     69 ARG  H       4.99            #peak   440
+ 69 ARG  H      70 ASN  H       3.36            #peak   441
+ 70 ASN  H      70 ASN  HB2     3.37            #peak   443
+ 70 ASN  H      70 ASN  HB3     3.56            #peak   445
+ 67 ASP  H      68 ASN  H       5.50            #peak   447
+ 68 ASN  H      70 ASN  H       5.50            #peak   450
+ 67 ASP  HB2    69 ARG  H       5.50            #peak   455
+ 40 TYR  H      40 TYR  QD      3.23            #peak   457
+ 38 GLU  H      60 ILE  QD1     5.07            #peak   458
+ 40 TYR  H      58 ARG  H       5.41            #peak   459
+ 40 TYR  H      40 TYR  HE2     5.50            #peak   460
+ 40 TYR  H      57 CYSS HA      5.50            #peak   461
+ 39 CYSS HB2    40 TYR  H       5.44            #peak   462
+ 39 CYSS HA     40 TYR  H       3.32            #peak   463
+ 38 GLU  H      57 CYSS HA      5.50            #peak   465
+ 38 GLU  H      60 ILE  H       5.05            #peak   467
+ 37 GLY  HA2    38 GLU  H       2.91            #peak   468
+ 25 ASP  HA     38 GLU  H       5.50            #peak   469
+ 38 GLU  H      38 GLU  QB      3.90            #peak   470
+ 42 SER  H      42 SER  HB3     3.51            #peak   475
+ 42 SER  H      42 SER  HB2     3.25            #peak   476
+ 42 SER  H      54 ASN  HB2     3.94            #peak   478
+ 41 ASP  HA     42 SER  H       2.78            #peak   479
+ 40 TYR  QD     42 SER  H       5.50            #peak   480
+ 42 SER  H      54 ASN  HA      5.50            #peak   483
+ 39 CYSS HB3    40 TYR  H       4.21            #peak   486
+ 40 TYR  QD     41 ASP  H       5.50            #peak   487
+ 42 SER  H      56 GLN  QG      5.50            #peak   489
+ 25 ASP  H      37 GLY  H       5.50            #peak   493
+ 36 ARG  H      62 ALA  HA      5.50            #peak   494
+ 36 ARG  H      61 ASN  HB2     4.80            #peak   495
+ 35 ASP  HB2    36 ARG  H       4.18            #peak   498
+ 36 ARG  H      60 ILE  HB      3.69            #peak   500
+ 36 ARG  H      61 ASN  HB3     5.50            #peak   501
+ 35 ASP  HB3    36 ARG  H       3.56            #peak   502
+ 35 ASP  H      35 ASP  HB2     3.76            #peak   503
+ 35 ASP  H      61 ASN  HB2     4.04            #peak   504
+ 35 ASP  H      35 ASP  HB3     3.34            #peak   505
+ 35 ASP  H      61 ASN  HB3     3.68            #peak   506
+ 35 ASP  H      62 ALA  HA      4.85            #peak   507
+ 35 ASP  H      36 ARG  H       3.40            #peak   508
+ 36 ARG  H      59 CYSS HA      5.43            #peak   509
+ 35 ASP  H      61 ASN  HA      5.50            #peak   510
+ 28 CYSS HB2    37 GLY  H       5.36            #peak   513
+ 25 ASP  HB2    37 GLY  H       4.07            #peak   514
+ 28 CYSS HB3    37 GLY  H       5.50            #peak   515
+ 25 ASP  HB3    37 GLY  H       4.73            #peak   516
+ 36 ARG  H      37 GLY  H       5.50            #peak   519
+ 25 ASP  HA     37 GLY  H       3.62            #peak   520
+ 36 ARG  HA     37 GLY  H       3.57            #peak   521
+ 36 ARG  H      60 ILE  QG2     5.18            #peak   523
+ 34 ALA  QB     36 ARG  H       3.55            #peak   525
+ 36 ARG  H      60 ILE  QD1     5.50            #peak   526
+ 36 ARG  HB2    37 GLY  H       4.02            #peak   528
+ 36 ARG  QG     37 GLY  H       5.32            #peak   530
+ 55 LYS  H      55 LYS  HB2     3.10            #peak   533
+ 56 GLN  H      57 CYSS H       5.50            #peak   534
+ 55 LYS  H      55 LYS  HB3     2.92            #peak   535
+ 54 ASN  HB3    55 LYS  H       5.36            #peak   536
+ 54 ASN  HA     55 LYS  H       3.52            #peak   538
+ 54 ASN  HB2    55 LYS  H       4.57            #peak   540
+ 56 GLN  HB3    57 CYSS H       5.50            #peak   541
+ 56 GLN  HB2    57 CYSS H       5.01            #peak   542
+ 39 CYSS HA     56 GLN  H       5.42            #peak   543
+ 56 GLN  HA     57 CYSS H       3.29            #peak   546
+ 57 CYSS H      57 CYSS HB3     3.58            #peak   548
+ 57 CYSS H      57 CYSS HB2     3.83            #peak   549
+ 21 TRP  HD1    55 LYS  H       3.93            #peak   550
+ 57 CYSS HA     58 ARG  H       3.08            #peak   551
+ 37 GLY  HA2    58 ARG  H       5.50            #peak   552
+ 37 GLY  HA3    58 ARG  H       5.50            #peak   553
+ 39 CYSS HA     58 ARG  H       4.93            #peak   555
+ 58 ARG  H      59 CYSS H       5.50            #peak   556
+ 38 GLU  H      58 ARG  H       3.80            #peak   557
+ 40 TYR  HE2    58 ARG  H       5.50            #peak   558
+ 40 TYR  QD     58 ARG  H       4.77            #peak   559
+ 58 ARG  H      58 ARG  QG      3.93            #peak   561
+ 55 LYS  H      56 GLN  H       5.06            #peak   544
+ 57 CYSS HB3    58 ARG  H       5.45            #peak   563
+ 57 CYSS HB2    58 ARG  H       4.61            #peak   566
+ 55 LYS  HA     56 GLN  H       2.60            #peak   569
+ 49 HIS  HB2    51 LEU  H       5.50            #peak   570
+ 49 HIS  HB3    51 LEU  H       5.50            #peak   573
+ 52 PRO  HD3    53 ASN  H       4.78            #peak   576
+ 52 PRO  HB3    53 ASN  H       4.28            #peak   578
+ 49 HIS  H      49 HIS  HB3     4.15            #peak   579
+ 48 PRO  HD2    49 HIS  H       5.50            #peak   583
+  3 PHE  QD     49 HIS  H       5.50            #peak   584
+ 48 PRO  HD3    49 HIS  H       5.50            #peak   586
+ 56 GLN  H      56 GLN  HB3     4.10            #peak   590
+ 21 TRP  HZ2    54 ASN  H       5.50            #peak   591
+ 54 ASN  H      55 LYS  H       5.50            #peak   592
+ 55 LYS  HB2    56 GLN  H       5.50            #peak   593
+ 56 GLN  H      56 GLN  QG      5.08            #peak   594
+ 21 TRP  HE1    53 ASN  H       5.33            #peak   599
+ 52 PRO  HD2    53 ASN  H       5.50            #peak   600
+  3 PHE  HA      3 PHE  QD      5.00 
+  3 PHE  QD      4 GLU  HA      5.00 
+ 27 TYR  QD     31 CYSS HB3     5.00 
+ 27 TYR  HE2    31 CYSS HB3     5.00 
+ 27 TYR  HE2    31 CYSS HB2     5.00 
+ 31 CYSS HB3    32 PHE  QD      5.00 
+ 31 CYSS HB2    32 PHE  QD      5.00 
+ 28 CYSS HB3    34 ALA  QB      5.00 
+ 28 CYSS HB2    34 ALA  QB      5.00 
+ 32 PHE  HB2    34 ALA  QB      5.00 
+ 25 ASP  HA     37 GLY  HA3     5.00 
+ 25 ASP  HA     37 GLY  HA2     5.00 
+ 39 CYSS HA     40 TYR  QD      5.00 
+ 40 TYR  HA     40 TYR  QD      5.00 
+ 40 TYR  QD     42 SER  HA      5.00 
+ 40 TYR  HE2    42 SER  HA      5.00 
+ 21 TRP  HD1    54 ASN  HA      5.00 
+ 39 CYSS HA     57 CYSS HA      5.00 
+ 60 ILE  HA     60 ILE  QD1     5.00 
+ 60 ILE  QG2    60 ILE  QD1     5.00 
+ 32 PHE  HB3    62 ALA  QB      5.00 
+ 32 PHE  HB2    62 ALA  QB      5.00 
+ 34 ALA  HA     62 ALA  HA      5.00 
+ 34 ALA  QB     62 ALA  HA      5.00 
+ 33 LYS  HB3    64 THR  QG2     5.00 
+ 33 LYS  HB2    64 THR  QG2     5.00 
+ 63 ARG  HB2    64 THR  QG2     5.00 
+ 27 TYR  HE2    73 CYSS HB3     5.00 
+ 27 TYR  HE2    73 CYSS HB2     5.00 
+  2 CYSS SG     47 CYSS SG      2.10 
+  2 CYSS SG     47 CYSS CB      3.10 
+  2 CYSS CB     47 CYSS SG      3.10 
+  9 CYSS SG     39 CYSS SG      2.10 
+  9 CYSS SG     39 CYSS CB      3.10 
+  9 CYSS CB     39 CYSS SG      3.10 
+ 24 CYSS SG     57 CYSS SG      2.10 
+ 24 CYSS SG     57 CYSS CB      3.10 
+ 24 CYSS CB     57 CYSS SG      3.10 
+ 28 CYSS SG     59 CYSS SG      2.10 
+ 28 CYSS SG     59 CYSS CB      3.10 
+ 28 CYSS CB     59 CYSS SG      3.10 
+ 31 CYSS SG     73 CYSS SG      2.10 
+ 31 CYSS SG     73 CYSS CB      3.10 
+ 31 CYSS CB     73 CYSS SG      3.10 
+  3 PHE  HA     51 LEU  QQD     4.96 
+  3 PHE  QB      4 GLU  H       4.45            #peak   284
+  3 PHE  HZ     51 LEU  QQD     4.96 
+  3 PHE  HE2    51 LEU  QQD     4.96 
+  3 PHE  QD      4 GLU  QG      4.88 
+  3 PHE  QD     51 LEU  QQD     4.96 
+  4 GLU  HA      7 SER  QB      4.88 
+  4 GLU  QG      5 ASP  H       5.34            #peak   274
+  5 ASP  HB2    56 GLN  QE2     5.34            #peak   214
+  5 ASP  HB3    56 GLN  QE2     5.34            #peak   211
+  6 TRP  H      51 LEU  QQD     5.44            #peak   296
+  6 TRP  HA     56 GLN  QE2     4.28            #peak   190
+  6 TRP  HB3    56 GLN  QE2     4.37            #peak   218
+  7 SER  H       7 SER  QB      3.45            #peak   287
+  7 SER  QB      8 ARG  H       4.13            #peak   246
+  7 SER  QB      9 CYSS H       5.34            #peak   235
+  7 SER  QB     10 SER  H       4.56            #peak   250
+  8 ARG  H       8 ARG  QB      2.93            #peak   242
+  8 ARG  QB      9 CYSS H       4.34            #peak   229
+  8 ARG  QB     24 CYSS H       4.14            #peak    73
+ 19 VAL  H      19 VAL  QQG     3.76            #peak   255
+ 19 VAL  QQG    20 LEU  H       4.24            #peak    53
+ 19 VAL  QQG    21 TRP  H       4.72            #peak    41
+ 20 LEU  QB     21 TRP  H       4.38            #peak    50
+ 21 TRP  HE1    51 LEU  QB      5.34            #peak   174
+ 21 TRP  HE1    51 LEU  QQD     5.44            #peak   184
+ 22 ARG  H      22 ARG  QB      3.60            #peak    70
+ 22 ARG  QB     26 SER  H       5.34            #peak    17
+ 22 ARG  QB     27 TYR  H       4.95            #peak    20
+ 23 SER  H      23 SER  QB      3.57            #peak    76
+ 23 SER  QB     24 CYSS H       3.44            #peak    63
+ 26 SER  H      26 SER  QB      3.25            #peak    18
+ 26 SER  QB     27 TYR  H       3.90            #peak     9
+ 28 CYSS H      29 LYS  QB      5.34            #peak    28
+ 29 LYS  H      29 LYS  QB      3.25            #peak   132
+ 29 LYS  H      29 LYS  QG      4.18            #peak   130
+ 29 LYS  H      29 LYS  QD      3.76            #peak   133
+ 29 LYS  H      30 VAL  QQG     5.14            #peak   131
+ 29 LYS  QB     30 VAL  H       3.29            #peak   121
+ 29 LYS  QG     30 VAL  H       5.27            #peak   134
+ 29 LYS  QD     30 VAL  H       5.26            #peak   122
+ 30 VAL  H      30 VAL  QQG     3.13            #peak   146
+ 30 VAL  QQG    31 CYSS H       3.90            #peak   139
+ 30 VAL  QQG    70 ASN  QD2     3.76            #peak   153
+ 33 LYS  H      33 LYS  QG      3.48            #peak    92
+ 33 LYS  H      33 LYS  QD      4.73            #peak    93
+ 33 LYS  QG     34 ALA  H       4.65            #peak    98
+ 34 ALA  H      59 CYSS QB      5.22            #peak    99
+ 34 ALA  QB     59 CYSS QB      4.88 
+ 35 ASP  H      60 ILE  QG1     4.87            #peak   103
+ 35 ASP  HB2    61 ASN  QD2     5.34            #peak   222
+ 35 ASP  HB3    61 ASN  QD2     5.34            #peak   221
+ 36 ARG  H      36 ARG  QG      3.53            #peak   524
+ 36 ARG  QG     37 GLY  H       4.46            #peak   529
+ 38 GLU  H      38 GLU  QB      3.38            #peak   471
+ 38 GLU  H      38 GLU  QG      3.94            #peak   473
+ 38 GLU  QB     58 ARG  H       3.89            #peak   567
+ 38 GLU  QG     58 ARG  H       5.34            #peak   568
+ 40 TYR  H      40 TYR  QB      3.37            #peak   474
+ 40 TYR  HA     56 GLN  QE2     5.31            #peak   165
+ 40 TYR  QB     41 ASP  H       4.18            #peak   488
+ 41 ASP  QB     42 SER  H       3.77            #peak   490
+ 42 SER  HB2    45 LEU  QB      4.88 
+ 42 SER  HB2    45 LEU  QQD     4.96 
+ 42 SER  HB3    45 LEU  QQD     4.96 
+ 45 LEU  QQD    47 CYSS QB      4.83 
+ 49 HIS  HB2    51 LEU  QQD     4.96 
+ 49 HIS  HB3    51 LEU  QQD     4.96 
+ 51 LEU  H      51 LEU  QB      3.13            #peak   572
+ 51 LEU  H      51 LEU  QQD     5.44            #peak   585
+ 51 LEU  QB     52 PRO  HD2     4.88 
+ 51 LEU  QB     52 PRO  HD3     4.88 
+ 51 LEU  QB     53 ASN  H       4.20            #peak   577
+ 51 LEU  QQD    52 PRO  HD2     4.96 
+ 51 LEU  QQD    52 PRO  HD3     4.96 
+ 51 LEU  QQD    53 ASN  H       5.44            #peak   574
+ 53 ASN  QB     53 ASN  QD2     3.20            #peak   170
+ 53 ASN  QB     54 ASN  H       4.20            #peak   605
+ 53 ASN  QB     55 LYS  H       4.17            #peak   539
+ 55 LYS  H      55 LYS  QG      5.34            #peak   532
+ 56 GLN  H      56 GLN  QG      4.45            #peak   594
+ 56 GLN  QG     57 CYSS H       5.34            #peak   545
+ 58 ARG  H      58 ARG  QB      3.25            #peak   564
+ 58 ARG  H      58 ARG  QG      3.39            #peak   561
+ 58 ARG  H      58 ARG  QD      5.34            #peak   565
+ 58 ARG  QB     59 CYSS H       3.86            #peak   356
+ 58 ARG  QD     59 CYSS H       5.34            #peak   360
+ 59 CYSS H      59 CYSS QB      3.17            #peak   359
+ 59 CYSS H      60 ILE  QG1     5.34            #peak   205
+ 59 CYSS QB     60 ILE  H       3.92            #peak   348
+ 59 CYSS QB     62 ALA  H       4.84            #peak   367
+ 59 CYSS QB     62 ALA  QB      4.88 
+ 60 ILE  H      60 ILE  QG1     3.50            #peak   347
+ 60 ILE  QG1    61 ASN  H       5.34            #peak   376
+ 61 ASN  HB3    61 ASN  QD2     3.57            #peak   223
+ 63 ARG  H      63 ARG  QG      3.72            #peak   319
+ 63 ARG  H      63 ARG  QD      5.34            #peak   307
+ 63 ARG  QG     64 THR  H       4.44            #peak   323
+ 66 LYS  H      66 LYS  QB      2.89            #peak   331
+ 66 LYS  H      66 LYS  QE      5.34            #peak   332
+ 66 LYS  QB     67 ASP  H       3.65            #peak   429
+ 66 LYS  QE     67 ASP  H       2.81            #peak   433
+ 68 ASN  H      68 ASN  QB      3.68            #peak   424
+ 68 ASN  QB     70 ASN  H       5.34            #peak   446
+ 68 ASN  QB     74 TRP  HE1     4.44            #peak   185
+ 69 ARG  H      69 ARG  QB      2.96            #peak   454
+ 69 ARG  H      69 ARG  QG      3.46            #peak   451
+ 69 ARG  H      69 ARG  QD      5.34            #peak   452
+ 69 ARG  QB     70 ASN  H       3.58            #peak   442
+ 69 ARG  QG     70 ASN  H       5.34            #peak   439
+ 69 ARG  QD     70 ASN  H       5.08            #peak   444
+ 71 PRO  QD     72 THR  H       4.53            #peak   396
+
+  Entry H atom name         Submitted Coord H atom name
+  Start of MODEL    1
+  Start of MODEL    2
+  Start of MODEL    3
+  Start of MODEL    4
+  Start of MODEL    5
+  Start of MODEL    6
+  Start of MODEL    7
+  Start of MODEL    8
+  Start of MODEL    9
+  Start of MODEL   10

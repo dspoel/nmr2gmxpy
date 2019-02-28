@@ -1,0 +1,687 @@
+*HEADER    MEMBRANE PROTEIN                        11-FEB-12   2LPF              
+*TITLE     R STATE STRUCTURE OF MONOMERIC PHOSPHOLAMBAN (C36A, C41F, C46A)       
+*COMPND    MOL_ID: 1;                                                            
+*COMPND   2 MOLECULE: CARDIAC PHOSPHOLAMBAN;                                     
+*COMPND   3 CHAIN: A;                                                            
+*COMPND   4 SYNONYM: PLB;                                                        
+*COMPND   5 ENGINEERED: YES;                                                     
+*COMPND   6 MUTATION: YES                                                        
+*SOURCE    MOL_ID: 1;                                                            
+*SOURCE   2 ORGANISM_SCIENTIFIC: ORYCTOLAGUS CUNICULUS;                          
+*SOURCE   3 ORGANISM_COMMON: RABBIT;                                             
+*SOURCE   4 ORGANISM_TAXID: 9986;                                                
+*SOURCE   5 GENE: PLN;                                                           
+*SOURCE   6 EXPRESSION_SYSTEM: ESCHERICHIA COLI;                                 
+*SOURCE   7 EXPRESSION_SYSTEM_TAXID: 562;                                        
+*SOURCE   8 EXPRESSION_SYSTEM_VECTOR: PMAL                                       
+*KEYWDS    PHOSPHOLAMBAN, MEMBRANE PROTEIN, EXCITED STATE, DILATED               
+*KEYWDS   2 CARDIOMYOPATHY                                                       
+*EXPDTA    SOLUTION NMR                                                          
+*NUMMDL    1                                                                     
+*AUTHOR    A.DE SIMONE, R.W.MONTALVAO, M.GUSTAVSSON, L.SHI, G.VEGLIA,            
+*AUTHOR   2 M.VENDRUSCOLO                                                        
+*REVDAT   1   13-FEB-13 2LPF    0                                                
+
+
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 3 and name N ) ( resid 3 and name HN ) 5.84 1.74 1.74
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 4 and name N ) ( resid 4 and name HN ) -0.12 0.69 0.69
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 5 and name N ) ( resid 5 and name HN ) 1.95 0.36 0.36
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 6 and name N ) ( resid 6 and name HN ) 8.15 1.50 1.50
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 7 and name N ) ( resid 7 and name HN ) -0.49 1.14 1.14
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 8 and name N ) ( resid 8 and name HN ) 0.37 1.39 1.39
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 9 and name N ) ( resid 9 and name HN ) -1.83 1.25 1.25
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 11 and name N ) ( resid 11 and name HN ) 5.60 0.66 0.66
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 12 and name N ) ( resid 12 and name HN ) 1.10 1.34 1.34
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 14 and name N ) ( resid 14 and name HN ) 1.10 1.33 1.33
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 16 and name N ) ( resid 16 and name HN ) -3.53 0.50 0.50
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 17 and name N ) ( resid 17 and name HN ) 2.92 2.15 2.15
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 18 and name N ) ( resid 18 and name HN ) 4.14 1.05 1.05
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 19 and name N ) ( resid 19 and name HN ) -5.48 0.86 0.86
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 20 and name N ) ( resid 20 and name HN ) -3.16 0.59 0.59
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 21 and name N ) ( resid 21 and name HN ) -4.99 0.65 0.65
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 23 and name N ) ( resid 23 and name HN ) -2.68 0.26 0.26
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 24 and name N ) ( resid 24 and name HN ) -1.70 1.84 1.84
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 25 and name N ) ( resid 25 and name HN ) -3.65 0.25 0.25
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 26 and name N ) ( resid 26 and name HN ) -1.83 0.66 0.66
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 27 and name N ) ( resid 27 and name HN ) -2.07 0.99 0.99
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 28 and name N ) ( resid 28 and name HN ) -3.16 0.61 0.61
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 29 and name N ) ( resid 29 and name HN ) -5.48 1.60 1.60
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 30 and name N ) ( resid 30 and name HN ) 9.13 1.04 1.04
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 31 and name N ) ( resid 31 and name HN ) 3.29 1.08 1.08
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 32 and name N ) ( resid 32 and name HN ) -3.04 1.65 1.65
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 34 and name N ) ( resid 34 and name HN ) 14.24 5.90 5.90
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 35 and name N ) ( resid 35 and name HN ) -1.58 1.38 1.38
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 36 and name N ) ( resid 36 and name HN ) 4.14 1.12 1.12
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 37 and name N ) ( resid 37 and name HN ) 16.43 1.64 1.64
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 38 and name N ) ( resid 38 and name HN ) 14.97 3.61 3.61
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 39 and name N ) ( resid 39 and name HN ) 1.95 0.19 0.19
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 41 and name N ) ( resid 41 and name HN ) 8.15 3.12 3.12
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 42 and name N ) ( resid 42 and name HN ) -0.12 2.99 2.99
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 43 and name N ) ( resid 43 and name HN ) 9.37 2.11 2.11
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 44 and name N ) ( resid 44 and name HN ) 15.94 1.39 1.39
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 45 and name N ) ( resid 45 and name HN ) 0.61 4.20 4.20
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 46 and name N ) ( resid 46 and name HN ) -5.48 4.48 4.48
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 47 and name N ) ( resid 47 and name HN ) 5.84 0.05 0.05
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 48 and name N ) ( resid 48 and name HN ) 18.50 0.86 0.86
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 49 and name N ) ( resid 49 and name HN ) 12.05 4.21 4.21
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 50 and name N ) ( resid 50 and name HN ) 2.68 2.18 2.18
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 51 and name N ) ( resid 51 and name HN ) 13.51 5.93 5.93
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 52 and name N ) ( resid 52 and name HN ) 14.36 4.35 4.35
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 53 and name N ) ( resid 53 and name HN ) -9.37 2.31 2.31
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 3 and name N ) ( resid 2 and name C ) -0.44 0.37 0.37
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 4 and name N ) ( resid 3 and name C ) 0.99 0.33 0.33
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 5 and name N ) ( resid 4 and name C ) -1.55 0.18 0.18
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 6 and name N ) ( resid 5 and name C ) 1.11 0.24 0.24
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 7 and name N ) ( resid 6 and name C ) -0.35 0.19 0.19
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 8 and name N ) ( resid 7 and name C ) -0.99 0.25 0.25
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 9 and name N ) ( resid 8 and name C ) -1.09 0.60 0.60
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 10 and name N ) ( resid 9 and name C ) 0.47 0.33 0.33
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 11 and name N ) ( resid 10 and name C ) -1.33 0.31 0.31
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 12 and name N ) ( resid 11 and name C ) -1.17 0.20 0.20
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 13 and name N ) ( resid 12 and name C ) 1.72 0.21 0.21
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 14 and name N ) ( resid 13 and name C ) 0.45 0.26 0.26
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 15 and name N ) ( resid 14 and name C ) -0.27 0.25 0.25
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 16 and name N ) ( resid 15 and name C ) -1.21 0.25 0.25
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 17 and name N ) ( resid 16 and name C ) -0.54 0.19 0.19
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 18 and name N ) ( resid 17 and name C ) -1.63 0.33 0.33
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 19 and name N ) ( resid 18 and name C ) -0.68 0.13 0.13
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 20 and name N ) ( resid 19 and name C ) -1.24 0.22 0.22
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 21 and name N ) ( resid 20 and name C ) -1.22 0.14 0.14
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 23 and name N ) ( resid 22 and name C ) -0.32 0.64 0.64
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 24 and name N ) ( resid 23 and name C ) -0.52 0.37 0.37
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 25 and name N ) ( resid 24 and name C ) 0.14 0.30 0.30
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 26 and name N ) ( resid 25 and name C ) -0.13 0.45 0.45
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 27 and name N ) ( resid 26 and name C ) -0.34 0.33 0.33
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 28 and name N ) ( resid 27 and name C ) -1.10 0.28 0.28
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 29 and name N ) ( resid 28 and name C ) -0.57 0.52 0.52
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 30 and name N ) ( resid 29 and name C ) -1.49 0.55 0.55
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 31 and name N ) ( resid 30 and name C ) 0.61 0.37 0.37
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 32 and name N ) ( resid 31 and name C ) 1.03 0.54 0.54
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 34 and name N ) ( resid 33 and name C ) -1.52 0.92 0.92
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 35 and name N ) ( resid 34 and name C ) 0.81 0.39 0.39
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 36 and name N ) ( resid 35 and name C ) -2.79 0.41 0.41
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 37 and name N ) ( resid 36 and name C ) 0.68 0.90 0.90
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 38 and name N ) ( resid 37 and name C ) 0.39 0.50 0.50
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 39 and name N ) ( resid 38 and name C ) -2.00 0.68 0.68
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 42 and name N ) ( resid 41 and name C ) 0.49 0.39 0.39
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 43 and name N ) ( resid 42 and name C ) -2.11 0.41 0.41
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 44 and name N ) ( resid 43 and name C ) -2.47 0.58 0.58
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 45 and name N ) ( resid 44 and name C ) 0.39 0.48 0.48
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 46 and name N ) ( resid 45 and name C ) -0.07 0.26 0.26
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 47 and name N ) ( resid 46 and name C ) -1.74 0.33 0.33
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 48 and name N ) ( resid 47 and name C ) 0.32 0.54 0.54
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 49 and name N ) ( resid 48 and name C ) -0.03 0.44 0.44
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 50 and name N ) ( resid 49 and name C ) -1.94 0.34 0.34
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 51 and name N ) ( resid 50 and name C ) -1.06 0.78 0.78
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 52 and name N ) ( resid 51 and name C ) -0.33 0.61 0.61
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 53 and name N ) ( resid 52 and name C ) -1.53 0.39 0.39
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 2 and name CA ) ( resid 2 and name C ) -1.04 0.31 0.31
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 3 and name CA ) ( resid 3 and name C ) -0.63 0.30 0.30
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 4 and name CA ) ( resid 4 and name C ) 1.30 0.23 0.23
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 5 and name CA ) ( resid 5 and name C ) -0.32 0.33 0.33
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 6 and name CA ) ( resid 6 and name C ) -1.10 0.26 0.26
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 7 and name CA ) ( resid 7 and name C ) 1.41 0.40 0.40
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 8 and name CA ) ( resid 8 and name C ) 1.05 0.55 0.55
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 9 and name CA ) ( resid 9 and name C ) 0.37 0.40 0.40
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 10 and name CA ) ( resid 10 and name C ) -0.96 0.52 0.52
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 11 and name CA ) ( resid 11 and name C ) 2.21 0.28 0.28
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 12 and name CA ) ( resid 12 and name C ) 0.18 0.37 0.37
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 13 and name CA ) ( resid 13 and name C ) -1.72 0.36 0.36
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 14 and name CA ) ( resid 14 and name C ) 2.64 0.41 0.41
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 15 and name CA ) ( resid 15 and name C ) 1.59 0.30 0.30
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 16 and name CA ) ( resid 16 and name C ) 2.22 0.25 0.25
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 17 and name CA ) ( resid 17 and name C ) -1.84 0.26 0.26
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 18 and name CA ) ( resid 18 and name C ) 0.57 0.15 0.15
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 19 and name CA ) ( resid 19 and name C ) 1.17 0.20 0.20
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 20 and name CA ) ( resid 20 and name C ) -0.41 0.17 0.17
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 22 and name CA ) ( resid 22 and name C ) -0.01 0.41 0.41
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 23 and name CA ) ( resid 23 and name C ) 0.64 0.36 0.36
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 24 and name CA ) ( resid 24 and name C ) -2.82 0.32 0.32
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 25 and name CA ) ( resid 25 and name C ) -0.82 0.34 0.34
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 26 and name CA ) ( resid 26 and name C ) -0.72 0.31 0.31
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 27 and name CA ) ( resid 27 and name C ) -0.84 0.35 0.35
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 28 and name CA ) ( resid 28 and name C ) 2.53 0.61 0.61
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 29 and name CA ) ( resid 29 and name C ) -1.57 0.53 0.53
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 30 and name CA ) ( resid 30 and name C ) -1.31 0.40 0.40
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 31 and name CA ) ( resid 31 and name C ) 1.51 1.38 1.38
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 32 and name CA ) ( resid 32 and name C ) 3.26 0.74 0.74
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 33 and name CA ) ( resid 33 and name C ) -3.07 1.29 1.29
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 34 and name CA ) ( resid 34 and name C ) -0.08 0.53 0.53
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 35 and name CA ) ( resid 35 and name C ) 3.20 1.04 1.04
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 36 and name CA ) ( resid 36 and name C ) -3.57 0.85 0.85
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 37 and name CA ) ( resid 37 and name C ) -1.28 0.73 0.73
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 38 and name CA ) ( resid 38 and name C ) 1.79 0.67 0.67
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 39 and name CA ) ( resid 39 and name C ) -1.10 0.37 0.37
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 40 and name CA ) ( resid 40 and name C ) -4.00 0.70 0.70
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 41 and name CA ) ( resid 41 and name C ) -0.13 0.45 0.45
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 42 and name CA ) ( resid 42 and name C ) 3.56 0.55 0.55
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 43 and name CA ) ( resid 43 and name C ) 3.04 0.54 0.54
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 44 and name CA ) ( resid 44 and name C ) -0.70 0.60 0.60
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 45 and name CA ) ( resid 45 and name C ) 0.51 0.46 0.46
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 46 and name CA ) ( resid 46 and name C ) 3.00 0.50 0.50
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 47 and name CA ) ( resid 47 and name C ) 0.70 0.74 0.74
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 48 and name CA ) ( resid 48 and name C ) -1.70 0.58 0.58
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 49 and name CA ) ( resid 49 and name C ) 2.10 0.48 0.48
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 50 and name CA ) ( resid 50 and name C ) 3.08 0.66 0.66
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 51 and name CA ) ( resid 51 and name C ) -2.51 0.54 0.54
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 52 and name CA ) ( resid 52 and name C ) -3.02 0.24 0.24
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 3 and name N ) ( resid 3 and name HN ) -1.20  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 4 and name N ) ( resid 4 and name HN ) -6.00  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 5 and name N ) ( resid 5 and name HN ) -6.60  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 6 and name N ) ( resid 6 and name HN ) -4.20  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 7 and name N ) ( resid 7 and name HN ) -7.79  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 8 and name N ) ( resid 8 and name HN ) -5.40  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 9 and name N ) ( resid 9 and name HN ) -6.00  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 11 and name N ) ( resid 11 and name HN ) -6.60  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 12 and name N ) ( resid 12 and name HN ) -4.80  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 14 and name N ) ( resid 14 and name HN ) -1.80  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 16 and name N ) ( resid 16 and name HN ) -6.00  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 17 and name N ) ( resid 17 and name HN ) 8.39  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 18 and name N ) ( resid 18 and name HN ) -4.20  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 19 and name N ) ( resid 19 and name HN ) -10.19  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 20 and name N ) ( resid 20 and name HN ) -8.99  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 21 and name N ) ( resid 21 and name HN ) 0.00  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 23 and name N ) ( resid 23 and name HN ) -4.80  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 24 and name N ) ( resid 24 and name HN ) -8.99  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 25 and name N ) ( resid 25 and name HN ) 1.80  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 27 and name N ) ( resid 27 and name HN ) -6.00  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 28 and name N ) ( resid 28 and name HN ) -2.40  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 29 and name N ) ( resid 29 and name HN ) -4.20  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 30 and name N ) ( resid 30 and name HN ) -2.40  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 31 and name N ) ( resid 31 and name HN ) -4.80  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 32 and name N ) ( resid 32 and name HN ) -6.00  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 34 and name N ) ( resid 34 and name HN ) -0.60  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 35 and name N ) ( resid 35 and name HN ) -2.40  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 36 and name N ) ( resid 36 and name HN ) -4.20  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 37 and name N ) ( resid 37 and name HN ) 4.80  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 38 and name N ) ( resid 38 and name HN ) 6.60  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 41 and name N ) ( resid 41 and name HN ) 5.40  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 42 and name N ) ( resid 42 and name HN ) 4.80  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 43 and name N ) ( resid 43 and name HN ) 0.60  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 44 and name N ) ( resid 44 and name HN ) 3.60  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 45 and name N ) ( resid 45 and name HN ) 8.39  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 48 and name N ) ( resid 48 and name HN ) 10.19  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 49 and name N ) ( resid 49 and name HN ) 7.79  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 50 and name N ) ( resid 50 and name HN ) 0.60  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 51 and name N ) ( resid 51 and name HN ) 7.79  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 52 and name N ) ( resid 52 and name HN ) 15.59  
+assign ( resid 500 and name OO ) ( resid 500 and name Z ) ( resid 500 and name X ) ( resid 500 and name Y  ) ( resid 53 and name N ) ( resid 53 and name HN ) -8.99  
+
+  Entry H atom name         Submitted Coord H atom name
+    1    H1   ALA   1           H1       ALA   1  13.945  28.206   4.688
+    2    H2   ALA   1           H2       ALA   1  14.428  27.944   6.238
+    3    H3   ALA   1           H3       ALA   1  15.500  28.456   5.090
+    4    HA   ALA   1           HA       ALA   1  15.857  26.143   5.514
+    5    HB1  ALA   1           HB1      ALA   1  13.558  25.621   6.263
+    6    HB2  ALA   1           HB2      ALA   1  12.969  25.850   4.603
+    7    HB3  ALA   1           HB3      ALA   1  14.087  24.534   4.980
+    8    H    MET   2           H        MET   2  15.888  24.439   3.572
+    9    HA   MET   2           HA       MET   2  15.860  25.776   0.937
+   10    HB2  MET   2           HB3      MET   2  18.156  25.882   1.905
+   11    HB3  MET   2           HB2      MET   2  18.131  24.130   2.126
+   12    HG2  MET   2           HG3      MET   2  17.928  23.857  -0.349
+   13    HG3  MET   2           HG2      MET   2  18.000  25.624  -0.514
+   14    HE1  MET   2           HE1      MET   2  19.963  23.937  -2.199
+   15    HE2  MET   2           HE2      MET   2  20.052  25.711  -2.084
+   16    HE3  MET   2           HE3      MET   2  21.519  24.732  -1.867
+   17    H    GLU   3           H        GLU   3  15.084  24.327  -0.664
+   18    HA   GLU   3           HA       GLU   3  13.977  21.824   0.317
+   19    HB2  GLU   3           HB3      GLU   3  12.822  23.227  -1.393
+   20    HB3  GLU   3           HB2      GLU   3  14.084  22.784  -2.547
+   21    HG2  GLU   3           HG3      GLU   3  13.519  20.369  -2.156
+   22    HG3  GLU   3           HG2      GLU   3  12.269  20.869  -1.037
+   23    H    LYS   4           H        LYS   4  14.705  19.837  -0.016
+   24    HA   LYS   4           HA       LYS   4  17.039  19.390  -1.791
+   25    HB2  LYS   4           HB3      LYS   4  16.695  18.037   0.899
+   26    HB3  LYS   4           HB2      LYS   4  17.997  17.802  -0.271
+   27    HG2  LYS   4           HG3      LYS   4  18.589  20.259   0.026
+   28    HG3  LYS   4           HG2      LYS   4  17.406  20.315   1.330
+   29    HD2  LYS   4           HD3      LYS   4  19.451  20.024   2.400
+   30    HD3  LYS   4           HD2      LYS   4  18.691  18.419   2.446
+   31    HE2  LYS   4           HE3      LYS   4  20.035  17.761   0.451
+   32    HE3  LYS   4           HE2      LYS   4  20.770  19.354   0.423
+   33    HZ1  LYS   4           HZ1      LYS   4  21.683  18.903   2.613
+   34    HZ2  LYS   4           HZ2      LYS   4  21.026  17.403   2.617
+   35    HZ3  LYS   4           HZ3      LYS   4  22.192  17.793   1.537
+   36    H    VAL   5           H        VAL   5  13.910  18.451  -0.814
+   37    HA   VAL   5           HA       VAL   5  13.707  16.516  -2.923
+   38    HB   VAL   5           HB       VAL   5  12.562  14.859  -1.464
+   39   HG11  VAL   5          HG11      VAL   5  14.826  14.479  -2.412
+   40   HG12  VAL   5          HG12      VAL   5  15.530  15.052  -0.887
+   41   HG13  VAL   5          HG13      VAL   5  14.522  13.599  -0.910
+   42   HG21  VAL   5          HG21      VAL   5  14.084  16.178   0.816
+   43   HG22  VAL   5          HG22      VAL   5  12.319  16.132   0.635
+   44   HG23  VAL   5          HG23      VAL   5  13.218  14.639   0.885
+   45    H    GLN   6           H        GLN   6  11.623  16.458  -3.687
+   46    HA   GLN   6           HA       GLN   6  10.008  18.690  -2.895
+   47    HB2  GLN   6           HB3      GLN   6   9.900  16.654  -5.132
+   48    HB3  GLN   6           HB2      GLN   6   8.692  17.936  -4.942
+   49    HG2  GLN   6           HG3      GLN   6  10.324  19.665  -5.082
+   50    HG3  GLN   6           HG2      GLN   6  11.663  18.502  -5.136
+   51   HE21  GLN   6          HE21      GLN   6  11.985  20.067  -7.010
+   52   HE22  GLN   6          HE22      GLN   6  11.393  19.506  -8.592
+   53    H    TYR   7           H        TYR   7   9.942  15.856  -1.377
+   54    HA   TYR   7           HA       TYR   7   7.474  14.714  -1.855
+   55    HB2  TYR   7           HB3      TYR   7   8.968  14.675   0.760
+   56    HB3  TYR   7           HB2      TYR   7   7.886  13.447   0.155
+   57    HD1  TYR   7           HD1      TYR   7   9.159  13.480  -2.765
+   58    HD2  TYR   7           HD2      TYR   7  10.708  13.143   1.228
+   59    HE1  TYR   7           HE1      TYR   7  11.121  12.289  -3.648
+   60    HE2  TYR   7           HE2      TYR   7  12.667  11.886   0.352
+   61    HH   TYR   7           HH       TYR   7  13.143  11.271  -3.127
+   62    H    LEU   8           H        LEU   8   7.898  17.588  -0.099
+   63    HA   LEU   8           HA       LEU   8   5.173  17.364   1.076
+   64    HB2  LEU   8           HB3      LEU   8   7.597  18.808   2.191
+   65    HB3  LEU   8           HB2      LEU   8   5.978  18.838   2.883
+   66    HG   LEU   8           HG       LEU   8   7.729  16.371   2.651
+   67   HD11  LEU   8          HD11      LEU   8   6.941  18.049   5.062
+   68   HD12  LEU   8          HD12      LEU   8   7.913  16.565   5.085
+   69   HD13  LEU   8          HD13      LEU   8   8.547  18.018   4.294
+   70   HD21  LEU   8          HD21      LEU   8   6.056  15.335   4.165
+   71   HD22  LEU   8          HD22      LEU   8   5.028  16.777   4.000
+   72   HD23  LEU   8          HD23      LEU   8   5.358  15.738   2.602
+   73    H    THR   9           H        THR   9   6.938  18.902  -1.293
+   74    HA   THR   9           HA       THR   9   5.403  21.444  -1.098
+   75    HB   THR   9           HB       THR   9   7.145  22.240  -2.732
+   76    HG1  THR   9           HG1      THR   9   9.066  20.931  -2.711
+   77   HG21  THR   9          HG21      THR   9   8.298  21.211  -0.104
+   78   HG22  THR   9          HG22      THR   9   8.892  22.561  -1.087
+   79   HG23  THR   9          HG23      THR   9   7.313  22.686  -0.275
+   80    H    ARG  10           H        ARG  10   6.410  18.857  -3.342
+   81    HA   ARG  10           HA       ARG  10   4.862  19.705  -5.559
+   82    HB2  ARG  10           HB3      ARG  10   6.688  18.108  -5.701
+   83    HB3  ARG  10           HB2      ARG  10   5.791  16.932  -4.717
+   84    HG2  ARG  10           HG3      ARG  10   4.066  16.790  -6.463
+   85    HG3  ARG  10           HG2      ARG  10   4.919  17.975  -7.448
+   86    HD2  ARG  10           HD3      ARG  10   6.188  15.364  -6.526
+   87    HD3  ARG  10           HD2      ARG  10   5.240  15.490  -7.996
+   88    HE   ARG  10           HE       ARG  10   7.798  16.981  -7.478
+   89   HH11  ARG  10          HH21      ARG  10   5.579  15.493  -9.799
+   90   HH12  ARG  10          HH22      ARG  10   6.559  15.913 -11.184
+   91   HH21  ARG  10          HH11      ARG  10   9.030  17.460  -9.190
+   92   HH22  ARG  10          HH12      ARG  10   8.567  17.045 -10.844
+   93    H    SER  11           H        SER  11   2.841  19.583  -6.059
+   94    HA   SER  11           HA       SER  11   0.604  19.474  -5.809
+   95    HB2  SER  11           HB3      SER  11   1.283  16.602  -5.212
+   96    HB3  SER  11           HB2      SER  11  -0.258  17.195  -5.847
+   97    HG   SER  11           HG       SER  11   1.685  16.445  -7.235
+   98    H    ALA  12           H        ALA  12   1.913  20.157  -3.185
+   99    HA   ALA  12           HA       ALA  12   1.036  18.771  -1.076
+  100    HB1  ALA  12           HB1      ALA  12   1.309  21.792  -1.271
+  101    HB2  ALA  12           HB2      ALA  12   1.356  20.841   0.226
+  102    HB3  ALA  12           HB3      ALA  12   2.612  20.625  -1.004
+  103    H    ILE  13           H        ILE  13  -0.934  21.276  -2.623
+  104    HA   ILE  13           HA       ILE  13  -3.208  20.536  -0.909
+  105    HB   ILE  13           HB       ILE  13  -2.304  22.863  -1.036
+  106   HG12  ILE  13          HG13      ILE  13  -5.261  22.634  -1.653
+  107   HG13  ILE  13          HG12      ILE  13  -4.513  22.180  -0.115
+  108   HG21  ILE  13          HG21      ILE  13  -2.020  22.941  -3.522
+  109   HG22  ILE  13          HG22      ILE  13  -3.792  23.029  -3.673
+  110   HG23  ILE  13          HG23      ILE  13  -2.903  24.309  -2.847
+  111   HD11  ILE  13          HD11      ILE  13  -4.530  24.956  -1.351
+  112   HD12  ILE  13          HD12      ILE  13  -5.419  24.398   0.066
+  113   HD13  ILE  13          HD13      ILE  13  -3.658  24.508   0.132
+  114    H    ARG  14           H        ARG  14  -2.204  19.079  -3.387
+  115    HA   ARG  14           HA       ARG  14  -4.854  18.862  -4.740
+  116    HB2  ARG  14           HB3      ARG  14  -2.089  18.962  -5.974
+  117    HB3  ARG  14           HB2      ARG  14  -3.485  18.265  -6.796
+  118    HG2  ARG  14           HG3      ARG  14  -4.712  20.395  -6.609
+  119    HG3  ARG  14           HG2      ARG  14  -3.297  21.143  -5.843
+  120    HD2  ARG  14           HD3      ARG  14  -1.950  20.691  -7.829
+  121    HD3  ARG  14           HD2      ARG  14  -3.264  19.829  -8.597
+  122    HE   ARG  14           HE       ARG  14  -3.000  22.743  -8.221
+  123   HH11  ARG  14          HH21      ARG  14  -5.122  20.140  -9.404
+  124   HH12  ARG  14          HH22      ARG  14  -6.054  21.231 -10.396
+  125   HH21  ARG  14          HH11      ARG  14  -4.263  24.100  -9.543
+  126   HH22  ARG  14          HH12      ARG  14  -5.577  23.422 -10.467
+  127    H    ARG  15           H        ARG  15  -1.996  17.092  -3.649
+  128    HA   ARG  15           HA       ARG  15  -2.712  14.668  -4.901
+  129    HB2  ARG  15           HB3      ARG  15  -0.920  13.709  -3.647
+  130    HB3  ARG  15           HB2      ARG  15  -0.435  15.305  -4.193
+  131    HG2  ARG  15           HG3      ARG  15  -0.907  16.221  -1.935
+  132    HG3  ARG  15           HG2      ARG  15  -1.460  14.630  -1.408
+  133    HD2  ARG  15           HD3      ARG  15   0.824  13.718  -1.855
+  134    HD3  ARG  15           HD2      ARG  15   1.348  15.326  -2.345
+  135    HE   ARG  15           HE       ARG  15   1.570  15.915  -0.159
+  136   HH11  ARG  15          HH21      ARG  15  -0.552  13.030  -0.130
+  137   HH12  ARG  15          HH22      ARG  15  -1.111  13.317   1.477
+  138   HH21  ARG  15          HH11      ARG  15   0.981  16.106   2.037
+  139   HH22  ARG  15          HH12      ARG  15  -0.040  14.865   2.764
+  140    H    ALA  16           H        ALA  16  -4.089  15.982  -2.073
+  141    HA   ALA  16           HA       ALA  16  -5.197  15.130  -0.297
+  142    HB1  ALA  16           HB1      ALA  16  -6.432  13.485  -2.523
+  143    HB2  ALA  16           HB2      ALA  16  -7.166  13.835  -0.930
+  144    HB3  ALA  16           HB3      ALA  16  -6.851  15.145  -2.072
+  145    H    SER  17           H        SER  17  -5.953  11.986  -1.051
+  146    HA   SER  17           HA       SER  17  -4.273  10.989   1.057
+  147    HB2  SER  17           HB3      SER  17  -6.241   9.514  -0.709
+  148    HB3  SER  17           HB2      SER  17  -5.574   8.976   0.849
+  149    HG   SER  17           HG       SER  17  -7.572   9.926   1.195
+  150    H    THR  18           H        THR  18  -3.310  11.487  -2.029
+  151    HA   THR  18           HA       THR  18  -1.747   8.973  -2.206
+  152    HB   THR  18           HB       THR  18  -1.203   9.543  -4.432
+  153    HG1  THR  18           HG1      THR  18  -2.680  11.927  -4.063
+  154   HG21  THR  18          HG21      THR  18  -4.169  10.122  -4.108
+  155   HG22  THR  18          HG22      THR  18  -3.336   9.515  -5.554
+  156   HG23  THR  18          HG23      THR  18  -3.438   8.502  -4.096
+  157    H    ILE  19           H        ILE  19   0.585   9.288  -2.934
+  158    HA   ILE  19           HA       ILE  19   1.817  11.557  -1.521
+  159    HB   ILE  19           HB       ILE  19   3.568  10.028  -0.695
+  160   HG12  ILE  19          HG13      ILE  19   1.539   7.811  -1.168
+  161   HG13  ILE  19          HG12      ILE  19   3.000   8.060  -2.132
+  162   HG21  ILE  19          HG21      ILE  19   0.798   9.592   0.465
+  163   HG22  ILE  19          HG22      ILE  19   2.355   9.522   1.322
+  164   HG23  ILE  19          HG23      ILE  19   1.774  11.057   0.682
+  165   HD11  ILE  19          HD11      ILE  19   3.422   6.342  -0.518
+  166   HD12  ILE  19          HD12      ILE  19   4.383   7.766  -0.086
+  167   HD13  ILE  19          HD13      ILE  19   2.908   7.371   0.833
+  168    H    GLU  20           H        GLU  20   3.605  12.385  -2.256
+  169    HA   GLU  20           HA       GLU  20   4.374  11.724  -5.027
+  170    HB2  GLU  20           HB3      GLU  20   4.497  14.169  -3.262
+  171    HB3  GLU  20           HB2      GLU  20   5.291  14.111  -4.821
+  172    HG2  GLU  20           HG3      GLU  20   2.335  13.459  -4.601
+  173    HG3  GLU  20           HG2      GLU  20   2.885  15.115  -4.524
+  174    H    MET  21           H        MET  21   5.584   9.835  -3.974
+  175    HA   MET  21           HA       MET  21   8.283  10.655  -3.113
+  176    HB2  MET  21           HB3      MET  21   6.468   8.768  -1.561
+  177    HB3  MET  21           HB2      MET  21   8.161   9.113  -1.198
+  178    HG2  MET  21           HG3      MET  21   7.510  11.546  -0.932
+  179    HG3  MET  21           HG2      MET  21   5.820  11.016  -1.008
+  180    HE1  MET  21           HE1      MET  21   5.712  11.594   2.732
+  181    HE2  MET  21           HE2      MET  21   6.191  12.634   1.378
+  182    HE3  MET  21           HE3      MET  21   4.796  11.552   1.212
+  183    HA   PRO  22           HA       PRO  22   9.362   6.796  -5.164
+  184    HB2  PRO  22           HB2      PRO  22  11.881   6.374  -4.258
+  185    HB3  PRO  22           HB3      PRO  22  11.482   7.746  -5.332
+  186    HG2  PRO  22           HG2      PRO  22  11.677   7.770  -2.302
+  187    HG3  PRO  22           HG3      PRO  22  12.501   8.862  -3.463
+  188    HD2  PRO  22           HD2      PRO  22  10.161   9.554  -2.273
+  189    HD3  PRO  22           HD3      PRO  22  10.496   9.988  -3.978
+  190    H    GLN  23           H        GLN  23   8.309   7.014  -2.074
+  191    HA   GLN  23           HA       GLN  23   8.887   4.161  -1.434
+  192    HB2  GLN  23           HB3      GLN  23   8.429   6.501   0.440
+  193    HB3  GLN  23           HB2      GLN  23   8.364   4.796   0.916
+  194    HG2  GLN  23           HG3      GLN  23  10.682   4.483   0.066
+  195    HG3  GLN  23           HG2      GLN  23  10.778   6.218  -0.250
+  196   HE21  GLN  23          HE21      GLN  23  12.636   4.917   1.441
+  197   HE22  GLN  23          HE22      GLN  23  12.325   5.456   3.087
+  198    H    GLN  24           H        GLN  24   7.239   2.952  -1.854
+  199    HA   GLN  24           HA       GLN  24   4.772   3.809  -2.755
+  200    HB2  GLN  24           HB3      GLN  24   5.650   1.147  -1.575
+  201    HB3  GLN  24           HB2      GLN  24   4.151   1.377  -2.472
+  202    HG2  GLN  24           HG3      GLN  24   6.925   1.882  -3.630
+  203    HG3  GLN  24           HG2      GLN  24   6.023   0.378  -3.780
+  204   HE21  GLN  24          HE21      GLN  24   6.671   1.291  -6.183
+  205   HE22  GLN  24          HE22      GLN  24   5.286   2.126  -6.900
+  206    H    ALA  25           H        ALA  25   5.650   3.146   0.598
+  207    HA   ALA  25           HA       ALA  25   2.962   4.037   1.389
+  208    HB1  ALA  25           HB1      ALA  25   2.774   2.253   3.064
+  209    HB2  ALA  25           HB2      ALA  25   2.818   1.608   1.419
+  210    HB3  ALA  25           HB3      ALA  25   4.267   1.502   2.440
+  211    H    ARG  26           H        ARG  26   2.841   5.119   3.202
+  212    HA   ARG  26           HA       ARG  26   5.185   5.521   4.967
+  213    HB2  ARG  26           HB3      ARG  26   3.583   7.676   3.544
+  214    HB3  ARG  26           HB2      ARG  26   4.612   8.009   4.920
+  215    HG2  ARG  26           HG3      ARG  26   5.532   6.957   2.230
+  216    HG3  ARG  26           HG2      ARG  26   5.709   8.575   2.863
+  217    HD2  ARG  26           HD3      ARG  26   7.090   6.084   3.879
+  218    HD3  ARG  26           HD2      ARG  26   7.809   7.430   3.009
+  219    HE   ARG  26           HE       ARG  26   6.513   8.266   5.458
+  220   HH11  ARG  26          HH21      ARG  26   9.565   6.873   4.257
+  221   HH12  ARG  26          HH22      ARG  26  10.457   7.327   5.677
+  222   HH21  ARG  26          HH11      ARG  26   7.743   8.893   7.260
+  223   HH22  ARG  26          HH12      ARG  26   9.451   8.494   7.332
+  224    H    GLN  27           H        GLN  27   1.819   4.989   4.749
+  225    HA   GLN  27           HA       GLN  27   1.549   5.619   7.639
+  226    HB2  GLN  27           HB3      GLN  27  -0.452   6.146   5.429
+  227    HB3  GLN  27           HB2      GLN  27  -0.810   6.206   7.152
+  228    HG2  GLN  27           HG3      GLN  27   0.950   7.961   7.417
+  229    HG3  GLN  27           HG2      GLN  27   1.131   8.001   5.663
+  230   HE21  GLN  27          HE21      GLN  27   0.372  10.340   7.134
+  231   HE22  GLN  27          HE22      GLN  27  -1.332  10.647   6.721
+  232    H    ASN  28           H        ASN  28   0.285   4.233   8.860
+  233    HA   ASN  28           HA       ASN  28   0.732   1.628   7.974
+  234    HB2  ASN  28           HB3      ASN  28   0.744   2.679  10.379
+  235    HB3  ASN  28           HB2      ASN  28  -0.953   2.169  10.414
+  236   HD21  ASN  28          HD21      ASN  28  -0.558   0.555  12.083
+  237   HD22  ASN  28          HD22      ASN  28   0.431  -0.862  11.705
+  238    H    LEU  29           H        LEU  29  -2.256   3.400   7.568
+  239    HA   LEU  29           HA       LEU  29  -3.869   1.031   7.229
+  240    HB2  LEU  29           HB3      LEU  29  -4.156   3.865   6.206
+  241    HB3  LEU  29           HB2      LEU  29  -5.297   2.575   5.828
+  242    HG   LEU  29           HG       LEU  29  -4.706   3.652   8.595
+  243   HD11  LEU  29          HD11      LEU  29  -7.189   3.781   6.830
+  244   HD12  LEU  29          HD12      LEU  29  -7.033   4.450   8.462
+  245   HD13  LEU  29          HD13      LEU  29  -6.064   5.125   7.132
+  246   HD21  LEU  29          HD21      LEU  29  -5.266   1.296   8.852
+  247   HD22  LEU  29          HD22      LEU  29  -6.687   2.243   9.266
+  248   HD23  LEU  29          HD23      LEU  29  -6.605   1.444   7.684
+  249    H    GLN  30           H        GLN  30  -1.592   2.685   5.079
+  250    HA   GLN  30           HA       GLN  30  -2.390   1.245   2.712
+  251    HB2  GLN  30           HB3      GLN  30   0.362   2.288   3.473
+  252    HB3  GLN  30           HB2      GLN  30  -0.191   1.853   1.867
+  253    HG2  GLN  30           HG3      GLN  30  -1.743   3.756   1.858
+  254    HG3  GLN  30           HG2      GLN  30  -1.264   4.184   3.505
+  255   HE21  GLN  30          HE21      GLN  30  -0.175   4.108   0.100
+  256   HE22  GLN  30          HE22      GLN  30   1.308   4.993   0.377
+  257    H    ASN  31           H        ASN  31  -0.014   0.717   5.266
+  258    HA   ASN  31           HA       ASN  31   1.162  -1.678   4.302
+  259    HB2  ASN  31           HB3      ASN  31   2.070  -0.010   5.953
+  260    HB3  ASN  31           HB2      ASN  31   0.869  -0.577   7.123
+  261   HD21  ASN  31          HD21      ASN  31   2.302  -1.350   8.672
+  262   HD22  ASN  31          HD22      ASN  31   3.394  -2.699   8.323
+  263    H    LEU  32           H        LEU  32  -1.486  -1.172   6.685
+  264    HA   LEU  32           HA       LEU  32  -1.855  -4.015   7.061
+  265    HB2  LEU  32           HB3      LEU  32  -3.510  -1.613   7.860
+  266    HB3  LEU  32           HB2      LEU  32  -3.860  -3.263   8.333
+  267    HG   LEU  32           HG       LEU  32  -1.284  -1.811   9.018
+  268   HD11  LEU  32          HD11      LEU  32  -3.218  -0.790  10.125
+  269   HD12  LEU  32          HD12      LEU  32  -3.736  -2.388  10.718
+  270   HD13  LEU  32          HD13      LEU  32  -2.212  -1.676  11.285
+  271   HD21  LEU  32          HD21      LEU  32  -0.997  -3.633  10.676
+  272   HD22  LEU  32          HD22      LEU  32  -2.410  -4.461   9.987
+  273   HD23  LEU  32          HD23      LEU  32  -0.937  -4.223   9.016
+  274    H    PHE  33           H        PHE  33  -3.373  -1.664   4.840
+  275    HA   PHE  33           HA       PHE  33  -5.440  -3.458   4.025
+  276    HB2  PHE  33           HB3      PHE  33  -5.451  -1.056   3.549
+  277    HB3  PHE  33           HB2      PHE  33  -4.072  -1.240   2.471
+  278    HD1  PHE  33           HD2      PHE  33  -7.671  -1.929   2.960
+  279    HD2  PHE  33           HD1      PHE  33  -4.344  -2.284   0.256
+  280    HE1  PHE  33           HE2      PHE  33  -9.223  -2.503   1.125
+  281    HE2  PHE  33           HE1      PHE  33  -5.903  -2.869  -1.573
+  282    HZ   PHE  33           HZ       PHE  33  -8.344  -2.990  -1.139
+  283    H    ILE  34           H        ILE  34  -2.108  -2.975   2.684
+  284    HA   ILE  34           HA       ILE  34  -2.514  -5.078   0.791
+  285    HB   ILE  34           HB       ILE  34  -0.868  -3.337   0.449
+  286   HG12  ILE  34          HG13      ILE  34   0.965  -4.674  -0.417
+  287   HG13  ILE  34          HG12      ILE  34   0.414  -6.091   0.482
+  288   HG21  ILE  34          HG21      ILE  34   0.804  -4.702   2.596
+  289   HG22  ILE  34          HG22      ILE  34   1.330  -3.400   1.518
+  290   HG23  ILE  34          HG23      ILE  34   0.061  -3.088   2.686
+  291   HD11  ILE  34          HD11      ILE  34  -1.210  -4.668  -1.671
+  292   HD12  ILE  34          HD12      ILE  34  -0.189  -6.096  -1.937
+  293   HD13  ILE  34          HD13      ILE  34  -1.601  -6.226  -0.886
+  294    H    ASN  35           H        ASN  35  -1.391  -5.110   4.150
+  295    HA   ASN  35           HA       ASN  35  -0.628  -7.839   4.232
+  296    HB2  ASN  35           HB3      ASN  35  -0.267  -6.005   5.971
+  297    HB3  ASN  35           HB2      ASN  35  -1.947  -6.257   6.461
+  298   HD21  ASN  35          HD21      ASN  35   1.279  -7.805   6.208
+  299   HD22  ASN  35          HD22      ASN  35   0.887  -9.039   7.432
+  300    H    PHE  36           H        PHE  36  -3.867  -6.366   4.835
+  301    HA   PHE  36           HA       PHE  36  -5.226  -8.840   5.199
+  302    HB2  PHE  36           HB3      PHE  36  -6.044  -6.032   4.443
+  303    HB3  PHE  36           HB2      PHE  36  -7.188  -7.341   4.379
+  304    HD1  PHE  36           HD1      PHE  36  -4.660  -7.376   7.115
+  305    HD2  PHE  36           HD2      PHE  36  -8.635  -6.255   5.903
+  306    HE1  PHE  36           HE1      PHE  36  -5.301  -7.118   9.460
+  307    HE2  PHE  36           HE2      PHE  36  -9.272  -5.994   8.280
+  308    HZ   PHE  36           HZ       PHE  36  -7.607  -6.427  10.070
+  309    H    ALA  37           H        ALA  37  -4.597  -6.949   2.203
+  310    HA   ALA  37           HA       ALA  37  -6.118  -8.656   0.515
+  311    HB1  ALA  37           HB1      ALA  37  -3.709  -6.914  -0.112
+  312    HB2  ALA  37           HB2      ALA  37  -4.877  -7.559  -1.289
+  313    HB3  ALA  37           HB3      ALA  37  -5.410  -6.379  -0.078
+  314    H    LEU  38           H        LEU  38  -2.700  -8.845   1.519
+  315    HA   LEU  38           HA       LEU  38  -2.028 -11.124  -0.069
+  316    HB2  LEU  38           HB3      LEU  38  -0.942  -9.949   2.500
+  317    HB3  LEU  38           HB2      LEU  38  -0.256 -11.396   1.786
+  318    HG   LEU  38           HG       LEU  38  -0.495  -8.798   0.228
+  319   HD11  LEU  38          HD11      LEU  38   1.844  -9.826   1.887
+  320   HD12  LEU  38          HD12      LEU  38   1.875  -8.424   0.803
+  321   HD13  LEU  38          HD13      LEU  38   0.849  -8.395   2.249
+  322   HD21  LEU  38          HD21      LEU  38   1.315  -9.786  -1.113
+  323   HD22  LEU  38          HD22      LEU  38   1.267 -11.258  -0.106
+  324   HD23  LEU  38          HD23      LEU  38  -0.117 -10.820  -1.133
+  325    H    ILE  39           H        ILE  39  -3.340 -10.867   3.263
+  326    HA   ILE  39           HA       ILE  39  -3.429 -13.670   3.743
+  327    HB   ILE  39           HB       ILE  39  -5.026 -11.349   4.824
+  328   HG12  ILE  39          HG13      ILE  39  -2.917 -13.044   6.208
+  329   HG13  ILE  39          HG12      ILE  39  -2.488 -11.625   5.273
+  330   HG21  ILE  39          HG21      ILE  39  -6.415 -13.325   5.107
+  331   HG22  ILE  39          HG22      ILE  39  -5.045 -14.235   5.760
+  332   HG23  ILE  39          HG23      ILE  39  -5.740 -12.872   6.664
+  333   HD11  ILE  39          HD11      ILE  39  -4.258 -11.617   7.742
+  334   HD12  ILE  39          HD12      ILE  39  -2.608 -11.005   7.579
+  335   HD13  ILE  39          HD13      ILE  39  -3.926 -10.211   6.710
+  336    H    LEU  40           H        LEU  40  -5.868 -11.490   2.283
+  337    HA   LEU  40           HA       LEU  40  -7.801 -13.532   2.001
+  338    HB2  LEU  40           HB3      LEU  40  -8.281 -11.145   2.101
+  339    HB3  LEU  40           HB2      LEU  40  -7.465 -10.896   0.560
+  340    HG   LEU  40           HG       LEU  40  -9.172 -12.191  -0.604
+  341   HD11  LEU  40          HD11      LEU  40  -9.844 -13.836   1.068
+  342   HD12  LEU  40          HD12      LEU  40 -10.447 -12.555   2.142
+  343   HD13  LEU  40          HD13      LEU  40 -11.243 -12.898   0.590
+  344   HD21  LEU  40          HD21      LEU  40 -11.051 -10.669  -0.273
+  345   HD22  LEU  40          HD22      LEU  40 -10.390 -10.150   1.289
+  346   HD23  LEU  40          HD23      LEU  40  -9.523  -9.778  -0.209
+  347    H    ILE  41           H        ILE  41  -5.316 -12.398  -0.344
+  348    HA   ILE  41           HA       ILE  41  -6.354 -14.212  -2.337
+  349    HB   ILE  41           HB       ILE  41  -5.065 -12.057  -2.712
+  350   HG12  ILE  41          HG13      ILE  41  -4.393 -14.549  -4.296
+  351   HG13  ILE  41          HG12      ILE  41  -5.880 -13.596  -4.425
+  352   HG21  ILE  41          HG21      ILE  41  -3.079 -12.685  -1.319
+  353   HG22  ILE  41          HG22      ILE  41  -2.643 -13.875  -2.562
+  354   HG23  ILE  41          HG23      ILE  41  -2.684 -12.142  -2.944
+  355   HD11  ILE  41          HD11      ILE  41  -4.490 -11.616  -5.114
+  356   HD12  ILE  41          HD12      ILE  41  -3.080 -12.697  -5.187
+  357   HD13  ILE  41          HD13      ILE  41  -4.471 -12.980  -6.241
+  358    H    PHE  42           H        PHE  42  -3.922 -14.542   0.216
+  359    HA   PHE  42           HA       PHE  42  -2.979 -17.122  -0.608
+  360    HB2  PHE  42           HB3      PHE  42  -1.814 -15.686   0.993
+  361    HB3  PHE  42           HB2      PHE  42  -3.158 -15.789   2.115
+  362    HD1  PHE  42           HD1      PHE  42  -0.508 -17.782   0.415
+  363    HD2  PHE  42           HD2      PHE  42  -3.353 -17.616   3.635
+  364    HE1  PHE  42           HE1      PHE  42   0.529 -19.792   1.444
+  365    HE2  PHE  42           HE2      PHE  42  -2.309 -19.614   4.659
+  366    HZ   PHE  42           HZ       PHE  42  -0.367 -20.705   3.570
+  367    H    LEU  43           H        LEU  43  -5.704 -16.108   1.508
+  368    HA   LEU  43           HA       LEU  43  -6.625 -18.710   2.103
+  369    HB2  LEU  43           HB3      LEU  43  -7.314 -16.727   3.307
+  370    HB3  LEU  43           HB2      LEU  43  -8.066 -16.057   1.862
+  371    HG   LEU  43           HG       LEU  43  -9.752 -17.836   1.864
+  372   HD11  LEU  43          HD11      LEU  43  -8.382 -18.782   4.420
+  373   HD12  LEU  43          HD12      LEU  43  -9.981 -19.317   3.848
+  374   HD13  LEU  43          HD13      LEU  43  -8.541 -19.697   2.905
+  375   HD21  LEU  43          HD21      LEU  43 -10.140 -15.733   3.104
+  376   HD22  LEU  43          HD22      LEU  43 -10.945 -17.103   3.871
+  377   HD23  LEU  43          HD23      LEU  43  -9.441 -16.468   4.570
+  378    H    LEU  44           H        LEU  44  -7.478 -16.553  -0.639
+  379    HA   LEU  44           HA       LEU  44  -9.307 -18.338  -1.868
+  380    HB2  LEU  44           HB3      LEU  44  -9.125 -15.957  -2.403
+  381    HB3  LEU  44           HB2      LEU  44  -7.497 -16.193  -3.029
+  382    HG   LEU  44           HG       LEU  44  -8.358 -17.581  -4.858
+  383   HD11  LEU  44          HD11      LEU  44 -11.107 -16.914  -3.715
+  384   HD12  LEU  44          HD12      LEU  44 -10.808 -17.629  -5.316
+  385   HD13  LEU  44          HD13      LEU  44 -10.384 -18.536  -3.866
+  386   HD21  LEU  44          HD21      LEU  44  -9.793 -14.913  -4.571
+  387   HD22  LEU  44          HD22      LEU  44  -8.121 -15.154  -5.132
+  388   HD23  LEU  44          HD23      LEU  44  -9.472 -15.792  -6.093
+  389    H    LEU  45           H        LEU  45  -5.752 -18.041  -2.261
+  390    HA   LEU  45           HA       LEU  45  -5.469 -19.979  -4.285
+  391    HB2  LEU  45           HB3      LEU  45  -3.710 -18.448  -3.683
+  392    HB3  LEU  45           HB2      LEU  45  -3.630 -19.095  -2.048
+  393    HG   LEU  45           HG       LEU  45  -2.806 -21.253  -2.902
+  394   HD11  LEU  45          HD11      LEU  45  -2.772 -19.836  -5.609
+  395   HD12  LEU  45          HD12      LEU  45  -1.992 -21.395  -5.234
+  396   HD13  LEU  45          HD13      LEU  45  -3.747 -21.258  -5.167
+  397   HD21  LEU  45          HD21      LEU  45  -1.259 -19.495  -2.187
+  398   HD22  LEU  45          HD22      LEU  45  -0.582 -20.452  -3.515
+  399   HD23  LEU  45          HD23      LEU  45  -1.232 -18.832  -3.838
+  400    H    ILE  46           H        ILE  46  -5.261 -20.466  -0.698
+  401    HA   ILE  46           HA       ILE  46  -4.953 -23.291  -1.076
+  402    HB   ILE  46           HB       ILE  46  -5.110 -23.574   1.249
+  403   HG12  ILE  46          HG13      ILE  46  -5.736 -20.634   1.525
+  404   HG13  ILE  46          HG12      ILE  46  -6.888 -21.945   1.767
+  405   HG21  ILE  46          HG21      ILE  46  -3.407 -21.147   0.640
+  406   HG22  ILE  46          HG22      ILE  46  -3.095 -22.416   1.840
+  407   HG23  ILE  46          HG23      ILE  46  -3.022 -22.800   0.123
+  408   HD11  ILE  46          HD11      ILE  46  -5.468 -22.838   3.610
+  409   HD12  ILE  46          HD12      ILE  46  -4.417 -21.405   3.442
+  410   HD13  ILE  46          HD13      ILE  46  -6.105 -21.206   3.913
+  411    H    ALA  47           H        ALA  47  -7.864 -21.312  -0.758
+  412    HA   ALA  47           HA       ALA  47  -9.632 -23.517  -0.327
+  413    HB1  ALA  47           HB1      ALA  47 -10.283 -21.158  -0.051
+  414    HB2  ALA  47           HB2      ALA  47 -10.065 -20.879  -1.801
+  415    HB3  ALA  47           HB3      ALA  47 -11.332 -21.988  -1.223
+  416    H    ILE  48           H        ILE  48  -8.307 -22.083  -3.329
+  417    HA   ILE  48           HA       ILE  48  -9.759 -23.787  -5.089
+  418    HB   ILE  48           HB       ILE  48  -7.245 -22.151  -5.395
+  419   HG12  ILE  48          HG13      ILE  48 -10.005 -21.816  -6.606
+  420   HG13  ILE  48          HG12      ILE  48  -9.555 -21.094  -5.072
+  421   HG21  ILE  48          HG21      ILE  48  -7.466 -22.512  -7.852
+  422   HG22  ILE  48          HG22      ILE  48  -7.029 -23.981  -6.991
+  423   HG23  ILE  48          HG23      ILE  48  -8.704 -23.749  -7.526
+  424   HD11  ILE  48          HD11      ILE  48  -9.339 -19.427  -6.753
+  425   HD12  ILE  48          HD12      ILE  48  -7.705 -19.851  -6.187
+  426   HD13  ILE  48          HD13      ILE  48  -8.305 -20.452  -7.751
+  427    H    ILE  49           H        ILE  49  -6.398 -24.146  -3.823
+  428    HA   ILE  49           HA       ILE  49  -6.235 -26.712  -5.142
+  429    HB   ILE  49           HB       ILE  49  -4.002 -26.871  -4.362
+  430   HG12  ILE  49          HG13      ILE  49  -4.428 -24.267  -2.887
+  431   HG13  ILE  49          HG12      ILE  49  -4.332 -25.853  -2.103
+  432   HG21  ILE  49          HG21      ILE  49  -4.530 -24.061  -5.368
+  433   HG22  ILE  49          HG22      ILE  49  -3.087 -25.076  -5.635
+  434   HG23  ILE  49          HG23      ILE  49  -4.629 -25.533  -6.364
+  435   HD11  ILE  49          HD11      ILE  49  -2.020 -26.126  -2.991
+  436   HD12  ILE  49          HD12      ILE  49  -2.112 -24.464  -3.645
+  437   HD13  ILE  49          HD13      ILE  49  -2.220 -24.735  -1.906
+  438    H    VAL  50           H        VAL  50  -8.090 -26.226  -2.731
+  439    HA   VAL  50           HA       VAL  50  -7.645 -28.966  -1.684
+  440    HB   VAL  50           HB       VAL  50  -8.600 -26.548  -0.145
+  441   HG11  VAL  50          HG11      VAL  50  -9.915 -28.419   0.644
+  442   HG12  VAL  50          HG12      VAL  50  -8.470 -29.446   0.731
+  443   HG13  VAL  50          HG13      VAL  50  -8.666 -28.060   1.829
+  444   HG21  VAL  50          HG21      VAL  50  -6.674 -27.016   1.303
+  445   HG22  VAL  50          HG22      VAL  50  -6.208 -28.392   0.269
+  446   HG23  VAL  50          HG23      VAL  50  -6.125 -26.739  -0.350
+  447    H    MET  51           H        MET  51  -9.880 -26.672  -3.076
+  448    HA   MET  51           HA       MET  51 -12.047 -28.666  -2.784
+  449    HB2  MET  51           HB3      MET  51 -12.119 -26.609  -1.351
+  450    HB3  MET  51           HB2      MET  51 -12.298 -25.661  -2.836
+  451    HG2  MET  51           HG3      MET  51 -14.389 -26.784  -3.338
+  452    HG3  MET  51           HG2      MET  51 -14.186 -27.852  -1.945
+  453    HE1  MET  51           HE1      MET  51 -16.813 -27.008  -1.759
+  454    HE2  MET  51           HE2      MET  51 -17.263 -25.320  -1.383
+  455    HE3  MET  51           HE3      MET  51 -16.597 -25.736  -2.976
+  456    H    LEU  52           H        LEU  52 -10.236 -27.057  -5.209
+  457    HA   LEU  52           HA       LEU  52 -12.367 -27.667  -7.183
+  458    HB2  LEU  52           HB3      LEU  52 -11.644 -25.289  -6.959
+  459    HB3  LEU  52           HB2      LEU  52 -10.010 -25.794  -7.394
+  460    HG   LEU  52           HG       LEU  52 -10.805 -26.505  -9.627
+  461   HD11  LEU  52          HD11      LEU  52 -13.453 -25.278  -8.733
+  462   HD12  LEU  52          HD12      LEU  52 -13.036 -25.786 -10.387
+  463   HD13  LEU  52          HD13      LEU  52 -13.174 -26.999  -9.114
+  464   HD21  LEU  52          HD21      LEU  52 -11.223 -24.275 -10.512
+  465   HD22  LEU  52          HD22      LEU  52 -11.458 -23.652  -8.854
+  466   HD23  LEU  52          HD23      LEU  52  -9.882 -24.319  -9.368
+  467    H    LEU  53           H        LEU  53  -9.333 -28.756  -6.049
+  468    HA   LEU  53           HA       LEU  53  -8.390 -29.547  -8.721
+  469    HB2  LEU  53           HB3      LEU  53  -7.112 -27.971  -7.113
+  470    HB3  LEU  53           HB2      LEU  53  -6.888 -29.404  -6.109
+  471    HG   LEU  53           HG       LEU  53  -5.763 -30.511  -8.125
+  472   HD11  LEU  53          HD11      LEU  53  -6.618 -28.999  -9.880
+  473   HD12  LEU  53          HD12      LEU  53  -5.797 -27.618  -9.115
+  474   HD13  LEU  53          HD13      LEU  53  -4.854 -28.961  -9.827
+  475   HD21  LEU  53          HD21      LEU  53  -4.537 -27.977  -6.967
+  476   HD22  LEU  53          HD22      LEU  53  -4.513 -29.589  -6.221
+  477   HD23  LEU  53          HD23      LEU  53  -3.647 -29.317  -7.742
