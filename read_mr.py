@@ -211,7 +211,7 @@ if __name__ == '__main__':
         index = 0
         key_prev=0
         for n in noe_list:
-            print n
+            print(n)
             n.print_(itp, pdb_atoms, an_tab, dictionary )
         for keys, values in sorted(dictionary.items()):
             # if key_prev != keys[0]:
