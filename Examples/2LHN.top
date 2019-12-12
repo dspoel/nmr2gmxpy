@@ -1,0 +1,48 @@
+;
+;	File '2LHN.top' was generated
+;	By user: spatel (7228)
+;	On host: hermione
+;	At date: Thu Mar 28 11:14:14 2019
+
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2016.3 (-:
+;	
+;	Executable:   /home/ofisette/group/packages/gromacs/2016.3/bin/gmx
+;	Data prefix:  /home/ofisette/group/packages/gromacs/2016.3
+;	Working dir:  /home/spatel/NMR_data/my_repo/PyNMRSTAR_test/topology
+;	Command line:
+;	  gmx -quiet pdb2gmx -f 2LHN.pdb -ignh -ff amber99sb-ildn -water tip3p -p 2LHN.top
+;	Force field was read from the standard GROMACS share directory.
+;
+
+; Include forcefield parameters
+#include "amber99sb-ildn.ff/forcefield.itp"
+
+; Include chain topologies
+#include "2LHN_Protein_chain_A.itp"
+#include "2LHN_Ion_chain_A2.itp"
+
+; Include water topology
+#include "amber99sb-ildn.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "amber99sb-ildn.ff/ions.itp"
+
+[ system ]
+; Name
+NUCLEAR POLYADENYLATED RNA-BINDING PROTEIN NAB2
+
+[ molecules ]
+; Compound        #mols
+Protein_chain_A     1
+Ion_chain_A2        1

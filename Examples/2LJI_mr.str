@@ -1,0 +1,1537 @@
+data_wwPDB_remediated_restraints_file_for_PDB_entry_2lji
+
+# This wwPDB archive file contains, for PDB entry 2lji:
+#
+# - Sequence information from the PDB mmCIF file
+# - NMR restraints from the PDB MR file
+#
+# In this file, the NMR restraints share the same atom names as in the coordinate 
+# file, and in this way can differ from the data deposited at the wwPDB. To achieve
+# this aim, the NMR restraints were parsed from their original format files, and
+# the coordinates and NMR restraints information were subsequently harmonized.
+#
+# Due to the complexity of this harmonization process, minor modifications could
+# have occurred to the NMR restraints information, or data could have been lost
+# because of parsing or conversion errors. The PDB file remains the
+# authoritative reference for the atomic coordinates and the originally deposited
+# restraints files remain the primary reference for these data.
+#
+# This file is generated as part of the wwPDB at the BioMagResBank (BMRB) in
+# collaboration with the PDBe (formerly MSD) group at the European
+# Bioinformatics Institute (EBI) and the CMBI/IMM group at the Radboud
+# University of Nijmegen.
+#
+# Several software packages were used to produce this file:
+#
+# - Wattos (BMRB and CMBI/IMM).
+# - FormatConverter and NMRStarExport (PDBe).
+# - CCPN framework (http://www.ccpn.ac.uk/).
+#
+# More information about this process can be found in the references below.
+# Please cite the original reference for this PDB entry.
+#
+# JF Doreleijers, A Nederveen, W Vranken, J Lin, AM Bonvin, R Kaptein, JL
+# Markley, and EL Ulrich (2005). BioMagResBank databases DOCR and FRED
+# containing converted and filtered sets of experimental NMR restraints and
+# coordinates from over 500 protein PDB structures. J. Biomol. NMR 32, 1-12.
+#
+# WF Vranken, W Boucher, TJ Stevens, RH Fogh, A Pajon, M Llinas, EL Ulrich, JL
+# Markley, J Ionides, ED Laue (2005). The CCPN data model for NMR spectroscopy:
+# development of a software pipeline. Proteins 59, 687-696.
+#
+# JF Doreleijers, WF Vranken, C Schulte, J Lin, JR Wedell, CJ Penkett, GW Vuister, 
+# G Vriend, JL Markley, and EL Ulrich (2009). The NMR Restraints Grid at BMRB for 
+# 5,266 Protein and Nucleic Acid PDB Entries. J Biomol. NMR 45, 389–396.
+
+
+save_entry_information
+   _Entry.Sf_category                   entry_information
+   _Entry.Sf_framecode                  entry_information
+   _Entry.ID                            rr_2lji
+   _Entry.Title                        "wwPDB remediated NMR restraints for PDB entry 2lji"
+   _Entry.Version_type                  original
+   _Entry.NMR_STAR_version              3.1.0.8
+   _Entry.Experimental_method           NMR
+   _Entry.Experimental_method_subtype   solution
+   _Entry.Details                      "Contains the remediated restraint lists and coordinates for PDB entry 2lji"
+   _Entry.PDB_coordinate_file_version   3.20
+
+   loop_
+      _Related_entries.Database_name
+      _Related_entries.Database_accession_code
+      _Related_entries.Relationship
+      _Related_entries.Entry_ID
+
+      PDB 2lji "Master copy" rr_2lji 
+
+   stop_
+
+save_
+
+
+save_assembly
+   _Assembly.Sf_category            assembly
+   _Assembly.Sf_framecode           assembly
+   _Assembly.Entry_ID               rr_2lji
+   _Assembly.ID                     1
+   _Assembly.Name                   2lji
+   _Assembly.Number_of_components   1
+   _Assembly.Organic_ligands        0
+   _Assembly.Metal_ions             0
+   _Assembly.Non_standard_bonds     no
+   _Assembly.Paramagnetic           no
+   _Assembly.Thiol_state           "not present"
+   _Assembly.Molecular_mass         8180.0283
+
+   loop_
+      _Entity_assembly.ID
+      _Entity_assembly.Entity_assembly_name
+      _Entity_assembly.Entity_ID
+      _Entity_assembly.Entity_label
+      _Entity_assembly.Asym_ID
+      _Entity_assembly.PDB_chain_ID
+      _Entity_assembly.Experimental_data_reported
+      _Entity_assembly.Physical_state
+      _Entity_assembly.Conformational_isomer
+      _Entity_assembly.Chemical_exchange_state
+      _Entity_assembly.Magnetic_equivalence_group_code
+      _Entity_assembly.Role
+      _Entity_assembly.Details
+      _Entity_assembly.Entry_ID
+      _Entity_assembly.Assembly_ID
+
+      1 "Small archaeal modifier protein 2" 1 $Small_archaeal_modifier_protein_2 A . no . . . . . . rr_2lji 1 
+
+   stop_
+
+save_
+
+
+save_Small_archaeal_modifier_protein_2
+   _Entity.Sf_category                       entity
+   _Entity.Sf_framecode                      Small_archaeal_modifier_protein_2
+   _Entity.Entry_ID                          rr_2lji
+   _Entity.ID                                1
+   _Entity.Name                              Small_archaeal_modifier_protein_2
+   _Entity.Type                              polymer
+   _Entity.Polymer_type                      polypeptide(L)
+   _Entity.Polymer_strand_ID                 A
+   _Entity.Polymer_seq_one_letter_code      
+;
+MNVTVEVVGEETSEVAVDDD
+GTYADLVRAVDLSPHEVTVL
+VDGRPVPEDQSVEVDRVKVL
+RLIKGGLEHHHHHH
+;
+   _Entity.Ambiguous_conformational_states   no
+   _Entity.Ambiguous_chem_comp_sites         no
+   _Entity.Nstd_monomer                      no
+   _Entity.Nstd_chirality                    no
+   _Entity.Nstd_linkage                      no
+   _Entity.Number_of_monomers                74
+   _Entity.Paramagnetic                      no
+   _Entity.Thiol_state                      "not present"
+   _Entity.Parent_entity_ID                  1
+   _Entity.Formula_weight                    8180.0283
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+       1 . MET . rr_2lji 1 
+       2 . ASN . rr_2lji 1 
+       3 . VAL . rr_2lji 1 
+       4 . THR . rr_2lji 1 
+       5 . VAL . rr_2lji 1 
+       6 . GLU . rr_2lji 1 
+       7 . VAL . rr_2lji 1 
+       8 . VAL . rr_2lji 1 
+       9 . GLY . rr_2lji 1 
+      10 . GLU . rr_2lji 1 
+      11 . GLU . rr_2lji 1 
+      12 . THR . rr_2lji 1 
+      13 . SER . rr_2lji 1 
+      14 . GLU . rr_2lji 1 
+      15 . VAL . rr_2lji 1 
+      16 . ALA . rr_2lji 1 
+      17 . VAL . rr_2lji 1 
+      18 . ASP . rr_2lji 1 
+      19 . ASP . rr_2lji 1 
+      20 . ASP . rr_2lji 1 
+      21 . GLY . rr_2lji 1 
+      22 . THR . rr_2lji 1 
+      23 . TYR . rr_2lji 1 
+      24 . ALA . rr_2lji 1 
+      25 . ASP . rr_2lji 1 
+      26 . LEU . rr_2lji 1 
+      27 . VAL . rr_2lji 1 
+      28 . ARG . rr_2lji 1 
+      29 . ALA . rr_2lji 1 
+      30 . VAL . rr_2lji 1 
+      31 . ASP . rr_2lji 1 
+      32 . LEU . rr_2lji 1 
+      33 . SER . rr_2lji 1 
+      34 . PRO . rr_2lji 1 
+      35 . HIS . rr_2lji 1 
+      36 . GLU . rr_2lji 1 
+      37 . VAL . rr_2lji 1 
+      38 . THR . rr_2lji 1 
+      39 . VAL . rr_2lji 1 
+      40 . LEU . rr_2lji 1 
+      41 . VAL . rr_2lji 1 
+      42 . ASP . rr_2lji 1 
+      43 . GLY . rr_2lji 1 
+      44 . ARG . rr_2lji 1 
+      45 . PRO . rr_2lji 1 
+      46 . VAL . rr_2lji 1 
+      47 . PRO . rr_2lji 1 
+      48 . GLU . rr_2lji 1 
+      49 . ASP . rr_2lji 1 
+      50 . GLN . rr_2lji 1 
+      51 . SER . rr_2lji 1 
+      52 . VAL . rr_2lji 1 
+      53 . GLU . rr_2lji 1 
+      54 . VAL . rr_2lji 1 
+      55 . ASP . rr_2lji 1 
+      56 . ARG . rr_2lji 1 
+      57 . VAL . rr_2lji 1 
+      58 . LYS . rr_2lji 1 
+      59 . VAL . rr_2lji 1 
+      60 . LEU . rr_2lji 1 
+      61 . ARG . rr_2lji 1 
+      62 . LEU . rr_2lji 1 
+      63 . ILE . rr_2lji 1 
+      64 . LYS . rr_2lji 1 
+      65 . GLY . rr_2lji 1 
+      66 . GLY . rr_2lji 1 
+      67 . LEU . rr_2lji 1 
+      68 . GLU . rr_2lji 1 
+      69 . HIS . rr_2lji 1 
+      70 . HIS . rr_2lji 1 
+      71 . HIS . rr_2lji 1 
+      72 . HIS . rr_2lji 1 
+      73 . HIS . rr_2lji 1 
+      74 . HIS . rr_2lji 1 
+
+   stop_
+
+   loop_
+      _Entity_poly_seq.Hetero
+      _Entity_poly_seq.Mon_ID
+      _Entity_poly_seq.Num
+      _Entity_poly_seq.Comp_index_ID
+      _Entity_poly_seq.Entry_ID
+      _Entity_poly_seq.Entity_ID
+
+      . MET  1  1 rr_2lji 1 
+      . ASN  2  2 rr_2lji 1 
+      . VAL  3  3 rr_2lji 1 
+      . THR  4  4 rr_2lji 1 
+      . VAL  5  5 rr_2lji 1 
+      . GLU  6  6 rr_2lji 1 
+      . VAL  7  7 rr_2lji 1 
+      . VAL  8  8 rr_2lji 1 
+      . GLY  9  9 rr_2lji 1 
+      . GLU 10 10 rr_2lji 1 
+      . GLU 11 11 rr_2lji 1 
+      . THR 12 12 rr_2lji 1 
+      . SER 13 13 rr_2lji 1 
+      . GLU 14 14 rr_2lji 1 
+      . VAL 15 15 rr_2lji 1 
+      . ALA 16 16 rr_2lji 1 
+      . VAL 17 17 rr_2lji 1 
+      . ASP 18 18 rr_2lji 1 
+      . ASP 19 19 rr_2lji 1 
+      . ASP 20 20 rr_2lji 1 
+      . GLY 21 21 rr_2lji 1 
+      . THR 22 22 rr_2lji 1 
+      . TYR 23 23 rr_2lji 1 
+      . ALA 24 24 rr_2lji 1 
+      . ASP 25 25 rr_2lji 1 
+      . LEU 26 26 rr_2lji 1 
+      . VAL 27 27 rr_2lji 1 
+      . ARG 28 28 rr_2lji 1 
+      . ALA 29 29 rr_2lji 1 
+      . VAL 30 30 rr_2lji 1 
+      . ASP 31 31 rr_2lji 1 
+      . LEU 32 32 rr_2lji 1 
+      . SER 33 33 rr_2lji 1 
+      . PRO 34 34 rr_2lji 1 
+      . HIS 35 35 rr_2lji 1 
+      . GLU 36 36 rr_2lji 1 
+      . VAL 37 37 rr_2lji 1 
+      . THR 38 38 rr_2lji 1 
+      . VAL 39 39 rr_2lji 1 
+      . LEU 40 40 rr_2lji 1 
+      . VAL 41 41 rr_2lji 1 
+      . ASP 42 42 rr_2lji 1 
+      . GLY 43 43 rr_2lji 1 
+      . ARG 44 44 rr_2lji 1 
+      . PRO 45 45 rr_2lji 1 
+      . VAL 46 46 rr_2lji 1 
+      . PRO 47 47 rr_2lji 1 
+      . GLU 48 48 rr_2lji 1 
+      . ASP 49 49 rr_2lji 1 
+      . GLN 50 50 rr_2lji 1 
+      . SER 51 51 rr_2lji 1 
+      . VAL 52 52 rr_2lji 1 
+      . GLU 53 53 rr_2lji 1 
+      . VAL 54 54 rr_2lji 1 
+      . ASP 55 55 rr_2lji 1 
+      . ARG 56 56 rr_2lji 1 
+      . VAL 57 57 rr_2lji 1 
+      . LYS 58 58 rr_2lji 1 
+      . VAL 59 59 rr_2lji 1 
+      . LEU 60 60 rr_2lji 1 
+      . ARG 61 61 rr_2lji 1 
+      . LEU 62 62 rr_2lji 1 
+      . ILE 63 63 rr_2lji 1 
+      . LYS 64 64 rr_2lji 1 
+      . GLY 65 65 rr_2lji 1 
+      . GLY 66 66 rr_2lji 1 
+      . LEU 67 67 rr_2lji 1 
+      . GLU 68 68 rr_2lji 1 
+      . HIS 69 69 rr_2lji 1 
+      . HIS 70 70 rr_2lji 1 
+      . HIS 71 71 rr_2lji 1 
+      . HIS 72 72 rr_2lji 1 
+      . HIS 73 73 rr_2lji 1 
+      . HIS 74 74 rr_2lji 1 
+
+   stop_
+
+save_
+
+
+save_conformer_statistics
+   _Conformer_stat_list.Sf_category                     conformer_statistics
+   _Conformer_stat_list.Sf_framecode                    conformer_statistics
+   _Conformer_stat_list.Entry_ID                        rr_2lji
+   _Conformer_stat_list.ID                              1
+   _Conformer_stat_list.Conf_family_coord_set_ID        1
+   _Conformer_stat_list.Conf_family_coord_set_label    $Original_constraints_and_structures
+   _Conformer_stat_list.Conformer_submitted_total_num   20
+
+save_
+
+
+save_global_Org_file_characteristics
+   _Constraint_stat_list.Sf_framecode   global_Org_file_characteristics
+   _Constraint_stat_list.Sf_category    constraint_statistics
+   _Constraint_stat_list.Entry_ID       rr_2lji
+   _Constraint_stat_list.ID             1
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+      1 2lji.mr . . "MR format" 1  comment               "Not applicable" "Not applicable"   0 rr_2lji 1 
+      1 2lji.mr . .  XPLOR/CNS  2  distance               NOE              simple          571 rr_2lji 1 
+      1 2lji.mr . .  XPLOR/CNS  3 "dihedral angle"       "Not applicable" "Not applicable"  89 rr_2lji 1 
+      1 2lji.mr . . "MR format" 4 "nomenclature mapping" "Not applicable" "Not applicable"   0 rr_2lji 1 
+
+   stop_
+
+save_
+
+
+save_constraint_statistics
+   _Constraint_stat_list.Sf_category    constraint_statistics
+   _Constraint_stat_list.Sf_framecode   constraint_statistics
+   _Constraint_stat_list.Entry_ID       rr_2lji
+   _Constraint_stat_list.ID             1
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+      1 "From CCPN project: '2lji'" . . . .  distance        "general distance" . 571 rr_2lji 1 
+      2 "From CCPN project: '2lji'" . . . . "dihedral angle" "Not applicable"   .  89 rr_2lji 1 
+
+   stop_
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+      1 2lji.mr . . "MR format" 1  comment               "Not applicable" "Not applicable"   0 rr_2lji 1 
+      1 2lji.mr . .  XPLOR/CNS  2  distance               NOE              simple          571 rr_2lji 1 
+      1 2lji.mr . .  XPLOR/CNS  3 "dihedral angle"       "Not applicable" "Not applicable"  89 rr_2lji 1 
+      1 2lji.mr . . "MR format" 4 "nomenclature mapping" "Not applicable" "Not applicable"   0 rr_2lji 1 
+
+   stop_
+
+save_
+
+
+save_CNS/XPLOR_distance_constraints_2
+   _Gen_dist_constraint_list.Sf_category          general_distance_constraints
+   _Gen_dist_constraint_list.Sf_framecode         CNS/XPLOR_distance_constraints_2
+   _Gen_dist_constraint_list.Entry_ID             rr_2lji
+   _Gen_dist_constraint_list.ID                   1
+   _Gen_dist_constraint_list.Constraint_type      NOE
+   _Gen_dist_constraint_list.Details             "Generated by Wattos"
+   _Gen_dist_constraint_list.Constraint_file_ID   1
+   _Gen_dist_constraint_list.Block_ID             2
+
+   loop_
+      _Gen_dist_constraint_software.Software_ID
+      _Gen_dist_constraint_software.Software_label
+      _Gen_dist_constraint_software.Method_ID
+      _Gen_dist_constraint_software.Method_label
+      _Gen_dist_constraint_software.Entry_ID
+      _Gen_dist_constraint_software.Gen_dist_constraint_list_ID
+
+      . . . . rr_2lji 1 
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint.ID
+      _Gen_dist_constraint.Member_ID
+      _Gen_dist_constraint.Member_logic_code
+      _Gen_dist_constraint.Assembly_atom_ID_1
+      _Gen_dist_constraint.Entity_assembly_ID_1
+      _Gen_dist_constraint.Entity_ID_1
+      _Gen_dist_constraint.Comp_index_ID_1
+      _Gen_dist_constraint.Seq_ID_1
+      _Gen_dist_constraint.Comp_ID_1
+      _Gen_dist_constraint.Atom_ID_1
+      _Gen_dist_constraint.Atom_type_1
+      _Gen_dist_constraint.Atom_isotope_number_1
+      _Gen_dist_constraint.Resonance_ID_1
+      _Gen_dist_constraint.Assembly_atom_ID_2
+      _Gen_dist_constraint.Entity_assembly_ID_2
+      _Gen_dist_constraint.Entity_ID_2
+      _Gen_dist_constraint.Comp_index_ID_2
+      _Gen_dist_constraint.Seq_ID_2
+      _Gen_dist_constraint.Comp_ID_2
+      _Gen_dist_constraint.Atom_ID_2
+      _Gen_dist_constraint.Atom_type_2
+      _Gen_dist_constraint.Atom_isotope_number_2
+      _Gen_dist_constraint.Resonance_ID_2
+      _Gen_dist_constraint.Intensity_val
+      _Gen_dist_constraint.Intensity_lower_val_err
+      _Gen_dist_constraint.Intensity_upper_val_err
+      _Gen_dist_constraint.Distance_val
+      _Gen_dist_constraint.Distance_lower_bound_val
+      _Gen_dist_constraint.Distance_upper_bound_val
+      _Gen_dist_constraint.Contribution_fractional_val
+      _Gen_dist_constraint.Spectral_peak_ID
+      _Gen_dist_constraint.Spectral_peak_list_ID
+      _Gen_dist_constraint.PDB_record_ID_1
+      _Gen_dist_constraint.PDB_model_num_1
+      _Gen_dist_constraint.PDB_strand_ID_1
+      _Gen_dist_constraint.PDB_ins_code_1
+      _Gen_dist_constraint.PDB_residue_no_1
+      _Gen_dist_constraint.PDB_residue_name_1
+      _Gen_dist_constraint.PDB_atom_name_1
+      _Gen_dist_constraint.PDB_record_ID_2
+      _Gen_dist_constraint.PDB_model_num_2
+      _Gen_dist_constraint.PDB_strand_ID_2
+      _Gen_dist_constraint.PDB_ins_code_2
+      _Gen_dist_constraint.PDB_residue_no_2
+      _Gen_dist_constraint.PDB_residue_name_2
+      _Gen_dist_constraint.PDB_atom_name_2
+      _Gen_dist_constraint.Auth_entity_assembly_ID_1
+      _Gen_dist_constraint.Auth_asym_ID_1
+      _Gen_dist_constraint.Auth_chain_ID_1
+      _Gen_dist_constraint.Auth_seq_ID_1
+      _Gen_dist_constraint.Auth_comp_ID_1
+      _Gen_dist_constraint.Auth_atom_ID_1
+      _Gen_dist_constraint.Auth_alt_ID_1
+      _Gen_dist_constraint.Auth_atom_name_1
+      _Gen_dist_constraint.Auth_entity_assembly_ID_2
+      _Gen_dist_constraint.Auth_asym_ID_2
+      _Gen_dist_constraint.Auth_chain_ID_2
+      _Gen_dist_constraint.Auth_seq_ID_2
+      _Gen_dist_constraint.Auth_comp_ID_2
+      _Gen_dist_constraint.Auth_atom_ID_2
+      _Gen_dist_constraint.Auth_alt_ID_2
+      _Gen_dist_constraint.Auth_atom_name_2
+      _Gen_dist_constraint.Entry_ID
+      _Gen_dist_constraint.Gen_dist_constraint_list_ID
+
+        1 1 .  . 1 1  2  2 ASN H    H . . . 1 1  2  2 ASN HA   H . . . . . 1.8 1.8 4.0 . . . . . A .  2 ASN H    . . A .  2 ASN HA   . . .  2 . HN   . . . . .  2 . HA   . . rr_2lji 1 
+        2 1 .  . 1 1  2  2 ASN H    H . . . 1 1  1  1 MET HA   H . . . . . 1.8 1.8 6.0 . . . . . A .  2 ASN H    . . A .  1 MET HA   . . .  2 . HN   . . . . .  1 . HA   . . rr_2lji 1 
+        3 1 OR . 1 1  2  2 ASN H    H . . . 1 1  2  2 ASN HB2  H . . . . . 1.8 1.8 4.0 . . . . . A .  2 ASN H    . . A .  2 ASN HB2  . . .  2 . HN   . . . . .  2 . HB#  . . rr_2lji 1 
+        3 2 OR . 1 1  2  2 ASN H    H . . . 1 1  2  2 ASN HB3  H . . . . . 1.8 1.8 4.0 . . . . . A .  2 ASN H    . . A .  2 ASN HB3  . . .  2 . HN   . . . . .  2 . HB#  . . rr_2lji 1 
+        4 1 OR . 1 1  2  2 ASN H    H . . . 1 1  1  1 MET HB2  H . . . . . 1.8 1.8 6.0 . . . . . A .  2 ASN H    . . A .  1 MET HB2  . . .  2 . HN   . . . . .  1 . HB#  . . rr_2lji 1 
+        4 2 OR . 1 1  2  2 ASN H    H . . . 1 1  1  1 MET HB3  H . . . . . 1.8 1.8 6.0 . . . . . A .  2 ASN H    . . A .  1 MET HB3  . . .  2 . HN   . . . . .  1 . HB#  . . rr_2lji 1 
+        5 1 .  . 1 1  2  2 ASN H    H . . . 1 1 16 16 ALA HA   H . . . . . 1.8 1.8 5.0 . . . . . A .  2 ASN H    . . A . 16 ALA HA   . . .  2 . HN   . . . . . 16 . HA   . . rr_2lji 1 
+        6 1 OR . 1 1  2  2 ASN HA   H . . . 1 1  2  2 ASN HB2  H . . . . . 1.8 1.8 4.0 . . . . . A .  2 ASN HA   . . A .  2 ASN HB2  . . .  2 . HA   . . . . .  2 . HB#  . . rr_2lji 1 
+        6 2 OR . 1 1  2  2 ASN HA   H . . . 1 1  2  2 ASN HB3  H . . . . . 1.8 1.8 4.0 . . . . . A .  2 ASN HA   . . A .  2 ASN HB3  . . .  2 . HA   . . . . .  2 . HB#  . . rr_2lji 1 
+        7 1 OR . 1 1  2  2 ASN HA   H . . . 1 1  3  3 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A .  2 ASN HA   . . A .  3 VAL MG1  . . .  2 . HA   . . . . .  3 . HG*  . . rr_2lji 1 
+        7 2 OR . 1 1  2  2 ASN HA   H . . . 1 1  3  3 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A .  2 ASN HA   . . A .  3 VAL MG2  . . .  2 . HA   . . . . .  3 . HG*  . . rr_2lji 1 
+        8 1 .  . 1 1  2  2 ASN H    H . . . 1 1 16 16 ALA H    H . . . . . 1.8 1.8 6.5 . . . . . A .  2 ASN H    . . A . 16 ALA H    . . .  2 . HN   . . . . . 16 . HN   . . rr_2lji 1 
+        9 1 .  . 1 1  3  3 VAL H    H . . . 1 1 17 17 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A .  3 VAL H    . . A . 17 VAL H    . . .  3 . HN   . . . . . 17 . HN   . . rr_2lji 1 
+       10 1 .  . 1 1  2  2 ASN HA   H . . . 1 1  3  3 VAL H    H . . . . . 1.8 1.8 3.0 . . . . . A .  2 ASN HA   . . A .  3 VAL H    . . .  2 . HA   . . . . .  3 . HN   . . rr_2lji 1 
+       11 1 .  . 1 1 16 16 ALA HA   H . . . 1 1  3  3 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 16 ALA HA   . . A .  3 VAL H    . . . 16 . HA   . . . . .  3 . HN   . . rr_2lji 1 
+       12 1 OR . 1 1  3  3 VAL H    H . . . 1 1  2  2 ASN HB2  H . . . . . 1.8 1.8 3.5 . . . . . A .  3 VAL H    . . A .  2 ASN HB2  . . .  3 . HN   . . . . .  2 . HB#  . . rr_2lji 1 
+       12 2 OR . 1 1  2  2 ASN HB3  H . . . 1 1  3  3 VAL H    H . . . . . 1.8 1.8 3.5 . . . . . A .  2 ASN HB3  . . A .  3 VAL H    . . .  2 . HB#  . . . . .  3 . HN   . . rr_2lji 1 
+       13 1 .  . 1 1  3  3 VAL H    H . . . 1 1  3  3 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A .  3 VAL H    . . A .  3 VAL HA   . . .  3 . HN   . . . . .  3 . HA   . . rr_2lji 1 
+       14 1 .  . 1 1  3  3 VAL H    H . . . 1 1  3  3 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A .  3 VAL H    . . A .  3 VAL HB   . . .  3 . HN   . . . . .  3 . HB   . . rr_2lji 1 
+       15 1 .  . 1 1  3  3 VAL HA   H . . . 1 1  3  3 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A .  3 VAL HA   . . A .  3 VAL HB   . . .  3 . HA   . . . . .  3 . HB   . . rr_2lji 1 
+       16 1 OR . 1 1  3  3 VAL HA   H . . . 1 1  3  3 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A .  3 VAL HA   . . A .  3 VAL MG1  . . .  3 . HA   . . . . .  3 . HG*  . . rr_2lji 1 
+       16 2 OR . 1 1  3  3 VAL MG2  H . . . 1 1  3  3 VAL HA   H . . . . . 1.8 1.8 5.0 . . . . . A .  3 VAL MG2  . . A .  3 VAL HA   . . .  3 . HG*  . . . . .  3 . HA   . . rr_2lji 1 
+       17 1 .  . 1 1  3  3 VAL HA   H . . . 1 1 14 14 GLU HA   H . . . . . 1.8 1.8 5.5 . . . . . A .  3 VAL HA   . . A . 14 GLU HA   . . .  3 . HA   . . . . . 14 . HA   . . rr_2lji 1 
+       18 1 OR . 1 1  3  3 VAL HA   H . . . 1 1 14 14 GLU HB2  H . . . . . 1.8 1.8 5.5 . . . . . A .  3 VAL HA   . . A . 14 GLU HB2  . . .  3 . HA   . . . . . 14 . HB#  . . rr_2lji 1 
+       18 2 OR . 1 1  3  3 VAL HA   H . . . 1 1 14 14 GLU HB3  H . . . . . 1.8 1.8 5.5 . . . . . A .  3 VAL HA   . . A . 14 GLU HB3  . . .  3 . HA   . . . . . 14 . HB#  . . rr_2lji 1 
+       19 1 OR . 1 1  4  4 THR H    H . . . 1 1  5  5 VAL MG1  H . . . . . 1.8 1.8 5.5 . . . . . A .  4 THR H    . . A .  5 VAL MG1  . . .  4 . HN   . . . . .  5 . HG*  . . rr_2lji 1 
+       19 2 OR . 1 1  4  4 THR H    H . . . 1 1  5  5 VAL MG2  H . . . . . 1.8 1.8 5.5 . . . . . A .  4 THR H    . . A .  5 VAL MG2  . . .  4 . HN   . . . . .  5 . HG*  . . rr_2lji 1 
+       20 1 .  . 1 1  4  4 THR H    H . . . 1 1 56 56 ARG HA   H . . . . . 1.8 1.8 5.0 . . . . . A .  4 THR H    . . A . 56 ARG HA   . . .  4 . HN   . . . . . 56 . HA   . . rr_2lji 1 
+       21 1 .  . 1 1  3  3 VAL HA   H . . . 1 1  4  4 THR H    H . . . . . 1.8 1.8 3.0 . . . . . A .  3 VAL HA   . . A .  4 THR H    . . .  3 . HA   . . . . .  4 . HN   . . rr_2lji 1 
+       22 1 .  . 1 1  4  4 THR H    H . . . 1 1 56 56 ARG HE   H . . . . . 1.8 1.8 6.0 . . . . . A .  4 THR H    . . A . 56 ARG HE   . . .  4 . HN   . . . . . 56 . HE#  . . rr_2lji 1 
+       23 1 .  . 1 1  4  4 THR H    H . . . 1 1  4  4 THR HA   H . . . . . 1.8 1.8 4.5 . . . . . A .  4 THR H    . . A .  4 THR HA   . . .  4 . HN   . . . . .  4 . HA   . . rr_2lji 1 
+       24 1 .  . 1 1  3  3 VAL HB   H . . . 1 1  4  4 THR H    H . . . . . 1.8 1.8 5.0 . . . . . A .  3 VAL HB   . . A .  4 THR H    . . .  3 . HB   . . . . .  4 . HN   . . rr_2lji 1 
+       25 1 .  . 1 1  4  4 THR HA   H . . . 1 1  4  4 THR HB   H . . . . . 1.8 1.8 4.0 . . . . . A .  4 THR HA   . . A .  4 THR HB   . . .  4 . HA   . . . . .  4 . HB   . . rr_2lji 1 
+       26 1 .  . 1 1  4  4 THR HA   H . . . 1 1  4  4 THR MG   H . . . . . 1.8 1.8 4.0 . . . . . A .  4 THR HA   . . A .  4 THR MG   . . .  4 . HA   . . . . .  4 . HG2* . . rr_2lji 1 
+       27 1 .  . 1 1 14 14 GLU HA   H . . . 1 1  4  4 THR HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 14 GLU HA   . . A .  4 THR HA   . . . 14 . HA   . . . . .  4 . HA   . . rr_2lji 1 
+       28 1 OR . 1 1  4  4 THR HA   H . . . 1 1 14 14 GLU HG2  H . . . . . 1.8 1.8 5.5 . . . . . A .  4 THR HA   . . A . 14 GLU HG2  . . .  4 . HA   . . . . . 14 . HG#  . . rr_2lji 1 
+       28 2 OR . 1 1  4  4 THR HA   H . . . 1 1 14 14 GLU HG3  H . . . . . 1.8 1.8 5.5 . . . . . A .  4 THR HA   . . A . 14 GLU HG3  . . .  4 . HA   . . . . . 14 . HG#  . . rr_2lji 1 
+       29 1 .  . 1 1  3  3 VAL H    H . . . 1 1  4  4 THR H    H . . . . . 1.8 1.8 5.0 . . . . . A .  3 VAL H    . . A .  4 THR H    . . .  3 . HN   . . . . .  4 . HN   . . rr_2lji 1 
+       30 1 .  . 1 1 14 14 GLU HA   H . . . 1 1  4  4 THR H    H . . . . . 1.8 1.8 5.0 . . . . . A . 14 GLU HA   . . A .  4 THR H    . . . 14 . HA   . . . . .  4 . HN   . . rr_2lji 1 
+       31 1 OR . 1 1  4  4 THR H    H . . . 1 1 56 56 ARG HG2  H . . . . . 1.8 1.8 5.0 . . . . . A .  4 THR H    . . A . 56 ARG HG2  . . .  4 . HN   . . . . . 56 . HG#  . . rr_2lji 1 
+       31 2 OR . 1 1  4  4 THR H    H . . . 1 1 56 56 ARG HG3  H . . . . . 1.8 1.8 5.0 . . . . . A .  4 THR H    . . A . 56 ARG HG3  . . .  4 . HN   . . . . . 56 . HG#  . . rr_2lji 1 
+       32 1 .  . 1 1  5  5 VAL H    H . . . 1 1 15 15 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A .  5 VAL H    . . A . 15 VAL H    . . .  5 . HN   . . . . . 15 . HN   . . rr_2lji 1 
+       33 1 .  . 1 1  5  5 VAL H    H . . . 1 1 13 13 SER H    H . . . . . 1.8 1.8 5.0 . . . . . A .  5 VAL H    . . A . 13 SER H    . . .  5 . HN   . . . . . 13 . HN   . . rr_2lji 1 
+       34 1 .  . 1 1  4  4 THR H    H . . . 1 1  5  5 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A .  4 THR H    . . A .  5 VAL H    . . .  4 . HN   . . . . .  5 . HN   . . rr_2lji 1 
+       35 1 .  . 1 1  5  5 VAL H    H . . . 1 1  6  6 GLU H    H . . . . . 1.8 1.8 5.0 . . . . . A .  5 VAL H    . . A .  6 GLU H    . . .  5 . HN   . . . . .  6 . HN   . . rr_2lji 1 
+       36 1 .  . 1 1  5  5 VAL H    H . . . 1 1 12 12 THR HA   H . . . . . 1.8 1.8 5.5 . . . . . A .  5 VAL H    . . A . 12 THR HA   . . .  5 . HN   . . . . . 12 . HA   . . rr_2lji 1 
+       37 1 .  . 1 1 14 14 GLU HA   H . . . 1 1  5  5 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 14 GLU HA   . . A .  5 VAL H    . . . 14 . HA   . . . . .  5 . HN   . . rr_2lji 1 
+       38 1 .  . 1 1  4  4 THR HA   H . . . 1 1  5  5 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A .  4 THR HA   . . A .  5 VAL H    . . .  4 . HA   . . . . .  5 . HN   . . rr_2lji 1 
+       39 1 .  . 1 1  5  5 VAL H    H . . . 1 1  5  5 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A .  5 VAL H    . . A .  5 VAL HA   . . .  5 . HN   . . . . .  5 . HA   . . rr_2lji 1 
+       40 1 .  . 1 1  5  5 VAL H    H . . . 1 1 14 14 GLU H    H . . . . . 1.8 1.8 6.0 . . . . . A .  5 VAL H    . . A . 14 GLU H    . . .  5 . HN   . . . . . 14 . HN   . . rr_2lji 1 
+       41 1 .  . 1 1  4  4 THR MG   H . . . 1 1  5  5 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A .  4 THR MG   . . A .  5 VAL H    . . .  4 . HG2* . . . . .  5 . HN   . . rr_2lji 1 
+       42 1 OR . 1 1  5  5 VAL H    H . . . 1 1  5  5 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A .  5 VAL H    . . A .  5 VAL MG1  . . .  5 . HN   . . . . .  5 . HG*  . . rr_2lji 1 
+       42 2 OR . 1 1  5  5 VAL MG2  H . . . 1 1  5  5 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A .  5 VAL MG2  . . A .  5 VAL H    . . .  5 . HG*  . . . . .  5 . HN   . . rr_2lji 1 
+       43 1 .  . 1 1  5  5 VAL HA   H . . . 1 1  5  5 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A .  5 VAL HA   . . A .  5 VAL HB   . . .  5 . HA   . . . . .  5 . HB   . . rr_2lji 1 
+       44 1 OR . 1 1  5  5 VAL HA   H . . . 1 1  5  5 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A .  5 VAL HA   . . A .  5 VAL MG1  . . .  5 . HA   . . . . .  5 . HG*  . . rr_2lji 1 
+       44 2 OR . 1 1  5  5 VAL MG2  H . . . 1 1  5  5 VAL HA   H . . . . . 1.8 1.8 5.0 . . . . . A .  5 VAL MG2  . . A .  5 VAL HA   . . .  5 . HG*  . . . . .  5 . HA   . . rr_2lji 1 
+       45 1 .  . 1 1  4  4 THR HB   H . . . 1 1  5  5 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A .  4 THR HB   . . A .  5 VAL H    . . .  4 . HB   . . . . .  5 . HN   . . rr_2lji 1 
+       46 1 .  . 1 1  4  4 THR MG   H . . . 1 1  5  5 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A .  4 THR MG   . . A .  5 VAL H    . . .  4 . HG2* . . . . .  5 . HN   . . rr_2lji 1 
+       47 1 OR . 1 1  6  6 GLU H    H . . . 1 1 59 59 VAL MG2  H . . . . . 1.8 1.8 4.5 . . . . . A .  6 GLU H    . . A . 59 VAL MG2  . . .  6 . HN   . . . . . 59 . HG*  . . rr_2lji 1 
+       47 2 OR . 1 1  6  6 GLU H    H . . . 1 1 59 59 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A .  6 GLU H    . . A . 59 VAL MG1  . . .  6 . HN   . . . . . 59 . HG*  . . rr_2lji 1 
+       48 1 .  . 1 1  6  6 GLU H    H . . . 1 1 58 58 LYS HA   H . . . . . 1.8 1.8 4.0 . . . . . A .  6 GLU H    . . A . 58 LYS HA   . . .  6 . HN   . . . . . 58 . HA   . . rr_2lji 1 
+       49 1 .  . 1 1  6  6 GLU H    H . . . 1 1  6  6 GLU HA   H . . . . . 1.8 1.8 4.0 . . . . . A .  6 GLU H    . . A .  6 GLU HA   . . .  6 . HN   . . . . .  6 . HA   . . rr_2lji 1 
+       50 1 .  . 1 1  6  6 GLU H    H . . . 1 1  7  7 VAL HA   H . . . . . 1.8 1.8 6.0 . . . . . A .  6 GLU H    . . A .  7 VAL HA   . . .  6 . HN   . . . . .  7 . HA   . . rr_2lji 1 
+       51 1 .  . 1 1  6  6 GLU H    H . . . 1 1  5  5 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A .  6 GLU H    . . A .  5 VAL HA   . . .  6 . HN   . . . . .  5 . HA   . . rr_2lji 1 
+       52 1 .  . 1 1  6  6 GLU H    H . . . 1 1  6  6 GLU HB3  H . . . . . 1.8 1.8 4.0 . . . . . A .  6 GLU H    . . A .  6 GLU HB3  . . .  6 . HN   . . . . .  6 . HB1  . . rr_2lji 1 
+       53 1 .  . 1 1  6  6 GLU H    H . . . 1 1  6  6 GLU HB2  H . . . . . 1.8 1.8 4.0 . . . . . A .  6 GLU H    . . A .  6 GLU HB2  . . .  6 . HN   . . . . .  6 . HB2  . . rr_2lji 1 
+       54 1 .  . 1 1  4  4 THR MG   H . . . 1 1  6  6 GLU H    H . . . . . 1.8 1.8 5.5 . . . . . A .  4 THR MG   . . A .  6 GLU H    . . .  4 . HG2* . . . . .  6 . HN   . . rr_2lji 1 
+       55 1 OR . 1 1  6  6 GLU H    H . . . 1 1  5  5 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A .  6 GLU H    . . A .  5 VAL MG1  . . .  6 . HN   . . . . .  5 . HG*  . . rr_2lji 1 
+       55 2 OR . 1 1  5  5 VAL MG2  H . . . 1 1  6  6 GLU H    H . . . . . 1.8 1.8 4.5 . . . . . A .  5 VAL MG2  . . A .  6 GLU H    . . .  5 . HG*  . . . . .  6 . HN   . . rr_2lji 1 
+       56 1 .  . 1 1  6  6 GLU HA   H . . . 1 1  6  6 GLU HB2  H . . . . . 1.8 1.8 5.5 . . . . . A .  6 GLU HA   . . A .  6 GLU HB2  . . .  6 . HA   . . . . .  6 . HB2  . . rr_2lji 1 
+       57 1 OR . 1 1  6  6 GLU HA   H . . . 1 1  6  6 GLU HG2  H . . . . . 1.8 1.8 5.0 . . . . . A .  6 GLU HA   . . A .  6 GLU HG2  . . .  6 . HA   . . . . .  6 . HG#  . . rr_2lji 1 
+       57 2 OR . 1 1  6  6 GLU HA   H . . . 1 1  6  6 GLU HG3  H . . . . . 1.8 1.8 5.0 . . . . . A .  6 GLU HA   . . A .  6 GLU HG3  . . .  6 . HA   . . . . .  6 . HG#  . . rr_2lji 1 
+       58 1 .  . 1 1  6  6 GLU H    H . . . 1 1 59 59 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A .  6 GLU H    . . A . 59 VAL H    . . .  6 . HN   . . . . . 59 . HN   . . rr_2lji 1 
+       59 1 OR . 1 1  6  6 GLU H    H . . . 1 1 58 58 LYS HB2  H . . . . . 1.8 1.8 5.5 . . . . . A .  6 GLU H    . . A . 58 LYS HB2  . . .  6 . HN   . . . . . 58 . HB#  . . rr_2lji 1 
+       59 2 OR . 1 1  6  6 GLU H    H . . . 1 1 58 58 LYS HB3  H . . . . . 1.8 1.8 5.5 . . . . . A .  6 GLU H    . . A . 58 LYS HB3  . . .  6 . HN   . . . . . 58 . HB#  . . rr_2lji 1 
+       60 1 .  . 1 1 12 12 THR HA   H . . . 1 1  7  7 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 12 THR HA   . . A .  7 VAL H    . . . 12 . HA   . . . . .  7 . HN   . . rr_2lji 1 
+       61 1 .  . 1 1  7  7 VAL HA   H . . . 1 1  7  7 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A .  7 VAL HA   . . A .  7 VAL H    . . .  7 . HA   . . . . .  7 . HN   . . rr_2lji 1 
+       62 1 .  . 1 1  7  7 VAL H    H . . . 1 1  7  7 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A .  7 VAL H    . . A .  7 VAL HB   . . .  7 . HN   . . . . .  7 . HB   . . rr_2lji 1 
+       63 1 OR . 1 1  7  7 VAL H    H . . . 1 1  7  7 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A .  7 VAL H    . . A .  7 VAL MG1  . . .  7 . HN   . . . . .  7 . HG*  . . rr_2lji 1 
+       63 2 OR . 1 1  7  7 VAL H    H . . . 1 1  7  7 VAL MG2  H . . . . . 1.8 1.8 4.0 . . . . . A .  7 VAL H    . . A .  7 VAL MG2  . . .  7 . HN   . . . . .  7 . HG*  . . rr_2lji 1 
+       64 1 .  . 1 1  7  7 VAL H    H . . . 1 1 12 12 THR H    H . . . . . 1.8 1.8 5.5 . . . . . A .  7 VAL H    . . A . 12 THR H    . . .  7 . HN   . . . . . 12 . HN   . . rr_2lji 1 
+       65 1 .  . 1 1 59 59 VAL H    H . . . 1 1  7  7 VAL H    H . . . . . 1.8 1.8 5.5 . . . . . A . 59 VAL H    . . A .  7 VAL H    . . . 59 . HN   . . . . .  7 . HN   . . rr_2lji 1 
+       66 1 OR . 1 1  7  7 VAL HB   H . . . 1 1  7  7 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A .  7 VAL HB   . . A .  7 VAL MG1  . . .  7 . HB   . . . . .  7 . HG*  . . rr_2lji 1 
+       66 2 OR . 1 1  7  7 VAL HB   H . . . 1 1  7  7 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A .  7 VAL HB   . . A .  7 VAL MG2  . . .  7 . HB   . . . . .  7 . HG*  . . rr_2lji 1 
+       67 1 OR . 1 1  7  7 VAL H    H . . . 1 1 59 59 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A .  7 VAL H    . . A . 59 VAL MG2  . . .  7 . HN   . . . . . 59 . HG*  . . rr_2lji 1 
+       67 2 OR . 1 1  7  7 VAL H    H . . . 1 1 59 59 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A .  7 VAL H    . . A . 59 VAL MG1  . . .  7 . HN   . . . . . 59 . HG*  . . rr_2lji 1 
+       68 1 .  . 1 1  6  6 GLU HA   H . . . 1 1  7  7 VAL H    H . . . . . 1.8 1.8 3.0 . . . . . A .  6 GLU HA   . . A .  7 VAL H    . . .  6 . HA   . . . . .  7 . HN   . . rr_2lji 1 
+       69 1 .  . 1 1  7  7 VAL H    H . . . 1 1  6  6 GLU HB2  H . . . . . 1.8 1.8 4.5 . . . . . A .  7 VAL H    . . A .  6 GLU HB2  . . .  7 . HN   . . . . .  6 . HB2  . . rr_2lji 1 
+       70 1 .  . 1 1  8  8 VAL H    H . . . 1 1  9  9 GLY H    H . . . . . 1.8 1.8 5.0 . . . . . A .  8 VAL H    . . A .  9 GLY H    . . .  8 . HN   . . . . .  9 . HN   . . rr_2lji 1 
+       71 1 .  . 1 1  7  7 VAL H    H . . . 1 1  8  8 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A .  7 VAL H    . . A .  8 VAL H    . . .  7 . HN   . . . . .  8 . HN   . . rr_2lji 1 
+       72 1 .  . 1 1 59 59 VAL H    H . . . 1 1  8  8 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 59 VAL H    . . A .  8 VAL H    . . . 59 . HN   . . . . .  8 . HN   . . rr_2lji 1 
+       73 1 .  . 1 1  7  7 VAL HA   H . . . 1 1  8  8 VAL H    H . . . . . 1.8 1.8 3.0 . . . . . A .  7 VAL HA   . . A .  8 VAL H    . . .  7 . HA   . . . . .  8 . HN   . . rr_2lji 1 
+       74 1 .  . 1 1  8  8 VAL H    H . . . 1 1  8  8 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A .  8 VAL H    . . A .  8 VAL HA   . . .  8 . HN   . . . . .  8 . HA   . . rr_2lji 1 
+       75 1 .  . 1 1  8  8 VAL H    H . . . 1 1  8  8 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A .  8 VAL H    . . A .  8 VAL HB   . . .  8 . HN   . . . . .  8 . HB   . . rr_2lji 1 
+       76 1 OR . 1 1  8  8 VAL H    H . . . 1 1  8  8 VAL MG2  H . . . . . 1.8 1.8 3.0 . . . . . A .  8 VAL H    . . A .  8 VAL MG2  . . .  8 . HN   . . . . .  8 . HG*  . . rr_2lji 1 
+       76 2 OR . 1 1  8  8 VAL H    H . . . 1 1  8  8 VAL MG1  H . . . . . 1.8 1.8 3.0 . . . . . A .  8 VAL H    . . A .  8 VAL MG1  . . .  8 . HN   . . . . .  8 . HG*  . . rr_2lji 1 
+       77 1 .  . 1 1  8  8 VAL H    H . . . 1 1 60 60 LEU HA   H . . . . . 1.8 1.8 4.5 . . . . . A .  8 VAL H    . . A . 60 LEU HA   . . .  8 . HN   . . . . . 60 . HA   . . rr_2lji 1 
+       78 1 .  . 1 1  8  8 VAL H    H . . . 1 1 59 59 VAL HB   H . . . . . 1.8 1.8 6.0 . . . . . A .  8 VAL H    . . A . 59 VAL HB   . . .  8 . HN   . . . . . 59 . HB   . . rr_2lji 1 
+       79 1 OR . 1 1  8  8 VAL HA   H . . . 1 1  8  8 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A .  8 VAL HA   . . A .  8 VAL MG1  . . .  8 . HA   . . . . .  8 . HG#  . . rr_2lji 1 
+       79 2 OR . 1 1  8  8 VAL HA   H . . . 1 1  8  8 VAL MG2  H . . . . . 1.8 1.8 4.0 . . . . . A .  8 VAL HA   . . A .  8 VAL MG2  . . .  8 . HA   . . . . .  8 . HG#  . . rr_2lji 1 
+       80 1 OR . 1 1  8  8 VAL HB   H . . . 1 1  8  8 VAL MG1  H . . . . . 1.8 1.8 3.0 . . . . . A .  8 VAL HB   . . A .  8 VAL MG1  . . .  8 . HB   . . . . .  8 . HG#  . . rr_2lji 1 
+       80 2 OR . 1 1  8  8 VAL HB   H . . . 1 1  8  8 VAL MG2  H . . . . . 1.8 1.8 3.0 . . . . . A .  8 VAL HB   . . A .  8 VAL MG2  . . .  8 . HB   . . . . .  8 . HG#  . . rr_2lji 1 
+       81 1 .  . 1 1 58 58 LYS HA   H . . . 1 1  8  8 VAL H    H . . . . . 1.8 1.8 6.0 . . . . . A . 58 LYS HA   . . A .  8 VAL H    . . . 58 . HA   . . . . .  8 . HN   . . rr_2lji 1 
+       82 1 OR . 1 1  8  8 VAL H    H . . . 1 1 59 59 VAL MG2  H . . . . . 1.8 1.8 4.5 . . . . . A .  8 VAL H    . . A . 59 VAL MG2  . . .  8 . HN   . . . . . 59 . HG*  . . rr_2lji 1 
+       82 2 OR . 1 1  8  8 VAL H    H . . . 1 1 59 59 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A .  8 VAL H    . . A . 59 VAL MG1  . . .  8 . HN   . . . . . 59 . HG*  . . rr_2lji 1 
+       83 1 .  . 1 1  9  9 GLY H    H . . . 1 1 10 10 GLU H    H . . . . . 1.8 1.8 5.0 . . . . . A .  9 GLY H    . . A . 10 GLU H    . . .  9 . HN   . . . . . 10 . HN   . . rr_2lji 1 
+       84 1 .  . 1 1  9  9 GLY H    H . . . 1 1  9  9 GLY HA3  H . . . . . 1.8 1.8 4.0 . . . . . A .  9 GLY H    . . A .  9 GLY HA3  . . .  9 . HN   . . . . .  9 . HA1  . . rr_2lji 1 
+       85 1 .  . 1 1  9  9 GLY H    H . . . 1 1  8  8 VAL HA   H . . . . . 1.8 1.8 5.0 . . . . . A .  9 GLY H    . . A .  8 VAL HA   . . .  9 . HN   . . . . .  8 . HA   . . rr_2lji 1 
+       86 1 OR . 1 1  9  9 GLY H    H . . . 1 1  8  8 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A .  9 GLY H    . . A .  8 VAL MG2  . . .  9 . HN   . . . . .  8 . HG*  . . rr_2lji 1 
+       86 2 OR . 1 1  9  9 GLY H    H . . . 1 1  8  8 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A .  9 GLY H    . . A .  8 VAL MG1  . . .  9 . HN   . . . . .  8 . HG*  . . rr_2lji 1 
+       87 1 .  . 1 1  9  9 GLY HA3  H . . . 1 1  9  9 GLY HA2  H . . . . . 1.8 1.8 4.0 . . . . . A .  9 GLY HA3  . . A .  9 GLY HA2  . . .  9 . HA1  . . . . .  9 . HA2  . . rr_2lji 1 
+       88 1 .  . 1 1  9  9 GLY H    H . . . 1 1 10 10 GLU H    H . . . . . 1.8 1.8 4.5 . . . . . A .  9 GLY H    . . A . 10 GLU H    . . .  9 . HN   . . . . . 10 . HN   . . rr_2lji 1 
+       89 1 .  . 1 1 13 13 SER H    H . . . 1 1 12 12 THR H    H . . . . . 1.8 1.8 5.0 . . . . . A . 13 SER H    . . A . 12 THR H    . . . 13 . HN   . . . . . 12 . HN   . . rr_2lji 1 
+       90 1 .  . 1 1 12 12 THR HA   H . . . 1 1 12 12 THR H    H . . . . . 1.8 1.8 4.0 . . . . . A . 12 THR HA   . . A . 12 THR H    . . . 12 . HA   . . . . . 12 . HN   . . rr_2lji 1 
+       91 1 .  . 1 1 12 12 THR H    H . . . 1 1 11 11 GLU HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 12 THR H    . . A . 11 GLU HA   . . . 12 . HN   . . . . . 11 . HA   . . rr_2lji 1 
+       92 1 .  . 1 1 12 12 THR H    H . . . 1 1 12 12 THR HB   H . . . . . 1.8 1.8 3.0 . . . . . A . 12 THR H    . . A . 12 THR HB   . . . 12 . HN   . . . . . 12 . HB   . . rr_2lji 1 
+       93 1 .  . 1 1 12 12 THR H    H . . . 1 1 12 12 THR MG   H . . . . . 1.8 1.8 5.0 . . . . . A . 12 THR H    . . A . 12 THR MG   . . . 12 . HN   . . . . . 12 . HG2* . . rr_2lji 1 
+       94 1 .  . 1 1 12 12 THR HA   H . . . 1 1  6  6 GLU HA   H . . . . . 1.8 1.8 3.5 . . . . . A . 12 THR HA   . . A .  6 GLU HA   . . . 12 . HA   . . . . .  6 . HA   . . rr_2lji 1 
+       95 1 .  . 1 1 12 12 THR HA   H . . . 1 1 12 12 THR HB   H . . . . . 1.8 1.8 5.0 . . . . . A . 12 THR HA   . . A . 12 THR HB   . . . 12 . HA   . . . . . 12 . HB   . . rr_2lji 1 
+       96 1 .  . 1 1 12 12 THR HA   H . . . 1 1 12 12 THR MG   H . . . . . 1.8 1.8 4.0 . . . . . A . 12 THR HA   . . A . 12 THR MG   . . . 12 . HA   . . . . . 12 . HG2* . . rr_2lji 1 
+       97 1 .  . 1 1  4  4 THR MG   H . . . 1 1 13 13 SER H    H . . . . . 1.8 1.8 5.5 . . . . . A .  4 THR MG   . . A . 13 SER H    . . .  4 . HG2* . . . . . 13 . HN   . . rr_2lji 1 
+       98 1 .  . 1 1 13 13 SER H    H . . . 1 1 14 14 GLU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 13 SER H    . . A . 14 GLU H    . . . 13 . HN   . . . . . 14 . HN   . . rr_2lji 1 
+       99 1 .  . 1 1 13 13 SER H    H . . . 1 1 12 12 THR HA   H . . . . . 1.8 1.8 3.0 . . . . . A . 13 SER H    . . A . 12 THR HA   . . . 13 . HN   . . . . . 12 . HA   . . rr_2lji 1 
+      100 1 .  . 1 1 13 13 SER H    H . . . 1 1 13 13 SER HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 13 SER H    . . A . 13 SER HB3  . . . 13 . HN   . . . . . 13 . HB1  . . rr_2lji 1 
+      101 1 .  . 1 1 13 13 SER H    H . . . 1 1 13 13 SER HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 13 SER H    . . A . 13 SER HB2  . . . 13 . HN   . . . . . 13 . HB2  . . rr_2lji 1 
+      102 1 OR . 1 1 13 13 SER H    H . . . 1 1 14 14 GLU HG2  H . . . . . 1.8 1.8 6.0 . . . . . A . 13 SER H    . . A . 14 GLU HG2  . . . 13 . HN   . . . . . 14 . HG#  . . rr_2lji 1 
+      102 2 OR . 1 1 14 14 GLU HG3  H . . . 1 1 13 13 SER H    H . . . . . 1.8 1.8 6.0 . . . . . A . 14 GLU HG3  . . A . 13 SER H    . . . 14 . HG#  . . . . . 13 . HN   . . rr_2lji 1 
+      103 1 .  . 1 1 13 13 SER HB3  H . . . 1 1 13 13 SER HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 13 SER HB3  . . A . 13 SER HA   . . . 13 . HB1  . . . . . 13 . HA   . . rr_2lji 1 
+      104 1 .  . 1 1 13 13 SER HB2  H . . . 1 1 13 13 SER HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 13 SER HB2  . . A . 13 SER HA   . . . 13 . HB2  . . . . . 13 . HA   . . rr_2lji 1 
+      105 1 .  . 1 1  5  5 VAL H    H . . . 1 1 13 13 SER H    H . . . . . 1.8 1.8 4.0 . . . . . A .  5 VAL H    . . A . 13 SER H    . . .  5 . HN   . . . . . 13 . HN   . . rr_2lji 1 
+      106 1 OR . 1 1 13 13 SER H    H . . . 1 1  5  5 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A . 13 SER H    . . A .  5 VAL MG1  . . . 13 . HN   . . . . .  5 . HG*  . . rr_2lji 1 
+      106 2 OR . 1 1  5  5 VAL MG2  H . . . 1 1 13 13 SER H    H . . . . . 1.8 1.8 4.5 . . . . . A .  5 VAL MG2  . . A . 13 SER H    . . .  5 . HG*  . . . . . 13 . HN   . . rr_2lji 1 
+      107 1 .  . 1 1 13 13 SER H    H . . . 1 1  7  7 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 13 SER H    . . A .  7 VAL H    . . . 13 . HN   . . . . .  7 . HN   . . rr_2lji 1 
+      108 1 .  . 1 1 13 13 SER H    H . . . 1 1 12 12 THR HB   H . . . . . 1.8 1.8 5.0 . . . . . A . 13 SER H    . . A . 12 THR HB   . . . 13 . HN   . . . . . 12 . HB   . . rr_2lji 1 
+      109 1 .  . 1 1 14 14 GLU HA   H . . . 1 1 14 14 GLU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 14 GLU HA   . . A . 14 GLU H    . . . 14 . HA   . . . . . 14 . HN   . . rr_2lji 1 
+      110 1 .  . 1 1 14 14 GLU H    H . . . 1 1 13 13 SER HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 14 GLU H    . . A . 13 SER HA   . . . 14 . HN   . . . . . 13 . HA   . . rr_2lji 1 
+      111 1 OR . 1 1 14 14 GLU H    H . . . 1 1 14 14 GLU HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 14 GLU H    . . A . 14 GLU HB2  . . . 14 . HN   . . . . . 14 . HB#  . . rr_2lji 1 
+      111 2 OR . 1 1 14 14 GLU HB3  H . . . 1 1 14 14 GLU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 14 GLU HB3  . . A . 14 GLU H    . . . 14 . HB#  . . . . . 14 . HN   . . rr_2lji 1 
+      112 1 .  . 1 1 14 14 GLU H    H . . . 1 1 13 13 SER HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 14 GLU H    . . A . 13 SER HB3  . . . 14 . HN   . . . . . 13 . HB1  . . rr_2lji 1 
+      113 1 .  . 1 1 14 14 GLU H    H . . . 1 1 13 13 SER HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 14 GLU H    . . A . 13 SER HB2  . . . 14 . HN   . . . . . 13 . HB2  . . rr_2lji 1 
+      114 1 OR . 1 1 14 14 GLU H    H . . . 1 1 14 14 GLU HG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 14 GLU H    . . A . 14 GLU HG2  . . . 14 . HN   . . . . . 14 . HG#  . . rr_2lji 1 
+      114 2 OR . 1 1 14 14 GLU HG3  H . . . 1 1 14 14 GLU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 14 GLU HG3  . . A . 14 GLU H    . . . 14 . HG#  . . . . . 14 . HN   . . rr_2lji 1 
+      115 1 .  . 1 1 14 14 GLU HA   H . . . 1 1  4  4 THR MG   H . . . . . 1.8 1.8 5.0 . . . . . A . 14 GLU HA   . . A .  4 THR MG   . . . 14 . HA   . . . . .  4 . HG2* . . rr_2lji 1 
+      116 1 OR . 1 1 14 14 GLU H    H . . . 1 1 15 15 VAL MG1  H . . . . . 1.8 1.8 6.0 . . . . . A . 14 GLU H    . . A . 15 VAL MG1  . . . 14 . HN   . . . . . 15 . HG*  . . rr_2lji 1 
+      116 2 OR . 1 1 14 14 GLU H    H . . . 1 1 15 15 VAL MG2  H . . . . . 1.8 1.8 6.0 . . . . . A . 14 GLU H    . . A . 15 VAL MG2  . . . 14 . HN   . . . . . 15 . HG*  . . rr_2lji 1 
+      117 1 .  . 1 1  5  5 VAL H    H . . . 1 1 15 15 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A .  5 VAL H    . . A . 15 VAL H    . . .  5 . HN   . . . . . 15 . HN   . . rr_2lji 1 
+      118 1 .  . 1 1 15 15 VAL H    H . . . 1 1 14 14 GLU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 15 VAL H    . . A . 14 GLU H    . . . 15 . HN   . . . . . 14 . HN   . . rr_2lji 1 
+      119 1 .  . 1 1  2  2 ASN HA   H . . . 1 1 15 15 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A .  2 ASN HA   . . A . 15 VAL H    . . .  2 . HA   . . . . . 15 . HN   . . rr_2lji 1 
+      120 1 .  . 1 1 14 14 GLU HA   H . . . 1 1 15 15 VAL H    H . . . . . 1.8 1.8 3.0 . . . . . A . 14 GLU HA   . . A . 15 VAL H    . . . 14 . HA   . . . . . 15 . HN   . . rr_2lji 1 
+      121 1 .  . 1 1  4  4 THR HA   H . . . 1 1 15 15 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A .  4 THR HA   . . A . 15 VAL H    . . .  4 . HA   . . . . . 15 . HN   . . rr_2lji 1 
+      122 1 .  . 1 1 15 15 VAL H    H . . . 1 1 15 15 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 15 VAL H    . . A . 15 VAL HA   . . . 15 . HN   . . . . . 15 . HA   . . rr_2lji 1 
+      123 1 .  . 1 1 15 15 VAL H    H . . . 1 1 15 15 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 15 VAL H    . . A . 15 VAL HB   . . . 15 . HN   . . . . . 15 . HB   . . rr_2lji 1 
+      124 1 .  . 1 1 16 16 ALA H    H . . . 1 1 15 15 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 16 ALA H    . . A . 15 VAL H    . . . 16 . HN   . . . . . 15 . HN   . . rr_2lji 1 
+      125 1 OR . 1 1 15 15 VAL H    H . . . 1 1 15 15 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 15 VAL H    . . A . 15 VAL MG1  . . . 15 . HN   . . . . . 15 . HG*  . . rr_2lji 1 
+      125 2 OR . 1 1 15 15 VAL H    H . . . 1 1 15 15 VAL MG2  H . . . . . 1.8 1.8 4.0 . . . . . A . 15 VAL H    . . A . 15 VAL MG2  . . . 15 . HN   . . . . . 15 . HG*  . . rr_2lji 1 
+      126 1 .  . 1 1 15 15 VAL HA   H . . . 1 1 15 15 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 15 VAL HA   . . A . 15 VAL HB   . . . 15 . HA   . . . . . 15 . HB   . . rr_2lji 1 
+      127 1 OR . 1 1 15 15 VAL HB   H . . . 1 1 15 15 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 15 VAL HB   . . A . 15 VAL MG1  . . . 15 . HB   . . . . . 15 . HG*  . . rr_2lji 1 
+      127 2 OR . 1 1 15 15 VAL MG2  H . . . 1 1 15 15 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 15 VAL MG2  . . A . 15 VAL HB   . . . 15 . HG*  . . . . . 15 . HB   . . rr_2lji 1 
+      128 1 OR . 1 1 15 15 VAL H    H . . . 1 1  5  5 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A . 15 VAL H    . . A .  5 VAL MG1  . . . 15 . HN   . . . . .  5 . HG*  . . rr_2lji 1 
+      128 2 OR . 1 1  5  5 VAL MG2  H . . . 1 1 15 15 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A .  5 VAL MG2  . . A . 15 VAL H    . . .  5 . HG*  . . . . . 15 . HN   . . rr_2lji 1 
+      129 1 .  . 1 1 16 16 ALA H    H . . . 1 1 15 15 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 16 ALA H    . . A . 15 VAL H    . . . 16 . HN   . . . . . 15 . HN   . . rr_2lji 1 
+      130 1 .  . 1 1 16 16 ALA H    H . . . 1 1 17 17 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A . 16 ALA H    . . A . 17 VAL H    . . . 16 . HN   . . . . . 17 . HN   . . rr_2lji 1 
+      131 1 .  . 1 1  2  2 ASN HA   H . . . 1 1 16 16 ALA H    H . . . . . 1.8 1.8 4.5 . . . . . A .  2 ASN HA   . . A . 16 ALA H    . . .  2 . HA   . . . . . 16 . HN   . . rr_2lji 1 
+      132 1 .  . 1 1 16 16 ALA HA   H . . . 1 1 16 16 ALA H    H . . . . . 1.8 1.8 4.0 . . . . . A . 16 ALA HA   . . A . 16 ALA H    . . . 16 . HA   . . . . . 16 . HN   . . rr_2lji 1 
+      133 1 .  . 1 1 16 16 ALA H    H . . . 1 1 15 15 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 16 ALA H    . . A . 15 VAL HA   . . . 16 . HN   . . . . . 15 . HA   . . rr_2lji 1 
+      134 1 .  . 1 1 16 16 ALA H    H . . . 1 1 15 15 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 16 ALA H    . . A . 15 VAL HB   . . . 16 . HN   . . . . . 15 . HB   . . rr_2lji 1 
+      135 1 .  . 1 1 16 16 ALA H    H . . . 1 1 16 16 ALA MB   H . . . . . 1.8 1.8 4.0 . . . . . A . 16 ALA H    . . A . 16 ALA MB   . . . 16 . HN   . . . . . 16 . HB#  . . rr_2lji 1 
+      136 1 OR . 1 1 16 16 ALA H    H . . . 1 1 15 15 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 16 ALA H    . . A . 15 VAL MG1  . . . 16 . HN   . . . . . 15 . HG*  . . rr_2lji 1 
+      136 2 OR . 1 1 16 16 ALA H    H . . . 1 1 15 15 VAL MG2  H . . . . . 1.8 1.8 4.0 . . . . . A . 16 ALA H    . . A . 15 VAL MG2  . . . 16 . HN   . . . . . 15 . HG*  . . rr_2lji 1 
+      137 1 .  . 1 1  2  2 ASN HA   H . . . 1 1 16 16 ALA MB   H . . . . . 1.8 1.8 4.5 . . . . . A .  2 ASN HA   . . A . 16 ALA MB   . . .  2 . HA   . . . . . 16 . HB#  . . rr_2lji 1 
+      138 1 .  . 1 1 16 16 ALA HA   H . . . 1 1 16 16 ALA MB   H . . . . . 1.8 1.8 4.0 . . . . . A . 16 ALA HA   . . A . 16 ALA MB   . . . 16 . HA   . . . . . 16 . HB#  . . rr_2lji 1 
+      139 1 .  . 1 1  3  3 VAL H    H . . . 1 1 17 17 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A .  3 VAL H    . . A . 17 VAL H    . . .  3 . HN   . . . . . 17 . HN   . . rr_2lji 1 
+      140 1 .  . 1 1 16 16 ALA H    H . . . 1 1 17 17 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A . 16 ALA H    . . A . 17 VAL H    . . . 16 . HN   . . . . . 17 . HN   . . rr_2lji 1 
+      141 1 .  . 1 1  2  2 ASN H    H . . . 1 1 17 17 VAL H    H . . . . . 1.8 1.8 6.0 . . . . . A .  2 ASN H    . . A . 17 VAL H    . . .  2 . HN   . . . . . 17 . HN   . . rr_2lji 1 
+      142 1 .  . 1 1 16 16 ALA HA   H . . . 1 1 17 17 VAL H    H . . . . . 1.8 1.8 3.0 . . . . . A . 16 ALA HA   . . A . 17 VAL H    . . . 16 . HA   . . . . . 17 . HN   . . rr_2lji 1 
+      143 1 .  . 1 1 17 17 VAL H    H . . . 1 1 17 17 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 17 VAL H    . . A . 17 VAL HA   . . . 17 . HN   . . . . . 17 . HA   . . rr_2lji 1 
+      144 1 .  . 1 1 17 17 VAL H    H . . . 1 1 17 17 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 17 VAL H    . . A . 17 VAL HB   . . . 17 . HN   . . . . . 17 . HB   . . rr_2lji 1 
+      145 1 .  . 1 1 17 17 VAL H    H . . . 1 1 16 16 ALA MB   H . . . . . 1.8 1.8 4.5 . . . . . A . 17 VAL H    . . A . 16 ALA MB   . . . 17 . HN   . . . . . 16 . HB#  . . rr_2lji 1 
+      146 1 OR . 1 1 17 17 VAL H    H . . . 1 1 17 17 VAL MG1  H . . . . . 1.8 1.8 3.5 . . . . . A . 17 VAL H    . . A . 17 VAL MG1  . . . 17 . HN   . . . . . 17 . HG*  . . rr_2lji 1 
+      146 2 OR . 1 1 17 17 VAL H    H . . . 1 1 17 17 VAL MG2  H . . . . . 1.8 1.8 3.5 . . . . . A . 17 VAL H    . . A . 17 VAL MG2  . . . 17 . HN   . . . . . 17 . HG*  . . rr_2lji 1 
+      147 1 .  . 1 1 17 17 VAL HA   H . . . 1 1 17 17 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 17 VAL HA   . . A . 17 VAL HB   . . . 17 . HA   . . . . . 17 . HB   . . rr_2lji 1 
+      148 1 OR . 1 1 17 17 VAL HA   H . . . 1 1 17 17 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 17 VAL HA   . . A . 17 VAL MG1  . . . 17 . HA   . . . . . 17 . HG*  . . rr_2lji 1 
+      148 2 OR . 1 1 17 17 VAL HA   H . . . 1 1 17 17 VAL MG2  H . . . . . 1.8 1.8 4.0 . . . . . A . 17 VAL HA   . . A . 17 VAL MG2  . . . 17 . HA   . . . . . 17 . HG*  . . rr_2lji 1 
+      149 1 .  . 1 1  2  2 ASN HA   H . . . 1 1 17 17 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A .  2 ASN HA   . . A . 17 VAL H    . . .  2 . HA   . . . . . 17 . HN   . . rr_2lji 1 
+      150 1 OR . 1 1 17 17 VAL H    H . . . 1 1  3  3 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 17 VAL H    . . A .  3 VAL MG1  . . . 17 . HN   . . . . .  3 . HG*  . . rr_2lji 1 
+      150 2 OR . 1 1  3  3 VAL MG2  H . . . 1 1 17 17 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A .  3 VAL MG2  . . A . 17 VAL H    . . .  3 . HG*  . . . . . 17 . HN   . . rr_2lji 1 
+      151 1 OR . 1 1 17 17 VAL H    H . . . 1 1  2  2 ASN HB2  H . . . . . 1.8 1.8 6.5 . . . . . A . 17 VAL H    . . A .  2 ASN HB2  . . . 17 . HN   . . . . .  2 . HB#  . . rr_2lji 1 
+      151 2 OR . 1 1  2  2 ASN HB3  H . . . 1 1 17 17 VAL H    H . . . . . 1.8 1.8 6.5 . . . . . A .  2 ASN HB3  . . A . 17 VAL H    . . .  2 . HB#  . . . . . 17 . HN   . . rr_2lji 1 
+      152 1 .  . 1 1 17 17 VAL HA   H . . . 1 1 18 18 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 17 VAL HA   . . A . 18 ASP H    . . . 17 . HA   . . . . . 18 . HN   . . rr_2lji 1 
+      153 1 .  . 1 1 18 18 ASP H    H . . . 1 1 18 18 ASP HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 18 ASP H    . . A . 18 ASP HB2  . . . 18 . HN   . . . . . 18 . HB2  . . rr_2lji 1 
+      154 1 .  . 1 1 18 18 ASP H    H . . . 1 1 18 18 ASP HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 18 ASP H    . . A . 18 ASP HB3  . . . 18 . HN   . . . . . 18 . HB1  . . rr_2lji 1 
+      155 1 .  . 1 1 17 17 VAL HB   H . . . 1 1 18 18 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 17 VAL HB   . . A . 18 ASP H    . . . 17 . HB   . . . . . 18 . HN   . . rr_2lji 1 
+      156 1 OR . 1 1 18 18 ASP H    H . . . 1 1 17 17 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 18 ASP H    . . A . 17 VAL MG1  . . . 18 . HN   . . . . . 17 . HG*  . . rr_2lji 1 
+      156 2 OR . 1 1 17 17 VAL MG2  H . . . 1 1 18 18 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 17 VAL MG2  . . A . 18 ASP H    . . . 17 . HG*  . . . . . 18 . HN   . . rr_2lji 1 
+      157 1 .  . 1 1 16 16 ALA HA   H . . . 1 1 18 18 ASP H    H . . . . . 1.8 1.8 6.5 . . . . . A . 16 ALA HA   . . A . 18 ASP H    . . . 16 . HA   . . . . . 18 . HN   . . rr_2lji 1 
+      158 1 .  . 1 1 18 18 ASP H    H . . . 1 1 21 21 GLY H    H . . . . . 1.8 1.8 6.0 . . . . . A . 18 ASP H    . . A . 21 GLY H    . . . 18 . HN   . . . . . 21 . HN   . . rr_2lji 1 
+      159 1 .  . 1 1 19 19 ASP H    H . . . 1 1 20 20 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 19 ASP H    . . A . 20 ASP H    . . . 19 . HN   . . . . . 20 . HN   . . rr_2lji 1 
+      160 1 .  . 1 1 19 19 ASP H    H . . . 1 1 18 18 ASP HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 19 ASP H    . . A . 18 ASP HA   . . . 19 . HN   . . . . . 18 . HA   . . rr_2lji 1 
+      161 1 .  . 1 1 19 19 ASP H    H . . . 1 1 19 19 ASP HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 19 ASP H    . . A . 19 ASP HA   . . . 19 . HN   . . . . . 19 . HA   . . rr_2lji 1 
+      162 1 OR . 1 1 19 19 ASP H    H . . . 1 1 18 18 ASP HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 19 ASP H    . . A . 18 ASP HB3  . . . 19 . HN   . . . . . 18 . HB#  . . rr_2lji 1 
+      162 2 OR . 1 1 19 19 ASP H    H . . . 1 1 18 18 ASP HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 19 ASP H    . . A . 18 ASP HB2  . . . 19 . HN   . . . . . 18 . HB#  . . rr_2lji 1 
+      163 1 OR . 1 1 19 19 ASP H    H . . . 1 1 17 17 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 19 ASP H    . . A . 17 VAL MG1  . . . 19 . HN   . . . . . 17 . HG*  . . rr_2lji 1 
+      163 2 OR . 1 1 17 17 VAL MG2  H . . . 1 1 19 19 ASP H    H . . . . . 1.8 1.8 5.0 . . . . . A . 17 VAL MG2  . . A . 19 ASP H    . . . 17 . HG*  . . . . . 19 . HN   . . rr_2lji 1 
+      164 1 .  . 1 1 19 19 ASP H    H . . . 1 1 20 20 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 19 ASP H    . . A . 20 ASP H    . . . 19 . HN   . . . . . 20 . HN   . . rr_2lji 1 
+      165 1 .  . 1 1 17 17 VAL H    H . . . 1 1 20 20 ASP H    H . . . . . 1.8 1.8 5.5 . . . . . A . 17 VAL H    . . A . 20 ASP H    . . . 17 . HN   . . . . . 20 . HN   . . rr_2lji 1 
+      166 1 .  . 1 1 21 21 GLY H    H . . . 1 1 20 20 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 21 GLY H    . . A . 20 ASP H    . . . 21 . HN   . . . . . 20 . HN   . . rr_2lji 1 
+      167 1 .  . 1 1 20 20 ASP H    H . . . 1 1 20 20 ASP HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 20 ASP H    . . A . 20 ASP HA   . . . 20 . HN   . . . . . 20 . HA   . . rr_2lji 1 
+      168 1 .  . 1 1 20 20 ASP H    H . . . 1 1 20 20 ASP HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 20 ASP H    . . A . 20 ASP HB3  . . . 20 . HN   . . . . . 20 . HB1  . . rr_2lji 1 
+      169 1 OR . 1 1 20 20 ASP H    H . . . 1 1 17 17 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 20 ASP H    . . A . 17 VAL MG1  . . . 20 . HN   . . . . . 17 . HG*  . . rr_2lji 1 
+      169 2 OR . 1 1 17 17 VAL MG2  H . . . 1 1 20 20 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 17 VAL MG2  . . A . 20 ASP H    . . . 17 . HG*  . . . . . 20 . HN   . . rr_2lji 1 
+      170 1 .  . 1 1 20 20 ASP HA   H . . . 1 1 20 20 ASP HB3  H . . . . . 1.8 1.8 5.0 . . . . . A . 20 ASP HA   . . A . 20 ASP HB3  . . . 20 . HA   . . . . . 20 . HB1  . . rr_2lji 1 
+      171 1 .  . 1 1 21 21 GLY H    H . . . 1 1 22 22 THR H    H . . . . . 1.8 1.8 5.0 . . . . . A . 21 GLY H    . . A . 22 THR H    . . . 21 . HN   . . . . . 22 . HN   . . rr_2lji 1 
+      172 1 .  . 1 1 21 21 GLY H    H . . . 1 1 20 20 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 21 GLY H    . . A . 20 ASP H    . . . 21 . HN   . . . . . 20 . HN   . . rr_2lji 1 
+      173 1 .  . 1 1 21 21 GLY H    H . . . 1 1 20 20 ASP HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 21 GLY H    . . A . 20 ASP HA   . . . 21 . HN   . . . . . 20 . HA   . . rr_2lji 1 
+      174 1 .  . 1 1 21 21 GLY H    H . . . 1 1 21 21 GLY HA3  H . . . . . 1.8 1.8 4.0 . . . . . A . 21 GLY H    . . A . 21 GLY HA3  . . . 21 . HN   . . . . . 21 . HA1  . . rr_2lji 1 
+      175 1 .  . 1 1 21 21 GLY H    H . . . 1 1 21 21 GLY HA2  H . . . . . 1.8 1.8 4.0 . . . . . A . 21 GLY H    . . A . 21 GLY HA2  . . . 21 . HN   . . . . . 21 . HA2  . . rr_2lji 1 
+      176 1 .  . 1 1 17 17 VAL HB   H . . . 1 1 21 21 GLY H    H . . . . . 1.8 1.8 6.0 . . . . . A . 17 VAL HB   . . A . 21 GLY H    . . . 17 . HB   . . . . . 21 . HN   . . rr_2lji 1 
+      177 1 .  . 1 1 21 21 GLY H    H . . . 1 1 22 22 THR MG   H . . . . . 1.8 1.8 5.5 . . . . . A . 21 GLY H    . . A . 22 THR MG   . . . 21 . HN   . . . . . 22 . HG2* . . rr_2lji 1 
+      178 1 OR . 1 1 21 21 GLY H    H . . . 1 1 17 17 VAL MG1  H . . . . . 1.8 1.8 5.5 . . . . . A . 21 GLY H    . . A . 17 VAL MG1  . . . 21 . HN   . . . . . 17 . HG*  . . rr_2lji 1 
+      178 2 OR . 1 1 17 17 VAL MG2  H . . . 1 1 21 21 GLY H    H . . . . . 1.8 1.8 5.5 . . . . . A . 17 VAL MG2  . . A . 21 GLY H    . . . 17 . HG*  . . . . . 21 . HN   . . rr_2lji 1 
+      179 1 .  . 1 1 21 21 GLY HA3  H . . . 1 1 21 21 GLY HA2  H . . . . . 1.8 1.8 5.0 . . . . . A . 21 GLY HA3  . . A . 21 GLY HA2  . . . 21 . HA1  . . . . . 21 . HA2  . . rr_2lji 1 
+      180 1 .  . 1 1 21 21 GLY H    H . . . 1 1 53 53 GLU HB2  H . . . . . 1.8 1.8 6.0 . . . . . A . 21 GLY H    . . A . 53 GLU HB2  . . . 21 . HN   . . . . . 53 . HB2  . . rr_2lji 1 
+      181 1 OR . 1 1 21 21 GLY H    H . . . 1 1 54 54 VAL MG1  H . . . . . 1.8 1.8 6.0 . . . . . A . 21 GLY H    . . A . 54 VAL MG1  . . . 21 . HN   . . . . . 54 . HG*  . . rr_2lji 1 
+      181 2 OR . 1 1 21 21 GLY H    H . . . 1 1 54 54 VAL MG2  H . . . . . 1.8 1.8 6.0 . . . . . A . 21 GLY H    . . A . 54 VAL MG2  . . . 21 . HN   . . . . . 54 . HG*  . . rr_2lji 1 
+      182 1 .  . 1 1 21 21 GLY H    H . . . 1 1 22 22 THR H    H . . . . . 1.8 1.8 3.0 . . . . . A . 21 GLY H    . . A . 22 THR H    . . . 21 . HN   . . . . . 22 . HN   . . rr_2lji 1 
+      183 1 .  . 1 1 22 22 THR H    H . . . 1 1 22 22 THR HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 22 THR H    . . A . 22 THR HA   . . . 22 . HN   . . . . . 22 . HA   . . rr_2lji 1 
+      184 1 .  . 1 1 22 22 THR H    H . . . 1 1 22 22 THR HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 22 THR H    . . A . 22 THR HB   . . . 22 . HN   . . . . . 22 . HB#  . . rr_2lji 1 
+      185 1 .  . 1 1 22 22 THR H    H . . . 1 1 21 21 GLY HA3  H . . . . . 1.8 1.8 4.0 . . . . . A . 22 THR H    . . A . 21 GLY HA3  . . . 22 . HN   . . . . . 21 . HA1  . . rr_2lji 1 
+      186 1 .  . 1 1 22 22 THR H    H . . . 1 1 21 21 GLY HA2  H . . . . . 1.8 1.8 4.0 . . . . . A . 22 THR H    . . A . 21 GLY HA2  . . . 22 . HN   . . . . . 21 . HA2  . . rr_2lji 1 
+      187 1 .  . 1 1 22 22 THR H    H . . . 1 1 25 25 ASP HB3  H . . . . . 1.8 1.8 4.5 . . . . . A . 22 THR H    . . A . 25 ASP HB3  . . . 22 . HN   . . . . . 25 . HB1  . . rr_2lji 1 
+      188 1 .  . 1 1 22 22 THR H    H . . . 1 1 25 25 ASP HB2  H . . . . . 1.8 1.8 5.0 . . . . . A . 22 THR H    . . A . 25 ASP HB2  . . . 22 . HN   . . . . . 25 . HB2  . . rr_2lji 1 
+      189 1 .  . 1 1 22 22 THR H    H . . . 1 1 24 24 ALA MB   H . . . . . 1.8 1.8 6.0 . . . . . A . 22 THR H    . . A . 24 ALA MB   . . . 22 . HN   . . . . . 24 . HB#  . . rr_2lji 1 
+      190 1 .  . 1 1 21 21 GLY HA2  H . . . 1 1 22 22 THR HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 21 GLY HA2  . . A . 22 THR HA   . . . 21 . HA2  . . . . . 22 . HA   . . rr_2lji 1 
+      191 1 .  . 1 1 22 22 THR HA   H . . . 1 1 22 22 THR HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 22 THR HA   . . A . 22 THR HB   . . . 22 . HA   . . . . . 22 . HB   . . rr_2lji 1 
+      192 1 .  . 1 1 22 22 THR MG   H . . . 1 1 22 22 THR HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 22 THR MG   . . A . 22 THR HA   . . . 22 . HG2* . . . . . 22 . HA   . . rr_2lji 1 
+      193 1 .  . 1 1 22 22 THR H    H . . . 1 1 25 25 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 22 THR H    . . A . 25 ASP H    . . . 22 . HN   . . . . . 25 . HN   . . rr_2lji 1 
+      194 1 OR . 1 1 22 22 THR H    H . . . 1 1 17 17 VAL MG1  H . . . . . 1.8 1.8 6.0 . . . . . A . 22 THR H    . . A . 17 VAL MG1  . . . 22 . HN   . . . . . 17 . HG*  . . rr_2lji 1 
+      194 2 OR . 1 1 17 17 VAL MG2  H . . . 1 1 22 22 THR H    H . . . . . 1.8 1.8 6.0 . . . . . A . 17 VAL MG2  . . A . 22 THR H    . . . 17 . HG*  . . . . . 22 . HN   . . rr_2lji 1 
+      195 1 OR . 1 1 22 22 THR H    H . . . 1 1 54 54 VAL MG1  H . . . . . 1.8 1.8 6.0 . . . . . A . 22 THR H    . . A . 54 VAL MG1  . . . 22 . HN   . . . . . 54 . HG*  . . rr_2lji 1 
+      195 2 OR . 1 1 22 22 THR H    H . . . 1 1 54 54 VAL MG2  H . . . . . 1.8 1.8 6.0 . . . . . A . 22 THR H    . . A . 54 VAL MG2  . . . 22 . HN   . . . . . 54 . HG*  . . rr_2lji 1 
+      196 1 .  . 1 1 22 22 THR H    H . . . 1 1 23 23 TYR H    H . . . . . 1.8 1.8 5.0 . . . . . A . 22 THR H    . . A . 23 TYR H    . . . 22 . HN   . . . . . 23 . HN   . . rr_2lji 1 
+      197 1 .  . 1 1 23 23 TYR H    H . . . 1 1 24 24 ALA H    H . . . . . 1.8 1.8 5.0 . . . . . A . 23 TYR H    . . A . 24 ALA H    . . . 23 . HN   . . . . . 24 . HN   . . rr_2lji 1 
+      198 1 .  . 1 1 25 25 ASP H    H . . . 1 1 23 23 TYR H    H . . . . . 1.8 1.8 5.0 . . . . . A . 25 ASP H    . . A . 23 TYR H    . . . 25 . HN   . . . . . 23 . HN   . . rr_2lji 1 
+      199 1 .  . 1 1 22 22 THR HA   H . . . 1 1 23 23 TYR H    H . . . . . 1.8 1.8 4.0 . . . . . A . 22 THR HA   . . A . 23 TYR H    . . . 22 . HA   . . . . . 23 . HN   . . rr_2lji 1 
+      200 1 .  . 1 1 22 22 THR HB   H . . . 1 1 23 23 TYR H    H . . . . . 1.8 1.8 4.5 . . . . . A . 22 THR HB   . . A . 23 TYR H    . . . 22 . HB   . . . . . 23 . HN   . . rr_2lji 1 
+      201 1 .  . 1 1 23 23 TYR H    H . . . 1 1 23 23 TYR HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 23 TYR H    . . A . 23 TYR HA   . . . 23 . HN   . . . . . 23 . HA   . . rr_2lji 1 
+      202 1 .  . 1 1 23 23 TYR H    H . . . 1 1 23 23 TYR HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 23 TYR H    . . A . 23 TYR HB3  . . . 23 . HN   . . . . . 23 . HB1  . . rr_2lji 1 
+      203 1 .  . 1 1 23 23 TYR H    H . . . 1 1 23 23 TYR HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 23 TYR H    . . A . 23 TYR HB2  . . . 23 . HN   . . . . . 23 . HB2  . . rr_2lji 1 
+      204 1 .  . 1 1 23 23 TYR H    H . . . 1 1 26 26 LEU HB2  H . . . . . 1.8 1.8 6.0 . . . . . A . 23 TYR H    . . A . 26 LEU HB2  . . . 23 . HN   . . . . . 26 . HB2  . . rr_2lji 1 
+      205 1 .  . 1 1 24 24 ALA MB   H . . . 1 1 23 23 TYR H    H . . . . . 1.8 1.8 5.0 . . . . . A . 24 ALA MB   . . A . 23 TYR H    . . . 24 . HB#  . . . . . 23 . HN   . . rr_2lji 1 
+      206 1 .  . 1 1 23 23 TYR H    H . . . 1 1 23 23 TYR HB3  H . . . . . 1.8 1.8 5.0 . . . . . A . 23 TYR H    . . A . 23 TYR HB3  . . . 23 . HN   . . . . . 23 . HB1  . . rr_2lji 1 
+      207 1 .  . 1 1 23 23 TYR HA   H . . . 1 1 26 26 LEU HB3  H . . . . . 1.8 1.8 6.0 . . . . . A . 23 TYR HA   . . A . 26 LEU HB3  . . . 23 . HA   . . . . . 26 . HB1  . . rr_2lji 1 
+      208 1 .  . 1 1 23 23 TYR HA   H . . . 1 1 26 26 LEU HB2  H . . . . . 1.8 1.8 5.0 . . . . . A . 23 TYR HA   . . A . 26 LEU HB2  . . . 23 . HA   . . . . . 26 . HB2  . . rr_2lji 1 
+      209 1 .  . 1 1 23 23 TYR HA   H . . . 1 1 26 26 LEU MD2  H . . . . . 1.8 1.8 5.0 . . . . . A . 23 TYR HA   . . A . 26 LEU MD2  . . . 23 . HA   . . . . . 26 . HD2* . . rr_2lji 1 
+      210 1 .  . 1 1 23 23 TYR HA   H . . . 1 1 26 26 LEU MD1  H . . . . . 1.8 1.8 6.0 . . . . . A . 23 TYR HA   . . A . 26 LEU MD1  . . . 23 . HA   . . . . . 26 . HD1* . . rr_2lji 1 
+      211 1 .  . 1 1 24 24 ALA H    H . . . 1 1 24 24 ALA HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 24 ALA H    . . A . 24 ALA HA   . . . 24 . HN   . . . . . 24 . HA   . . rr_2lji 1 
+      212 1 .  . 1 1 24 24 ALA H    H . . . 1 1 23 23 TYR HB3  H . . . . . 1.8 1.8 6.0 . . . . . A . 24 ALA H    . . A . 23 TYR HB3  . . . 24 . HN   . . . . . 23 . HB1  . . rr_2lji 1 
+      213 1 .  . 1 1 24 24 ALA H    H . . . 1 1 23 23 TYR HB2  H . . . . . 1.8 1.8 6.0 . . . . . A . 24 ALA H    . . A . 23 TYR HB2  . . . 24 . HN   . . . . . 23 . HB2  . . rr_2lji 1 
+      214 1 .  . 1 1 24 24 ALA MB   H . . . 1 1 24 24 ALA H    H . . . . . 1.8 1.8 4.0 . . . . . A . 24 ALA MB   . . A . 24 ALA H    . . . 24 . HB#  . . . . . 24 . HN   . . rr_2lji 1 
+      215 1 .  . 1 1 22 22 THR HA   H . . . 1 1 24 24 ALA H    H . . . . . 1.8 1.8 5.0 . . . . . A . 22 THR HA   . . A . 24 ALA H    . . . 22 . HA   . . . . . 24 . HN   . . rr_2lji 1 
+      216 1 .  . 1 1 22 22 THR HB   H . . . 1 1 24 24 ALA H    H . . . . . 1.8 1.8 3.0 . . . . . A . 22 THR HB   . . A . 24 ALA H    . . . 22 . HB   . . . . . 24 . HN   . . rr_2lji 1 
+      217 1 .  . 1 1 25 25 ASP H    H . . . 1 1 27 27 VAL HB   H . . . . . 1.8 1.8 6.0 . . . . . A . 25 ASP H    . . A . 27 VAL HB   . . . 25 . HN   . . . . . 27 . HB   . . rr_2lji 1 
+      218 1 .  . 1 1 25 25 ASP H    H . . . 1 1 24 24 ALA H    H . . . . . 1.8 1.8 3.0 . . . . . A . 25 ASP H    . . A . 24 ALA H    . . . 25 . HN   . . . . . 24 . HN   . . rr_2lji 1 
+      219 1 .  . 1 1 24 24 ALA MB   H . . . 1 1 25 25 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 24 ALA MB   . . A . 25 ASP H    . . . 24 . HB#  . . . . . 25 . HN   . . rr_2lji 1 
+      220 1 .  . 1 1 25 25 ASP H    H . . . 1 1 24 24 ALA HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 25 ASP H    . . A . 24 ALA HA   . . . 25 . HN   . . . . . 24 . HA   . . rr_2lji 1 
+      221 1 .  . 1 1 25 25 ASP HB3  H . . . 1 1 25 25 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 25 ASP HB3  . . A . 25 ASP H    . . . 25 . HB1  . . . . . 25 . HN   . . rr_2lji 1 
+      222 1 .  . 1 1 25 25 ASP HB2  H . . . 1 1 25 25 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 25 ASP HB2  . . A . 25 ASP H    . . . 25 . HB2  . . . . . 25 . HN   . . rr_2lji 1 
+      223 1 .  . 1 1 25 25 ASP HB3  H . . . 1 1 25 25 ASP HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 25 ASP HB3  . . A . 25 ASP HA   . . . 25 . HB1  . . . . . 25 . HA   . . rr_2lji 1 
+      224 1 .  . 1 1 21 21 GLY HA2  H . . . 1 1 25 25 ASP H    H . . . . . 1.8 1.8 6.5 . . . . . A . 21 GLY HA2  . . A . 25 ASP H    . . . 21 . HA2  . . . . . 25 . HN   . . rr_2lji 1 
+      225 1 .  . 1 1 25 25 ASP H    H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 3.5 . . . . . A . 25 ASP H    . . A . 26 LEU H    . . . 25 . HN   . . . . . 26 . HN   . . rr_2lji 1 
+      226 1 .  . 1 1 26 26 LEU H    H . . . 1 1 28 28 ARG H    H . . . . . 1.8 1.8 5.0 . . . . . A . 26 LEU H    . . A . 28 ARG H    . . . 26 . HN   . . . . . 28 . HN   . . rr_2lji 1 
+      227 1 .  . 1 1 25 25 ASP HA   H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 25 ASP HA   . . A . 26 LEU H    . . . 25 . HA   . . . . . 26 . HN   . . rr_2lji 1 
+      228 1 .  . 1 1 26 26 LEU H    H . . . 1 1 26 26 LEU HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 26 LEU H    . . A . 26 LEU HA   . . . 26 . HN   . . . . . 26 . HA   . . rr_2lji 1 
+      229 1 .  . 1 1 26 26 LEU H    H . . . 1 1 27 27 VAL HA   H . . . . . 1.8 1.8 6.0 . . . . . A . 26 LEU H    . . A . 27 VAL HA   . . . 26 . HN   . . . . . 27 . HA   . . rr_2lji 1 
+      230 1 .  . 1 1 25 25 ASP HB3  H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 4.5 . . . . . A . 25 ASP HB3  . . A . 26 LEU H    . . . 25 . HB1  . . . . . 26 . HN   . . rr_2lji 1 
+      231 1 .  . 1 1 25 25 ASP HB2  H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 4.5 . . . . . A . 25 ASP HB2  . . A . 26 LEU H    . . . 25 . HB2  . . . . . 26 . HN   . . rr_2lji 1 
+      232 1 .  . 1 1 26 26 LEU HB3  H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 26 LEU HB3  . . A . 26 LEU H    . . . 26 . HB1  . . . . . 26 . HN   . . rr_2lji 1 
+      233 1 .  . 1 1 26 26 LEU HB2  H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 26 LEU HB2  . . A . 26 LEU H    . . . 26 . HB2  . . . . . 26 . HN   . . rr_2lji 1 
+      234 1 .  . 1 1 26 26 LEU H    H . . . 1 1 27 27 VAL MG1  H . . . . . 1.8 1.8 6.0 . . . . . A . 26 LEU H    . . A . 27 VAL MG1  . . . 26 . HN   . . . . . 27 . HG1* . . rr_2lji 1 
+      235 1 .  . 1 1 23 23 TYR HB2  H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 6.0 . . . . . A . 23 TYR HB2  . . A . 26 LEU H    . . . 23 . HB2  . . . . . 26 . HN   . . rr_2lji 1 
+      236 1 .  . 1 1 24 24 ALA HA   H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 4.5 . . . . . A . 24 ALA HA   . . A . 26 LEU H    . . . 24 . HA   . . . . . 26 . HN   . . rr_2lji 1 
+      237 1 .  . 1 1 24 24 ALA H    H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 24 ALA H    . . A . 26 LEU H    . . . 24 . HN   . . . . . 26 . HN   . . rr_2lji 1 
+      238 1 .  . 1 1 22 22 THR H    H . . . 1 1 26 26 LEU H    H . . . . . 1.8 1.8 6.0 . . . . . A . 22 THR H    . . A . 26 LEU H    . . . 22 . HN   . . . . . 26 . HN   . . rr_2lji 1 
+      239 1 .  . 1 1 26 26 LEU HA   H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 26 LEU HA   . . A . 27 VAL H    . . . 26 . HA   . . . . . 27 . HN   . . rr_2lji 1 
+      240 1 .  . 1 1 28 28 ARG H    H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 28 ARG H    . . A . 27 VAL H    . . . 28 . HN   . . . . . 27 . HN   . . rr_2lji 1 
+      241 1 .  . 1 1 27 27 VAL H    H . . . 1 1 28 28 ARG HA   H . . . . . 1.8 1.8 5.5 . . . . . A . 27 VAL H    . . A . 28 ARG HA   . . . 27 . HN   . . . . . 28 . HA   . . rr_2lji 1 
+      242 1 .  . 1 1 27 27 VAL HA   H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 27 VAL HA   . . A . 27 VAL H    . . . 27 . HA   . . . . . 27 . HN   . . rr_2lji 1 
+      243 1 .  . 1 1 25 25 ASP HB3  H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 6.0 . . . . . A . 25 ASP HB3  . . A . 27 VAL H    . . . 25 . HB1  . . . . . 27 . HN   . . rr_2lji 1 
+      244 1 .  . 1 1 25 25 ASP HB2  H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 6.0 . . . . . A . 25 ASP HB2  . . A . 27 VAL H    . . . 25 . HB2  . . . . . 27 . HN   . . rr_2lji 1 
+      245 1 .  . 1 1 27 27 VAL HB   H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 27 VAL HB   . . A . 27 VAL H    . . . 27 . HB   . . . . . 27 . HN   . . rr_2lji 1 
+      246 1 .  . 1 1 26 26 LEU HB2  H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 6.0 . . . . . A . 26 LEU HB2  . . A . 27 VAL H    . . . 26 . HB2  . . . . . 27 . HN   . . rr_2lji 1 
+      247 1 OR . 1 1 27 27 VAL H    H . . . 1 1 26 26 LEU MD2  H . . . . . 1.8 1.8 5.0 . . . . . A . 27 VAL H    . . A . 26 LEU MD2  . . . 27 . HN   . . . . . 26 . HD*  . . rr_2lji 1 
+      247 2 OR . 1 1 27 27 VAL H    H . . . 1 1 26 26 LEU MD1  H . . . . . 1.8 1.8 5.0 . . . . . A . 27 VAL H    . . A . 26 LEU MD1  . . . 27 . HN   . . . . . 26 . HD*  . . rr_2lji 1 
+      248 1 .  . 1 1 27 27 VAL H    H . . . 1 1 27 27 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 27 VAL H    . . A . 27 VAL MG2  . . . 27 . HN   . . . . . 27 . HG2* . . rr_2lji 1 
+      249 1 OR . 1 1 27 27 VAL HA   H . . . 1 1 26 26 LEU MD2  H . . . . . 1.8 1.8 4.0 . . . . . A . 27 VAL HA   . . A . 26 LEU MD2  . . . 27 . HA   . . . . . 26 . HD*  . . rr_2lji 1 
+      249 2 OR . 1 1 27 27 VAL HA   H . . . 1 1 26 26 LEU MD1  H . . . . . 1.8 1.8 4.0 . . . . . A . 27 VAL HA   . . A . 26 LEU MD1  . . . 27 . HA   . . . . . 26 . HD*  . . rr_2lji 1 
+      250 1 .  . 1 1 27 27 VAL HA   H . . . 1 1 27 27 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 27 VAL HA   . . A . 27 VAL MG2  . . . 27 . HA   . . . . . 27 . HG2* . . rr_2lji 1 
+      251 1 .  . 1 1 25 25 ASP HA   H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 25 ASP HA   . . A . 27 VAL H    . . . 25 . HA   . . . . . 27 . HN   . . rr_2lji 1 
+      252 1 .  . 1 1 24 24 ALA MB   H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 6.0 . . . . . A . 24 ALA MB   . . A . 27 VAL H    . . . 24 . HB#  . . . . . 27 . HN   . . rr_2lji 1 
+      253 1 .  . 1 1 24 24 ALA HA   H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 24 ALA HA   . . A . 27 VAL H    . . . 24 . HA   . . . . . 27 . HN   . . rr_2lji 1 
+      254 1 .  . 1 1 28 28 ARG H    H . . . 1 1 27 27 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 28 ARG H    . . A . 27 VAL H    . . . 28 . HN   . . . . . 27 . HN   . . rr_2lji 1 
+      255 1 .  . 1 1 28 28 ARG H    H . . . 1 1 29 29 ALA H    H . . . . . 1.8 1.8 4.0 . . . . . A . 28 ARG H    . . A . 29 ALA H    . . . 28 . HN   . . . . . 29 . HN   . . rr_2lji 1 
+      256 1 .  . 1 1 28 28 ARG H    H . . . 1 1 28 28 ARG HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 28 ARG H    . . A . 28 ARG HA   . . . 28 . HN   . . . . . 28 . HA   . . rr_2lji 1 
+      257 1 .  . 1 1 28 28 ARG H    H . . . 1 1 27 27 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 28 ARG H    . . A . 27 VAL HA   . . . 28 . HN   . . . . . 27 . HA   . . rr_2lji 1 
+      258 1 .  . 1 1 27 27 VAL HB   H . . . 1 1 28 28 ARG H    H . . . . . 1.8 1.8 4.0 . . . . . A . 27 VAL HB   . . A . 28 ARG H    . . . 27 . HB   . . . . . 28 . HN   . . rr_2lji 1 
+      259 1 OR . 1 1 28 28 ARG H    H . . . 1 1 28 28 ARG HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 28 ARG H    . . A . 28 ARG HB2  . . . 28 . HN   . . . . . 28 . HB#  . . rr_2lji 1 
+      259 2 OR . 1 1 28 28 ARG H    H . . . 1 1 28 28 ARG HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 28 ARG H    . . A . 28 ARG HB3  . . . 28 . HN   . . . . . 28 . HB#  . . rr_2lji 1 
+      260 1 .  . 1 1 28 28 ARG H    H . . . 1 1 26 26 LEU HA   H . . . . . 1.8 1.8 5.5 . . . . . A . 28 ARG H    . . A . 26 LEU HA   . . . 28 . HN   . . . . . 26 . HA   . . rr_2lji 1 
+      261 1 .  . 1 1 28 28 ARG H    H . . . 1 1 27 27 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 28 ARG H    . . A . 27 VAL MG2  . . . 28 . HN   . . . . . 27 . HG2* . . rr_2lji 1 
+      262 1 .  . 1 1 28 28 ARG HA   H . . . 1 1 28 28 ARG HD2  H . . . . . 1.8 1.8 6.0 . . . . . A . 28 ARG HA   . . A . 28 ARG HD2  . . . 28 . HA   . . . . . 28 . HD2  . . rr_2lji 1 
+      263 1 .  . 1 1 25 25 ASP HB2  H . . . 1 1 28 28 ARG H    H . . . . . 1.8 1.8 6.0 . . . . . A . 25 ASP HB2  . . A . 28 ARG H    . . . 25 . HB2  . . . . . 28 . HN   . . rr_2lji 1 
+      264 1 .  . 1 1 24 24 ALA HA   H . . . 1 1 28 28 ARG H    H . . . . . 1.8 1.8 5.0 . . . . . A . 24 ALA HA   . . A . 28 ARG H    . . . 24 . HA   . . . . . 28 . HN   . . rr_2lji 1 
+      265 1 .  . 1 1 28 28 ARG H    H . . . 1 1 29 29 ALA H    H . . . . . 1.8 1.8 4.0 . . . . . A . 28 ARG H    . . A . 29 ALA H    . . . 28 . HN   . . . . . 29 . HN   . . rr_2lji 1 
+      266 1 .  . 1 1 27 27 VAL HA   H . . . 1 1 29 29 ALA H    H . . . . . 1.8 1.8 5.0 . . . . . A . 27 VAL HA   . . A . 29 ALA H    . . . 27 . HA   . . . . . 29 . HN   . . rr_2lji 1 
+      267 1 .  . 1 1 29 29 ALA H    H . . . 1 1 30 30 VAL H    H . . . . . 1.8 1.8 3.5 . . . . . A . 29 ALA H    . . A . 30 VAL H    . . . 29 . HN   . . . . . 30 . HN   . . rr_2lji 1 
+      268 1 .  . 1 1 29 29 ALA H    H . . . 1 1 29 29 ALA HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 29 ALA H    . . A . 29 ALA HA   . . . 29 . HN   . . . . . 29 . HA   . . rr_2lji 1 
+      269 1 .  . 1 1 26 26 LEU HA   H . . . 1 1 29 29 ALA H    H . . . . . 1.8 1.8 5.0 . . . . . A . 26 LEU HA   . . A . 29 ALA H    . . . 26 . HA   . . . . . 29 . HN   . . rr_2lji 1 
+      270 1 .  . 1 1 29 29 ALA H    H . . . 1 1 30 30 VAL HB   H . . . . . 1.8 1.8 6.0 . . . . . A . 29 ALA H    . . A . 30 VAL HB   . . . 29 . HN   . . . . . 30 . HB   . . rr_2lji 1 
+      271 1 OR . 1 1 29 29 ALA H    H . . . 1 1 28 28 ARG HB2  H . . . . . 1.8 1.8 5.0 . . . . . A . 29 ALA H    . . A . 28 ARG HB2  . . . 29 . HN   . . . . . 28 . HB#  . . rr_2lji 1 
+      271 2 OR . 1 1 29 29 ALA H    H . . . 1 1 28 28 ARG HB3  H . . . . . 1.8 1.8 5.0 . . . . . A . 29 ALA H    . . A . 28 ARG HB3  . . . 29 . HN   . . . . . 28 . HB#  . . rr_2lji 1 
+      272 1 .  . 1 1 29 29 ALA H    H . . . 1 1 29 29 ALA MB   H . . . . . 1.8 1.8 4.0 . . . . . A . 29 ALA H    . . A . 29 ALA MB   . . . 29 . HN   . . . . . 29 . HB#  . . rr_2lji 1 
+      273 1 .  . 1 1 26 26 LEU HA   H . . . 1 1 29 29 ALA MB   H . . . . . 1.8 1.8 5.0 . . . . . A . 26 LEU HA   . . A . 29 ALA MB   . . . 26 . HA   . . . . . 29 . HB#  . . rr_2lji 1 
+      274 1 .  . 1 1 26 26 LEU MD1  H . . . 1 1 29 29 ALA MB   H . . . . . 1.8 1.8 4.5 . . . . . A . 26 LEU MD1  . . A . 29 ALA MB   . . . 26 . HD1* . . . . . 29 . HB#  . . rr_2lji 1 
+      275 1 .  . 1 1 29 29 ALA HA   H . . . 1 1 29 29 ALA MB   H . . . . . 1.8 1.8 3.0 . . . . . A . 29 ALA HA   . . A . 29 ALA MB   . . . 29 . HA   . . . . . 29 . HB#  . . rr_2lji 1 
+      276 1 .  . 1 1 27 27 VAL HA   H . . . 1 1 29 29 ALA H    H . . . . . 1.8 1.8 5.0 . . . . . A . 27 VAL HA   . . A . 29 ALA H    . . . 27 . HA   . . . . . 29 . HN   . . rr_2lji 1 
+      277 1 .  . 1 1 25 25 ASP H    H . . . 1 1 29 29 ALA H    H . . . . . 1.8 1.8 6.0 . . . . . A . 25 ASP H    . . A . 29 ALA H    . . . 25 . HN   . . . . . 29 . HN   . . rr_2lji 1 
+      278 1 .  . 1 1 27 27 VAL H    H . . . 1 1 29 29 ALA H    H . . . . . 1.8 1.8 4.5 . . . . . A . 27 VAL H    . . A . 29 ALA H    . . . 27 . HN   . . . . . 29 . HN   . . rr_2lji 1 
+      279 1 .  . 1 1 29 29 ALA H    H . . . 1 1 32 32 LEU MD1  H . . . . . 1.8 1.8 6.0 . . . . . A . 29 ALA H    . . A . 32 LEU MD1  . . . 29 . HN   . . . . . 32 . HD1* . . rr_2lji 1 
+      280 1 .  . 1 1 28 28 ARG H    H . . . 1 1 30 30 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 28 ARG H    . . A . 30 VAL H    . . . 28 . HN   . . . . . 30 . HN   . . rr_2lji 1 
+      281 1 .  . 1 1 30 30 VAL H    H . . . 1 1 31 31 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 30 VAL H    . . A . 31 ASP H    . . . 30 . HN   . . . . . 31 . HN   . . rr_2lji 1 
+      282 1 .  . 1 1 30 30 VAL H    H . . . 1 1 32 32 LEU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 30 VAL H    . . A . 32 LEU H    . . . 30 . HN   . . . . . 32 . HN   . . rr_2lji 1 
+      283 1 .  . 1 1 30 30 VAL H    H . . . 1 1 30 30 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 30 VAL H    . . A . 30 VAL HA   . . . 30 . HN   . . . . . 30 . HA   . . rr_2lji 1 
+      284 1 .  . 1 1 30 30 VAL H    H . . . 1 1 29 29 ALA HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 30 VAL H    . . A . 29 ALA HA   . . . 30 . HN   . . . . . 29 . HA   . . rr_2lji 1 
+      285 1 .  . 1 1 30 30 VAL H    H . . . 1 1 31 31 ASP HB2  H . . . . . 1.8 1.8 6.0 . . . . . A . 30 VAL H    . . A . 31 ASP HB2  . . . 30 . HN   . . . . . 31 . HB2  . . rr_2lji 1 
+      286 1 .  . 1 1 30 30 VAL H    H . . . 1 1 30 30 VAL HB   H . . . . . 1.8 1.8 5.0 . . . . . A . 30 VAL H    . . A . 30 VAL HB   . . . 30 . HN   . . . . . 30 . HB   . . rr_2lji 1 
+      287 1 .  . 1 1 27 27 VAL HA   H . . . 1 1 30 30 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 27 VAL HA   . . A . 30 VAL H    . . . 27 . HA   . . . . . 30 . HN   . . rr_2lji 1 
+      288 1 OR . 1 1 30 30 VAL H    H . . . 1 1 30 30 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 30 VAL H    . . A . 30 VAL MG1  . . . 30 . HN   . . . . . 30 . HG*  . . rr_2lji 1 
+      288 2 OR . 1 1 30 30 VAL H    H . . . 1 1 30 30 VAL MG2  H . . . . . 1.8 1.8 4.0 . . . . . A . 30 VAL H    . . A . 30 VAL MG2  . . . 30 . HN   . . . . . 30 . HG*  . . rr_2lji 1 
+      289 1 OR . 1 1 30 30 VAL HB   H . . . 1 1 27 27 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 30 VAL HB   . . A . 27 VAL MG2  . . . 30 . HB   . . . . . 27 . HG*  . . rr_2lji 1 
+      289 2 OR . 1 1 30 30 VAL HB   H . . . 1 1 27 27 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 30 VAL HB   . . A . 27 VAL MG1  . . . 30 . HB   . . . . . 27 . HG*  . . rr_2lji 1 
+      290 1 .  . 1 1 30 30 VAL HB   H . . . 1 1 30 30 VAL HA   H . . . . . 1.8 1.8 3.5 . . . . . A . 30 VAL HB   . . A . 30 VAL HA   . . . 30 . HB   . . . . . 30 . HA   . . rr_2lji 1 
+      291 1 OR . 1 1 30 30 VAL HA   H . . . 1 1 32 32 LEU MD2  H . . . . . 1.8 1.8 4.0 . . . . . A . 30 VAL HA   . . A . 32 LEU MD2  . . . 30 . HA   . . . . . 32 . HD*  . . rr_2lji 1 
+      291 2 OR . 1 1 30 30 VAL HA   H . . . 1 1 32 32 LEU MD1  H . . . . . 1.8 1.8 4.0 . . . . . A . 30 VAL HA   . . A . 32 LEU MD1  . . . 30 . HA   . . . . . 32 . HD*  . . rr_2lji 1 
+      292 1 .  . 1 1 30 30 VAL H    H . . . 1 1 29 29 ALA MB   H . . . . . 1.8 1.8 4.5 . . . . . A . 30 VAL H    . . A . 29 ALA MB   . . . 30 . HN   . . . . . 29 . HB#  . . rr_2lji 1 
+      293 1 .  . 1 1 30 30 VAL H    H . . . 1 1 31 31 ASP HA   H . . . . . 1.8 1.8 5.5 . . . . . A . 30 VAL H    . . A . 31 ASP HA   . . . 30 . HN   . . . . . 31 . HA   . . rr_2lji 1 
+      294 1 .  . 1 1 26 26 LEU HA   H . . . 1 1 30 30 VAL H    H . . . . . 1.8 1.8 5.5 . . . . . A . 26 LEU HA   . . A . 30 VAL H    . . . 26 . HA   . . . . . 30 . HN   . . rr_2lji 1 
+      295 1 .  . 1 1 31 31 ASP H    H . . . 1 1 32 32 LEU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 31 ASP H    . . A . 32 LEU H    . . . 31 . HN   . . . . . 32 . HN   . . rr_2lji 1 
+      296 1 .  . 1 1 30 30 VAL H    H . . . 1 1 31 31 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 30 VAL H    . . A . 31 ASP H    . . . 30 . HN   . . . . . 31 . HN   . . rr_2lji 1 
+      297 1 .  . 1 1 31 31 ASP H    H . . . 1 1 30 30 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 31 ASP H    . . A . 30 VAL HA   . . . 31 . HN   . . . . . 30 . HA   . . rr_2lji 1 
+      298 1 .  . 1 1 31 31 ASP H    H . . . 1 1 31 31 ASP HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 31 ASP H    . . A . 31 ASP HA   . . . 31 . HN   . . . . . 31 . HA   . . rr_2lji 1 
+      299 1 .  . 1 1 31 31 ASP H    H . . . 1 1 31 31 ASP HB3  H . . . . . 1.8 1.8 5.0 . . . . . A . 31 ASP H    . . A . 31 ASP HB3  . . . 31 . HN   . . . . . 31 . HB1  . . rr_2lji 1 
+      300 1 .  . 1 1 31 31 ASP H    H . . . 1 1 31 31 ASP HB2  H . . . . . 1.8 1.8 5.0 . . . . . A . 31 ASP H    . . A . 31 ASP HB2  . . . 31 . HN   . . . . . 31 . HB2  . . rr_2lji 1 
+      301 1 OR . 1 1 31 31 ASP H    H . . . 1 1 30 30 VAL MG1  H . . . . . 1.8 1.8 5.5 . . . . . A . 31 ASP H    . . A . 30 VAL MG1  . . . 31 . HN   . . . . . 30 . HG*  . . rr_2lji 1 
+      301 2 OR . 1 1 31 31 ASP H    H . . . 1 1 30 30 VAL MG2  H . . . . . 1.8 1.8 5.5 . . . . . A . 31 ASP H    . . A . 30 VAL MG2  . . . 31 . HN   . . . . . 30 . HG*  . . rr_2lji 1 
+      302 1 OR . 1 1 31 31 ASP H    H . . . 1 1 27 27 VAL MG2  H . . . . . 1.8 1.8 6.0 . . . . . A . 31 ASP H    . . A . 27 VAL MG2  . . . 31 . HN   . . . . . 27 . HG*  . . rr_2lji 1 
+      302 2 OR . 1 1 31 31 ASP H    H . . . 1 1 27 27 VAL MG1  H . . . . . 1.8 1.8 6.0 . . . . . A . 31 ASP H    . . A . 27 VAL MG1  . . . 31 . HN   . . . . . 27 . HG*  . . rr_2lji 1 
+      303 1 .  . 1 1 31 31 ASP H    H . . . 1 1 32 32 LEU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 31 ASP H    . . A . 32 LEU H    . . . 31 . HN   . . . . . 32 . HN   . . rr_2lji 1 
+      304 1 .  . 1 1 30 30 VAL H    H . . . 1 1 32 32 LEU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 30 VAL H    . . A . 32 LEU H    . . . 30 . HN   . . . . . 32 . HN   . . rr_2lji 1 
+      305 1 .  . 1 1 32 32 LEU H    H . . . 1 1 32 32 LEU HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 32 LEU H    . . A . 32 LEU HA   . . . 32 . HN   . . . . . 32 . HA   . . rr_2lji 1 
+      306 1 .  . 1 1 32 32 LEU H    H . . . 1 1 32 32 LEU HB2  H . . . . . 1.8 1.8 5.0 . . . . . A . 32 LEU H    . . A . 32 LEU HB2  . . . 32 . HN   . . . . . 32 . HB2  . . rr_2lji 1 
+      307 1 OR . 1 1 32 32 LEU H    H . . . 1 1 30 30 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 32 LEU H    . . A . 30 VAL MG1  . . . 32 . HN   . . . . . 30 . HG*  . . rr_2lji 1 
+      307 2 OR . 1 1 32 32 LEU H    H . . . 1 1 30 30 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 32 LEU H    . . A . 30 VAL MG2  . . . 32 . HN   . . . . . 30 . HG*  . . rr_2lji 1 
+      308 1 .  . 1 1 30 30 VAL HB   H . . . 1 1 32 32 LEU H    H . . . . . 1.8 1.8 4.5 . . . . . A . 30 VAL HB   . . A . 32 LEU H    . . . 30 . HB   . . . . . 32 . HN   . . rr_2lji 1 
+      309 1 OR . 1 1 32 32 LEU H    H . . . 1 1 28 28 ARG HB2  H . . . . . 1.8 1.8 4.5 . . . . . A . 32 LEU H    . . A . 28 ARG HB2  . . . 32 . HN   . . . . . 28 . HB#  . . rr_2lji 1 
+      309 2 OR . 1 1 28 28 ARG HB3  H . . . 1 1 32 32 LEU H    H . . . . . 1.8 1.8 4.5 . . . . . A . 28 ARG HB3  . . A . 32 LEU H    . . . 28 . HB#  . . . . . 32 . HN   . . rr_2lji 1 
+      310 1 .  . 1 1 28 28 ARG H    H . . . 1 1 32 32 LEU H    H . . . . . 1.8 1.8 6.0 . . . . . A . 28 ARG H    . . A . 32 LEU H    . . . 28 . HN   . . . . . 32 . HN   . . rr_2lji 1 
+      311 1 OR . 1 1 32 32 LEU H    H . . . 1 1 27 27 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 32 LEU H    . . A . 27 VAL MG2  . . . 32 . HN   . . . . . 27 . HG*  . . rr_2lji 1 
+      311 2 OR . 1 1 32 32 LEU H    H . . . 1 1 27 27 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 32 LEU H    . . A . 27 VAL MG1  . . . 32 . HN   . . . . . 27 . HG*  . . rr_2lji 1 
+      312 1 .  . 1 1 32 32 LEU H    H . . . 1 1 33 33 SER H    H . . . . . 1.8 1.8 5.0 . . . . . A . 32 LEU H    . . A . 33 SER H    . . . 32 . HN   . . . . . 33 . HN   . . rr_2lji 1 
+      313 1 .  . 1 1 32 32 LEU HA   H . . . 1 1 33 33 SER H    H . . . . . 1.8 1.8 3.5 . . . . . A . 32 LEU HA   . . A . 33 SER H    . . . 32 . HA   . . . . . 33 . HN   . . rr_2lji 1 
+      314 1 .  . 1 1 33 33 SER H    H . . . 1 1 32 32 LEU HB3  H . . . . . 1.8 1.8 5.0 . . . . . A . 33 SER H    . . A . 32 LEU HB3  . . . 33 . HN   . . . . . 32 . HB1  . . rr_2lji 1 
+      315 1 .  . 1 1 32 32 LEU HB2  H . . . 1 1 33 33 SER H    H . . . . . 1.8 1.8 5.0 . . . . . A . 32 LEU HB2  . . A . 33 SER H    . . . 32 . HB2  . . . . . 33 . HN   . . rr_2lji 1 
+      316 1 OR . 1 1 33 33 SER H    H . . . 1 1 32 32 LEU MD2  H . . . . . 1.8 1.8 5.0 . . . . . A . 33 SER H    . . A . 32 LEU MD2  . . . 33 . HN   . . . . . 32 . HD*  . . rr_2lji 1 
+      316 2 OR . 1 1 32 32 LEU MD1  H . . . 1 1 33 33 SER H    H . . . . . 1.8 1.8 5.0 . . . . . A . 32 LEU MD1  . . A . 33 SER H    . . . 32 . HD*  . . . . . 33 . HN   . . rr_2lji 1 
+      317 1 .  . 1 1 35 35 HIS H    H . . . 1 1 34 34 PRO HA   H . . . . . 1.8 1.8 4.5 . . . . . A . 35 HIS H    . . A . 34 PRO HA   . . . 35 . HN   . . . . . 34 . HA   . . rr_2lji 1 
+      318 1 OR . 1 1 35 35 HIS H    H . . . 1 1 35 35 HIS HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 35 HIS H    . . A . 35 HIS HB2  . . . 35 . HN   . . . . . 35 . HB#  . . rr_2lji 1 
+      318 2 OR . 1 1 35 35 HIS H    H . . . 1 1 35 35 HIS HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 35 HIS H    . . A . 35 HIS HB3  . . . 35 . HN   . . . . . 35 . HB#  . . rr_2lji 1 
+      319 1 .  . 1 1 35 35 HIS H    H . . . 1 1 34 34 PRO HB3  H . . . . . 1.8 1.8 5.0 . . . . . A . 35 HIS H    . . A . 34 PRO HB3  . . . 35 . HN   . . . . . 34 . HB1  . . rr_2lji 1 
+      320 1 .  . 1 1 35 35 HIS H    H . . . 1 1 34 34 PRO HB2  H . . . . . 1.8 1.8 5.0 . . . . . A . 35 HIS H    . . A . 34 PRO HB2  . . . 35 . HN   . . . . . 34 . HB2  . . rr_2lji 1 
+      321 1 .  . 1 1 35 35 HIS H    H . . . 1 1 36 36 GLU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 35 HIS H    . . A . 36 GLU H    . . . 35 . HN   . . . . . 36 . HN   . . rr_2lji 1 
+      322 1 .  . 1 1 36 36 GLU H    H . . . 1 1 37 37 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 36 GLU H    . . A . 37 VAL H    . . . 36 . HN   . . . . . 37 . HN   . . rr_2lji 1 
+      323 1 .  . 1 1 36 36 GLU H    H . . . 1 1 35 35 HIS HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 36 GLU H    . . A . 35 HIS HA   . . . 36 . HN   . . . . . 35 . HA   . . rr_2lji 1 
+      324 1 .  . 1 1 36 36 GLU H    H . . . 1 1 36 36 GLU HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 36 GLU H    . . A . 36 GLU HA   . . . 36 . HN   . . . . . 36 . HA   . . rr_2lji 1 
+      325 1 OR . 1 1 36 36 GLU H    H . . . 1 1 35 35 HIS HB2  H . . . . . 1.8 1.8 5.0 . . . . . A . 36 GLU H    . . A . 35 HIS HB2  . . . 36 . HN   . . . . . 35 . HB#  . . rr_2lji 1 
+      325 2 OR . 1 1 35 35 HIS HB3  H . . . 1 1 36 36 GLU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 35 HIS HB3  . . A . 36 GLU H    . . . 35 . HB#  . . . . . 36 . HN   . . rr_2lji 1 
+      326 1 .  . 1 1 36 36 GLU H    H . . . 1 1 36 36 GLU HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 36 GLU H    . . A . 36 GLU HB3  . . . 36 . HN   . . . . . 36 . HB1  . . rr_2lji 1 
+      327 1 OR . 1 1 36 36 GLU H    H . . . 1 1 37 37 VAL MG2  H . . . . . 1.8 1.8 4.5 . . . . . A . 36 GLU H    . . A . 37 VAL MG2  . . . 36 . HN   . . . . . 37 . HG*  . . rr_2lji 1 
+      327 2 OR . 1 1 36 36 GLU H    H . . . 1 1 37 37 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A . 36 GLU H    . . A . 37 VAL MG1  . . . 36 . HN   . . . . . 37 . HG*  . . rr_2lji 1 
+      328 1 .  . 1 1 34 34 PRO HA   H . . . 1 1 36 36 GLU H    H . . . . . 1.8 1.8 5.5 . . . . . A . 34 PRO HA   . . A . 36 GLU H    . . . 34 . HA   . . . . . 36 . HN   . . rr_2lji 1 
+      329 1 .  . 1 1 36 36 GLU H    H . . . 1 1 36 36 GLU HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 36 GLU H    . . A . 36 GLU HB2  . . . 36 . HN   . . . . . 36 . HB2  . . rr_2lji 1 
+      330 1 .  . 1 1 37 37 VAL H    H . . . 1 1 38 38 THR H    H . . . . . 1.8 1.8 5.0 . . . . . A . 37 VAL H    . . A . 38 THR H    . . . 37 . HN   . . . . . 38 . HN   . . rr_2lji 1 
+      331 1 .  . 1 1 16 16 ALA H    H . . . 1 1 37 37 VAL H    H . . . . . 1.8 1.8 6.0 . . . . . A . 16 ALA H    . . A . 37 VAL H    . . . 16 . HN   . . . . . 37 . HN   . . rr_2lji 1 
+      332 1 .  . 1 1 36 36 GLU H    H . . . 1 1 37 37 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 36 GLU H    . . A . 37 VAL H    . . . 36 . HN   . . . . . 37 . HN   . . rr_2lji 1 
+      333 1 .  . 1 1 37 37 VAL H    H . . . 1 1 37 37 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 37 VAL H    . . A . 37 VAL HA   . . . 37 . HN   . . . . . 37 . HA   . . rr_2lji 1 
+      334 1 .  . 1 1 37 37 VAL H    H . . . 1 1 35 35 HIS HA   H . . . . . 1.8 1.8 5.5 . . . . . A . 37 VAL H    . . A . 35 HIS HA   . . . 37 . HN   . . . . . 35 . HA   . . rr_2lji 1 
+      335 1 .  . 1 1 37 37 VAL H    H . . . 1 1 36 36 GLU HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 37 VAL H    . . A . 36 GLU HA   . . . 37 . HN   . . . . . 36 . HA   . . rr_2lji 1 
+      336 1 .  . 1 1 37 37 VAL H    H . . . 1 1 37 37 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 37 VAL H    . . A . 37 VAL HB   . . . 37 . HN   . . . . . 37 . HB   . . rr_2lji 1 
+      337 1 OR . 1 1 37 37 VAL H    H . . . 1 1 37 37 VAL MG2  H . . . . . 1.8 1.8 3.0 . . . . . A . 37 VAL H    . . A . 37 VAL MG2  . . . 37 . HN   . . . . . 37 . HG*  . . rr_2lji 1 
+      337 2 OR . 1 1 37 37 VAL H    H . . . 1 1 37 37 VAL MG1  H . . . . . 1.8 1.8 3.0 . . . . . A . 37 VAL H    . . A . 37 VAL MG1  . . . 37 . HN   . . . . . 37 . HG*  . . rr_2lji 1 
+      338 1 OR . 1 1 37 37 VAL HB   H . . . 1 1 37 37 VAL MG2  H . . . . . 1.8 1.8 3.5 . . . . . A . 37 VAL HB   . . A . 37 VAL MG2  . . . 37 . HB   . . . . . 37 . HG*  . . rr_2lji 1 
+      338 2 OR . 1 1 37 37 VAL HB   H . . . 1 1 37 37 VAL MG1  H . . . . . 1.8 1.8 3.5 . . . . . A . 37 VAL HB   . . A . 37 VAL MG1  . . . 37 . HB   . . . . . 37 . HG*  . . rr_2lji 1 
+      339 1 .  . 1 1 37 37 VAL HA   H . . . 1 1 37 37 VAL HB   H . . . . . 1.8 1.8 5.0 . . . . . A . 37 VAL HA   . . A . 37 VAL HB   . . . 37 . HA   . . . . . 37 . HB   . . rr_2lji 1 
+      340 1 .  . 1 1 15 15 VAL HB   H . . . 1 1 37 37 VAL HB   H . . . . . 1.8 1.8 5.0 . . . . . A . 15 VAL HB   . . A . 37 VAL HB   . . . 15 . HB   . . . . . 37 . HB   . . rr_2lji 1 
+      341 1 .  . 1 1 38 38 THR H    H . . . 1 1 39 39 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 38 THR H    . . A . 39 VAL H    . . . 38 . HN   . . . . . 39 . HN   . . rr_2lji 1 
+      342 1 .  . 1 1 38 38 THR H    H . . . 1 1 60 60 LEU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 38 THR H    . . A . 60 LEU H    . . . 38 . HN   . . . . . 60 . HN   . . rr_2lji 1 
+      343 1 .  . 1 1 38 38 THR H    H . . . 1 1 37 37 VAL HA   H . . . . . 1.8 1.8 3.5 . . . . . A . 38 THR H    . . A . 37 VAL HA   . . . 38 . HN   . . . . . 37 . HA   . . rr_2lji 1 
+      344 1 .  . 1 1 38 38 THR H    H . . . 1 1 59 59 VAL HA   H . . . . . 1.8 1.8 6.0 . . . . . A . 38 THR H    . . A . 59 VAL HA   . . . 38 . HN   . . . . . 59 . HA   . . rr_2lji 1 
+      345 1 .  . 1 1 38 38 THR H    H . . . 1 1 37 37 VAL HB   H . . . . . 1.8 1.8 3.5 . . . . . A . 38 THR H    . . A . 37 VAL HB   . . . 38 . HN   . . . . . 37 . HB   . . rr_2lji 1 
+      346 1 .  . 1 1 38 38 THR H    H . . . 1 1 60 60 LEU HB3  H . . . . . 1.8 1.8 6.0 . . . . . A . 38 THR H    . . A . 60 LEU HB3  . . . 38 . HN   . . . . . 60 . HB1  . . rr_2lji 1 
+      347 1 .  . 1 1 38 38 THR H    H . . . 1 1 60 60 LEU HB2  H . . . . . 1.8 1.8 5.5 . . . . . A . 38 THR H    . . A . 60 LEU HB2  . . . 38 . HN   . . . . . 60 . HB2  . . rr_2lji 1 
+      348 1 .  . 1 1 38 38 THR H    H . . . 1 1 38 38 THR MG   H . . . . . 1.8 1.8 5.5 . . . . . A . 38 THR H    . . A . 38 THR MG   . . . 38 . HN   . . . . . 38 . HG2* . . rr_2lji 1 
+      349 1 OR . 1 1 38 38 THR H    H . . . 1 1 37 37 VAL MG2  H . . . . . 1.8 1.8 3.5 . . . . . A . 38 THR H    . . A . 37 VAL MG2  . . . 38 . HN   . . . . . 37 . HG*  . . rr_2lji 1 
+      349 2 OR . 1 1 38 38 THR H    H . . . 1 1 37 37 VAL MG1  H . . . . . 1.8 1.8 3.5 . . . . . A . 38 THR H    . . A . 37 VAL MG1  . . . 38 . HN   . . . . . 37 . HG*  . . rr_2lji 1 
+      350 1 OR . 1 1 38 38 THR HA   H . . . 1 1 37 37 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 38 THR HA   . . A . 37 VAL MG2  . . . 38 . HA   . . . . . 37 . HG*  . . rr_2lji 1 
+      350 2 OR . 1 1 38 38 THR HA   H . . . 1 1 37 37 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 38 THR HA   . . A . 37 VAL MG1  . . . 38 . HA   . . . . . 37 . HG*  . . rr_2lji 1 
+      351 1 .  . 1 1 38 38 THR HA   H . . . 1 1 38 38 THR HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 38 THR HA   . . A . 38 THR HB   . . . 38 . HA   . . . . . 38 . HB   . . rr_2lji 1 
+      352 1 .  . 1 1 38 38 THR MG   H . . . 1 1 39 39 VAL MG1  H . . . . . 1.8 1.8 6.0 . . . . . A . 38 THR MG   . . A . 39 VAL MG1  . . . 38 . HG2# . . . . . 39 . HG1* . . rr_2lji 1 
+      353 1 .  . 1 1 38 38 THR MG   H . . . 1 1 40 40 LEU HA   H . . . . . 1.8 1.8 6.0 . . . . . A . 38 THR MG   . . A . 40 LEU HA   . . . 38 . HG2# . . . . . 40 . HA   . . rr_2lji 1 
+      354 1 OR . 1 1 38 38 THR MG   H . . . 1 1 40 40 LEU MD1  H . . . . . 1.8 1.8 4.5 . . . . . A . 38 THR MG   . . A . 40 LEU MD1  . . . 38 . HG2# . . . . . 40 . HD*  . . rr_2lji 1 
+      354 2 OR . 1 1 38 38 THR MG   H . . . 1 1 40 40 LEU MD2  H . . . . . 1.8 1.8 4.5 . . . . . A . 38 THR MG   . . A . 40 LEU MD2  . . . 38 . HG2# . . . . . 40 . HD*  . . rr_2lji 1 
+      355 1 OR . 1 1 38 38 THR H    H . . . 1 1 59 59 VAL MG2  H . . . . . 1.8 1.8 5.5 . . . . . A . 38 THR H    . . A . 59 VAL MG2  . . . 38 . HN   . . . . . 59 . HG*  . . rr_2lji 1 
+      355 2 OR . 1 1 38 38 THR H    H . . . 1 1 59 59 VAL MG1  H . . . . . 1.8 1.8 5.5 . . . . . A . 38 THR H    . . A . 59 VAL MG1  . . . 38 . HN   . . . . . 59 . HG*  . . rr_2lji 1 
+      356 1 .  . 1 1 39 39 VAL H    H . . . 1 1 38 38 THR HA   H . . . . . 1.8 1.8 3.0 . . . . . A . 39 VAL H    . . A . 38 THR HA   . . . 39 . HN   . . . . . 38 . HA   . . rr_2lji 1 
+      357 1 .  . 1 1 39 39 VAL H    H . . . 1 1 38 38 THR HB   H . . . . . 1.8 1.8 4.5 . . . . . A . 39 VAL H    . . A . 38 THR HB   . . . 39 . HN   . . . . . 38 . HB   . . rr_2lji 1 
+      358 1 .  . 1 1 39 39 VAL H    H . . . 1 1 39 39 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 39 VAL H    . . A . 39 VAL HB   . . . 39 . HN   . . . . . 39 . HB   . . rr_2lji 1 
+      359 1 .  . 1 1 39 39 VAL H    H . . . 1 1 39 39 VAL MG1  H . . . . . 1.8 1.8 3.5 . . . . . A . 39 VAL H    . . A . 39 VAL MG1  . . . 39 . HN   . . . . . 39 . HG1* . . rr_2lji 1 
+      360 1 .  . 1 1 39 39 VAL H    H . . . 1 1 38 38 THR MG   H . . . . . 1.8 1.8 4.0 . . . . . A . 39 VAL H    . . A . 38 THR MG   . . . 39 . HN   . . . . . 38 . HG2* . . rr_2lji 1 
+      361 1 .  . 1 1 39 39 VAL H    H . . . 1 1 39 39 VAL MG2  H . . . . . 1.8 1.8 4.5 . . . . . A . 39 VAL H    . . A . 39 VAL MG2  . . . 39 . HN   . . . . . 39 . HG2* . . rr_2lji 1 
+      362 1 .  . 1 1 39 39 VAL MG1  H . . . 1 1 39 39 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 39 VAL MG1  . . A . 39 VAL HA   . . . 39 . HG1* . . . . . 39 . HA   . . rr_2lji 1 
+      363 1 .  . 1 1 39 39 VAL MG2  H . . . 1 1 41 41 VAL MG2  H . . . . . 1.8 1.8 3.5 . . . . . A . 39 VAL MG2  . . A . 41 VAL MG2  . . . 39 . HG2# . . . . . 41 . HG2* . . rr_2lji 1 
+      364 1 .  . 1 1 39 39 VAL MG2  H . . . 1 1 57 57 VAL HA   H . . . . . 1.8 1.8 6.0 . . . . . A . 39 VAL MG2  . . A . 57 VAL HA   . . . 39 . HG2# . . . . . 57 . HA   . . rr_2lji 1 
+      365 1 .  . 1 1 59 59 VAL HA   H . . . 1 1 39 39 VAL HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 59 VAL HA   . . A . 39 VAL HA   . . . 59 . HA   . . . . . 39 . HA   . . rr_2lji 1 
+      366 1 .  . 1 1 39 39 VAL H    H . . . 1 1 40 40 LEU HA   H . . . . . 1.8 1.8 5.5 . . . . . A . 39 VAL H    . . A . 40 LEU HA   . . . 39 . HN   . . . . . 40 . HA   . . rr_2lji 1 
+      367 1 .  . 1 1 40 40 LEU H    H . . . 1 1 58 58 LYS H    H . . . . . 1.8 1.8 4.0 . . . . . A . 40 LEU H    . . A . 58 LYS H    . . . 40 . HN   . . . . . 58 . HN   . . rr_2lji 1 
+      368 1 .  . 1 1 59 59 VAL HA   H . . . 1 1 40 40 LEU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 59 VAL HA   . . A . 40 LEU H    . . . 59 . HA   . . . . . 40 . HN   . . rr_2lji 1 
+      369 1 .  . 1 1 39 39 VAL HA   H . . . 1 1 40 40 LEU H    H . . . . . 1.8 1.8 3.0 . . . . . A . 39 VAL HA   . . A . 40 LEU H    . . . 39 . HA   . . . . . 40 . HN   . . rr_2lji 1 
+      370 1 .  . 1 1 60 60 LEU H    H . . . 1 1 40 40 LEU H    H . . . . . 1.8 1.8 6.0 . . . . . A . 60 LEU H    . . A . 40 LEU H    . . . 60 . HN   . . . . . 40 . HN   . . rr_2lji 1 
+      371 1 .  . 1 1 39 39 VAL MG2  H . . . 1 1 40 40 LEU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 39 VAL MG2  . . A . 40 LEU H    . . . 39 . HG2* . . . . . 40 . HN   . . rr_2lji 1 
+      372 1 .  . 1 1 40 40 LEU H    H . . . 1 1 41 41 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 40 LEU H    . . A . 41 VAL H    . . . 40 . HN   . . . . . 41 . HN   . . rr_2lji 1 
+      373 1 .  . 1 1 40 40 LEU H    H . . . 1 1 40 40 LEU HB3  H . . . . . 1.8 1.8 3.5 . . . . . A . 40 LEU H    . . A . 40 LEU HB3  . . . 40 . HN   . . . . . 40 . HB1  . . rr_2lji 1 
+      374 1 .  . 1 1 40 40 LEU HA   H . . . 1 1 40 40 LEU HB2  H . . . . . 1.8 1.8 4.5 . . . . . A . 40 LEU HA   . . A . 40 LEU HB2  . . . 40 . HA   . . . . . 40 . HB2  . . rr_2lji 1 
+      375 1 .  . 1 1 40 40 LEU HA   H . . . 1 1 40 40 LEU HG   H . . . . . 1.8 1.8 5.5 . . . . . A . 40 LEU HA   . . A . 40 LEU HG   . . . 40 . HA   . . . . . 40 . HG#  . . rr_2lji 1 
+      376 1 OR . 1 1 40 40 LEU HG   H . . . 1 1 58 58 LYS HG2  H . . . . . 1.8 1.8 4.5 . . . . . A . 40 LEU HG   . . A . 58 LYS HG2  . . . 40 . HG#  . . . . . 58 . HG#  . . rr_2lji 1 
+      376 2 OR . 1 1 40 40 LEU HG   H . . . 1 1 58 58 LYS HG3  H . . . . . 1.8 1.8 4.5 . . . . . A . 40 LEU HG   . . A . 58 LYS HG3  . . . 40 . HG#  . . . . . 58 . HG#  . . rr_2lji 1 
+      377 1 .  . 1 1 39 39 VAL MG1  H . . . 1 1 40 40 LEU H    H . . . . . 1.8 1.8 6.0 . . . . . A . 39 VAL MG1  . . A . 40 LEU H    . . . 39 . HG1* . . . . . 40 . HN   . . rr_2lji 1 
+      378 1 .  . 1 1 39 39 VAL MG2  H . . . 1 1 40 40 LEU H    H . . . . . 1.8 1.8 6.0 . . . . . A . 39 VAL MG2  . . A . 40 LEU H    . . . 39 . HG2* . . . . . 40 . HN   . . rr_2lji 1 
+      379 1 .  . 1 1 41 41 VAL H    H . . . 1 1 42 42 ASP H    H . . . . . 1.8 1.8 5.0 . . . . . A . 41 VAL H    . . A . 42 ASP H    . . . 41 . HN   . . . . . 42 . HN   . . rr_2lji 1 
+      380 1 .  . 1 1 40 40 LEU HA   H . . . 1 1 41 41 VAL H    H . . . . . 1.8 1.8 3.0 . . . . . A . 40 LEU HA   . . A . 41 VAL H    . . . 40 . HA   . . . . . 41 . HN   . . rr_2lji 1 
+      381 1 .  . 1 1 41 41 VAL H    H . . . 1 1 41 41 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 41 VAL H    . . A . 41 VAL HA   . . . 41 . HN   . . . . . 41 . HA   . . rr_2lji 1 
+      382 1 .  . 1 1 41 41 VAL H    H . . . 1 1 41 41 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 41 VAL H    . . A . 41 VAL HB   . . . 41 . HN   . . . . . 41 . HB   . . rr_2lji 1 
+      383 1 .  . 1 1 41 41 VAL H    H . . . 1 1 41 41 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A . 41 VAL H    . . A . 41 VAL MG1  . . . 41 . HN   . . . . . 41 . HG1* . . rr_2lji 1 
+      384 1 .  . 1 1 41 41 VAL MG2  H . . . 1 1 41 41 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 41 VAL MG2  . . A . 41 VAL H    . . . 41 . HG2* . . . . . 41 . HN   . . rr_2lji 1 
+      385 1 OR . 1 1 41 41 VAL H    H . . . 1 1 40 40 LEU MD1  H . . . . . 1.8 1.8 4.5 . . . . . A . 41 VAL H    . . A . 40 LEU MD1  . . . 41 . HN   . . . . . 40 . HD*  . . rr_2lji 1 
+      385 2 OR . 1 1 40 40 LEU MD2  H . . . 1 1 41 41 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A . 40 LEU MD2  . . A . 41 VAL H    . . . 40 . HD*  . . . . . 41 . HN   . . rr_2lji 1 
+      386 1 .  . 1 1 41 41 VAL H    H . . . 1 1 42 42 ASP HB3  H . . . . . 1.8 1.8 6.5 . . . . . A . 41 VAL H    . . A . 42 ASP HB3  . . . 41 . HN   . . . . . 42 . HB1  . . rr_2lji 1 
+      387 1 .  . 1 1 40 40 LEU HA   H . . . 1 1 41 41 VAL HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 40 LEU HA   . . A . 41 VAL HA   . . . 40 . HA   . . . . . 41 . HA   . . rr_2lji 1 
+      388 1 .  . 1 1 41 41 VAL HA   H . . . 1 1 41 41 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A . 41 VAL HA   . . A . 41 VAL MG1  . . . 41 . HA   . . . . . 41 . HG1* . . rr_2lji 1 
+      389 1 .  . 1 1 41 41 VAL MG2  H . . . 1 1 41 41 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 41 VAL MG2  . . A . 41 VAL MG1  . . . 41 . HG2* . . . . . 41 . HG1* . . rr_2lji 1 
+      390 1 .  . 1 1 41 41 VAL MG1  H . . . 1 1 42 42 ASP HB2  H . . . . . 1.8 1.8 5.0 . . . . . A . 41 VAL MG1  . . A . 42 ASP HB2  . . . 41 . HG1* . . . . . 42 . HB2  . . rr_2lji 1 
+      391 1 .  . 1 1 41 41 VAL H    H . . . 1 1 44 44 ARG H    H . . . . . 1.8 1.8 6.0 . . . . . A . 41 VAL H    . . A . 44 ARG H    . . . 41 . HN   . . . . . 44 . HN   . . rr_2lji 1 
+      392 1 .  . 1 1 42 42 ASP H    H . . . 1 1 43 43 GLY HA2  H . . . . . 1.8 1.8 6.0 . . . . . A . 42 ASP H    . . A . 43 GLY HA2  . . . 42 . HN   . . . . . 43 . HA2  . . rr_2lji 1 
+      393 1 .  . 1 1 42 42 ASP H    H . . . 1 1 44 44 ARG H    H . . . . . 1.8 1.8 6.5 . . . . . A . 42 ASP H    . . A . 44 ARG H    . . . 42 . HN   . . . . . 44 . HN   . . rr_2lji 1 
+      394 1 .  . 1 1 42 42 ASP H    H . . . 1 1 42 42 ASP HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 42 ASP H    . . A . 42 ASP HA   . . . 42 . HN   . . . . . 42 . HA   . . rr_2lji 1 
+      395 1 .  . 1 1 42 42 ASP H    H . . . 1 1 42 42 ASP HB3  H . . . . . 1.8 1.8 5.5 . . . . . A . 42 ASP H    . . A . 42 ASP HB3  . . . 42 . HN   . . . . . 42 . HB1  . . rr_2lji 1 
+      396 1 .  . 1 1 42 42 ASP H    H . . . 1 1 42 42 ASP HB2  H . . . . . 1.8 1.8 5.0 . . . . . A . 42 ASP H    . . A . 42 ASP HB2  . . . 42 . HN   . . . . . 42 . HB2  . . rr_2lji 1 
+      397 1 .  . 1 1 42 42 ASP H    H . . . 1 1 41 41 VAL MG1  H . . . . . 1.8 1.8 6.0 . . . . . A . 42 ASP H    . . A . 41 VAL MG1  . . . 42 . HN   . . . . . 41 . HG1* . . rr_2lji 1 
+      398 1 .  . 1 1 42 42 ASP HB3  H . . . 1 1 42 42 ASP HA   H . . . . . 1.8 1.8 4.5 . . . . . A . 42 ASP HB3  . . A . 42 ASP HA   . . . 42 . HB1  . . . . . 42 . HA   . . rr_2lji 1 
+      399 1 .  . 1 1 41 41 VAL MG2  H . . . 1 1 42 42 ASP H    H . . . . . 1.8 1.8 6.0 . . . . . A . 41 VAL MG2  . . A . 42 ASP H    . . . 41 . HG2* . . . . . 42 . HN   . . rr_2lji 1 
+      400 1 .  . 1 1 42 42 ASP H    H . . . 1 1 43 43 GLY H    H . . . . . 1.8 1.8 6.0 . . . . . A . 42 ASP H    . . A . 43 GLY H    . . . 42 . HN   . . . . . 43 . HN   . . rr_2lji 1 
+      401 1 .  . 1 1 44 44 ARG H    H . . . 1 1 43 43 GLY H    H . . . . . 1.8 1.8 4.5 . . . . . A . 44 ARG H    . . A . 43 GLY H    . . . 44 . HN   . . . . . 43 . HN   . . rr_2lji 1 
+      402 1 .  . 1 1 42 42 ASP HA   H . . . 1 1 43 43 GLY H    H . . . . . 1.8 1.8 4.0 . . . . . A . 42 ASP HA   . . A . 43 GLY H    . . . 42 . HA   . . . . . 43 . HN   . . rr_2lji 1 
+      403 1 .  . 1 1 43 43 GLY H    H . . . 1 1 43 43 GLY HA3  H . . . . . 1.8 1.8 4.0 . . . . . A . 43 GLY H    . . A . 43 GLY HA3  . . . 43 . HN   . . . . . 43 . HA1  . . rr_2lji 1 
+      404 1 .  . 1 1 43 43 GLY HA2  H . . . 1 1 43 43 GLY H    H . . . . . 1.8 1.8 3.5 . . . . . A . 43 GLY HA2  . . A . 43 GLY H    . . . 43 . HA2  . . . . . 43 . HN   . . rr_2lji 1 
+      405 1 .  . 1 1 42 42 ASP HB3  H . . . 1 1 43 43 GLY H    H . . . . . 1.8 1.8 5.0 . . . . . A . 42 ASP HB3  . . A . 43 GLY H    . . . 42 . HB1  . . . . . 43 . HN   . . rr_2lji 1 
+      406 1 .  . 1 1 40 40 LEU HB3  H . . . 1 1 43 43 GLY H    H . . . . . 1.8 1.8 6.0 . . . . . A . 40 LEU HB3  . . A . 43 GLY H    . . . 40 . HB1  . . . . . 43 . HN   . . rr_2lji 1 
+      407 1 OR . 1 1 43 43 GLY H    H . . . 1 1 40 40 LEU MD1  H . . . . . 1.8 1.8 6.0 . . . . . A . 43 GLY H    . . A . 40 LEU MD1  . . . 43 . HN   . . . . . 40 . HD*  . . rr_2lji 1 
+      407 2 OR . 1 1 40 40 LEU MD2  H . . . 1 1 43 43 GLY H    H . . . . . 1.8 1.8 6.0 . . . . . A . 40 LEU MD2  . . A . 43 GLY H    . . . 40 . HD*  . . . . . 43 . HN   . . rr_2lji 1 
+      408 1 .  . 1 1 42 42 ASP HB2  H . . . 1 1 43 43 GLY H    H . . . . . 1.8 1.8 4.5 . . . . . A . 42 ASP HB2  . . A . 43 GLY H    . . . 42 . HB2  . . . . . 43 . HN   . . rr_2lji 1 
+      409 1 .  . 1 1 44 44 ARG H    H . . . 1 1 43 43 GLY H    H . . . . . 1.8 1.8 5.0 . . . . . A . 44 ARG H    . . A . 43 GLY H    . . . 44 . HN   . . . . . 43 . HN   . . rr_2lji 1 
+      410 1 .  . 1 1 44 44 ARG H    H . . . 1 1 43 43 GLY HA3  H . . . . . 1.8 1.8 5.0 . . . . . A . 44 ARG H    . . A . 43 GLY HA3  . . . 44 . HN   . . . . . 43 . HA1  . . rr_2lji 1 
+      411 1 .  . 1 1 44 44 ARG H    H . . . 1 1 43 43 GLY HA2  H . . . . . 1.8 1.8 5.0 . . . . . A . 44 ARG H    . . A . 43 GLY HA2  . . . 44 . HN   . . . . . 43 . HA2  . . rr_2lji 1 
+      412 1 .  . 1 1 42 42 ASP HB3  H . . . 1 1 44 44 ARG H    H . . . . . 1.8 1.8 6.0 . . . . . A . 42 ASP HB3  . . A . 44 ARG H    . . . 42 . HB1  . . . . . 44 . HN   . . rr_2lji 1 
+      413 1 .  . 1 1 42 42 ASP HB2  H . . . 1 1 44 44 ARG H    H . . . . . 1.8 1.8 6.0 . . . . . A . 42 ASP HB2  . . A . 44 ARG H    . . . 42 . HB2  . . . . . 44 . HN   . . rr_2lji 1 
+      414 1 .  . 1 1 44 44 ARG H    H . . . 1 1 44 44 ARG HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 44 ARG H    . . A . 44 ARG HA   . . . 44 . HN   . . . . . 44 . HA   . . rr_2lji 1 
+      415 1 OR . 1 1 44 44 ARG H    H . . . 1 1 44 44 ARG HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 44 ARG H    . . A . 44 ARG HB2  . . . 44 . HN   . . . . . 44 . HB#  . . rr_2lji 1 
+      415 2 OR . 1 1 44 44 ARG H    H . . . 1 1 44 44 ARG HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 44 ARG H    . . A . 44 ARG HB3  . . . 44 . HN   . . . . . 44 . HB#  . . rr_2lji 1 
+      416 1 .  . 1 1 48 48 GLU H    H . . . 1 1 49 49 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 48 GLU H    . . A . 49 ASP H    . . . 48 . HN   . . . . . 49 . HN   . . rr_2lji 1 
+      417 1 .  . 1 1 48 48 GLU H    H . . . 1 1 50 50 GLN H    H . . . . . 1.8 1.8 5.0 . . . . . A . 48 GLU H    . . A . 50 GLN H    . . . 48 . HN   . . . . . 50 . HN   . . rr_2lji 1 
+      418 1 .  . 1 1 48 48 GLU H    H . . . 1 1 47 47 PRO HA   H . . . . . 1.8 1.8 3.5 . . . . . A . 48 GLU H    . . A . 47 PRO HA   . . . 48 . HN   . . . . . 47 . HA   . . rr_2lji 1 
+      419 1 .  . 1 1 48 48 GLU H    H . . . 1 1 48 48 GLU HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 48 GLU H    . . A . 48 GLU HA   . . . 48 . HN   . . . . . 48 . HA   . . rr_2lji 1 
+      420 1 OR . 1 1 48 48 GLU H    H . . . 1 1 48 48 GLU HG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 48 GLU H    . . A . 48 GLU HG2  . . . 48 . HN   . . . . . 48 . HG#  . . rr_2lji 1 
+      420 2 OR . 1 1 48 48 GLU H    H . . . 1 1 48 48 GLU HG3  H . . . . . 1.8 1.8 5.0 . . . . . A . 48 GLU H    . . A . 48 GLU HG3  . . . 48 . HN   . . . . . 48 . HG#  . . rr_2lji 1 
+      421 1 .  . 1 1 48 48 GLU H    H . . . 1 1 49 49 ASP H    H . . . . . 1.8 1.8 4.5 . . . . . A . 48 GLU H    . . A . 49 ASP H    . . . 48 . HN   . . . . . 49 . HN   . . rr_2lji 1 
+      422 1 .  . 1 1 49 49 ASP H    H . . . 1 1 50 50 GLN H    H . . . . . 1.8 1.8 4.0 . . . . . A . 49 ASP H    . . A . 50 GLN H    . . . 49 . HN   . . . . . 50 . HN   . . rr_2lji 1 
+      423 1 .  . 1 1 49 49 ASP H    H . . . 1 1 49 49 ASP HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 49 ASP H    . . A . 49 ASP HA   . . . 49 . HN   . . . . . 49 . HA   . . rr_2lji 1 
+      424 1 .  . 1 1 49 49 ASP H    H . . . 1 1 48 48 GLU HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 49 ASP H    . . A . 48 GLU HA   . . . 49 . HN   . . . . . 48 . HA   . . rr_2lji 1 
+      425 1 .  . 1 1 49 49 ASP H    H . . . 1 1 49 49 ASP HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 49 ASP H    . . A . 49 ASP HB3  . . . 49 . HN   . . . . . 49 . HB1  . . rr_2lji 1 
+      426 1 OR . 1 1 49 49 ASP H    H . . . 1 1 48 48 GLU HG2  H . . . . . 1.8 1.8 4.0 . . . . . A . 49 ASP H    . . A . 48 GLU HG2  . . . 49 . HN   . . . . . 48 . HG#  . . rr_2lji 1 
+      426 2 OR . 1 1 49 49 ASP H    H . . . 1 1 48 48 GLU HG3  H . . . . . 1.8 1.8 4.0 . . . . . A . 49 ASP H    . . A . 48 GLU HG3  . . . 49 . HN   . . . . . 48 . HG#  . . rr_2lji 1 
+      427 1 .  . 1 1 49 49 ASP H    H . . . 1 1 50 50 GLN H    H . . . . . 1.8 1.8 3.5 . . . . . A . 49 ASP H    . . A . 50 GLN H    . . . 49 . HN   . . . . . 50 . HN   . . rr_2lji 1 
+      428 1 .  . 1 1 50 50 GLN H    H . . . 1 1 49 49 ASP HA   H . . . . . 1.8 1.8 4.5 . . . . . A . 50 GLN H    . . A . 49 ASP HA   . . . 50 . HN   . . . . . 49 . HA   . . rr_2lji 1 
+      429 1 .  . 1 1 50 50 GLN H    H . . . 1 1 50 50 GLN HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 50 GLN H    . . A . 50 GLN HA   . . . 50 . HN   . . . . . 50 . HA   . . rr_2lji 1 
+      430 1 .  . 1 1 50 50 GLN H    H . . . 1 1 49 49 ASP HB2  H . . . . . 1.8 1.8 4.5 . . . . . A . 50 GLN H    . . A . 49 ASP HB2  . . . 50 . HN   . . . . . 49 . HB2  . . rr_2lji 1 
+      431 1 .  . 1 1 50 50 GLN H    H . . . 1 1 50 50 GLN HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 50 GLN H    . . A . 50 GLN HB3  . . . 50 . HN   . . . . . 50 . HB1  . . rr_2lji 1 
+      432 1 .  . 1 1 50 50 GLN H    H . . . 1 1 50 50 GLN HB2  H . . . . . 1.8 1.8 3.5 . . . . . A . 50 GLN H    . . A . 50 GLN HB2  . . . 50 . HN   . . . . . 50 . HB2  . . rr_2lji 1 
+      433 1 .  . 1 1 50 50 GLN H    H . . . 1 1 51 51 SER H    H . . . . . 1.8 1.8 5.5 . . . . . A . 50 GLN H    . . A . 51 SER H    . . . 50 . HN   . . . . . 51 . HN   . . rr_2lji 1 
+      434 1 .  . 1 1 50 50 GLN HA   H . . . 1 1 51 51 SER H    H . . . . . 1.8 1.8 3.0 . . . . . A . 50 GLN HA   . . A . 51 SER H    . . . 50 . HA   . . . . . 51 . HN   . . rr_2lji 1 
+      435 1 .  . 1 1 51 51 SER H    H . . . 1 1 51 51 SER HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 51 SER H    . . A . 51 SER HB3  . . . 51 . HN   . . . . . 51 . HB1  . . rr_2lji 1 
+      436 1 .  . 1 1 51 51 SER H    H . . . 1 1 51 51 SER HB2  H . . . . . 1.8 1.8 3.5 . . . . . A . 51 SER H    . . A . 51 SER HB2  . . . 51 . HN   . . . . . 51 . HB2  . . rr_2lji 1 
+      437 1 .  . 1 1 50 50 GLN HB3  H . . . 1 1 51 51 SER H    H . . . . . 1.8 1.8 4.5 . . . . . A . 50 GLN HB3  . . A . 51 SER H    . . . 50 . HB1  . . . . . 51 . HN   . . rr_2lji 1 
+      438 1 .  . 1 1 50 50 GLN HB2  H . . . 1 1 51 51 SER H    H . . . . . 1.8 1.8 5.0 . . . . . A . 50 GLN HB2  . . A . 51 SER H    . . . 50 . HB2  . . . . . 51 . HN   . . rr_2lji 1 
+      439 1 .  . 1 1 51 51 SER HB2  H . . . 1 1 51 51 SER HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 51 SER HB2  . . A . 51 SER HA   . . . 51 . HB2  . . . . . 51 . HA   . . rr_2lji 1 
+      440 1 .  . 1 1 51 51 SER HB3  H . . . 1 1 51 51 SER HA   H . . . . . 1.8 1.8 4.5 . . . . . A . 51 SER HB3  . . A . 51 SER HA   . . . 51 . HB1  . . . . . 51 . HA   . . rr_2lji 1 
+      441 1 .  . 1 1 51 51 SER HA   H . . . 1 1 52 52 VAL H    H . . . . . 1.8 1.8 3.0 . . . . . A . 51 SER HA   . . A . 52 VAL H    . . . 51 . HA   . . . . . 52 . HN   . . rr_2lji 1 
+      442 1 .  . 1 1 51 51 SER HB3  H . . . 1 1 52 52 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 51 SER HB3  . . A . 52 VAL H    . . . 51 . HB1  . . . . . 52 . HN   . . rr_2lji 1 
+      443 1 .  . 1 1 51 51 SER HB2  H . . . 1 1 52 52 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 51 SER HB2  . . A . 52 VAL H    . . . 51 . HB2  . . . . . 52 . HN   . . rr_2lji 1 
+      444 1 .  . 1 1 52 52 VAL H    H . . . 1 1 52 52 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 52 VAL H    . . A . 52 VAL HA   . . . 52 . HN   . . . . . 52 . HA   . . rr_2lji 1 
+      445 1 .  . 1 1 52 52 VAL H    H . . . 1 1 52 52 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 52 VAL H    . . A . 52 VAL HB   . . . 52 . HN   . . . . . 52 . HB   . . rr_2lji 1 
+      446 1 .  . 1 1 52 52 VAL H    H . . . 1 1 52 52 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A . 52 VAL H    . . A . 52 VAL MG1  . . . 52 . HN   . . . . . 52 . HG1* . . rr_2lji 1 
+      447 1 .  . 1 1 52 52 VAL H    H . . . 1 1 52 52 VAL MG2  H . . . . . 1.8 1.8 4.0 . . . . . A . 52 VAL H    . . A . 52 VAL MG2  . . . 52 . HN   . . . . . 52 . HG2* . . rr_2lji 1 
+      448 1 .  . 1 1 52 52 VAL HA   H . . . 1 1 52 52 VAL MG1  H . . . . . 1.8 1.8 4.5 . . . . . A . 52 VAL HA   . . A . 52 VAL MG1  . . . 52 . HA   . . . . . 52 . HG1* . . rr_2lji 1 
+      449 1 .  . 1 1 52 52 VAL H    H . . . 1 1 53 53 GLU HA   H . . . . . 1.8 1.8 6.0 . . . . . A . 52 VAL H    . . A . 53 GLU HA   . . . 52 . HN   . . . . . 53 . HA   . . rr_2lji 1 
+      450 1 .  . 1 1 52 52 VAL H    H . . . 1 1 53 53 GLU H    H . . . . . 1.8 1.8 4.5 . . . . . A . 52 VAL H    . . A . 53 GLU H    . . . 52 . HN   . . . . . 53 . HN   . . rr_2lji 1 
+      451 1 .  . 1 1 53 53 GLU H    H . . . 1 1 54 54 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 53 GLU H    . . A . 54 VAL H    . . . 53 . HN   . . . . . 54 . HN   . . rr_2lji 1 
+      452 1 .  . 1 1 53 53 GLU HA   H . . . 1 1 53 53 GLU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 53 GLU HA   . . A . 53 GLU H    . . . 53 . HA   . . . . . 53 . HN   . . rr_2lji 1 
+      453 1 OR . 1 1 53 53 GLU H    H . . . 1 1 53 53 GLU HG2  H . . . . . 1.8 1.8 4.5 . . . . . A . 53 GLU H    . . A . 53 GLU HG2  . . . 53 . HN   . . . . . 53 . HG#  . . rr_2lji 1 
+      453 2 OR . 1 1 53 53 GLU H    H . . . 1 1 53 53 GLU HG3  H . . . . . 1.8 1.8 4.5 . . . . . A . 53 GLU H    . . A . 53 GLU HG3  . . . 53 . HN   . . . . . 53 . HG#  . . rr_2lji 1 
+      454 1 .  . 1 1 52 52 VAL HA   H . . . 1 1 53 53 GLU H    H . . . . . 1.8 1.8 3.5 . . . . . A . 52 VAL HA   . . A . 53 GLU H    . . . 52 . HA   . . . . . 53 . HN   . . rr_2lji 1 
+      455 1 OR . 1 1 53 53 GLU H    H . . . 1 1 54 54 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 53 GLU H    . . A . 54 VAL MG1  . . . 53 . HN   . . . . . 54 . HG*  . . rr_2lji 1 
+      455 2 OR . 1 1 54 54 VAL MG2  H . . . 1 1 53 53 GLU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 54 VAL MG2  . . A . 53 GLU H    . . . 54 . HG*  . . . . . 53 . HN   . . rr_2lji 1 
+      456 1 .  . 1 1 52 52 VAL MG1  H . . . 1 1 53 53 GLU H    H . . . . . 1.8 1.8 4.5 . . . . . A . 52 VAL MG1  . . A . 53 GLU H    . . . 52 . HG1* . . . . . 53 . HN   . . rr_2lji 1 
+      457 1 .  . 1 1 52 52 VAL MG2  H . . . 1 1 53 53 GLU H    H . . . . . 1.8 1.8 5.5 . . . . . A . 52 VAL MG2  . . A . 53 GLU H    . . . 52 . HG2* . . . . . 53 . HN   . . rr_2lji 1 
+      458 1 .  . 1 1 52 52 VAL MG1  H . . . 1 1 53 53 GLU HA   H . . . . . 1.8 1.8 5.5 . . . . . A . 52 VAL MG1  . . A . 53 GLU HA   . . . 52 . HG1* . . . . . 53 . HA   . . rr_2lji 1 
+      459 1 .  . 1 1 54 54 VAL H    H . . . 1 1 55 55 ASP H    H . . . . . 1.8 1.8 5.0 . . . . . A . 54 VAL H    . . A . 55 ASP H    . . . 54 . HN   . . . . . 55 . HN   . . rr_2lji 1 
+      460 1 .  . 1 1 53 53 GLU H    H . . . 1 1 54 54 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 53 GLU H    . . A . 54 VAL H    . . . 53 . HN   . . . . . 54 . HN   . . rr_2lji 1 
+      461 1 .  . 1 1 54 54 VAL H    H . . . 1 1 54 54 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 54 VAL H    . . A . 54 VAL HA   . . . 54 . HN   . . . . . 54 . HA   . . rr_2lji 1 
+      462 1 .  . 1 1 53 53 GLU HA   H . . . 1 1 54 54 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 53 GLU HA   . . A . 54 VAL H    . . . 53 . HA   . . . . . 54 . HN   . . rr_2lji 1 
+      463 1 .  . 1 1 52 52 VAL HA   H . . . 1 1 54 54 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 52 VAL HA   . . A . 54 VAL H    . . . 52 . HA   . . . . . 54 . HN   . . rr_2lji 1 
+      464 1 .  . 1 1 54 54 VAL H    H . . . 1 1 54 54 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 54 VAL H    . . A . 54 VAL HB   . . . 54 . HN   . . . . . 54 . HB   . . rr_2lji 1 
+      465 1 OR . 1 1 54 54 VAL H    H . . . 1 1 53 53 GLU HG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 54 VAL H    . . A . 53 GLU HG2  . . . 54 . HN   . . . . . 53 . HG#  . . rr_2lji 1 
+      465 2 OR . 1 1 54 54 VAL H    H . . . 1 1 53 53 GLU HG3  H . . . . . 1.8 1.8 5.0 . . . . . A . 54 VAL H    . . A . 53 GLU HG3  . . . 54 . HN   . . . . . 53 . HG#  . . rr_2lji 1 
+      466 1 .  . 1 1 52 52 VAL HB   H . . . 1 1 54 54 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 52 VAL HB   . . A . 54 VAL H    . . . 52 . HB   . . . . . 54 . HN   . . rr_2lji 1 
+      467 1 .  . 1 1 52 52 VAL MG1  H . . . 1 1 54 54 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 52 VAL MG1  . . A . 54 VAL H    . . . 52 . HG1* . . . . . 54 . HN   . . rr_2lji 1 
+      468 1 OR . 1 1  3  3 VAL MG2  H . . . 1 1 54 54 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A .  3 VAL MG2  . . A . 54 VAL MG1  . . .  3 . HG*  . . . . . 54 . HG*  . . rr_2lji 1 
+      468 2 OR . 1 1  3  3 VAL MG1  H . . . 1 1 54 54 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A .  3 VAL MG1  . . A . 54 VAL MG1  . . .  3 . HG*  . . . . . 54 . HG*  . . rr_2lji 1 
+      468 3 OR . 1 1 54 54 VAL MG2  H . . . 1 1  3  3 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 54 VAL MG2  . . A .  3 VAL MG1  . . . 54 . HG*  . . . . .  3 . HG*  . . rr_2lji 1 
+      468 4 OR . 1 1  3  3 VAL MG2  H . . . 1 1 54 54 VAL MG2  H . . . . . 1.8 1.8 4.0 . . . . . A .  3 VAL MG2  . . A . 54 VAL MG2  . . .  3 . HG*  . . . . . 54 . HG*  . . rr_2lji 1 
+      469 1 OR . 1 1 54 54 VAL HA   H . . . 1 1 54 54 VAL MG1  H . . . . . 1.8 1.8 3.5 . . . . . A . 54 VAL HA   . . A . 54 VAL MG1  . . . 54 . HA   . . . . . 54 . HG*  . . rr_2lji 1 
+      469 2 OR . 1 1 54 54 VAL MG2  H . . . 1 1 54 54 VAL HA   H . . . . . 1.8 1.8 3.5 . . . . . A . 54 VAL MG2  . . A . 54 VAL HA   . . . 54 . HG*  . . . . . 54 . HA   . . rr_2lji 1 
+      470 1 .  . 1 1 55 55 ASP H    H . . . 1 1 56 56 ARG H    H . . . . . 1.8 1.8 4.5 . . . . . A . 55 ASP H    . . A . 56 ARG H    . . . 55 . HN   . . . . . 56 . HN   . . rr_2lji 1 
+      471 1 .  . 1 1 55 55 ASP H    H . . . 1 1 54 54 VAL HA   H . . . . . 1.8 1.8 3.0 . . . . . A . 55 ASP H    . . A . 54 VAL HA   . . . 55 . HN   . . . . . 54 . HA   . . rr_2lji 1 
+      472 1 .  . 1 1 55 55 ASP H    H . . . 1 1 55 55 ASP HB3  H . . . . . 1.8 1.8 4.5 . . . . . A . 55 ASP H    . . A . 55 ASP HB3  . . . 55 . HN   . . . . . 55 . HB1  . . rr_2lji 1 
+      473 1 .  . 1 1 55 55 ASP H    H . . . 1 1 54 54 VAL HB   H . . . . . 1.8 1.8 3.5 . . . . . A . 55 ASP H    . . A . 54 VAL HB   . . . 55 . HN   . . . . . 54 . HB   . . rr_2lji 1 
+      474 1 OR . 1 1 55 55 ASP H    H . . . 1 1 54 54 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 55 ASP H    . . A . 54 VAL MG1  . . . 55 . HN   . . . . . 54 . HG*  . . rr_2lji 1 
+      474 2 OR . 1 1 54 54 VAL MG2  H . . . 1 1 55 55 ASP H    H . . . . . 1.8 1.8 4.0 . . . . . A . 54 VAL MG2  . . A . 55 ASP H    . . . 54 . HG*  . . . . . 55 . HN   . . rr_2lji 1 
+      475 1 .  . 1 1 55 55 ASP HB3  H . . . 1 1 55 55 ASP HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 55 ASP HB3  . . A . 55 ASP HA   . . . 55 . HB1  . . . . . 55 . HA   . . rr_2lji 1 
+      476 1 .  . 1 1 55 55 ASP H    H . . . 1 1 56 56 ARG H    H . . . . . 1.8 1.8 4.5 . . . . . A . 55 ASP H    . . A . 56 ARG H    . . . 55 . HN   . . . . . 56 . HN   . . rr_2lji 1 
+      477 1 .  . 1 1 56 56 ARG HA   H . . . 1 1 56 56 ARG H    H . . . . . 1.8 1.8 4.0 . . . . . A . 56 ARG HA   . . A . 56 ARG H    . . . 56 . HA   . . . . . 56 . HN   . . rr_2lji 1 
+      478 1 .  . 1 1 56 56 ARG H    H . . . 1 1 55 55 ASP HA   H . . . . . 1.8 1.8 3.0 . . . . . A . 56 ARG H    . . A . 55 ASP HA   . . . 56 . HN   . . . . . 55 . HA   . . rr_2lji 1 
+      479 1 .  . 1 1 56 56 ARG H    H . . . 1 1 55 55 ASP HB3  H . . . . . 1.8 1.8 4.5 . . . . . A . 56 ARG H    . . A . 55 ASP HB3  . . . 56 . HN   . . . . . 55 . HB1  . . rr_2lji 1 
+      480 1 .  . 1 1 54 54 VAL HB   H . . . 1 1 56 56 ARG H    H . . . . . 1.8 1.8 6.0 . . . . . A . 54 VAL HB   . . A . 56 ARG H    . . . 54 . HB   . . . . . 56 . HN   . . rr_2lji 1 
+      481 1 .  . 1 1 56 56 ARG H    H . . . 1 1 55 55 ASP HB2  H . . . . . 1.8 1.8 5.5 . . . . . A . 56 ARG H    . . A . 55 ASP HB2  . . . 56 . HN   . . . . . 55 . HB2  . . rr_2lji 1 
+      482 1 OR . 1 1 56 56 ARG H    H . . . 1 1 56 56 ARG HB2  H . . . . . 1.8 1.8 4.5 . . . . . A . 56 ARG H    . . A . 56 ARG HB2  . . . 56 . HN   . . . . . 56 . HB#  . . rr_2lji 1 
+      482 2 OR . 1 1 56 56 ARG H    H . . . 1 1 56 56 ARG HB3  H . . . . . 1.8 1.8 4.5 . . . . . A . 56 ARG H    . . A . 56 ARG HB3  . . . 56 . HN   . . . . . 56 . HB#  . . rr_2lji 1 
+      483 1 OR . 1 1 56 56 ARG H    H . . . 1 1 56 56 ARG HG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 56 ARG H    . . A . 56 ARG HG2  . . . 56 . HN   . . . . . 56 . HG#  . . rr_2lji 1 
+      483 2 OR . 1 1 56 56 ARG HG3  H . . . 1 1 56 56 ARG H    H . . . . . 1.8 1.8 5.0 . . . . . A . 56 ARG HG3  . . A . 56 ARG H    . . . 56 . HG#  . . . . . 56 . HN   . . rr_2lji 1 
+      484 1 OR . 1 1 56 56 ARG H    H . . . 1 1 54 54 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 56 ARG H    . . A . 54 VAL MG1  . . . 56 . HN   . . . . . 54 . HG*  . . rr_2lji 1 
+      484 2 OR . 1 1 54 54 VAL MG2  H . . . 1 1 56 56 ARG H    H . . . . . 1.8 1.8 5.0 . . . . . A . 54 VAL MG2  . . A . 56 ARG H    . . . 54 . HG*  . . . . . 56 . HN   . . rr_2lji 1 
+      485 1 OR . 1 1 56 56 ARG H    H . . . 1 1  3  3 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 56 ARG H    . . A .  3 VAL MG1  . . . 56 . HN   . . . . .  3 . HG*  . . rr_2lji 1 
+      485 2 OR . 1 1  3  3 VAL MG2  H . . . 1 1 56 56 ARG H    H . . . . . 1.8 1.8 5.0 . . . . . A .  3 VAL MG2  . . A . 56 ARG H    . . .  3 . HG*  . . . . . 56 . HN   . . rr_2lji 1 
+      486 1 OR . 1 1 56 56 ARG HG3  H . . . 1 1 58 58 LYS HE2  H . . . . . 1.8 1.8 5.5 . . . . . A . 56 ARG HG3  . . A . 58 LYS HE2  . . . 56 . HG#  . . . . . 58 . HE#  . . rr_2lji 1 
+      486 2 OR . 1 1 58 58 LYS HE3  H . . . 1 1 56 56 ARG HG2  H . . . . . 1.8 1.8 5.5 . . . . . A . 58 LYS HE3  . . A . 56 ARG HG2  . . . 58 . HE#  . . . . . 56 . HG#  . . rr_2lji 1 
+      486 3 OR . 1 1 56 56 ARG HG3  H . . . 1 1 58 58 LYS HE3  H . . . . . 1.8 1.8 5.5 . . . . . A . 56 ARG HG3  . . A . 58 LYS HE3  . . . 56 . HG#  . . . . . 58 . HE#  . . rr_2lji 1 
+      486 4 OR . 1 1 56 56 ARG HG2  H . . . 1 1 58 58 LYS HE2  H . . . . . 1.8 1.8 5.5 . . . . . A . 56 ARG HG2  . . A . 58 LYS HE2  . . . 56 . HG#  . . . . . 58 . HE#  . . rr_2lji 1 
+      487 1 OR . 1 1 56 56 ARG HG3  H . . . 1 1 58 58 LYS HG2  H . . . . . 1.8 1.8 5.5 . . . . . A . 56 ARG HG3  . . A . 58 LYS HG2  . . . 56 . HG#  . . . . . 58 . HG#  . . rr_2lji 1 
+      487 2 OR . 1 1 58 58 LYS HG3  H . . . 1 1 56 56 ARG HG2  H . . . . . 1.8 1.8 5.5 . . . . . A . 58 LYS HG3  . . A . 56 ARG HG2  . . . 58 . HG#  . . . . . 56 . HG#  . . rr_2lji 1 
+      487 3 OR . 1 1 56 56 ARG HG3  H . . . 1 1 58 58 LYS HG3  H . . . . . 1.8 1.8 5.5 . . . . . A . 56 ARG HG3  . . A . 58 LYS HG3  . . . 56 . HG#  . . . . . 58 . HG#  . . rr_2lji 1 
+      487 4 OR . 1 1 56 56 ARG HG2  H . . . 1 1 58 58 LYS HG2  H . . . . . 1.8 1.8 5.5 . . . . . A . 56 ARG HG2  . . A . 58 LYS HG2  . . . 56 . HG#  . . . . . 58 . HG#  . . rr_2lji 1 
+      488 1 .  . 1 1 58 58 LYS H    H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 58 LYS H    . . A . 57 VAL H    . . . 58 . HN   . . . . . 57 . HN   . . rr_2lji 1 
+      489 1 .  . 1 1 56 56 ARG H    H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 5.0 . . . . . A . 56 ARG H    . . A . 57 VAL H    . . . 56 . HN   . . . . . 57 . HN   . . rr_2lji 1 
+      490 1 .  . 1 1 56 56 ARG HA   H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 56 ARG HA   . . A . 57 VAL H    . . . 56 . HA   . . . . . 57 . HN   . . rr_2lji 1 
+      491 1 .  . 1 1 57 57 VAL HA   H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A . 57 VAL HA   . . A . 57 VAL H    . . . 57 . HA   . . . . . 57 . HN   . . rr_2lji 1 
+      492 1 .  . 1 1  5  5 VAL HA   H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 3.5 . . . . . A .  5 VAL HA   . . A . 57 VAL H    . . .  5 . HA   . . . . . 57 . HN   . . rr_2lji 1 
+      493 1 .  . 1 1  5  5 VAL HB   H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A .  5 VAL HB   . . A . 57 VAL H    . . .  5 . HB   . . . . . 57 . HN   . . rr_2lji 1 
+      494 1 OR . 1 1 57 57 VAL H    H . . . 1 1 56 56 ARG HB2  H . . . . . 1.8 1.8 4.5 . . . . . A . 57 VAL H    . . A . 56 ARG HB2  . . . 57 . HN   . . . . . 56 . HB#  . . rr_2lji 1 
+      494 2 OR . 1 1 56 56 ARG HB3  H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A . 56 ARG HB3  . . A . 57 VAL H    . . . 56 . HB#  . . . . . 57 . HN   . . rr_2lji 1 
+      495 1 OR . 1 1 57 57 VAL H    H . . . 1 1 56 56 ARG HG2  H . . . . . 1.8 1.8 4.5 . . . . . A . 57 VAL H    . . A . 56 ARG HG2  . . . 57 . HN   . . . . . 56 . HG#  . . rr_2lji 1 
+      495 2 OR . 1 1 56 56 ARG HG3  H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 4.5 . . . . . A . 56 ARG HG3  . . A . 57 VAL H    . . . 56 . HG#  . . . . . 57 . HN   . . rr_2lji 1 
+      496 1 OR . 1 1 57 57 VAL H    H . . . 1 1  5  5 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 57 VAL H    . . A .  5 VAL MG1  . . . 57 . HN   . . . . .  5 . HG*  . . rr_2lji 1 
+      496 2 OR . 1 1  5  5 VAL MG2  H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A .  5 VAL MG2  . . A . 57 VAL H    . . .  5 . HG*  . . . . . 57 . HN   . . rr_2lji 1 
+      497 1 .  . 1 1 59 59 VAL H    H . . . 1 1 58 58 LYS H    H . . . . . 1.8 1.8 5.0 . . . . . A . 59 VAL H    . . A . 58 LYS H    . . . 59 . HN   . . . . . 58 . HN   . . rr_2lji 1 
+      498 1 .  . 1 1 58 58 LYS HA   H . . . 1 1 58 58 LYS H    H . . . . . 1.8 1.8 4.0 . . . . . A . 58 LYS HA   . . A . 58 LYS H    . . . 58 . HA   . . . . . 58 . HN   . . rr_2lji 1 
+      499 1 .  . 1 1 57 57 VAL HA   H . . . 1 1 58 58 LYS H    H . . . . . 1.8 1.8 3.0 . . . . . A . 57 VAL HA   . . A . 58 LYS H    . . . 57 . HA   . . . . . 58 . HN   . . rr_2lji 1 
+      500 1 OR . 1 1 58 58 LYS H    H . . . 1 1 58 58 LYS HE2  H . . . . . 1.8 1.8 6.0 . . . . . A . 58 LYS H    . . A . 58 LYS HE2  . . . 58 . HN   . . . . . 58 . HE#  . . rr_2lji 1 
+      500 2 OR . 1 1 58 58 LYS H    H . . . 1 1 58 58 LYS HE3  H . . . . . 1.8 1.8 6.0 . . . . . A . 58 LYS H    . . A . 58 LYS HE3  . . . 58 . HN   . . . . . 58 . HE#  . . rr_2lji 1 
+      501 1 OR . 1 1 58 58 LYS H    H . . . 1 1 58 58 LYS HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 58 LYS H    . . A . 58 LYS HB2  . . . 58 . HN   . . . . . 58 . HB#  . . rr_2lji 1 
+      501 2 OR . 1 1 58 58 LYS HB3  H . . . 1 1 58 58 LYS H    H . . . . . 1.8 1.8 4.0 . . . . . A . 58 LYS HB3  . . A . 58 LYS H    . . . 58 . HB#  . . . . . 58 . HN   . . rr_2lji 1 
+      502 1 .  . 1 1  5  5 VAL HB   H . . . 1 1 58 58 LYS H    H . . . . . 1.8 1.8 5.5 . . . . . A .  5 VAL HB   . . A . 58 LYS H    . . .  5 . HB   . . . . . 58 . HN   . . rr_2lji 1 
+      503 1 OR . 1 1 40 40 LEU HG   H . . . 1 1 58 58 LYS HG3  H . . . . . 1.8 1.8 4.5 . . . . . A . 40 LEU HG   . . A . 58 LYS HG3  . . . 40 . HG*  . . . . . 58 . HG#  . . rr_2lji 1 
+      503 2 OR . 1 1 40 40 LEU HG   H . . . 1 1 58 58 LYS HG2  H . . . . . 1.8 1.8 4.5 . . . . . A . 40 LEU HG   . . A . 58 LYS HG2  . . . 40 . HG*  . . . . . 58 . HG#  . . rr_2lji 1 
+      504 1 .  . 1 1 40 40 LEU H    H . . . 1 1 58 58 LYS H    H . . . . . 1.8 1.8 4.5 . . . . . A . 40 LEU H    . . A . 58 LYS H    . . . 40 . HN   . . . . . 58 . HN   . . rr_2lji 1 
+      505 1 .  . 1 1 58 58 LYS H    H . . . 1 1 41 41 VAL H    H . . . . . 1.8 1.8 6.0 . . . . . A . 58 LYS H    . . A . 41 VAL H    . . . 58 . HN   . . . . . 41 . HN   . . rr_2lji 1 
+      506 1 .  . 1 1 59 59 VAL H    H . . . 1 1 60 60 LEU H    H . . . . . 1.8 1.8 4.5 . . . . . A . 59 VAL H    . . A . 60 LEU H    . . . 59 . HN   . . . . . 60 . HN   . . rr_2lji 1 
+      507 1 .  . 1 1 59 59 VAL H    H . . . 1 1 57 57 VAL H    H . . . . . 1.8 1.8 6.5 . . . . . A . 59 VAL H    . . A . 57 VAL H    . . . 59 . HN   . . . . . 57 . HN   . . rr_2lji 1 
+      508 1 .  . 1 1 58 58 LYS HA   H . . . 1 1 59 59 VAL H    H . . . . . 1.8 1.8 3.0 . . . . . A . 58 LYS HA   . . A . 59 VAL H    . . . 58 . HA   . . . . . 59 . HN   . . rr_2lji 1 
+      509 1 OR . 1 1 59 59 VAL H    H . . . 1 1 58 58 LYS HD2  H . . . . . 1.8 1.8 6.0 . . . . . A . 59 VAL H    . . A . 58 LYS HD2  . . . 59 . HN   . . . . . 58 . HD#  . . rr_2lji 1 
+      509 2 OR . 1 1 59 59 VAL H    H . . . 1 1 58 58 LYS HD3  H . . . . . 1.8 1.8 6.0 . . . . . A . 59 VAL H    . . A . 58 LYS HD3  . . . 59 . HN   . . . . . 58 . HD#  . . rr_2lji 1 
+      510 1 .  . 1 1 59 59 VAL H    H . . . 1 1 59 59 VAL HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 59 VAL H    . . A . 59 VAL HB   . . . 59 . HN   . . . . . 59 . HB   . . rr_2lji 1 
+      511 1 OR . 1 1 59 59 VAL H    H . . . 1 1 58 58 LYS HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 59 VAL H    . . A . 58 LYS HB2  . . . 59 . HN   . . . . . 58 . HB#  . . rr_2lji 1 
+      511 2 OR . 1 1 59 59 VAL H    H . . . 1 1 58 58 LYS HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 59 VAL H    . . A . 58 LYS HB3  . . . 59 . HN   . . . . . 58 . HB#  . . rr_2lji 1 
+      512 1 OR . 1 1 59 59 VAL H    H . . . 1 1 58 58 LYS HG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 59 VAL H    . . A . 58 LYS HG2  . . . 59 . HN   . . . . . 58 . HG#  . . rr_2lji 1 
+      512 2 OR . 1 1 59 59 VAL H    H . . . 1 1 58 58 LYS HG3  H . . . . . 1.8 1.8 5.0 . . . . . A . 59 VAL H    . . A . 58 LYS HG3  . . . 59 . HN   . . . . . 58 . HG#  . . rr_2lji 1 
+      513 1 OR . 1 1 59 59 VAL H    H . . . 1 1 59 59 VAL MG1  H . . . . . 1.8 1.8 3.5 . . . . . A . 59 VAL H    . . A . 59 VAL MG1  . . . 59 . HN   . . . . . 59 . HG#  . . rr_2lji 1 
+      513 2 OR . 1 1 59 59 VAL H    H . . . 1 1 59 59 VAL MG2  H . . . . . 1.8 1.8 3.5 . . . . . A . 59 VAL H    . . A . 59 VAL MG2  . . . 59 . HN   . . . . . 59 . HG#  . . rr_2lji 1 
+      514 1 .  . 1 1 59 59 VAL H    H . . . 1 1 59 59 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 59 VAL H    . . A . 59 VAL HA   . . . 59 . HN   . . . . . 59 . HA   . . rr_2lji 1 
+      515 1 .  . 1 1 59 59 VAL HA   H . . . 1 1 39 39 VAL HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 59 VAL HA   . . A . 39 VAL HA   . . . 59 . HA   . . . . . 39 . HA   . . rr_2lji 1 
+      516 1 OR . 1 1 59 59 VAL HA   H . . . 1 1 59 59 VAL MG1  H . . . . . 1.8 1.8 3.5 . . . . . A . 59 VAL HA   . . A . 59 VAL MG1  . . . 59 . HA   . . . . . 59 . HG#  . . rr_2lji 1 
+      516 2 OR . 1 1 59 59 VAL HA   H . . . 1 1 59 59 VAL MG2  H . . . . . 1.8 1.8 3.5 . . . . . A . 59 VAL HA   . . A . 59 VAL MG2  . . . 59 . HA   . . . . . 59 . HG#  . . rr_2lji 1 
+      517 1 OR . 1 1 59 59 VAL HB   H . . . 1 1 59 59 VAL MG1  H . . . . . 1.8 1.8 4.0 . . . . . A . 59 VAL HB   . . A . 59 VAL MG1  . . . 59 . HB   . . . . . 59 . HG#  . . rr_2lji 1 
+      517 2 OR . 1 1 59 59 VAL HB   H . . . 1 1 59 59 VAL MG2  H . . . . . 1.8 1.8 4.0 . . . . . A . 59 VAL HB   . . A . 59 VAL MG2  . . . 59 . HB   . . . . . 59 . HG#  . . rr_2lji 1 
+      518 1 .  . 1 1  7  7 VAL HA   H . . . 1 1 59 59 VAL H    H . . . . . 1.8 1.8 4.0 . . . . . A .  7 VAL HA   . . A . 59 VAL H    . . .  7 . HA   . . . . . 59 . HN   . . rr_2lji 1 
+      519 1 OR . 1 1 59 59 VAL H    H . . . 1 1  6  6 GLU HB3  H . . . . . 1.8 1.8 5.5 . . . . . A . 59 VAL H    . . A .  6 GLU HB3  . . . 59 . HN   . . . . .  6 . HB#  . . rr_2lji 1 
+      519 2 OR . 1 1 59 59 VAL H    H . . . 1 1  6  6 GLU HB2  H . . . . . 1.8 1.8 5.5 . . . . . A . 59 VAL H    . . A .  6 GLU HB2  . . . 59 . HN   . . . . .  6 . HB#  . . rr_2lji 1 
+      520 1 .  . 1 1 59 59 VAL H    H . . . 1 1 60 60 LEU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 59 VAL H    . . A . 60 LEU H    . . . 59 . HN   . . . . . 60 . HN   . . rr_2lji 1 
+      521 1 .  . 1 1 38 38 THR H    H . . . 1 1 60 60 LEU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 38 THR H    . . A . 60 LEU H    . . . 38 . HN   . . . . . 60 . HN   . . rr_2lji 1 
+      522 1 .  . 1 1 37 37 VAL HA   H . . . 1 1 60 60 LEU H    H . . . . . 1.8 1.8 5.0 . . . . . A . 37 VAL HA   . . A . 60 LEU H    . . . 37 . HA   . . . . . 60 . HN   . . rr_2lji 1 
+      523 1 .  . 1 1 60 60 LEU H    H . . . 1 1 59 59 VAL HA   H . . . . . 1.8 1.8 3.0 . . . . . A . 60 LEU H    . . A . 59 VAL HA   . . . 60 . HN   . . . . . 59 . HA   . . rr_2lji 1 
+      524 1 .  . 1 1 60 60 LEU H    H . . . 1 1 39 39 VAL HA   H . . . . . 1.8 1.8 5.0 . . . . . A . 60 LEU H    . . A . 39 VAL HA   . . . 60 . HN   . . . . . 39 . HA   . . rr_2lji 1 
+      525 1 .  . 1 1 60 60 LEU H    H . . . 1 1 38 38 THR HB   H . . . . . 1.8 1.8 5.5 . . . . . A . 60 LEU H    . . A . 38 THR HB   . . . 60 . HN   . . . . . 38 . HB   . . rr_2lji 1 
+      526 1 .  . 1 1 37 37 VAL HB   H . . . 1 1 60 60 LEU H    H . . . . . 1.8 1.8 4.0 . . . . . A . 37 VAL HB   . . A . 60 LEU H    . . . 37 . HB   . . . . . 60 . HN   . . rr_2lji 1 
+      527 1 .  . 1 1 59 59 VAL HB   H . . . 1 1 60 60 LEU H    H . . . . . 1.8 1.8 3.5 . . . . . A . 59 VAL HB   . . A . 60 LEU H    . . . 59 . HB   . . . . . 60 . HN   . . rr_2lji 1 
+      528 1 .  . 1 1 60 60 LEU H    H . . . 1 1 60 60 LEU HB3  H . . . . . 1.8 1.8 4.0 . . . . . A . 60 LEU H    . . A . 60 LEU HB3  . . . 60 . HN   . . . . . 60 . HB1  . . rr_2lji 1 
+      529 1 .  . 1 1 60 60 LEU H    H . . . 1 1 60 60 LEU HB2  H . . . . . 1.8 1.8 4.0 . . . . . A . 60 LEU H    . . A . 60 LEU HB2  . . . 60 . HN   . . . . . 60 . HB2  . . rr_2lji 1 
+      530 1 .  . 1 1 60 60 LEU H    H . . . 1 1 38 38 THR MG   H . . . . . 1.8 1.8 7.0 . . . . . A . 60 LEU H    . . A . 38 THR MG   . . . 60 . HN   . . . . . 38 . HG2* . . rr_2lji 1 
+      531 1 OR . 1 1 60 60 LEU H    H . . . 1 1 59 59 VAL MG1  H . . . . . 1.8 1.8 3.5 . . . . . A . 60 LEU H    . . A . 59 VAL MG1  . . . 60 . HN   . . . . . 59 . HG#  . . rr_2lji 1 
+      531 2 OR . 1 1 60 60 LEU H    H . . . 1 1 59 59 VAL MG2  H . . . . . 1.8 1.8 3.5 . . . . . A . 60 LEU H    . . A . 59 VAL MG2  . . . 60 . HN   . . . . . 59 . HG#  . . rr_2lji 1 
+      532 1 OR . 1 1 60 60 LEU HA   H . . . 1 1 60 60 LEU MD1  H . . . . . 1.8 1.8 5.0 . . . . . A . 60 LEU HA   . . A . 60 LEU MD1  . . . 60 . HA   . . . . . 60 . HD#  . . rr_2lji 1 
+      532 2 OR . 1 1 60 60 LEU HA   H . . . 1 1 60 60 LEU MD2  H . . . . . 1.8 1.8 5.0 . . . . . A . 60 LEU HA   . . A . 60 LEU MD2  . . . 60 . HA   . . . . . 60 . HD#  . . rr_2lji 1 
+      533 1 OR . 1 1 60 60 LEU H    H . . . 1 1 37 37 VAL MG1  H . . . . . 1.8 1.8 5.0 . . . . . A . 60 LEU H    . . A . 37 VAL MG1  . . . 60 . HN   . . . . . 37 . HG#  . . rr_2lji 1 
+      533 2 OR . 1 1 60 60 LEU H    H . . . 1 1 37 37 VAL MG2  H . . . . . 1.8 1.8 5.0 . . . . . A . 60 LEU H    . . A . 37 VAL MG2  . . . 60 . HN   . . . . . 37 . HG#  . . rr_2lji 1 
+      534 1 .  . 1 1 61 61 ARG H    H . . . 1 1 62 62 LEU H    H . . . . . 1.8 1.8 3.5 . . . . . A . 61 ARG H    . . A . 62 LEU H    . . . 61 . HN   . . . . . 62 . HN   . . rr_2lji 1 
+      535 1 .  . 1 1 60 60 LEU HA   H . . . 1 1 61 61 ARG H    H . . . . . 1.8 1.8 3.0 . . . . . A . 60 LEU HA   . . A . 61 ARG H    . . . 60 . HA   . . . . . 61 . HN   . . rr_2lji 1 
+      536 1 .  . 1 1  8  8 VAL HB   H . . . 1 1 61 61 ARG H    H . . . . . 1.8 1.8 4.5 . . . . . A .  8 VAL HB   . . A . 61 ARG H    . . .  8 . HB   . . . . . 61 . HN   . . rr_2lji 1 
+      537 1 OR . 1 1 61 61 ARG H    H . . . 1 1 61 61 ARG HB2  H . . . . . 1.8 1.8 4.5 . . . . . A . 61 ARG H    . . A . 61 ARG HB2  . . . 61 . HN   . . . . . 61 . HB#  . . rr_2lji 1 
+      537 2 OR . 1 1 61 61 ARG H    H . . . 1 1 61 61 ARG HB3  H . . . . . 1.8 1.8 4.5 . . . . . A . 61 ARG H    . . A . 61 ARG HB3  . . . 61 . HN   . . . . . 61 . HB#  . . rr_2lji 1 
+      538 1 .  . 1 1 60 60 LEU HB3  H . . . 1 1 61 61 ARG H    H . . . . . 1.8 1.8 4.5 . . . . . A . 60 LEU HB3  . . A . 61 ARG H    . . . 60 . HB1  . . . . . 61 . HN   . . rr_2lji 1 
+      539 1 OR . 1 1 61 61 ARG H    H . . . 1 1 60 60 LEU MD1  H . . . . . 1.8 1.8 4.0 . . . . . A . 61 ARG H    . . A . 60 LEU MD1  . . . 61 . HN   . . . . . 60 . HD#  . . rr_2lji 1 
+      539 2 OR . 1 1 60 60 LEU MD2  H . . . 1 1 61 61 ARG H    H . . . . . 1.8 1.8 4.0 . . . . . A . 60 LEU MD2  . . A . 61 ARG H    . . . 60 . HD#  . . . . . 61 . HN   . . rr_2lji 1 
+      540 1 OR . 1 1 61 61 ARG H    H . . . 1 1 61 61 ARG HD2  H . . . . . 1.8 1.8 6.0 . . . . . A . 61 ARG H    . . A . 61 ARG HD2  . . . 61 . HN   . . . . . 61 . HD#  . . rr_2lji 1 
+      540 2 OR . 1 1 61 61 ARG H    H . . . 1 1 61 61 ARG HD3  H . . . . . 1.8 1.8 6.0 . . . . . A . 61 ARG H    . . A . 61 ARG HD3  . . . 61 . HN   . . . . . 61 . HD#  . . rr_2lji 1 
+      541 1 OR . 1 1 63 63 ILE HA   H . . . 1 1 60 60 LEU MD1  H . . . . . 1.8 1.8 4.0 . . . . . A . 63 ILE HA   . . A . 60 LEU MD1  . . . 63 . HA   . . . . . 60 . HD#  . . rr_2lji 1 
+      541 2 OR . 1 1 60 60 LEU MD2  H . . . 1 1 63 63 ILE HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 60 LEU MD2  . . A . 63 ILE HA   . . . 60 . HD#  . . . . . 63 . HA   . . rr_2lji 1 
+      542 1 OR . 1 1 63 63 ILE HB   H . . . 1 1 60 60 LEU MD1  H . . . . . 1.8 1.8 4.0 . . . . . A . 63 ILE HB   . . A . 60 LEU MD1  . . . 63 . HB   . . . . . 60 . HD#  . . rr_2lji 1 
+      542 2 OR . 1 1 60 60 LEU MD2  H . . . 1 1 63 63 ILE HB   H . . . . . 1.8 1.8 4.0 . . . . . A . 60 LEU MD2  . . A . 63 ILE HB   . . . 60 . HD#  . . . . . 63 . HB   . . rr_2lji 1 
+      543 1 OR . 1 1 63 63 ILE HA   H . . . 1 1 63 63 ILE HG12 H . . . . . 1.8 1.8 5.0 . . . . . A . 63 ILE HA   . . A . 63 ILE HG12 . . . 63 . HA   . . . . . 63 . HG1# . . rr_2lji 1 
+      543 2 OR . 1 1 63 63 ILE HA   H . . . 1 1 63 63 ILE HG13 H . . . . . 1.8 1.8 5.0 . . . . . A . 63 ILE HA   . . A . 63 ILE HG13 . . . 63 . HA   . . . . . 63 . HG1# . . rr_2lji 1 
+      544 1 .  . 1 1 63 63 ILE HA   H . . . 1 1 63 63 ILE HB   H . . . . . 1.8 1.8 4.5 . . . . . A . 63 ILE HA   . . A . 63 ILE HB   . . . 63 . HA   . . . . . 63 . HB   . . rr_2lji 1 
+      545 1 OR . 1 1 63 63 ILE HB   H . . . 1 1 63 63 ILE HG12 H . . . . . 1.8 1.8 5.5 . . . . . A . 63 ILE HB   . . A . 63 ILE HG12 . . . 63 . HB   . . . . . 63 . HG1# . . rr_2lji 1 
+      545 2 OR . 1 1 63 63 ILE HB   H . . . 1 1 63 63 ILE HG13 H . . . . . 1.8 1.8 5.5 . . . . . A . 63 ILE HB   . . A . 63 ILE HG13 . . . 63 . HB   . . . . . 63 . HG1# . . rr_2lji 1 
+      546 1 .  . 1 1 63 63 ILE HA   H . . . 1 1 64 64 LYS H    H . . . . . 1.8 1.8 3.0 . . . . . A . 63 ILE HA   . . A . 64 LYS H    . . . 63 . HA   . . . . . 64 . HN   . . rr_2lji 1 
+      547 1 .  . 1 1 63 63 ILE HB   H . . . 1 1 64 64 LYS H    H . . . . . 1.8 1.8 4.0 . . . . . A . 63 ILE HB   . . A . 64 LYS H    . . . 63 . HB   . . . . . 64 . HN   . . rr_2lji 1 
+      548 1 OR . 1 1 64 64 LYS H    H . . . 1 1 63 63 ILE HG12 H . . . . . 1.8 1.8 4.5 . . . . . A . 64 LYS H    . . A . 63 ILE HG12 . . . 64 . HN   . . . . . 63 . HG1# . . rr_2lji 1 
+      548 2 OR . 1 1 63 63 ILE HG13 H . . . 1 1 64 64 LYS H    H . . . . . 1.8 1.8 4.5 . . . . . A . 63 ILE HG13 . . A . 64 LYS H    . . . 63 . HG1# . . . . . 64 . HN   . . rr_2lji 1 
+      549 1 .  . 1 1 64 64 LYS H    H . . . 1 1 63 63 ILE MG   H . . . . . 1.8 1.8 5.5 . . . . . A . 64 LYS H    . . A . 63 ILE MG   . . . 64 . HN   . . . . . 63 . HG2# . . rr_2lji 1 
+      550 1 .  . 1 1 64 64 LYS H    H . . . 1 1 63 63 ILE MD   H . . . . . 1.8 1.8 4.0 . . . . . A . 64 LYS H    . . A . 63 ILE MD   . . . 64 . HN   . . . . . 63 . HD#  . . rr_2lji 1 
+      551 1 .  . 1 1 65 65 GLY H    H . . . 1 1 64 64 LYS HA   H . . . . . 1.8 1.8 4.0 . . . . . A . 65 GLY H    . . A . 64 LYS HA   . . . 65 . HN   . . . . . 64 . HA   . . rr_2lji 1 
+      552 1 OR . 1 1 65 65 GLY H    H . . . 1 1 65 65 GLY HA2  H . . . . . 1.8 1.8 4.0 . . . . . A . 65 GLY H    . . A . 65 GLY HA2  . . . 65 . HN   . . . . . 65 . HA#  . . rr_2lji 1 
+      552 2 OR . 1 1 65 65 GLY H    H . . . 1 1 65 65 GLY HA3  H . . . . . 1.8 1.8 4.0 . . . . . A . 65 GLY H    . . A . 65 GLY HA3  . . . 65 . HN   . . . . . 65 . HA#  . . rr_2lji 1 
+      553 1 OR . 1 1 65 65 GLY H    H . . . 1 1 64 64 LYS HB2  H . . . . . 1.8 1.8 5.5 . . . . . A . 65 GLY H    . . A . 64 LYS HB2  . . . 65 . HN   . . . . . 64 . HB#  . . rr_2lji 1 
+      553 2 OR . 1 1 65 65 GLY H    H . . . 1 1 64 64 LYS HB3  H . . . . . 1.8 1.8 5.5 . . . . . A . 65 GLY H    . . A . 64 LYS HB3  . . . 65 . HN   . . . . . 64 . HB#  . . rr_2lji 1 
+      554 1 .  . 1 1 66 66 GLY H    H . . . 1 1 67 67 LEU H    H . . . . . 1.8 1.8 5.5 . . . . . A . 66 GLY H    . . . .   . .   .    . . . 66 . HN   . . . . . 67 . HN   . . rr_2lji 1 
+      555 1 OR . 1 1 66 66 GLY H    H . . . 1 1 66 66 GLY HA2  H . . . . . 1.8 1.8 3.5 . . . . . A . 66 GLY H    . . A . 66 GLY HA2  . . . 66 . HN   . . . . . 66 . HA#  . . rr_2lji 1 
+      555 2 OR . 1 1 66 66 GLY H    H . . . 1 1 66 66 GLY HA3  H . . . . . 1.8 1.8 3.5 . . . . . A . 66 GLY H    . . A . 66 GLY HA3  . . . 66 . HN   . . . . . 66 . HA#  . . rr_2lji 1 
+      556 1 OR . 1 1 66 66 GLY H    H . . . 1 1 65 65 GLY HA2  H . . . . . 1.8 1.8 3.5 . . . . . A . 66 GLY H    . . A . 65 GLY HA2  . . . 66 . HN   . . . . . 65 . HA#  . . rr_2lji 1 
+      556 2 OR . 1 1 65 65 GLY HA3  H . . . 1 1 66 66 GLY H    H . . . . . 1.8 1.8 3.5 . . . . . A . 65 GLY HA3  . . A . 66 GLY H    . . . 65 . HA#  . . . . . 66 . HN   . . rr_2lji 1 
+      557 1 OR . 1 1 66 66 GLY H    H . . . 1 1 67 67 LEU MD1  H . . . . . 1.8 1.8 6.5 . . . . . A . 66 GLY H    . . . .   . .   .    . . . 66 . HN   . . . . . 67 . HD#  . . rr_2lji 1 
+      557 2 OR . 1 1 66 66 GLY H    H . . . 1 1 67 67 LEU MD2  H . . . . . 1.8 1.8 6.5 . . . . . A . 66 GLY H    . . . .   . .   .    . . . 66 . HN   . . . . . 67 . HD#  . . rr_2lji 1 
+      558 1 .  . 1 1 67 67 LEU H    H . . . 1 1 68 68 GLU H    H . . . . . 1.8 1.8 5.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HN   . . . . . 68 . HN   . . rr_2lji 1 
+      559 1 .  . 1 1 67 67 LEU H    H . . . 1 1 67 67 LEU HA   H . . . . . 1.8 1.8 3.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HN   . . . . . 67 . HA   . . rr_2lji 1 
+      560 1 OR . 1 1 67 67 LEU H    H . . . 1 1 66 66 GLY HA2  H . . . . . 1.8 1.8 3.0 . . . . . . .   . .   .    . . A . 66 GLY HA2  . . . 67 . HN   . . . . . 66 . HA#  . . rr_2lji 1 
+      560 2 OR . 1 1 67 67 LEU H    H . . . 1 1 66 66 GLY HA3  H . . . . . 1.8 1.8 3.0 . . . . . . .   . .   .    . . A . 66 GLY HA3  . . . 67 . HN   . . . . . 66 . HA#  . . rr_2lji 1 
+      561 1 OR . 1 1 67 67 LEU H    H . . . 1 1 67 67 LEU MD1  H . . . . . 1.8 1.8 3.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HN   . . . . . 67 . HD#  . . rr_2lji 1 
+      561 2 OR . 1 1 67 67 LEU H    H . . . 1 1 67 67 LEU MD2  H . . . . . 1.8 1.8 3.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HN   . . . . . 67 . HD#  . . rr_2lji 1 
+      562 1 OR . 1 1 67 67 LEU HA   H . . . 1 1 67 67 LEU HB2  H . . . . . 1.8 1.8 5.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HA   . . . . . 67 . HB#  . . rr_2lji 1 
+      562 2 OR . 1 1 67 67 LEU HA   H . . . 1 1 67 67 LEU HB3  H . . . . . 1.8 1.8 5.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HA   . . . . . 67 . HB#  . . rr_2lji 1 
+      563 1 OR . 1 1 67 67 LEU HB2  H . . . 1 1 67 67 LEU MD1  H . . . . . 1.8 1.8 4.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HB#  . . . . . 67 . HD#  . . rr_2lji 1 
+      563 2 OR . 1 1 67 67 LEU MD2  H . . . 1 1 67 67 LEU HB2  H . . . . . 1.8 1.8 4.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HD#  . . . . . 67 . HB#  . . rr_2lji 1 
+      563 3 OR . 1 1 67 67 LEU MD2  H . . . 1 1 67 67 LEU HB3  H . . . . . 1.8 1.8 4.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HD#  . . . . . 67 . HB#  . . rr_2lji 1 
+      563 4 OR . 1 1 67 67 LEU HB3  H . . . 1 1 67 67 LEU MD1  H . . . . . 1.8 1.8 4.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HB#  . . . . . 67 . HD#  . . rr_2lji 1 
+      564 1 .  . 1 1 67 67 LEU H    H . . . 1 1 68 68 GLU H    H . . . . . 1.8 1.8 4.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HN   . . . . . 68 . HN   . . rr_2lji 1 
+      565 1 .  . 1 1 68 68 GLU H    H . . . 1 1 67 67 LEU HA   H . . . . . 1.8 1.8 3.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HN   . . . . . 67 . HA   . . rr_2lji 1 
+      566 1 OR . 1 1 68 68 GLU H    H . . . 1 1 68 68 GLU HG2  H . . . . . 1.8 1.8 5.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HN   . . . . . 68 . HG#  . . rr_2lji 1 
+      566 2 OR . 1 1 68 68 GLU H    H . . . 1 1 68 68 GLU HG3  H . . . . . 1.8 1.8 5.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HN   . . . . . 68 . HG#  . . rr_2lji 1 
+      567 1 OR . 1 1 68 68 GLU H    H . . . 1 1 68 68 GLU HB2  H . . . . . 1.8 1.8 3.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HN   . . . . . 68 . HB#  . . rr_2lji 1 
+      567 2 OR . 1 1 68 68 GLU H    H . . . 1 1 68 68 GLU HB3  H . . . . . 1.8 1.8 3.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HN   . . . . . 68 . HB#  . . rr_2lji 1 
+      568 1 OR . 1 1 68 68 GLU H    H . . . 1 1 67 67 LEU HB2  H . . . . . 1.8 1.8 5.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HN   . . . . . 67 . HB#  . . rr_2lji 1 
+      568 2 OR . 1 1 68 68 GLU H    H . . . 1 1 67 67 LEU HB3  H . . . . . 1.8 1.8 5.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HN   . . . . . 67 . HB#  . . rr_2lji 1 
+      569 1 OR . 1 1 68 68 GLU H    H . . . 1 1 67 67 LEU MD1  H . . . . . 1.8 1.8 6.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HN   . . . . . 67 . HD#  . . rr_2lji 1 
+      569 2 OR . 1 1 67 67 LEU MD2  H . . . 1 1 68 68 GLU H    H . . . . . 1.8 1.8 6.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 67 . HD#  . . . . . 68 . HN   . . rr_2lji 1 
+      570 1 OR . 1 1 68 68 GLU HA   H . . . 1 1 68 68 GLU HG2  H . . . . . 1.8 1.8 5.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HA   . . . . . 68 . HG#  . . rr_2lji 1 
+      570 2 OR . 1 1 68 68 GLU HG3  H . . . 1 1 68 68 GLU HA   H . . . . . 1.8 1.8 5.5 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HG#  . . . . . 68 . HA   . . rr_2lji 1 
+      571 1 OR . 1 1 68 68 GLU HB2  H . . . 1 1 68 68 GLU HG2  H . . . . . 1.8 1.8 4.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HB#  . . . . . 68 . HG#  . . rr_2lji 1 
+      571 2 OR . 1 1 68 68 GLU HB3  H . . . 1 1 68 68 GLU HG2  H . . . . . 1.8 1.8 4.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HB#  . . . . . 68 . HG#  . . rr_2lji 1 
+      571 3 OR . 1 1 68 68 GLU HG3  H . . . 1 1 68 68 GLU HB2  H . . . . . 1.8 1.8 4.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HG#  . . . . . 68 . HB#  . . rr_2lji 1 
+      571 4 OR . 1 1 68 68 GLU HG3  H . . . 1 1 68 68 GLU HB3  H . . . . . 1.8 1.8 4.0 . . . . . . .   . .   .    . . . .   . .   .    . . . 68 . HG#  . . . . . 68 . HB#  . . rr_2lji 1 
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_comment_org.ID
+      _Gen_dist_constraint_comment_org.Comment_text
+      _Gen_dist_constraint_comment_org.Comment_begin_line
+      _Gen_dist_constraint_comment_org.Comment_begin_column
+      _Gen_dist_constraint_comment_org.Comment_end_line
+      _Gen_dist_constraint_comment_org.Comment_end_column
+      _Gen_dist_constraint_comment_org.Entry_ID
+      _Gen_dist_constraint_comment_org.Gen_dist_constraint_list_ID
+
+       1  N2                                                                    1 1   1  4 rr_2lji 1 
+       2  V3                                                                   10 1  10  4 rr_2lji 1 
+       3  T4                                                                   21 1  21  4 rr_2lji 1 
+       4  V5                                                                   35 1  35  4 rr_2lji 1 
+       5  E6                                                                   53 1  53  4 rr_2lji 1 
+       6  V7                                                                   67 1  67  4 rr_2lji 1 
+       7  V8                                                                   78 1  78  4 rr_2lji 1 
+       8  G9                                                                   92 1  92  4 rr_2lji 1 
+       9  E10                                                                  98 1  98  5 rr_2lji 1 
+      10  T12                                                                 100 1 100  5 rr_2lji 1 
+      11  S13                                                                 109 1 109  5 rr_2lji 1 
+      12  E14                                                                 122 1 122  5 rr_2lji 1 
+      13  V15                                                                 131 1 131  5 rr_2lji 1 
+      14  A16                                                                 144 1 144  5 rr_2lji 1 
+      15  V17                                                                 155 1 155  5 rr_2lji 1 
+      16  D18                                                                 169 1 169  5 rr_2lji 1 
+      17  D19                                                                 177 1 177  5 rr_2lji 1 
+      18  D20                                                                 183 1 183  5 rr_2lji 1 
+      19  G21                                                                 191 1 191  5 rr_2lji 1 
+      20  T22                                                                 203 1 203  5 rr_2lji 1 
+      21  Y23                                                                 218 1 218  5 rr_2lji 1 
+      22  A24                                                                 234 1 234  5 rr_2lji 1 
+      23  D25                                                                 241 1 241  5 rr_2lji 1 
+      24  L26                                                                 250 1 250  5 rr_2lji 1 
+      25  V27                                                                 265 1 265  5 rr_2lji 1 
+      26  R28                                                                 281 1 281  5 rr_2lji 1 
+      27  A29                                                                 293 1 293  5 rr_2lji 1 
+      28  V30                                                                 309 1 309  5 rr_2lji 1 
+      29  D31                                                                 325 1 325  5 rr_2lji 1 
+      30  L32                                                                 334 1 334  5 rr_2lji 1 
+      31  S33                                                                 344 1 344  5 rr_2lji 1 
+      32  H35                                                                 350 1 350  5 rr_2lji 1 
+      33  E36                                                                 355 1 355  5 rr_2lji 1 
+      34  V37                                                                 365 1 365  5 rr_2lji 1 
+      35  T38                                                                 377 1 377  5 rr_2lji 1 
+      36  V39                                                                 393 1 393  5 rr_2lji 1 
+      37  L40                                                                 405 1 405  5 rr_2lji 1 
+      38  V41                                                                 418 1 418  5 rr_2lji 1 
+      39  D42                                                                 432 1 432  5 rr_2lji 1 
+      40 "assign (resid 42 and name hn) (resid 40 and name ha ) 1.8 0.0 3.2"  435 1 435 67 rr_2lji 1 
+      41  G43                                                                 442 1 442  5 rr_2lji 1 
+      42 "assign (resid 43 and name hn) (resid 40 and name ha ) 1.8 0.0 4.2"  445 1 445 67 rr_2lji 1 
+      43 "assign (resid 43 and name hn) (resid 40 and name hb2 ) 1.8 0.0 4.2" 451 1 451 68 rr_2lji 1 
+      44  R44                                                                 454 1 454  5 rr_2lji 1 
+      45  E48                                                                 462 1 462  5 rr_2lji 1 
+      46  D49                                                                 468 1 468  5 rr_2lji 1 
+      47  Q50                                                                 475 1 475  5 rr_2lji 1 
+      48  S51                                                                 482 1 482  5 rr_2lji 1 
+      49  V52                                                                 491 1 491  5 rr_2lji 1 
+      50  E53                                                                 501 1 501  5 rr_2lji 1 
+      51  V54                                                                 511 1 511  5 rr_2lji 1 
+      52  D55                                                                 523 1 523  5 rr_2lji 1 
+      53  R56                                                                 530 1 530  5 rr_2lji 1 
+      54  V57                                                                 543 1 543  5 rr_2lji 1 
+      55  K58                                                                 553 1 553  5 rr_2lji 1 
+      56  V59                                                                 563 1 563  5 rr_2lji 1 
+      57  L60                                                                 578 1 578  5 rr_2lji 1 
+      58  R61                                                                 593 1 593  5 rr_2lji 1 
+      59  I63                                                                 601 1 601  5 rr_2lji 1 
+      60  K64                                                                 607 1 607  5 rr_2lji 1 
+      61  G65                                                                 613 1 613  5 rr_2lji 1 
+      62  G66                                                                 617 1 617  5 rr_2lji 1 
+      63  L67                                                                 622 1 622  5 rr_2lji 1 
+      64  E68                                                                 629 1 629  5 rr_2lji 1 
+
+   stop_
+
+save_
+
+
+save_CNS/XPLOR_dihedral_3
+   _Torsion_angle_constraint_list.Sf_category          torsion_angle_constraints
+   _Torsion_angle_constraint_list.Sf_framecode         CNS/XPLOR_dihedral_3
+   _Torsion_angle_constraint_list.Entry_ID             rr_2lji
+   _Torsion_angle_constraint_list.ID                   1
+   _Torsion_angle_constraint_list.Details             "Generated by Wattos"
+   _Torsion_angle_constraint_list.Constraint_file_ID   1
+   _Torsion_angle_constraint_list.Block_ID             3
+
+   loop_
+      _Torsion_angle_constraint_software.Software_ID
+      _Torsion_angle_constraint_software.Software_label
+      _Torsion_angle_constraint_software.Method_ID
+      _Torsion_angle_constraint_software.Method_label
+      _Torsion_angle_constraint_software.Entry_ID
+      _Torsion_angle_constraint_software.Torsion_angle_constraint_list_ID
+
+      . . . . rr_2lji 1 
+
+   stop_
+
+   loop_
+      _Torsion_angle_constraint.ID
+      _Torsion_angle_constraint.Torsion_angle_name
+      _Torsion_angle_constraint.Assembly_atom_ID_1
+      _Torsion_angle_constraint.Entity_assembly_ID_1
+      _Torsion_angle_constraint.Entity_ID_1
+      _Torsion_angle_constraint.Comp_index_ID_1
+      _Torsion_angle_constraint.Seq_ID_1
+      _Torsion_angle_constraint.Comp_ID_1
+      _Torsion_angle_constraint.Atom_ID_1
+      _Torsion_angle_constraint.Atom_type_1
+      _Torsion_angle_constraint.Resonance_ID_1
+      _Torsion_angle_constraint.Assembly_atom_ID_2
+      _Torsion_angle_constraint.Entity_assembly_ID_2
+      _Torsion_angle_constraint.Entity_ID_2
+      _Torsion_angle_constraint.Comp_index_ID_2
+      _Torsion_angle_constraint.Seq_ID_2
+      _Torsion_angle_constraint.Comp_ID_2
+      _Torsion_angle_constraint.Atom_ID_2
+      _Torsion_angle_constraint.Atom_type_2
+      _Torsion_angle_constraint.Resonance_ID_2
+      _Torsion_angle_constraint.Assembly_atom_ID_3
+      _Torsion_angle_constraint.Entity_assembly_ID_3
+      _Torsion_angle_constraint.Entity_ID_3
+      _Torsion_angle_constraint.Comp_index_ID_3
+      _Torsion_angle_constraint.Seq_ID_3
+      _Torsion_angle_constraint.Comp_ID_3
+      _Torsion_angle_constraint.Atom_ID_3
+      _Torsion_angle_constraint.Atom_type_3
+      _Torsion_angle_constraint.Resonance_ID_3
+      _Torsion_angle_constraint.Assembly_atom_ID_4
+      _Torsion_angle_constraint.Entity_assembly_ID_4
+      _Torsion_angle_constraint.Entity_ID_4
+      _Torsion_angle_constraint.Comp_index_ID_4
+      _Torsion_angle_constraint.Seq_ID_4
+      _Torsion_angle_constraint.Comp_ID_4
+      _Torsion_angle_constraint.Atom_ID_4
+      _Torsion_angle_constraint.Atom_type_4
+      _Torsion_angle_constraint.Resonance_ID_4
+      _Torsion_angle_constraint.Angle_lower_bound_val
+      _Torsion_angle_constraint.Angle_upper_bound_val
+      _Torsion_angle_constraint.Source_experiment_ID
+      _Torsion_angle_constraint.PDB_record_ID_1
+      _Torsion_angle_constraint.PDB_model_num_1
+      _Torsion_angle_constraint.PDB_strand_ID_1
+      _Torsion_angle_constraint.PDB_ins_code_1
+      _Torsion_angle_constraint.PDB_residue_no_1
+      _Torsion_angle_constraint.PDB_residue_name_1
+      _Torsion_angle_constraint.PDB_atom_name_1
+      _Torsion_angle_constraint.PDB_record_ID_2
+      _Torsion_angle_constraint.PDB_model_num_2
+      _Torsion_angle_constraint.PDB_strand_ID_2
+      _Torsion_angle_constraint.PDB_ins_code_2
+      _Torsion_angle_constraint.PDB_residue_no_2
+      _Torsion_angle_constraint.PDB_residue_name_2
+      _Torsion_angle_constraint.PDB_atom_name_2
+      _Torsion_angle_constraint.PDB_record_ID_3
+      _Torsion_angle_constraint.PDB_model_num_3
+      _Torsion_angle_constraint.PDB_strand_ID_3
+      _Torsion_angle_constraint.PDB_ins_code_3
+      _Torsion_angle_constraint.PDB_residue_no_3
+      _Torsion_angle_constraint.PDB_residue_name_3
+      _Torsion_angle_constraint.PDB_atom_name_3
+      _Torsion_angle_constraint.PDB_record_ID_4
+      _Torsion_angle_constraint.PDB_model_num_4
+      _Torsion_angle_constraint.PDB_strand_ID_4
+      _Torsion_angle_constraint.PDB_ins_code_4
+      _Torsion_angle_constraint.PDB_residue_no_4
+      _Torsion_angle_constraint.PDB_residue_name_4
+      _Torsion_angle_constraint.PDB_atom_name_4
+      _Torsion_angle_constraint.Auth_entity_assembly_ID_1
+      _Torsion_angle_constraint.Auth_asym_ID_1
+      _Torsion_angle_constraint.Auth_chain_ID_1
+      _Torsion_angle_constraint.Auth_seq_ID_1
+      _Torsion_angle_constraint.Auth_comp_ID_1
+      _Torsion_angle_constraint.Auth_atom_ID_1
+      _Torsion_angle_constraint.Auth_alt_ID_1
+      _Torsion_angle_constraint.Auth_atom_name_1
+      _Torsion_angle_constraint.Auth_entity_assembly_ID_2
+      _Torsion_angle_constraint.Auth_asym_ID_2
+      _Torsion_angle_constraint.Auth_chain_ID_2
+      _Torsion_angle_constraint.Auth_seq_ID_2
+      _Torsion_angle_constraint.Auth_comp_ID_2
+      _Torsion_angle_constraint.Auth_atom_ID_2
+      _Torsion_angle_constraint.Auth_alt_ID_2
+      _Torsion_angle_constraint.Auth_atom_name_2
+      _Torsion_angle_constraint.Auth_entity_assembly_ID_3
+      _Torsion_angle_constraint.Auth_asym_ID_3
+      _Torsion_angle_constraint.Auth_chain_ID_3
+      _Torsion_angle_constraint.Auth_seq_ID_3
+      _Torsion_angle_constraint.Auth_comp_ID_3
+      _Torsion_angle_constraint.Auth_atom_ID_3
+      _Torsion_angle_constraint.Auth_alt_ID_3
+      _Torsion_angle_constraint.Auth_atom_name_3
+      _Torsion_angle_constraint.Auth_entity_assembly_ID_4
+      _Torsion_angle_constraint.Auth_asym_ID_4
+      _Torsion_angle_constraint.Auth_chain_ID_4
+      _Torsion_angle_constraint.Auth_seq_ID_4
+      _Torsion_angle_constraint.Auth_comp_ID_4
+      _Torsion_angle_constraint.Auth_atom_ID_4
+      _Torsion_angle_constraint.Auth_alt_ID_4
+      _Torsion_angle_constraint.Auth_atom_name_4
+      _Torsion_angle_constraint.Entry_ID
+      _Torsion_angle_constraint.Torsion_angle_constraint_list_ID
+
+       1 . . 1 1  1  1 MET C C . . 1 1  2  2 ASN N  N . . 1 1  2  2 ASN CA C . . 1 1  2  2 ASN C C . -118.15  -85.21 . . . A .  1 MET C . . A .  2 ASN N  . . A .  2 ASN CA . . A .  2 ASN C . . .  1 . C . . . . .  2 . N  . . . . .  2 . CA . . . . .  2 . C . . rr_2lji 1 
+       2 . . 1 1  2  2 ASN N N . . 1 1  2  2 ASN CA C . . 1 1  2  2 ASN C  C . . 1 1  3  3 VAL N N .  126.15  149.25 . . . A .  2 ASN N . . A .  2 ASN CA . . A .  2 ASN C  . . A .  3 VAL N . . .  2 . N . . . . .  2 . CA . . . . .  2 . C  . . . . .  3 . N . . rr_2lji 1 
+       3 . . 1 1  2  2 ASN C C . . 1 1  3  3 VAL N  N . . 1 1  3  3 VAL CA C . . 1 1  3  3 VAL C C . -140.00 -102.48 . . . A .  2 ASN C . . A .  3 VAL N  . . A .  3 VAL CA . . A .  3 VAL C . . .  2 . C . . . . .  3 . N  . . . . .  3 . CA . . . . .  3 . C . . rr_2lji 1 
+       4 . . 1 1  3  3 VAL N N . . 1 1  3  3 VAL CA C . . 1 1  3  3 VAL C  C . . 1 1  4  4 THR N N .  116.64  139.18 . . . A .  3 VAL N . . A .  3 VAL CA . . A .  3 VAL C  . . A .  4 THR N . . .  3 . N . . . . .  3 . CA . . . . .  3 . C  . . . . .  4 . N . . rr_2lji 1 
+       5 . . 1 1  3  3 VAL C C . . 1 1  4  4 THR N  N . . 1 1  4  4 THR CA C . . 1 1  4  4 THR C C . -109.79  -75.57 . . . A .  3 VAL C . . A .  4 THR N  . . A .  4 THR CA . . A .  4 THR C . . .  3 . C . . . . .  4 . N  . . . . .  4 . CA . . . . .  4 . C . . rr_2lji 1 
+       6 . . 1 1  4  4 THR N N . . 1 1  4  4 THR CA C . . 1 1  4  4 THR C  C . . 1 1  5  5 VAL N N .  113.63  134.77 . . . A .  4 THR N . . A .  4 THR CA . . A .  4 THR C  . . A .  5 VAL N . . .  4 . N . . . . .  4 . CA . . . . .  4 . C  . . . . .  5 . N . . rr_2lji 1 
+       7 . . 1 1  4  4 THR C C . . 1 1  5  5 VAL N  N . . 1 1  5  5 VAL CA C . . 1 1  5  5 VAL C C . -118.50  -91.70 . . . A .  4 THR C . . A .  5 VAL N  . . A .  5 VAL CA . . A .  5 VAL C . . .  4 . C . . . . .  5 . N  . . . . .  5 . CA . . . . .  5 . C . . rr_2lji 1 
+       8 . . 1 1  5  5 VAL N N . . 1 1  5  5 VAL CA C . . 1 1  5  5 VAL C  C . . 1 1  6  6 GLU N N .  117.24  137.36 . . . A .  5 VAL N . . A .  5 VAL CA . . A .  5 VAL C  . . A .  6 GLU N . . .  5 . N . . . . .  5 . CA . . . . .  5 . C  . . . . .  6 . N . . rr_2lji 1 
+       9 . . 1 1  5  5 VAL C C . . 1 1  6  6 GLU N  N . . 1 1  6  6 GLU CA C . . 1 1  6  6 GLU C C . -131.02  -81.84 . . . A .  5 VAL C . . A .  6 GLU N  . . A .  6 GLU CA . . A .  6 GLU C . . .  5 . C . . . . .  6 . N  . . . . .  6 . CA . . . . .  6 . C . . rr_2lji 1 
+      10 . . 1 1  6  6 GLU N N . . 1 1  6  6 GLU CA C . . 1 1  6  6 GLU C  C . . 1 1  7  7 VAL N N .  114.79  131.45 . . . A .  6 GLU N . . A .  6 GLU CA . . A .  6 GLU C  . . A .  7 VAL N . . .  6 . N . . . . .  6 . CA . . . . .  6 . C  . . . . .  7 . N . . rr_2lji 1 
+      11 . . 1 1  6  6 GLU C C . . 1 1  7  7 VAL N  N . . 1 1  7  7 VAL CA C . . 1 1  7  7 VAL C C . -103.13  -75.47 . . . A .  6 GLU C . . A .  7 VAL N  . . A .  7 VAL CA . . A .  7 VAL C . . .  6 . C . . . . .  7 . N  . . . . .  7 . CA . . . . .  7 . C . . rr_2lji 1 
+      12 . . 1 1  7  7 VAL N N . . 1 1  7  7 VAL CA C . . 1 1  7  7 VAL C  C . . 1 1  8  8 VAL N N .  101.97  133.75 . . . A .  7 VAL N . . A .  7 VAL CA . . A .  7 VAL C  . . A .  8 VAL N . . .  7 . N . . . . .  7 . CA . . . . .  7 . C  . . . . .  8 . N . . rr_2lji 1 
+      13 . . 1 1  7  7 VAL C C . . 1 1  8  8 VAL N  N . . 1 1  8  8 VAL CA C . . 1 1  8  8 VAL C C .  -82.52  -57.42 . . . A .  7 VAL C . . A .  8 VAL N  . . A .  8 VAL CA . . A .  8 VAL C . . .  7 . C . . . . .  8 . N  . . . . .  8 . CA . . . . .  8 . C . . rr_2lji 1 
+      14 . . 1 1  8  8 VAL N N . . 1 1  8  8 VAL CA C . . 1 1  8  8 VAL C  C . . 1 1  9  9 GLY N N .  120.99  135.55 . . . A .  8 VAL N . . A .  8 VAL CA . . A .  8 VAL C  . . A .  9 GLY N . . .  8 . N . . . . .  8 . CA . . . . .  8 . C  . . . . .  9 . N . . rr_2lji 1 
+      15 . . 1 1  9  9 GLY C C . . 1 1 10 10 GLU N  N . . 1 1 10 10 GLU CA C . . 1 1 10 10 GLU C C . -120.48  -77.74 . . . A .  9 GLY C . . A . 10 GLU N  . . A . 10 GLU CA . . A . 10 GLU C . . .  9 . C . . . . . 10 . N  . . . . . 10 . CA . . . . . 10 . C . . rr_2lji 1 
+      16 . . 1 1 10 10 GLU N N . . 1 1 10 10 GLU CA C . . 1 1 10 10 GLU C  C . . 1 1 11 11 GLU N N .  122.21  162.85 . . . A . 10 GLU N . . A . 10 GLU CA . . A . 10 GLU C  . . A . 11 GLU N . . . 10 . N . . . . . 10 . CA . . . . . 10 . C  . . . . . 11 . N . . rr_2lji 1 
+      17 . . 1 1 11 11 GLU C C . . 1 1 12 12 THR N  N . . 1 1 12 12 THR CA C . . 1 1 12 12 THR C C . -127.49 -100.53 . . . A . 11 GLU C . . A . 12 THR N  . . A . 12 THR CA . . A . 12 THR C . . . 11 . C . . . . . 12 . N  . . . . . 12 . CA . . . . . 12 . C . . rr_2lji 1 
+      18 . . 1 1 12 12 THR N N . . 1 1 12 12 THR CA C . . 1 1 12 12 THR C  C . . 1 1 13 13 SER N N .  116.97  134.77 . . . A . 12 THR N . . A . 12 THR CA . . A . 12 THR C  . . A . 13 SER N . . . 12 . N . . . . . 12 . CA . . . . . 12 . C  . . . . . 13 . N . . rr_2lji 1 
+      19 . . 1 1 12 12 THR C C . . 1 1 13 13 SER N  N . . 1 1 13 13 SER CA C . . 1 1 13 13 SER C C . -141.49 -105.65 . . . A . 12 THR C . . A . 13 SER N  . . A . 13 SER CA . . A . 13 SER C . . . 12 . C . . . . . 13 . N  . . . . . 13 . CA . . . . . 13 . C . . rr_2lji 1 
+      20 . . 1 1 13 13 SER N N . . 1 1 13 13 SER CA C . . 1 1 13 13 SER C  C . . 1 1 14 14 GLU N N .  124.63  162.53 . . . A . 13 SER N . . A . 13 SER CA . . A . 13 SER C  . . A . 14 GLU N . . . 13 . N . . . . . 13 . CA . . . . . 13 . C  . . . . . 14 . N . . rr_2lji 1 
+      21 . . 1 1 13 13 SER C C . . 1 1 14 14 GLU N  N . . 1 1 14 14 GLU CA C . . 1 1 14 14 GLU C C . -125.27  -79.87 . . . A . 13 SER C . . A . 14 GLU N  . . A . 14 GLU CA . . A . 14 GLU C . . . 13 . C . . . . . 14 . N  . . . . . 14 . CA . . . . . 14 . C . . rr_2lji 1 
+      22 . . 1 1 14 14 GLU N N . . 1 1 14 14 GLU CA C . . 1 1 14 14 GLU C  C . . 1 1 15 15 VAL N N .  122.09  145.81 . . . A . 14 GLU N . . A . 14 GLU CA . . A . 14 GLU C  . . A . 15 VAL N . . . 14 . N . . . . . 14 . CA . . . . . 14 . C  . . . . . 15 . N . . rr_2lji 1 
+      23 . . 1 1 14 14 GLU C C . . 1 1 15 15 VAL N  N . . 1 1 15 15 VAL CA C . . 1 1 15 15 VAL C C . -132.44 -114.64 . . . A . 14 GLU C . . A . 15 VAL N  . . A . 15 VAL CA . . A . 15 VAL C . . . 14 . C . . . . . 15 . N  . . . . . 15 . CA . . . . . 15 . C . . rr_2lji 1 
+      24 . . 1 1 15 15 VAL N N . . 1 1 15 15 VAL CA C . . 1 1 15 15 VAL C  C . . 1 1 16 16 ALA N N .  122.93  150.87 . . . A . 15 VAL N . . A . 15 VAL CA . . A . 15 VAL C  . . A . 16 ALA N . . . 15 . N . . . . . 15 . CA . . . . . 15 . C  . . . . . 16 . N . . rr_2lji 1 
+      25 . . 1 1 15 15 VAL C C . . 1 1 16 16 ALA N  N . . 1 1 16 16 ALA CA C . . 1 1 16 16 ALA C C . -118.92  -84.82 . . . A . 15 VAL C . . A . 16 ALA N  . . A . 16 ALA CA . . A . 16 ALA C . . . 15 . C . . . . . 16 . N  . . . . . 16 . CA . . . . . 16 . C . . rr_2lji 1 
+      26 . . 1 1 16 16 ALA N N . . 1 1 16 16 ALA CA C . . 1 1 16 16 ALA C  C . . 1 1 17 17 VAL N N .  124.18  148.46 . . . A . 16 ALA N . . A . 16 ALA CA . . A . 16 ALA C  . . A . 17 VAL N . . . 16 . N . . . . . 16 . CA . . . . . 16 . C  . . . . . 17 . N . . rr_2lji 1 
+      27 . . 1 1 16 16 ALA C C . . 1 1 17 17 VAL N  N . . 1 1 17 17 VAL CA C . . 1 1 17 17 VAL C C . -142.20 -116.70 . . . A . 16 ALA C . . A . 17 VAL N  . . A . 17 VAL CA . . A . 17 VAL C . . . 16 . C . . . . . 17 . N  . . . . . 17 . CA . . . . . 17 . C . . rr_2lji 1 
+      28 . . 1 1 17 17 VAL N N . . 1 1 17 17 VAL CA C . . 1 1 17 17 VAL C  C . . 1 1 18 18 ASP N N .  132.18  165.28 . . . A . 17 VAL N . . A . 17 VAL CA . . A . 17 VAL C  . . A . 18 ASP N . . . 17 . N . . . . . 17 . CA . . . . . 17 . C  . . . . . 18 . N . . rr_2lji 1 
+      29 . . 1 1 18 18 ASP C C . . 1 1 19 19 ASP N  N . . 1 1 19 19 ASP CA C . . 1 1 19 19 ASP C C .  -66.35  -51.45 . . . A . 18 ASP C . . A . 19 ASP N  . . A . 19 ASP CA . . A . 19 ASP C . . . 18 . C . . . . . 19 . N  . . . . . 19 . CA . . . . . 19 . C . . rr_2lji 1 
+      30 . . 1 1 19 19 ASP N N . . 1 1 19 19 ASP CA C . . 1 1 19 19 ASP C  C . . 1 1 20 20 ASP N N .  -40.65  -21.57 . . . A . 19 ASP N . . A . 19 ASP CA . . A . 19 ASP C  . . A . 20 ASP N . . . 19 . N . . . . . 19 . CA . . . . . 19 . C  . . . . . 20 . N . . rr_2lji 1 
+      31 . . 1 1 20 20 ASP C C . . 1 1 21 21 GLY N  N . . 1 1 21 21 GLY CA C . . 1 1 21 21 GLY C C .   70.96   92.82 . . . A . 20 ASP C . . A . 21 GLY N  . . A . 21 GLY CA . . A . 21 GLY C . . . 20 . C . . . . . 21 . N  . . . . . 21 . CA . . . . . 21 . C . . rr_2lji 1 
+      32 . . 1 1 21 21 GLY N N . . 1 1 21 21 GLY CA C . . 1 1 21 21 GLY C  C . . 1 1 22 22 THR N N .  -13.57   25.93 . . . A . 21 GLY N . . A . 21 GLY CA . . A . 21 GLY C  . . A . 22 THR N . . . 21 . N . . . . . 21 . CA . . . . . 21 . C  . . . . . 22 . N . . rr_2lji 1 
+      33 . . 1 1 21 21 GLY C C . . 1 1 22 22 THR N  N . . 1 1 22 22 THR CA C . . 1 1 22 22 THR C C . -122.40  -87.16 . . . A . 21 GLY C . . A . 22 THR N  . . A . 22 THR CA . . A . 22 THR C . . . 21 . C . . . . . 22 . N  . . . . . 22 . CA . . . . . 22 . C . . rr_2lji 1 
+      34 . . 1 1 22 22 THR N N . . 1 1 22 22 THR CA C . . 1 1 22 22 THR C  C . . 1 1 23 23 TYR N N .  158.82  178.90 . . . A . 22 THR N . . A . 22 THR CA . . A . 22 THR C  . . A . 23 TYR N . . . 22 . N . . . . . 22 . CA . . . . . 22 . C  . . . . . 23 . N . . rr_2lji 1 
+      35 . . 1 1 22 22 THR C C . . 1 1 23 23 TYR N  N . . 1 1 23 23 TYR CA C . . 1 1 23 23 TYR C C .  -63.21  -57.41 . . . A . 22 THR C . . A . 23 TYR N  . . A . 23 TYR CA . . A . 23 TYR C . . . 22 . C . . . . . 23 . N  . . . . . 23 . CA . . . . . 23 . C . . rr_2lji 1 
+      36 . . 1 1 23 23 TYR N N . . 1 1 23 23 TYR CA C . . 1 1 23 23 TYR C  C . . 1 1 24 24 ALA N N .  -39.89  -32.79 . . . A . 23 TYR N . . A . 23 TYR CA . . A . 23 TYR C  . . A . 24 ALA N . . . 23 . N . . . . . 23 . CA . . . . . 23 . C  . . . . . 24 . N . . rr_2lji 1 
+      37 . . 1 1 23 23 TYR C C . . 1 1 24 24 ALA N  N . . 1 1 24 24 ALA CA C . . 1 1 24 24 ALA C C .  -66.14  -56.58 . . . A . 23 TYR C . . A . 24 ALA N  . . A . 24 ALA CA . . A . 24 ALA C . . . 23 . C . . . . . 24 . N  . . . . . 24 . CA . . . . . 24 . C . . rr_2lji 1 
+      38 . . 1 1 24 24 ALA N N . . 1 1 24 24 ALA CA C . . 1 1 24 24 ALA C  C . . 1 1 25 25 ASP N N .  -46.49  -35.83 . . . A . 24 ALA N . . A . 24 ALA CA . . A . 24 ALA C  . . A . 25 ASP N . . . 24 . N . . . . . 24 . CA . . . . . 24 . C  . . . . . 25 . N . . rr_2lji 1 
+      39 . . 1 1 24 24 ALA C C . . 1 1 25 25 ASP N  N . . 1 1 25 25 ASP CA C . . 1 1 25 25 ASP C C .  -67.67  -58.93 . . . A . 24 ALA C . . A . 25 ASP N  . . A . 25 ASP CA . . A . 25 ASP C . . . 24 . C . . . . . 25 . N  . . . . . 25 . CA . . . . . 25 . C . . rr_2lji 1 
+      40 . . 1 1 25 25 ASP N N . . 1 1 25 25 ASP CA C . . 1 1 25 25 ASP C  C . . 1 1 26 26 LEU N N .  -44.28  -37.54 . . . A . 25 ASP N . . A . 25 ASP CA . . A . 25 ASP C  . . A . 26 LEU N . . . 25 . N . . . . . 25 . CA . . . . . 25 . C  . . . . . 26 . N . . rr_2lji 1 
+      41 . . 1 1 25 25 ASP C C . . 1 1 26 26 LEU N  N . . 1 1 26 26 LEU CA C . . 1 1 26 26 LEU C C .  -74.43  -56.45 . . . A . 25 ASP C . . A . 26 LEU N  . . A . 26 LEU CA . . A . 26 LEU C . . . 25 . C . . . . . 26 . N  . . . . . 26 . CA . . . . . 26 . C . . rr_2lji 1 
+      42 . . 1 1 26 26 LEU N N . . 1 1 26 26 LEU CA C . . 1 1 26 26 LEU C  C . . 1 1 27 27 VAL N N .  -51.76  -33.76 . . . A . 26 LEU N . . A . 26 LEU CA . . A . 26 LEU C  . . A . 27 VAL N . . . 26 . N . . . . . 26 . CA . . . . . 26 . C  . . . . . 27 . N . . rr_2lji 1 
+      43 . . 1 1 26 26 LEU C C . . 1 1 27 27 VAL N  N . . 1 1 27 27 VAL CA C . . 1 1 27 27 VAL C C .  -70.82  -62.38 . . . A . 26 LEU C . . A . 27 VAL N  . . A . 27 VAL CA . . A . 27 VAL C . . . 26 . C . . . . . 27 . N  . . . . . 27 . CA . . . . . 27 . C . . rr_2lji 1 
+      44 . . 1 1 27 27 VAL N N . . 1 1 27 27 VAL CA C . . 1 1 27 27 VAL C  C . . 1 1 28 28 ARG N N .  -51.36  -33.16 . . . A . 27 VAL N . . A . 27 VAL CA . . A . 27 VAL C  . . A . 28 ARG N . . . 27 . N . . . . . 27 . CA . . . . . 27 . C  . . . . . 28 . N . . rr_2lji 1 
+      45 . . 1 1 27 27 VAL C C . . 1 1 28 28 ARG N  N . . 1 1 28 28 ARG CA C . . 1 1 28 28 ARG C C .  -67.48  -52.90 . . . A . 27 VAL C . . A . 28 ARG N  . . A . 28 ARG CA . . A . 28 ARG C . . . 27 . C . . . . . 28 . N  . . . . . 28 . CA . . . . . 28 . C . . rr_2lji 1 
+      46 . . 1 1 28 28 ARG N N . . 1 1 28 28 ARG CA C . . 1 1 28 28 ARG C  C . . 1 1 29 29 ALA N N .  -52.99  -36.13 . . . A . 28 ARG N . . A . 28 ARG CA . . A . 28 ARG C  . . A . 29 ALA N . . . 28 . N . . . . . 28 . CA . . . . . 28 . C  . . . . . 29 . N . . rr_2lji 1 
+      47 . . 1 1 28 28 ARG C C . . 1 1 29 29 ALA N  N . . 1 1 29 29 ALA CA C . . 1 1 29 29 ALA C C .  -75.02  -54.26 . . . A . 28 ARG C . . A . 29 ALA N  . . A . 29 ALA CA . . A . 29 ALA C . . . 28 . C . . . . . 29 . N  . . . . . 29 . CA . . . . . 29 . C . . rr_2lji 1 
+      48 . . 1 1 29 29 ALA N N . . 1 1 29 29 ALA CA C . . 1 1 29 29 ALA C  C . . 1 1 30 30 VAL N N .  -43.51  -25.13 . . . A . 29 ALA N . . A . 29 ALA CA . . A . 29 ALA C  . . A . 30 VAL N . . . 29 . N . . . . . 29 . CA . . . . . 29 . C  . . . . . 30 . N . . rr_2lji 1 
+      49 . . 1 1 29 29 ALA C C . . 1 1 30 30 VAL N  N . . 1 1 30 30 VAL CA C . . 1 1 30 30 VAL C C . -112.88  -81.06 . . . A . 29 ALA C . . A . 30 VAL N  . . A . 30 VAL CA . . A . 30 VAL C . . . 29 . C . . . . . 30 . N  . . . . . 30 . CA . . . . . 30 . C . . rr_2lji 1 
+      50 . . 1 1 30 30 VAL N N . . 1 1 30 30 VAL CA C . . 1 1 30 30 VAL C  C . . 1 1 31 31 ASP N N .    3.20   23.04 . . . A . 30 VAL N . . A . 30 VAL CA . . A . 30 VAL C  . . A . 31 ASP N . . . 30 . N . . . . . 30 . CA . . . . . 30 . C  . . . . . 31 . N . . rr_2lji 1 
+      51 . . 1 1 30 30 VAL C C . . 1 1 31 31 ASP N  N . . 1 1 31 31 ASP CA C . . 1 1 31 31 ASP C C .   52.86   65.54 . . . A . 30 VAL C . . A . 31 ASP N  . . A . 31 ASP CA . . A . 31 ASP C . . . 30 . C . . . . . 31 . N  . . . . . 31 . CA . . . . . 31 . C . . rr_2lji 1 
+      52 . . 1 1 31 31 ASP N N . . 1 1 31 31 ASP CA C . . 1 1 31 31 ASP C  C . . 1 1 32 32 LEU N N .   27.90   48.04 . . . A . 31 ASP N . . A . 31 ASP CA . . A . 31 ASP C  . . A . 32 LEU N . . . 31 . N . . . . . 31 . CA . . . . . 31 . C  . . . . . 32 . N . . rr_2lji 1 
+      53 . . 1 1 32 32 LEU C C . . 1 1 33 33 SER N  N . . 1 1 33 33 SER CA C . . 1 1 33 33 SER C C . -115.24  -72.46 . . . A . 32 LEU C . . A . 33 SER N  . . A . 33 SER CA . . A . 33 SER C . . . 32 . C . . . . . 33 . N  . . . . . 33 . CA . . . . . 33 . C . . rr_2lji 1 
+      54 . . 1 1 33 33 SER N N . . 1 1 33 33 SER CA C . . 1 1 33 33 SER C  C . . 1 1 34 34 PRO N N .  120.93  156.01 . . . A . 33 SER N . . A . 33 SER CA . . A . 33 SER C  . . A . 34 PRO N . . . 33 . N . . . . . 33 . CA . . . . . 33 . C  . . . . . 34 . N . . rr_2lji 1 
+      55 . . 1 1 34 34 PRO N N . . 1 1 34 34 PRO CA C . . 1 1 34 34 PRO C  C . . 1 1 35 35 HIS N N .  -32.65  -14.71 . . . A . 34 PRO N . . A . 34 PRO CA . . A . 34 PRO C  . . A . 35 HIS N . . . 34 . N . . . . . 34 . CA . . . . . 34 . C  . . . . . 35 . N . . rr_2lji 1 
+      56 . . 1 1 34 34 PRO C C . . 1 1 35 35 HIS N  N . . 1 1 35 35 HIS CA C . . 1 1 35 35 HIS C C .  -79.61  -63.73 . . . A . 34 PRO C . . A . 35 HIS N  . . A . 35 HIS CA . . A . 35 HIS C . . . 34 . C . . . . . 35 . N  . . . . . 35 . CA . . . . . 35 . C . . rr_2lji 1 
+      57 . . 1 1 35 35 HIS N N . . 1 1 35 35 HIS CA C . . 1 1 35 35 HIS C  C . . 1 1 36 36 GLU N N .  -42.53  -13.03 . . . A . 35 HIS N . . A . 35 HIS CA . . A . 35 HIS C  . . A . 36 GLU N . . . 35 . N . . . . . 35 . CA . . . . . 35 . C  . . . . . 36 . N . . rr_2lji 1 
+      58 . . 1 1 36 36 GLU C C . . 1 1 37 37 VAL N  N . . 1 1 37 37 VAL CA C . . 1 1 37 37 VAL C C . -142.74 -123.90 . . . A . 36 GLU C . . A . 37 VAL N  . . A . 37 VAL CA . . A . 37 VAL C . . . 36 . C . . . . . 37 . N  . . . . . 37 . CA . . . . . 37 . C . . rr_2lji 1 
+      59 . . 1 1 37 37 VAL N N . . 1 1 37 37 VAL CA C . . 1 1 37 37 VAL C  C . . 1 1 38 38 THR N N .  145.94  166.80 . . . A . 37 VAL N . . A . 37 VAL CA . . A . 37 VAL C  . . A . 38 THR N . . . 37 . N . . . . . 37 . CA . . . . . 37 . C  . . . . . 38 . N . . rr_2lji 1 
+      60 . . 1 1 37 37 VAL C C . . 1 1 38 38 THR N  N . . 1 1 38 38 THR CA C . . 1 1 38 38 THR C C . -139.78  -84.90 . . . A . 37 VAL C . . A . 38 THR N  . . A . 38 THR CA . . A . 38 THR C . . . 37 . C . . . . . 38 . N  . . . . . 38 . CA . . . . . 38 . C . . rr_2lji 1 
+      61 . . 1 1 38 38 THR N N . . 1 1 38 38 THR CA C . . 1 1 38 38 THR C  C . . 1 1 39 39 VAL N N .  117.06  138.30 . . . A . 38 THR N . . A . 38 THR CA . . A . 38 THR C  . . A . 39 VAL N . . . 38 . N . . . . . 38 . CA . . . . . 38 . C  . . . . . 39 . N . . rr_2lji 1 
+      62 . . 1 1 38 38 THR C C . . 1 1 39 39 VAL N  N . . 1 1 39 39 VAL CA C . . 1 1 39 39 VAL C C . -110.85  -81.91 . . . A . 38 THR C . . A . 39 VAL N  . . A . 39 VAL CA . . A . 39 VAL C . . . 38 . C . . . . . 39 . N  . . . . . 39 . CA . . . . . 39 . C . . rr_2lji 1 
+      63 . . 1 1 39 39 VAL N N . . 1 1 39 39 VAL CA C . . 1 1 39 39 VAL C  C . . 1 1 40 40 LEU N N .  117.66  136.02 . . . A . 39 VAL N . . A . 39 VAL CA . . A . 39 VAL C  . . A . 40 LEU N . . . 39 . N . . . . . 39 . CA . . . . . 39 . C  . . . . . 40 . N . . rr_2lji 1 
+      64 . . 1 1 39 39 VAL C C . . 1 1 40 40 LEU N  N . . 1 1 40 40 LEU CA C . . 1 1 40 40 LEU C C . -122.47  -83.15 . . . A . 39 VAL C . . A . 40 LEU N  . . A . 40 LEU CA . . A . 40 LEU C . . . 39 . C . . . . . 40 . N  . . . . . 40 . CA . . . . . 40 . C . . rr_2lji 1 
+      65 . . 1 1 40 40 LEU N N . . 1 1 40 40 LEU CA C . . 1 1 40 40 LEU C  C . . 1 1 41 41 VAL N N .  125.71  157.53 . . . A . 40 LEU N . . A . 40 LEU CA . . A . 40 LEU C  . . A . 41 VAL N . . . 40 . N . . . . . 40 . CA . . . . . 40 . C  . . . . . 41 . N . . rr_2lji 1 
+      66 . . 1 1 40 40 LEU C C . . 1 1 41 41 VAL N  N . . 1 1 41 41 VAL CA C . . 1 1 41 41 VAL C C . -130.08 -102.56 . . . A . 40 LEU C . . A . 41 VAL N  . . A . 41 VAL CA . . A . 41 VAL C . . . 40 . C . . . . . 41 . N  . . . . . 41 . CA . . . . . 41 . C . . rr_2lji 1 
+      67 . . 1 1 41 41 VAL N N . . 1 1 41 41 VAL CA C . . 1 1 41 41 VAL C  C . . 1 1 42 42 ASP N N .  117.79  138.93 . . . A . 41 VAL N . . A . 41 VAL CA . . A . 41 VAL C  . . A . 42 ASP N . . . 41 . N . . . . . 41 . CA . . . . . 41 . C  . . . . . 42 . N . . rr_2lji 1 
+      68 . . 1 1 41 41 VAL C C . . 1 1 42 42 ASP N  N . . 1 1 42 42 ASP CA C . . 1 1 42 42 ASP C C .  -81.30  -48.24 . . . A . 41 VAL C . . A . 42 ASP N  . . A . 42 ASP CA . . A . 42 ASP C . . . 41 . C . . . . . 42 . N  . . . . . 42 . CA . . . . . 42 . C . . rr_2lji 1 
+      69 . . 1 1 42 42 ASP N N . . 1 1 42 42 ASP CA C . . 1 1 42 42 ASP C  C . . 1 1 43 43 GLY N N .  122.82  145.14 . . . A . 42 ASP N . . A . 42 ASP CA . . A . 42 ASP C  . . A . 43 GLY N . . . 42 . N . . . . . 42 . CA . . . . . 42 . C  . . . . . 43 . N . . rr_2lji 1 
+      70 . . 1 1 43 43 GLY C C . . 1 1 44 44 ARG N  N . . 1 1 44 44 ARG CA C . . 1 1 44 44 ARG C C . -131.70  -96.02 . . . A . 43 GLY C . . A . 44 ARG N  . . A . 44 ARG CA . . A . 44 ARG C . . . 43 . C . . . . . 44 . N  . . . . . 44 . CA . . . . . 44 . C . . rr_2lji 1 
+      71 . . 1 1 44 44 ARG N N . . 1 1 44 44 ARG CA C . . 1 1 44 44 ARG C  C . . 1 1 45 45 PRO N N .  120.31  166.57 . . . A . 44 ARG N . . A . 44 ARG CA . . A . 44 ARG C  . . A . 45 PRO N . . . 44 . N . . . . . 44 . CA . . . . . 44 . C  . . . . . 45 . N . . rr_2lji 1 
+      72 . . 1 1 47 47 PRO C C . . 1 1 48 48 GLU N  N . . 1 1 48 48 GLU CA C . . 1 1 48 48 GLU C C .  -68.35  -58.39 . . . A . 47 PRO C . . A . 48 GLU N  . . A . 48 GLU CA . . A . 48 GLU C . . . 47 . C . . . . . 48 . N  . . . . . 48 . CA . . . . . 48 . C . . rr_2lji 1 
+      73 . . 1 1 48 48 GLU N N . . 1 1 48 48 GLU CA C . . 1 1 48 48 GLU C  C . . 1 1 49 49 ASP N N .  -35.17   -9.37 . . . A . 48 GLU N . . A . 48 GLU CA . . A . 48 GLU C  . . A . 49 ASP N . . . 48 . N . . . . . 48 . CA . . . . . 48 . C  . . . . . 49 . N . . rr_2lji 1 
+      74 . . 1 1 48 48 GLU C C . . 1 1 49 49 ASP N  N . . 1 1 49 49 ASP CA C . . 1 1 49 49 ASP C C . -109.62  -77.10 . . . A . 48 GLU C . . A . 49 ASP N  . . A . 49 ASP CA . . A . 49 ASP C . . . 48 . C . . . . . 49 . N  . . . . . 49 . CA . . . . . 49 . C . . rr_2lji 1 
+      75 . . 1 1 49 49 ASP N N . . 1 1 49 49 ASP CA C . . 1 1 49 49 ASP C  C . . 1 1 50 50 GLN N N .  -18.08   19.02 . . . A . 49 ASP N . . A . 49 ASP CA . . A . 49 ASP C  . . A . 50 GLN N . . . 49 . N . . . . . 49 . CA . . . . . 49 . C  . . . . . 50 . N . . rr_2lji 1 
+      76 . . 1 1 53 53 GLU C C . . 1 1 54 54 VAL N  N . . 1 1 54 54 VAL CA C . . 1 1 54 54 VAL C C . -156.98 -106.34 . . . A . 53 GLU C . . A . 54 VAL N  . . A . 54 VAL CA . . A . 54 VAL C . . . 53 . C . . . . . 54 . N  . . . . . 54 . CA . . . . . 54 . C . . rr_2lji 1 
+      77 . . 1 1 54 54 VAL N N . . 1 1 54 54 VAL CA C . . 1 1 54 54 VAL C  C . . 1 1 55 55 ASP N N .  162.33  170.89 . . . A . 54 VAL N . . A . 54 VAL CA . . A . 54 VAL C  . . A . 55 ASP N . . . 54 . N . . . . . 54 . CA . . . . . 54 . C  . . . . . 55 . N . . rr_2lji 1 
+      78 . . 1 1 54 54 VAL C C . . 1 1 55 55 ASP N  N . . 1 1 55 55 ASP CA C . . 1 1 55 55 ASP C C . -148.98  -88.58 . . . A . 54 VAL C . . A . 55 ASP N  . . A . 55 ASP CA . . A . 55 ASP C . . . 54 . C . . . . . 55 . N  . . . . . 55 . CA . . . . . 55 . C . . rr_2lji 1 
+      79 . . 1 1 55 55 ASP N N . . 1 1 55 55 ASP CA C . . 1 1 55 55 ASP C  C . . 1 1 56 56 ARG N N .  123.79  157.81 . . . A . 55 ASP N . . A . 55 ASP CA . . A . 55 ASP C  . . A . 56 ARG N . . . 55 . N . . . . . 55 . CA . . . . . 55 . C  . . . . . 56 . N . . rr_2lji 1 
+      80 . . 1 1 55 55 ASP C C . . 1 1 56 56 ARG N  N . . 1 1 56 56 ARG CA C . . 1 1 56 56 ARG C C . -133.83  -95.63 . . . A . 55 ASP C . . A . 56 ARG N  . . A . 56 ARG CA . . A . 56 ARG C . . . 55 . C . . . . . 56 . N  . . . . . 56 . CA . . . . . 56 . C . . rr_2lji 1 
+      81 . . 1 1 56 56 ARG N N . . 1 1 56 56 ARG CA C . . 1 1 56 56 ARG C  C . . 1 1 57 57 VAL N N .  125.37  158.29 . . . A . 56 ARG N . . A . 56 ARG CA . . A . 56 ARG C  . . A . 57 VAL N . . . 56 . N . . . . . 56 . CA . . . . . 56 . C  . . . . . 57 . N . . rr_2lji 1 
+      82 . . 1 1 56 56 ARG C C . . 1 1 57 57 VAL N  N . . 1 1 57 57 VAL CA C . . 1 1 57 57 VAL C C . -136.58 -124.78 . . . A . 56 ARG C . . A . 57 VAL N  . . A . 57 VAL CA . . A . 57 VAL C . . . 56 . C . . . . . 57 . N  . . . . . 57 . CA . . . . . 57 . C . . rr_2lji 1 
+      83 . . 1 1 57 57 VAL N N . . 1 1 57 57 VAL CA C . . 1 1 57 57 VAL C  C . . 1 1 58 58 LYS N N .  138.95  166.91 . . . A . 57 VAL N . . A . 57 VAL CA . . A . 57 VAL C  . . A . 58 LYS N . . . 57 . N . . . . . 57 . CA . . . . . 57 . C  . . . . . 58 . N . . rr_2lji 1 
+      84 . . 1 1 57 57 VAL C C . . 1 1 58 58 LYS N  N . . 1 1 58 58 LYS CA C . . 1 1 58 58 LYS C C . -139.16 -102.36 . . . A . 57 VAL C . . A . 58 LYS N  . . A . 58 LYS CA . . A . 58 LYS C . . . 57 . C . . . . . 58 . N  . . . . . 58 . CA . . . . . 58 . C . . rr_2lji 1 
+      85 . . 1 1 58 58 LYS N N . . 1 1 58 58 LYS CA C . . 1 1 58 58 LYS C  C . . 1 1 59 59 VAL N N .  125.87  162.35 . . . A . 58 LYS N . . A . 58 LYS CA . . A . 58 LYS C  . . A . 59 VAL N . . . 58 . N . . . . . 58 . CA . . . . . 58 . C  . . . . . 59 . N . . rr_2lji 1 
+      86 . . 1 1 58 58 LYS C C . . 1 1 59 59 VAL N  N . . 1 1 59 59 VAL CA C . . 1 1 59 59 VAL C C . -143.09 -101.05 . . . A . 58 LYS C . . A . 59 VAL N  . . A . 59 VAL CA . . A . 59 VAL C . . . 58 . C . . . . . 59 . N  . . . . . 59 . CA . . . . . 59 . C . . rr_2lji 1 
+      87 . . 1 1 59 59 VAL N N . . 1 1 59 59 VAL CA C . . 1 1 59 59 VAL C  C . . 1 1 60 60 LEU N N .  119.82  141.76 . . . A . 59 VAL N . . A . 59 VAL CA . . A . 59 VAL C  . . A . 60 LEU N . . . 59 . N . . . . . 59 . CA . . . . . 59 . C  . . . . . 60 . N . . rr_2lji 1 
+      88 . . 1 1 59 59 VAL C C . . 1 1 60 60 LEU N  N . . 1 1 60 60 LEU CA C . . 1 1 60 60 LEU C C . -137.71  -94.37 . . . A . 59 VAL C . . A . 60 LEU N  . . A . 60 LEU CA . . A . 60 LEU C . . . 59 . C . . . . . 60 . N  . . . . . 60 . CA . . . . . 60 . C . . rr_2lji 1 
+      89 . . 1 1 60 60 LEU N N . . 1 1 60 60 LEU CA C . . 1 1 60 60 LEU C  C . . 1 1 61 61 ARG N N .  106.76  139.22 . . . A . 60 LEU N . . A . 60 LEU CA . . A . 60 LEU C  . . A . 61 ARG N . . . 60 . N . . . . . 60 . CA . . . . . 60 . C  . . . . . 61 . N . . rr_2lji 1 
+
+   stop_
+
+   loop_
+      _TA_constraint_comment_org.ID
+      _TA_constraint_comment_org.Comment_text
+      _TA_constraint_comment_org.Comment_begin_line
+      _TA_constraint_comment_org.Comment_begin_column
+      _TA_constraint_comment_org.Comment_end_line
+      _TA_constraint_comment_org.Comment_end_column
+      _TA_constraint_comment_org.Entry_ID
+      _TA_constraint_comment_org.Torsion_angle_constraint_list_ID
+
+      1 "assign (resid 33 and name c ) (resid 34 and name n )" 109 1 109 54 rr_2lji 1 
+
+   stop_
+
+   loop_
+      _TA_constraint_parse_err.ID
+      _TA_constraint_parse_err.Content
+      _TA_constraint_parse_err.Begin_line
+      _TA_constraint_parse_err.Begin_column
+      _TA_constraint_parse_err.End_line
+      _TA_constraint_parse_err.End_column
+      _TA_constraint_parse_err.Entry_ID
+      _TA_constraint_parse_err.Torsion_angle_constraint_list_ID
+
+      1 "(resid 34 and name ca) (resid 34 and name c ) 1.0 -58.910 7.660 2" 110 8 110 73 rr_2lji 1 
+
+   stop_
+
+save_
+
+
+save_MR_file_comment_1
+   _Org_constr_file_comment.Sf_framecode         MR_file_comment_1
+   _Org_constr_file_comment.Sf_category          org_constr_file_comment
+   _Org_constr_file_comment.Entry_ID             rr_2lji
+   _Org_constr_file_comment.ID                   1
+   _Org_constr_file_comment.Constraint_file_ID   1
+   _Org_constr_file_comment.Block_ID             1
+   _Org_constr_file_comment.Details             "Generated by Wattos"
+   _Org_constr_file_comment.Comment             "*HEADER PROTEIN BINDING 14-SEP-11 2LJI *TITLE STRUCTURE OF A PROTEIN FROM HALOFERAX VOLCANII *COMPND MOL_ID: 1; *COMPND 2 MOLECULE: SMALL ARCHAEAL MODIFIER PROTEIN 2; *COMPND 3 CHAIN: A; *COMPND 4 SYNONYM: SAMP 2, UBIQUITIN-LIKE SMALL ARCHAEAL MODIFIER PROTEIN 2; *COMPND 5 ENGINEERED: YES *SOURCE MOL_ID: 1; *SOURCE 2 ORGANISM_SCIENTIFIC: HALOFERAX VOLCANII; *SOURCE 3 ORGANISM_TAXID: 309800; *SOURCE 4 STRAIN: DS2; *SOURCE 5 GENE: HVO_0202; *SOURCE 6 EXPRESSION_SYSTEM: ESCHERICHIA COLI; *SOURCE 7 EXPRESSION_SYSTEM_TAXID: 562; *SOURCE 8 EXPRESSION_SYSTEM_VECTOR_TYPE: VECTOR; *SOURCE 9 EXPRESSION_SYSTEM_VECTOR: PET22B *KEYWDS UBIQUITIN LIKE PROTEIN, PROTEIN BINDING *EXPDTA SOLUTION NMR *NUMMDL 20 *AUTHOR W.ZHANG, S.LIAO, K.FAN *REVDAT 1 10-OCT-12 2LJI 0"
+
+save_
+
