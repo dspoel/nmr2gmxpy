@@ -6,3 +6,9 @@ on proteins and write input for GROMACS.
 
 Database of NMR data files and protein databank files for testing
 scripts and running GROMACS.
+
+In order to test, go to the Examples directory and run 
+
+../nmrstar_to_gromacs.py -h
+
+to get instructions.
