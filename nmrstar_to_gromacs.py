@@ -268,21 +268,31 @@ def parseArguments():
 
 if __name__ == '__main__':
     args  = parseArguments()
-
+    
+    # Find arguments with extention .str and .top (flags were not important?)
     if args.mrfile and args.mrfile[-3:] == "str" and args.topfile and args.topfile[-3:] == "top":
-        # Call function dist_restraints() for current file_nm
-        outf = dist_restraints(args.mrfile, args.topfile, args.verbose) 
-        if outf:
-            print("Generated distance restraints in %s" % outf)
-        # Call function torsional_restraints() for current file_nm
-        outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
-        if outf:
-            print("Generated dihedral restraints in %s" % outf)
-        # Calling function orientation_restraints() for current file_nm
-        outf = orientation_restraints(args.mrfile, args.topfile, args.verbose) 
-        if outf:
-            print("Generated orientation restraints in %s" % outf)
+
+        try:
+    	    # Call function dist_restraints() for current file_nm
+    	    outf = dist_restraints(args.mrfile, args.topfile, args.verbose)
+    	    print("Generated distance restraints in %s" % outf)
+        except Exception as ex:
+    	    print("Error in dist_restraints:\n\t", ex)
+    	    
+        try:
+	    # Call function torsional_restraints() for current file_nm
+    	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
+    	    print("Generated dihedral restraints in %s" % outf)
+        except Exception as ex:
+    	    print("Error in torsional_restraints:\n\t", ex)
+	
+        try:
+    	    # Calling function orientation_restraints() for current file_nm
+    	    outf = orientation_restraints(args.mrfile, args.topfile, args.verbose) 
+    	    print("Generated orientation restraints in %s" % outf)
+        except Exception as ex:
+    	    print("Error in orientation_restraints:\n\t", ex)
     else:
         print("Please give me at a .top file and a .str file")
-        
+
 
