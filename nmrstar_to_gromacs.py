@@ -15,6 +15,8 @@ import test_atomno
 from operator import itemgetter, attrgetter
 
 ### ADDED
+
+import Restraint
 # for catching errors
 
 import linecache
@@ -80,6 +82,9 @@ def dist_restraints(mr_file, top_file, verbose):
     # Convert the array to numpy array
     DR_array = np.array( DR_result_sets)
     
+    
+    
+    
     # Checking if it has correct format!
     # If number of lines is 0 cause error
     if DR_array.shape == (0,): 
@@ -98,7 +103,13 @@ def dist_restraints(mr_file, top_file, verbose):
     if verbose:
         print(total)
     index = 0
-    print(DR_array_0[0,5]);
+    print(DR_array_0[0,]);
+    
+    restraint = Restraint.Restraint(DR_array_0[0,]);
+    print (restraint.id);
+    print (restraint.atom_id_1);
+    restraint.print_all();
+    
     f1.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
     for i in range(total):
         #replacing atom names by using atoms names and residue names 
