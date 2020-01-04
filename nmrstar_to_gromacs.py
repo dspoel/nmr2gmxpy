@@ -81,22 +81,24 @@ def dist_restraints(mr_file, top_file, verbose):
     DR_array = np.array( DR_result_sets)
     
     # Checking if it has correct format!
+    # If number of lines is 0 cause error
     if DR_array.shape == (0,): 
         print("**Format Error : Different NMR restraint format for PDB id : " , file_nm)
         # If it has different format then remove it 
         os.remove(dist_res_file) 
         return None
-        
+    print("shape",DR_array.shape)
+    # Zeroth "line" dimension
     DR_array_0 = np.array(DR_array[0,])
     if verbose:
-        print(DR_array.shape)
-        print(DR_array_0.shape)
+        print("The dimension of the array: ",DR_array.shape)
+        print("The first (zeroth) 'line' dimension: ", DR_array_0.shape)
     
     total = DR_array_0.shape[0]
     if verbose:
         print(total)
     index = 0
-
+    print(DR_array_0[0,5]);
     f1.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
     for i in range(total):
         #replacing atom names by using atoms names and residue names 
@@ -155,7 +157,7 @@ def dist_restraints(mr_file, top_file, verbose):
                 print("**Format Error : different residue number in NMR restraint file for PDB id : %s" %file_nm)
                 os.remove(dist_res_file)
                 return None
-        index = index + 1        
+        index = index + 1
     f1.close()
     return disres_file
 
@@ -301,12 +303,12 @@ if __name__ == '__main__':
         except Exception as ex:
     	    #print("Error in dist_restraints:\n\t", ex)
     	    printException();
-        try:
-	    # Call function torsional_restraints() for current file_nm
-    	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
-    	    print("Generated dihedral restraints in %s" % outf)
-        except Exception as ex:
-    	    printException();
+#        try:
+#	    # Call function torsional_restraints() for current file_nm
+#    	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
+#    	    print("Generated dihedral restraints in %s" % outf)
+#        except Exception as ex:
+#    	    printException();
     	    #print("Error in torsional_restraints:\n\t", ex)
 	
 #        try:

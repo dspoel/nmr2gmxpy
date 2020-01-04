@@ -1,3 +1,8 @@
+"""
+For some residues in NMR filec change arom number to number-1 for gromacs
+except ~line 89
+"""
+
 import mdjoy
 import mdjoy.top as top
 import numpy as np
@@ -80,6 +85,7 @@ def atom_replace(atom_nm,res_nm):
             atom_nm = 'HE1'
         if atom_nm == 'HE3':
             atom_nm = 'HE2'
+# SHOULD BE OTHER WAY AROUND?
         if atom_nm == 'HD1':
             atom_nm = 'HD2'
 
