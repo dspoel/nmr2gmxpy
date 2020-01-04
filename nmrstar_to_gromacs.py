@@ -104,11 +104,21 @@ def dist_restraints(mr_file, top_file, verbose):
         print(total)
     index = 0
     print(DR_array_0[0,]);
+    print(DR_array_0[55,])
     
     restraint = Restraint.Restraint(DR_array_0[0,]);
-    print (restraint.id);
-    print (restraint.atom_id_1);
+    #restraint.init(DR_array_0[0,]);
+    #print (restraint.id);
+    #print (restraint.atom_id_1);
     restraint.print_all();
+    
+    restraints = Restraint.init_with_NMR_file(mr_file)
+    #print (restraint.id);
+    #print (restraint.atom_id_1);
+    restraints[0].print_all();
+    restraints[55].print_all();
+    
+    
     
     f1.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
     for i in range(total):
