@@ -17,6 +17,8 @@ from operator import itemgetter, attrgetter
 ### ADDED
 
 import Restraint
+import Distance_restraint
+import Distance_restraint_list
 # for catching errors
 
 import linecache
@@ -106,17 +108,19 @@ def dist_restraints(mr_file, top_file, verbose):
     print(DR_array_0[0,]);
     print(DR_array_0[55,])
     
-    restraint = Restraint.Restraint(DR_array_0[0,]);
+    restraint = Distance_restraint.Distance_restraint(DR_array_0[0,]);
     #restraint.init(DR_array_0[0,]);
     #print (restraint.id);
     #print (restraint.atom_id_1);
     restraint.print_all();
     
-    restraints = Restraint.init_with_NMR_file(mr_file)
+    drl = Distance_restraint_list.Distance_restraint_list(mr_file);
+    drl.restraints[0].print_all();
+    #restraints = Restraint.init_with_NMR_file(mr_file)
     #print (restraint.id);
     #print (restraint.atom_id_1);
-    restraints[0].print_all();
-    restraints[55].print_all();
+    #restraints[0].print_all();
+    #restraints[55].print_all();
     
     
     
