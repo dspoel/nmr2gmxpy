@@ -39,6 +39,9 @@ def printException(printTraceback=True):
     print('=======================================\n')
 #########
 
+def create_itr_dist_file_header(fp):
+    fp.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
+
 def dist_restraints(mr_file, top_file, verbose):
 
     # Reading topology file using module test_atomno.py
@@ -113,6 +116,7 @@ def dist_restraints(mr_file, top_file, verbose):
     #print (restraint.atom_id_1);
     #restraint.print_all();
 
+    
     drl = Distance_restraint_list.Distance_restraint_list(mr_file);
     drl.restraints[55].print_all();
     #restraints = Restraint.init_with_NMR_file(mr_file)
@@ -122,7 +126,13 @@ def dist_restraints(mr_file, top_file, verbose):
     #restraints[55].print_all();
     print("after replacing")
     drl.replace_atoms_names_and_groups();
+    drl.change_units();
     drl.restraints[55].print_all();
+    drl.set_type_average(1);
+    f_test = open("test", 'w')
+    create_itr_dist_file_header(f_test)
+    drl.write_in_file(f_test);
+    
     
     
     f1.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
@@ -152,6 +162,7 @@ def dist_restraints(mr_file, top_file, verbose):
         # Change distances angstrom to nanometer
         DR_array_0[i,7] = round(float(DR_array_0[i,7])*0.10,2)
         DR_array_0[i,8] = round(float(DR_array_0[i,8])*0.10,2)
+# IS THIS CORRECT? Still in angstrom
         up2 = round(float( DR_array_0[i,8])+0.1,2)
         
         # 1 - for time and ensemble average and

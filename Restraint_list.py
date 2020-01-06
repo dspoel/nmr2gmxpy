@@ -5,7 +5,7 @@ import numpy as np
 
 class Restraint_list:
     def __init__(self, mr_file):
-        self.restraints = [];
+        self.restraints = []
         
         entry = create_pynmrstar_entry(mr_file)
         DR_result_sets = self.create_data_array_from_pynmrstar_entry(entry)
@@ -40,7 +40,19 @@ class Restraint_list:
     def replace_atoms_names_and_groups(self):
         for element in self.restraints:
             element.replace_atoms_names_and_groups()
-            
+    
+    def check_this_object(self):
+    #TO DO!
+        pass
+    
+    def change_units(self):
+    # only who needs this
+        for element in self.restraints:
+            element.change_units()
+    
+    def write_in_file(self, itr_fp):
+        for i, element in enumerate(self.restraints):
+            element.write_in_file(itr_fp, i)
     
 def create_pynmrstar_entry(mr_file):
     # Patch the parser

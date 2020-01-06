@@ -24,6 +24,11 @@ class Restraint():
         print("}")
     
     def replace_atoms_names_and_groups(self):
+        # should be implemented in a child
+        pass
+    
+    def change_units(self):
+        # if is needed should be implemented in a child
         pass
     
 def init_with_NMR_file(mr_file):

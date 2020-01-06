@@ -5,7 +5,9 @@ class Distance_restraint_list(Restraint_list.Restraint_list):
 
     def __init__(self, mr_file):
         Restraint_list.Restraint_list.__init__(self,mr_file)
-
+        # 1 - for time and ensemble average and
+        # 2 - for no time and ensemble average
+        self.type_average = 1
     
     def create_data_array_from_pynmrstar_entry(self, entry):
         DR_result_sets = []
@@ -18,3 +20,8 @@ class Distance_restraint_list(Restraint_list.Restraint_list):
         total = data_array_2d.shape[0]
         for i in range(total):
             self.restraints.append(Distance_restraint.Distance_restraint(data_array_2d[i,]))
+    
+    def set_type_average(self, type_in):
+        type_average = type_in
+        for element in self.restraints:
+            element.set_type_average(type_in)
