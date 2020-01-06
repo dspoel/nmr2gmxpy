@@ -1,4 +1,5 @@
 import pynmrstar
+import test_atomno
 import os
 import numpy as np
 
@@ -8,8 +9,6 @@ class Restraint():
     """
     def __init__(self, data_array):
         # Every child should define their own constructor
-        testVlue = 5
-        #
         pass
 
     def print_all(self):
@@ -19,11 +18,14 @@ class Restraint():
         for attr in dir(self):
             if (not callable(getattr(self,attr)) and not attr.startswith("__")):
             
-                print(attr + " = " + getattr(self, attr))
+                print(attr + " = " + str(getattr(self, attr)))
                 #print (getattr(self, attr))
             
         print("}")
-        
+    
+    def replace_atoms_names_and_groups(self):
+        pass
+    
 def init_with_NMR_file(mr_file):
     # Patch the parser
     from monkeypatch import patch_parser, unpatch_parser

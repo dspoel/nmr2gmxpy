@@ -82,8 +82,7 @@ def dist_restraints(mr_file, top_file, verbose):
     '''
 
     # Convert the array to numpy array
-    DR_array = np.array( DR_result_sets)
-    
+    DR_array = np.array(DR_result_sets)
     
     
     
@@ -112,16 +111,18 @@ def dist_restraints(mr_file, top_file, verbose):
     #restraint.init(DR_array_0[0,]);
     #print (restraint.id);
     #print (restraint.atom_id_1);
-    restraint.print_all();
-    
+    #restraint.print_all();
+
     drl = Distance_restraint_list.Distance_restraint_list(mr_file);
-    drl.restraints[0].print_all();
+    drl.restraints[55].print_all();
     #restraints = Restraint.init_with_NMR_file(mr_file)
     #print (restraint.id);
     #print (restraint.atom_id_1);
     #restraints[0].print_all();
     #restraints[55].print_all();
-    
+    print("after replacing")
+    drl.replace_atoms_names_and_groups();
+    drl.restraints[55].print_all();
     
     
     f1.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
@@ -184,6 +185,8 @@ def dist_restraints(mr_file, top_file, verbose):
                 return None
         index = index + 1
     f1.close()
+    
+    print(DR_array_0[55,]);
     return disres_file
 
 

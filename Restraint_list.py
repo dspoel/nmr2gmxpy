@@ -8,11 +8,12 @@ class Restraint_list:
         self.restraints = [];
         
         entry = create_pynmrstar_entry(mr_file)
-        DR_result_sets = self.create_data_array_2d_from_pynmrstar_entry(entry)
+        DR_result_sets = self.create_data_array_from_pynmrstar_entry(entry)
         
         # Convert the array to numpy array
-        DR_array = np.array( DR_result_sets)
-    
+        DR_array = np.array(DR_result_sets)
+        
+        # 3d array
         # Checking if it has correct format!
         # If number of lines is 0 cause error
         if DR_array.shape == (0,): 
@@ -20,17 +21,26 @@ class Restraint_list:
             # If it has different format then remove it 
             #os.remove(dist_res_file) 
 #CATCH            #return None
-
+        
+        #take the first (and only one) element 
         DR_array_0 = np.array(DR_array[0,])
         self.init_list(DR_array_0);
 
 
 
-    def create_data_array_2d_from_pynmrstar_entry(self, entry):
+    def create_data_array_from_pynmrstar_entry(self, entry):
+        # mast be defined in a child
+        # return 3d array: number of molecules; number of atoms; number of arguments for atom (defined in restraint child)
         pass
 
     def init_list(self, data_array_2d):
+        # must be defined in a child
         pass
+    
+    def replace_atoms_names_and_groups(self):
+        for element in self.restraints:
+            element.replace_atoms_names_and_groups()
+            
     
 def create_pynmrstar_entry(mr_file):
     # Patch the parser
