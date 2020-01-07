@@ -19,6 +19,8 @@ from operator import itemgetter, attrgetter
 import Restraint
 import Distance_restraint
 import Distance_restraint_list
+import Torsion_restraint_list
+
 # for catching errors
 
 import linecache
@@ -131,7 +133,7 @@ def dist_restraints(mr_file, top_file, verbose):
     drl.set_type_average(1);
     f_test = open("test", 'w')
     create_itr_dist_file_header(f_test)
-    drl.write_in_file(f_test);
+    drl.write_data_in_file(f_test);
     
     
     
@@ -225,6 +227,17 @@ def torsional_restraints(mr_file, top_file, verbose):
 
     # Restore the original parser
     unpatch_parser(pynmrstar)
+
+    drl = Torsion_restraint_list.Torsion_restraint_list(mr_file);
+    print("my replacing")
+    drl.replace_atoms_names_and_groups();
+    #drl.change_units();
+    drl.restraints[55].print_all();
+    #drl.set_type_average(1);
+    f_test = open("testTorsion", 'w')
+    drl.write_header_in_file(f_test)
+    drl.write_data_in_file(f_test);
+    f_test.close()
 
     tor_res_file = top_file[0:-4] + '_dihres.itp'
     g= open(tor_res_file, 'w')
@@ -335,19 +348,19 @@ if __name__ == '__main__':
     # Find arguments with extention .str and .top (flags were not important?)
     if args.mrfile and args.mrfile[-3:] == "str" and args.topfile and args.topfile[-3:] == "top":
 
-        try:
-    	    # Call function dist_restraints() for current file_nm
-    	    outf = dist_restraints(args.mrfile, args.topfile, args.verbose)
-    	    print("Generated distance restraints in %s" % outf)
-        except Exception as ex:
-    	    #print("Error in dist_restraints:\n\t", ex)
-    	    printException();
 #        try:
-#	    # Call function torsional_restraints() for current file_nm
-#    	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
-#    	    print("Generated dihedral restraints in %s" % outf)
+    	    # Call function dist_restraints() for current file_nm
+#    	    outf = dist_restraints(args.mrfile, args.topfile, args.verbose)
+#    	    print("Generated distance restraints in %s" % outf)
 #        except Exception as ex:
+    	    #print("Error in dist_restraints:\n\t", ex)
 #    	    printException();
+        try:
+	    # Call function torsional_restraints() for current file_nm
+    	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
+    	    print("Generated dihedral restraints in %s" % outf)
+        except Exception as ex:
+    	    printException();
     	    #print("Error in torsional_restraints:\n\t", ex)
 	
 #        try:

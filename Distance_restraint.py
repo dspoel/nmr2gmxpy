@@ -48,8 +48,11 @@ class Distance_restraint (Restraint.Restraint):
         
         self.distance_upper_boundary = round(self.distance_upper_boundary * 0.10, 2)
         self.distance_upper_boundary_2 = round(self.distance_upper_boundary + 0.1, 2)
-        
-    def write_in_file(self, fp, my_number):
+    
+    def write_header_in_file(self, fp):
+        fp.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
+
+    def write_data_in_file(self, fp, my_number):
         for p in range(self.group_1):
             for q in range(self.group_2):
                 current_atom1 = self.atom_id_1

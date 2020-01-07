@@ -50,9 +50,12 @@ class Restraint_list:
         for element in self.restraints:
             element.change_units()
     
-    def write_in_file(self, itr_fp):
+    def write_header_in_file(self, fp):
+        self.restraints[0].write_header_in_file(fp);
+        
+    def write_data_in_file(self, itr_fp):
         for i, element in enumerate(self.restraints):
-            element.write_in_file(itr_fp, i)
+            element.write_data_in_file(itr_fp, i)
     
 def create_pynmrstar_entry(mr_file):
     # Patch the parser
