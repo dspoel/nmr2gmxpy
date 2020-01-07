@@ -18,10 +18,10 @@ class Distance_restraint (Restraint.Restraint):
         self.group_1 = 0
         self.group_2 = 0
 
-        self.distance_lower_boundary = float(data_array[7])
-        self.distance_upper_boundary = float(data_array[8])
+        self.distance_lower_bound = float(data_array[7])
+        self.distance_upper_bound = float(data_array[8])
         # will be changed
-        self.distance_upper_boundary_2 = self.distance_upper_boundary + 1.0
+        self.distance_upper_bound_2 = self.distance_upper_bound + 1.0
         
         #value for force constant. Always !?
         self.fac = 1.0
@@ -44,10 +44,10 @@ class Distance_restraint (Restraint.Restraint):
     
     def change_units(self):
     # Change distances angstrom to nanometer
-        self.distance_lower_boundary = round(self.distance_lower_boundary * 0.10, 2)
+        self.distance_lower_bound = round(self.distance_lower_bound * 0.10, 2)
         
-        self.distance_upper_boundary = round(self.distance_upper_boundary * 0.10, 2)
-        self.distance_upper_boundary_2 = round(self.distance_upper_boundary + 0.1, 2)
+        self.distance_upper_bound = round(self.distance_upper_bound * 0.10, 2)
+        self.distance_upper_bound_2 = round(self.distance_upper_bound + 0.1, 2)
     
     def write_header_in_file(self, fp):
         fp.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
@@ -70,7 +70,7 @@ class Distance_restraint (Restraint.Restraint):
                 fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
                         (atom_no1, atom_no2, my_number,
                         self.type_average, 
-                        self.distance_lower_boundary, 
-                        self.distance_upper_boundary,
-                        self.distance_upper_boundary_2,
+                        self.distance_lower_bound, 
+                        self.distance_upper_bound,
+                        self.distance_upper_bound_2,
                         self.fac))

@@ -15,8 +15,8 @@ import test_atomno
 from operator import itemgetter, attrgetter
 
 ### ADDED
-
 import Restraint
+import Restraint_list
 import Distance_restraint
 import Distance_restraint_list
 import Torsion_restraint_list
@@ -36,8 +36,9 @@ def printException(printTraceback=True):
     linecache.checkcache(filename)
     line = linecache.getline(filename, lineno, f.f_globals)
     print('=======================================')
-    print ('EXCEPTION IN ({}, LINE {} "{}"):\n\t{}'.format(filename, lineno, line.strip(), exc_obj))
+    print ('ERROR ({}, LINE {} "{}"):\n\t{}'.format(filename, lineno, line.strip(), exc_obj))
     if printTraceback:
+        print("\n")
         print(traceback.format_exc())
     print('=======================================\n')
 #########
@@ -195,7 +196,7 @@ def dist_restraints(mr_file, top_file, verbose):
         if i == 0 :
             if atom_no1 == 0 :
                 print("**Format Error : different residue number in NMR restraint file for PDB id : %s" %file_nm)
-                os.remove(dist_res_file)
+                #os.remove(dist_res_file)
                 return None
         index = index + 1
     f1.close()
@@ -368,20 +369,23 @@ if __name__ == '__main__':
 #        except Exception as ex:
     	    #print("Error in dist_restraints:\n\t", ex)
 #    	    printException();
-#        try:
+        try:
 	    # Call function torsional_restraints() for current file_nm
-#    	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
-#    	    print("Generated dihedral restraints in %s" % outf)
-#        except Exception as ex:
-#    	    printException();
+    	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
+    	    print("Generated dihedral restraints in %s" % outf)
+        except Exception as ex:
+    	    printException(False)
+#        except Restraint_list.FormatError as ex:
+#            os.remove(outf)
+#            printException(False)
     	    #print("Error in torsional_restraints:\n\t", ex)
 	
-        try:
+#        try:
     	    # Calling function orientation_restraints() for current file_nm
-    	    outf = orientation_restraints(args.mrfile, args.topfile, args.verbose) 
-    	    print("Generated orientation restraints in %s" % outf)
-        except:
-    	    printException();
+#    	    outf = orientation_restraints(args.mrfile, args.topfile, args.verbose) 
+#    	    print("Generated orientation restraints in %s" % outf)
+#        except:
+#    	    printException();
     	    
     else:
         print("Please give me at a .top file and a .str file")

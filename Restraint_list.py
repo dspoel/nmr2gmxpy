@@ -3,10 +3,15 @@ import pynmrstar
 import os
 import numpy as np
 
+class FormatError(Exception):
+    def __init__(self, msg=None):
+        pass
+        
+
 class Restraint_list:
     def __init__(self, mr_file):
         self.restraints = []
-        
+        self.mr_file = mr_file
         entry = create_pynmrstar_entry(mr_file)
         DR_result_sets = self.create_data_array_from_pynmrstar_entry(entry)
         
@@ -14,13 +19,9 @@ class Restraint_list:
         DR_array = np.array(DR_result_sets)
         
         # 3d array
-        # Checking if it has correct format!
         # If number of lines is 0 cause error
-        if DR_array.shape == (0,): 
-            print("**Format Error : Different NMR restraint format for PDB id : " , mr_file)
-            # If it has different format then remove it 
-            #os.remove(dist_res_file) 
-#CATCH            #return None
+        if DR_array.shape == (0,):
+            raise FormatError("Different NMR restraint format for PDB id in file: %s"% mr_file)
         
         #take the first (and only one) element 
         DR_array_0 = np.array(DR_array[0,])

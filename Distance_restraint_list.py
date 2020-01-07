@@ -25,3 +25,13 @@ class Distance_restraint_list(Restraint_list.Restraint_list):
         type_average = type_in
         for element in self.restraints:
             element.set_type_average(type_in)
+
+    def check(self):
+        for element in self.restraints:
+            if element.distance_upper_bound != '.' and element.distance_lower_bound != '.':
+                raise Restraint_list.FormatError(
+                    "No distance upper and lower bounds in NMR restraints file '%s' for PDB id"%self.mr_file)
+
+
+
+
