@@ -20,6 +20,7 @@ import Restraint
 import Distance_restraint
 import Distance_restraint_list
 import Torsion_restraint_list
+import Orientation_restraint_list
 
 # for catching errors
 
@@ -298,6 +299,18 @@ def orientation_restraints(mr_file, top_file, verbose):
     # Restore the original parser
     unpatch_parser(pynmrstar)
 
+
+    drl = Orientation_restraint_list.Orientation_restraint_list(mr_file);
+    print("my replacing")
+    drl.replace_atoms_names_and_groups();
+    #drl.change_units();
+    drl.restraints[2].print_all();
+    #drl.set_type_average(1);
+    f_test = open("testOrient", 'w')
+    drl.write_header_in_file(f_test)
+    drl.write_data_in_file(f_test);
+    f_test.close()
+
     orires_file = top_file[0:-4] + '_orires.itp'
     h= open(orires_file, 'w')
 
@@ -355,20 +368,20 @@ if __name__ == '__main__':
 #        except Exception as ex:
     	    #print("Error in dist_restraints:\n\t", ex)
 #    	    printException();
-        try:
+#        try:
 	    # Call function torsional_restraints() for current file_nm
-    	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
-    	    print("Generated dihedral restraints in %s" % outf)
-        except Exception as ex:
-    	    printException();
+#    	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
+#    	    print("Generated dihedral restraints in %s" % outf)
+#        except Exception as ex:
+#    	    printException();
     	    #print("Error in torsional_restraints:\n\t", ex)
 	
-#        try:
+        try:
     	    # Calling function orientation_restraints() for current file_nm
-    	    #outf = orientation_restraints(args.mrfile, args.topfile, args.verbose) 
-    	    #print("Generated orientation restraints in %s" % outf)
-#        except:
-#    	    printException();
+    	    outf = orientation_restraints(args.mrfile, args.topfile, args.verbose) 
+    	    print("Generated orientation restraints in %s" % outf)
+        except:
+    	    printException();
     	    
     else:
         print("Please give me at a .top file and a .str file")
