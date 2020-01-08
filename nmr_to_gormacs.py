@@ -1,6 +1,13 @@
 """
-# Use it wisely
+I can take restraint data from Nuclear Magnetic Resonance data 
+file (NMRstar) and convert it to GROMACS restraint files (itp).
+I also need corresponding GROMACS topology  file to get right atom names.
+I will try to generate 3 .itp files: distance restraint,
+orientation (dehydral restraint) and orientation restraint.
+Not every NMRstar file have all nessesary information, but I try my best!
 """
+
+
 from Restraint_list import FormatError
 from Distance_restraint_list import Distance_restraint_list
 from Torsion_restraint_list import Torsion_restraint_list
@@ -11,12 +18,11 @@ import sys
 import os
 import argparse
 
-# for catching errors
+#------------------------EXEPTION PRINTING---------------------------------------
 import linecache
 import traceback
 
-# Exceptions printing
-def printException(printTraceback=True):
+def printException(printTraceback=True,):
     exc_type, exc_obj, tb = sys.exc_info()
     f = tb.tb_frame
     lineno = tb.tb_lineno
@@ -29,39 +35,8 @@ def printException(printTraceback=True):
         print("")
         print(traceback.format_exc())
     print('=======================================\n')
-#########
+#--------------------------------------------------------------------------------
 
-def make_distance_restraint_file(mr_file, top_file, verbose):
-    
-    # Reading topology file using module test_atomno.py
-    test_atomno.get_file(top_file)
-    
-    res = Distance_restraint_list(mr_file)
-    res.replace_atoms_names_and_groups()
-#    res.check()
-    res.change_units()
-    res.set_type_average(1)
-    
-    file_name = top_file[0:-4] + '_distance.itp'
-    
-    fp = open(file_name, 'w')
-    res.write_header_in_file(fp)
-    res.write_data_in_file(fp)
-    return file_name
-    
-
-def make_torsion_restraint_file(mr_file, top_file, verbose):
-    # Reading topology file using module test_atomno.py
-    test_atomno.get_file(top_file)
-    
-    res = Torsion_restraint_list(mr_file)
-    res.replace_atoms_names_and_groups()
-    
-    
-    file_out = top_file[0:-4] + '_torsion.itp'
-    fp = open(file_out, 'w')
-    res.write_header_in_file(fp)
-    res.write_data_in_file(fp)
 
 def make_restraint_file(restraint_type, mr_file, top_file, verbose):
     # Reading topology file using module test_atomno.py
@@ -73,7 +48,11 @@ def make_restraint_file(restraint_type, mr_file, top_file, verbose):
         res = Torsion_restraint_list(mr_file)
     elif restraint_type == "orientation":
         res = Orientation_restraint_list(mr_file)
-    
+    else:
+        print("Error: unknown restraint type.")
+        print("Restraint type can be: distance, torsion or orientation")
+            
+
     res.replace_atoms_names_and_groups()
     # only for distance
     res.change_units()
@@ -86,77 +65,76 @@ def make_restraint_file(restraint_type, mr_file, top_file, verbose):
     return file_out
 
 
-def call_restraint_make_function(restraint_type, mr_file, top_file, verbose):
+def call_restraint_make_function(restraint_type, mr_file, top_file, verbose, debug):
     try:
         outf = make_restraint_file(restraint_type, args.mrfile, args.topfile, args.verbose)
         print("Generated %s restraints in '%s'." % (restraint_type,outf))
     except FormatError as ex:
         print("Warning:")
         print(ex)
-        print("No %s restraint file was not generated." % restraint_type)
+        print("No %s restraint file was generated." % restraint_type)
+        
+        if(debug):
+            printException(debug)
     except Exception as ex:
-        printException(False);
+        printException(debug)
+
+
+#========================COMMAND LINE ARGUMENTS PARSING==========================
+# When command line argument parser error occure, the program print --help
+class My_argument_parser(argparse.ArgumentParser):
+    def error(self, message):
+        sys.stderr.write('error: %s\n' % message)
+        self.print_help()
+        sys.exit(2)
 
 def parse_arguments():
-    parser = argparse.ArgumentParser()
+    #parser = argparse.ArgumentParser()
+    parser = My_argument_parser(description=__doc__,
+                            formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("-m", "--mrfile", help = "NMR star file with .str file name extension.",
                         required=True, type=str)
     parser.add_argument("-p", "--topfile", help= "GROMACS topology file with .top file name extension.",
                         required=True, type=str)
     parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
 
+    parser.add_argument("-d", "--debug", 
+                        help="Print traceback for errors if any. Also print traceback for warnings.",
+                         action="store_true")
+    
     args = parser.parse_args()
     return args
 
+#================================================================================
+
 if __name__ == '__main__':
     args  = parse_arguments()
-    
-    if args.mrfile[-3:] != "str":
-        print("\tError: NMRstar file should have .str extansion.")
-        print(__doc__)
-        sys.exit(1);
-        
-    if args.topfile[-3:] != "top":
-        print("\tError: GROMACS topology file should have .top extansion.")
-        print(__doc__)
-        sys.exit(1);
 
-    print("")
+if args.mrfile[-3:] != "str":
+    print("\tError: NMRstar file should have .str extansion.")
+    print(__doc__)
+    sys.exit(1);
+        
+if args.topfile[-3:] != "top":
+    print("\tError: GROMACS topology file should have .top extansion.")
+    print(__doc__)
+    sys.exit(1);
 
-    try:
-        outf = make_restraint_file("distance", args.mrfile, args.topfile, args.verbose)
-        print("Generated DISTANCE restraints in '%s'" % outf)
-    except FormatError as ex:
-        print("Warning:")
-        print(ex)
-        print("DISTANCE restraint file was not generated.")
-    except Exception as ex:
-        printException(False);
-        
-    print("")
-        
-    try:
-        outf = make_restraint_file("torsion", args.mrfile, args.topfile, args.verbose)
-        print("Generated TORSION restraints in '%s'" % outf)
-    except FormatError as ex:
-        print("Warning:")
-        print(ex)
-        print("TORSION restraint file was not generated.")
-    except Exception as ex:
-        printException(False);
-        
-    print("")
+print("")
     
-    try:
-        outf = make_restraint_file("orientation", args.mrfile, args.topfile, args.verbose)
-        print("Generated ORIENTATION restraints in '%s'" % outf)
-    except FormatError as ex:
-        print("Warning:")
-        print(ex)
-        print("ORIENTATION restraint file was not generated.")
-    except Exception as ex:
-        printException(False);
-        
-        
-    print("\ngmx #666: 'It is important to not generate too much senseless output.' (Anyone who ever used computer)")
+restraint_type = "distance"
+call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
     
+print("")
+    
+restraint_type = "torsion"
+call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+
+print("")
+    
+restraint_type = "orientation"
+call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+    
+print("\ngmx #666: 'It is important to not generate too much senseless output.' (Anyone who ever used computer)")
+    
+
