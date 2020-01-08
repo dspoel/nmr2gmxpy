@@ -3,13 +3,16 @@ import Torsion_restraint
 
 class Torsion_restraint_list(Restraint_list.Restraint_list):
 
-    def __init__(self, mr_file):
-        Restraint_list.Restraint_list.__init__(self,mr_file)
+    def __init__(self, mr_file, verbose=False):
+        Restraint_list.Restraint_list.__init__(self, mr_file, verbose)
         # 1 - for time and ensemble average and
         # 2 - for no time and ensemble average
         self.type_average = 1
     
     def create_data_array_from_pynmrstar_entry(self, entry):
+        # print output if verbose
+        super().create_data_array_from_pynmrstar_entry(entry)
+        
         result_sets = []
         for loop in entry.get_loops_by_category("_Torsion_angle_constraint") :
             result_sets.append(loop.get_tag(['ID',
@@ -21,8 +24,11 @@ class Torsion_restraint_list(Restraint_list.Restraint_list):
 
         return result_sets
     
-    def init_list(self, data_array_2d):
+    def init_list(self, data_array):
+        # print output if verbose
+        super().init_list(data_array)
+
         self.restraints = [];
-        total = data_array_2d.shape[0]
+        total = data_array.shape[0]
         for i in range(total):
-            self.restraints.append(Torsion_restraint.Torsion_restraint(data_array_2d[i,]))
+            self.restraints.append(Torsion_restraint.Torsion_restraint(data_array[i,]))

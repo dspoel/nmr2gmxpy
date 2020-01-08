@@ -8,9 +8,14 @@ class Restraint():
     # Abstract parent class for all restraints
     """
     def __init__(self, data_array):
+        self.verbose = False
         # Every child should define their own constructor
-        pass
 
+    def set_verbose(self,verbose):
+        self.verbose = verbose
+    def get_verbose(self):
+        return self.verbose
+    
     def print_all(self):
         #members = [attr for attr in dir(self) if not callable(getattr(self, attr)) and not attr.startswith("__")]
         #print (members)

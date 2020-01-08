@@ -49,6 +49,14 @@ class Distance_restraint (Restraint.Restraint):
         self.distance_upper_bound = round(self.distance_upper_bound * 0.10, 2)
         self.distance_upper_bound_2 = round(self.distance_upper_bound + 0.1, 2)
     
+    def check_if_zero(self):
+        atom_no1 = test_atomno.get_atomno(self.auth_seq_id_1, self.atom_id_1)
+        if atom_no1==0:
+            return True
+        else:
+            return False
+        
+        
     def write_header_in_file(self, fp):
         fp.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
 
