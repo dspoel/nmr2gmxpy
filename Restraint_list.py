@@ -34,7 +34,7 @@ class Restraint_list:
         # return 3d array: number of molecules; number of atoms; number of arguments for atom (defined in restraint child)
         pass
 
-    def init_list(self, data_array_2d):
+    def init_list(self, data_array):
         # must be defined in a child
         pass
     

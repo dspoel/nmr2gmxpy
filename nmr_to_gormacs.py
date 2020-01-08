@@ -1,10 +1,10 @@
 """
 # Use it wisely
 """
-import Restraint_list
+from Restraint_list import FormatError
 from Distance_restraint_list import Distance_restraint_list
 from Torsion_restraint_list import Torsion_restraint_list
-import Orientation_restraint_list
+from Orientation_restraint_list import Orientation_restraint_list
 import test_atomno
 
 import sys
@@ -38,7 +38,7 @@ def make_distance_restraint_file(mr_file, top_file, verbose):
     
     res = Distance_restraint_list(mr_file)
     res.replace_atoms_names_and_groups()
-    res.check()
+#    res.check()
     res.change_units()
     res.set_type_average(1)
     
@@ -47,9 +47,10 @@ def make_distance_restraint_file(mr_file, top_file, verbose):
     fp = open(file_name, 'w')
     res.write_header_in_file(fp)
     res.write_data_in_file(fp)
+    return file_name
+    
 
 def make_torsion_restraint_file(mr_file, top_file, verbose):
-    
     # Reading topology file using module test_atomno.py
     test_atomno.get_file(top_file)
     
@@ -62,6 +63,39 @@ def make_torsion_restraint_file(mr_file, top_file, verbose):
     res.write_header_in_file(fp)
     res.write_data_in_file(fp)
 
+def make_restraint_file(restraint_type, mr_file, top_file, verbose):
+    # Reading topology file using module test_atomno.py
+    test_atomno.get_file(top_file)
+    
+    if restraint_type == "distance":
+        res = Distance_restraint_list(mr_file)
+    elif restraint_type == "torsion":
+        res = Torsion_restraint_list(mr_file)
+    elif restraint_type == "orientation":
+        res = Orientation_restraint_list(mr_file)
+    
+    res.replace_atoms_names_and_groups()
+    # only for distance
+    res.change_units()
+#    res.set_type_average(1)
+
+    file_out = top_file[0:-4] + '_' + restraint_type + '.itp'
+    fp = open(file_out, 'w')
+    res.write_header_in_file(fp)
+    res.write_data_in_file(fp)
+    return file_out
+
+
+def call_restraint_make_function(restraint_type, mr_file, top_file, verbose):
+    try:
+        outf = make_restraint_file(restraint_type, args.mrfile, args.topfile, args.verbose)
+        print("Generated %s restraints in '%s'." % (restraint_type,outf))
+    except FormatError as ex:
+        print("Warning:")
+        print(ex)
+        print("No %s restraint file was not generated." % restraint_type)
+    except Exception as ex:
+        printException(False);
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -87,13 +121,42 @@ if __name__ == '__main__':
         print(__doc__)
         sys.exit(1);
 
+    print("")
 
     try:
-        outf = make_distance_restraint_file(args.mrfile, args.topfile, args.verbose)
-        print("Generated distance restraints in %s" % outf)
+        outf = make_restraint_file("distance", args.mrfile, args.topfile, args.verbose)
+        print("Generated DISTANCE restraints in '%s'" % outf)
+    except FormatError as ex:
+        print("Warning:")
+        print(ex)
+        print("DISTANCE restraint file was not generated.")
     except Exception as ex:
-        printException();
+        printException(False);
+        
+    print("")
+        
+    try:
+        outf = make_restraint_file("torsion", args.mrfile, args.topfile, args.verbose)
+        print("Generated TORSION restraints in '%s'" % outf)
+    except FormatError as ex:
+        print("Warning:")
+        print(ex)
+        print("TORSION restraint file was not generated.")
+    except Exception as ex:
+        printException(False);
+        
+    print("")
     
-    
-    print("I can do more anyway")
+    try:
+        outf = make_restraint_file("orientation", args.mrfile, args.topfile, args.verbose)
+        print("Generated ORIENTATION restraints in '%s'" % outf)
+    except FormatError as ex:
+        print("Warning:")
+        print(ex)
+        print("ORIENTATION restraint file was not generated.")
+    except Exception as ex:
+        printException(False);
+        
+        
+    print("\ngmx #666: 'It is important to not generate too much senseless output.' (Anyone who ever used computer)")
     

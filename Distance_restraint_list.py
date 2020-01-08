@@ -15,11 +15,12 @@ class Distance_restraint_list(Restraint_list.Restraint_list):
             DR_result_sets.append(distance_restraints_loop.get_tag(['ID','Auth_seq_ID_1' ,'Atom_ID_1','Comp_ID_1', 'Auth_seq_ID_2','Atom_ID_2' ,'Comp_ID_2','Distance_lower_bound_val','Distance_upper_bound_val'])) 
         return DR_result_sets
     
-    def init_list(self, data_array_2d):
+    def init_list(self, data_array):
         self.restraints = [];
-        total = data_array_2d.shape[0]
+        total = data_array.shape[0]
         for i in range(total):
-            self.restraints.append(Distance_restraint.Distance_restraint(data_array_2d[i,]))
+            self.restraints.append(Distance_restraint.Distance_restraint(data_array[i,]))
+        self.check()
     
     def set_type_average(self, type_in):
         type_average = type_in
@@ -28,10 +29,15 @@ class Distance_restraint_list(Restraint_list.Restraint_list):
 
     def check(self):
         for element in self.restraints:
-            if element.distance_upper_bound != '.' and element.distance_lower_bound != '.':
+            if element.distance_upper_bound == '.' and element.distance_lower_bound == '.':
                 raise Restraint_list.FormatError(
                     "No distance upper and lower bounds in NMR restraints file '%s' for PDB id"%self.mr_file)
-
+            elif element.distance_upper_bound == '.':
+                raise Restraint_list.FormatError(
+                    "No distance upper bound in NMR restraints file '%s' for PDB id"%self.mr_file)
+            elif element.distance_lower_bound == '.':
+                raise Restraint_list.FormatError(
+                    "No distance lower bound in NMR restraints file '%s' for PDB id"%self.mr_file)
 
 
 
