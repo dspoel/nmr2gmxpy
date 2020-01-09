@@ -18,10 +18,10 @@ class Distance_restraint (Restraint.Restraint):
         self.group_1 = 0
         self.group_2 = 0
 
-        self.distance_lower_bound = float(data_array[7])
-        self.distance_upper_bound = float(data_array[8])
+        self.distance_lower_bound = data_array[7]
+        self.distance_upper_bound = data_array[8]
         # will be changed
-        self.distance_upper_bound_2 = self.distance_upper_bound + 1.0
+        self.distance_upper_bound_2 = 0.0
         
         #value for force constant. Always !?
         self.fac = 1.0
@@ -44,10 +44,10 @@ class Distance_restraint (Restraint.Restraint):
     
     def change_units(self):
     # Change distances angstrom to nanometer
-        self.distance_lower_bound = round(self.distance_lower_bound * 0.10, 2)
+        self.distance_lower_bound = round(float(self.distance_lower_bound) * 0.10, 2)
         
-        self.distance_upper_bound = round(self.distance_upper_bound * 0.10, 2)
-        self.distance_upper_bound_2 = round(self.distance_upper_bound + 0.1, 2)
+        self.distance_upper_bound = round(float(self.distance_upper_bound) * 0.10, 2)
+        self.distance_upper_bound_2 = round(float(self.distance_upper_bound) + 0.1, 2)
     
     def check_if_zero(self):
         atom_no1 = test_atomno.get_atomno(self.auth_seq_id_1, self.atom_id_1)

@@ -57,4 +57,3 @@ class Distance_restraint_list(Restraint_list.Restraint_list):
                     "No distance lower bound in NMR restraints file '%s' for PDB id"%self.mr_file)
 
 
-

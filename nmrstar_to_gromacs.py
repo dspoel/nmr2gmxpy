@@ -73,7 +73,7 @@ def dist_restraints(mr_file, top_file, verbose):
     unpatch_parser(pynmrstar)
 
     # Assigning protein name to new gromacs restraints file
-    disres_file = top_file[0:-4] + '_disres.itp'
+    disres_file = top_file[0:-4] + '_distance.itp2'
     
     # Open the file to write it like following format
     f1 = open(disres_file, 'w')
@@ -111,31 +111,31 @@ def dist_restraints(mr_file, top_file, verbose):
     if verbose:
         print(total)
     index = 0
-    print(DR_array_0[0,]);
-    print(DR_array_0[55,])
+    #print(DR_array_0[0,]);
+    #print(DR_array_0[55,])
     
-    restraint = Distance_restraint.Distance_restraint(DR_array_0[0,]);
+    #restraint = Distance_restraint.Distance_restraint(DR_array_0[0,]);
     #restraint.init(DR_array_0[0,]);
     #print (restraint.id);
     #print (restraint.atom_id_1);
     #restraint.print_all();
 
     
-    drl = Distance_restraint_list.Distance_restraint_list(mr_file);
-    drl.restraints[55].print_all();
+    #drl = Distance_restraint_list.Distance_restraint_list(mr_file);
+    #drl.restraints[55].print_all();
     #restraints = Restraint.init_with_NMR_file(mr_file)
     #print (restraint.id);
     #print (restraint.atom_id_1);
     #restraints[0].print_all();
     #restraints[55].print_all();
-    print("after replacing")
-    drl.replace_atoms_names_and_groups();
-    drl.change_units();
-    drl.restraints[55].print_all();
-    drl.set_type_average(1);
-    f_test = open("test", 'w')
-    create_itr_dist_file_header(f_test)
-    drl.write_data_in_file(f_test);
+    #print("after replacing")
+    #drl.replace_atoms_names_and_groups();
+    #drl.change_units();
+    #drl.restraints[55].print_all();
+    #drl.set_type_average(1);
+    #f_test = open("test", 'w')
+    #create_itr_dist_file_header(f_test)
+    #drl.write_data_in_file(f_test);
     
     
     
@@ -149,17 +149,17 @@ def dist_restraints(mr_file, top_file, verbose):
         DR_array_0[i,5],ME_group2 = test_atomno.atom_replace(DR_array_0[i,5],DR_array_0[i,6])
         # Checking for some errors, like no distance upper bound, no distance lower bound or both
         if DR_array_0[i,8] == '.' :
-            print("**Error : No distance upper bound in NMR restraints file for PDB id : ", file_nm)
-            os.remove(dist_res_file)
+            print("**Error : No distance upper bound in NMR restraints file for PDB id : ", disres_file)
+            os.remove(disres_file)
             return None            
         if DR_array_0[i,7] == '.' :
-            print("**Error : No distance lower bound in NMR restraints file for PDB id : ", file_nm)
-            os.remove(dist_res_file)
+            print("**Error : No distance lower bound in NMR restraints file for PDB id : ", disres_file)
+            os.remove(disres_file)
             return None    
 
         if DR_array_0[i,8] == '.' and  DR_array_0[i,7] == '.' :
-            print("**Error : No distance lower bound and distance upper bound in NMR restraints file for PDB id : ", file_nm)
-            os.remove(dist_res_file)
+            print("**Error : No distance lower bound and distance upper bound in NMR restraints file for PDB id : ", disres_file)
+            os.remove(disres_file)
             return None
         
 
@@ -195,13 +195,14 @@ def dist_restraints(mr_file, top_file, verbose):
         # if first element is zero then file has incorrect format!
         if i == 0 :
             if atom_no1 == 0 :
-                print("**Format Error : different residue number in NMR restraint file for PDB id : %s" %file_nm)
+                print("**Format Error : different residue number in NMR restraint file for PDB id : %s" %disres_file)
                 #os.remove(dist_res_file)
                 return None
         index = index + 1
     f1.close()
     
     print(DR_array_0[55,]);
+
     return disres_file
 
 
@@ -230,18 +231,18 @@ def torsional_restraints(mr_file, top_file, verbose):
     # Restore the original parser
     unpatch_parser(pynmrstar)
 
-    drl = Torsion_restraint_list.Torsion_restraint_list(mr_file);
-    print("my replacing")
-    drl.replace_atoms_names_and_groups();
+    #drl = Torsion_restraint_list.Torsion_restraint_list(mr_file);
+    #print("my replacing")
+    #drl.replace_atoms_names_and_groups();
     #drl.change_units();
-    drl.restraints[55].print_all();
+    #drl.restraints[55].print_all();
     #drl.set_type_average(1);
-    f_test = open("testTorsion", 'w')
-    drl.write_header_in_file(f_test)
-    drl.write_data_in_file(f_test);
-    f_test.close()
+    #f_test = open("testTorsion", 'w')
+    #drl.write_header_in_file(f_test)
+    #drl.write_data_in_file(f_test);
+    #f_test.close()
 
-    tor_res_file = top_file[0:-4] + '_dihres.itp'
+    tor_res_file = top_file[0:-4] + '_torsion.itp2'
     g= open(tor_res_file, 'w')
 
     g.write(";    ai\t    aj\t    ak\t    al\t  type\t   phi\t  dphi\t   fac\n\n")
@@ -301,18 +302,18 @@ def orientation_restraints(mr_file, top_file, verbose):
     unpatch_parser(pynmrstar)
 
 
-    drl = Orientation_restraint_list.Orientation_restraint_list(mr_file);
-    print("my replacing")
-    drl.replace_atoms_names_and_groups();
+    #drl = Orientation_restraint_list.Orientation_restraint_list(mr_file);
+    #print("my replacing")
+    #drl.replace_atoms_names_and_groups();
     #drl.change_units();
-    drl.restraints[2].print_all();
+    #drl.restraints[2].print_all();
     #drl.set_type_average(1);
-    f_test = open("testOrient", 'w')
-    drl.write_header_in_file(f_test)
-    drl.write_data_in_file(f_test);
-    f_test.close()
+    #f_test = open("testOrient", 'w')
+    #drl.write_header_in_file(f_test)
+    #drl.write_data_in_file(f_test);
+    #f_test.close()
 
-    orires_file = top_file[0:-4] + '_orires.itp'
+    orires_file = top_file[0:-4] + '_orientation.itp2'
     h= open(orires_file, 'w')
 
     h.write(";    ai\t    aj\t  type\t  exp.\t label\t alpha\tconst.\t  obs.\tweight\n")
@@ -320,8 +321,8 @@ def orientation_restraints(mr_file, top_file, verbose):
 
     orientation_array = np.array(orientation_result_sets)
     if orientation_array.shape == (0,):
-        print("**Error : No Orientation restraints for PDB id : " , file_nm)
-        os.remove(orientation_res_file)
+        print("**Error : No Orientation restraints for PDB id : " , orires_file)
+        os.remove(orires_file)
         return None
     orientation_array_0 = np.array(orientation_array[0,] )
     if verbose:
@@ -362,30 +363,30 @@ if __name__ == '__main__':
     # Find arguments with extention .str and .top (flags were not important?)
     if args.mrfile and args.mrfile[-3:] == "str" and args.topfile and args.topfile[-3:] == "top":
 
-#        try:
+        try:
     	    # Call function dist_restraints() for current file_nm
-#    	    outf = dist_restraints(args.mrfile, args.topfile, args.verbose)
-#    	    print("Generated distance restraints in %s" % outf)
-#        except Exception as ex:
+    	    outf = dist_restraints(args.mrfile, args.topfile, args.verbose)
+    	    print("Generated distance restraints in %s" % outf)
+        except Exception as ex:
     	    #print("Error in dist_restraints:\n\t", ex)
-#    	    printException();
+    	    printException();
         try:
 	    # Call function torsional_restraints() for current file_nm
     	    outf = torsional_restraints(args.mrfile, args.topfile, args.verbose) 
     	    print("Generated dihedral restraints in %s" % outf)
         except Exception as ex:
-    	    printException(False)
+    	    printException()
 #        except Restraint_list.FormatError as ex:
 #            os.remove(outf)
 #            printException(False)
     	    #print("Error in torsional_restraints:\n\t", ex)
 	
-#        try:
+        try:
     	    # Calling function orientation_restraints() for current file_nm
-#    	    outf = orientation_restraints(args.mrfile, args.topfile, args.verbose) 
-#    	    print("Generated orientation restraints in %s" % outf)
-#        except:
-#    	    printException();
+    	    outf = orientation_restraints(args.mrfile, args.topfile, args.verbose) 
+    	    print("Generated orientation restraints in %s" % outf)
+        except:
+    	    printException();
     	    
     else:
         print("Please give me at a .top file and a .str file")
