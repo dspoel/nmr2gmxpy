@@ -1,12 +1,13 @@
+#!/usr/bin/env python3
+
 """
 I can take restraint data from Nuclear Magnetic Resonance data 
 file (NMRstar) and convert it to GROMACS restraint files (itp).
 I also need corresponding GROMACS topology  file to get right atom names.
 I will try to generate 3 .itp files: distance restraint,
-orientation (dehydral restraint) and orientation restraint.
-Not every NMRstar file have all nessesary information, but I try my best!
+dihedral restraint and orientation restraint.
+Not every NMRstar file has all nessesary information, but I try my best!
 """
-
 
 from Restraint_list import FormatError
 from Distance_restraint_list import Distance_restraint_list
@@ -123,21 +124,21 @@ if args.topfile[-3:] != "top":
     sys.exit(1);
 
 
-print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
+    print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     
-restraint_type = "distance"
-call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+    restraint_type = "distance"
+    call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
     
-print("\n~~~~~~~TORSION RESTRAINTS~~~~~~~")
+    print("\n~~~~~~~TORSION RESTRAINTS~~~~~~~")
     
-restraint_type = "torsion"
-call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+    restraint_type = "torsion"
+    call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
 
-print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
+    print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
     
-restraint_type = "orientation"
-call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+    restraint_type = "orientation"
+    call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
     
-print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
+    print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
     
 
