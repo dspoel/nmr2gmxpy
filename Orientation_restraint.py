@@ -31,6 +31,7 @@ class Orientation_restraint (Restraint.Restraint):
         self.atom_id_2, self.group_2 = test_atomno.atom_replace(self.atom_id_2, self.comp_id_2)
         
     def write_header_in_file(self, fp):
+        fp.write("[ orientation_restraints ]\n")
         fp.write(";    ai\t    aj\t  type\t  exp.\t label\t alpha\tconst.\t  obs.\tweight\n")
         fp.write(";      \t      \t      \t      \t      \t   Hz \t nm^3 \t   Hz \t Hz^-2\n\n")
     

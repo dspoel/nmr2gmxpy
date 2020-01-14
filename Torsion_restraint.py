@@ -44,6 +44,7 @@ class Torsion_restraint (Restraint.Restraint):
         self.atom_id_4, self.group_4 = test_atomno.atom_replace(self.atom_id_4, self.comp_id_4)
         
     def write_header_in_file(self, fp):
+        fp.write("[ dihedral_restraints ]\n")
         fp.write(";    ai\t    aj\t    ak\t    al\t  type\t   phi\t  dphi\t   fac\n\n")
         
     def write_data_in_file(self, fp, my_number):

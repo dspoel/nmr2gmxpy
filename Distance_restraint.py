@@ -58,6 +58,7 @@ class Distance_restraint (Restraint.Restraint):
         
         
     def write_header_in_file(self, fp):
+        fp.write("[ distance_restraints ]\n")
         fp.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
 
     def write_data_in_file(self, fp, my_number):
