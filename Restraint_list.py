@@ -65,11 +65,11 @@ class Restraint_list:
     def write_header_in_file(self, fp):
         self.restraints[0].write_header_in_file(fp);
         
-    def write_data_in_file(self, itr_fp):
+    def write_data_in_file(self, itp_fp):
         if self.verbose:
-            print("Writting .itr file...")
+            print("Writting .itp file...")
         for i, element in enumerate(self.restraints):
-            element.write_data_in_file(itr_fp, i)
+            element.write_data_in_file(itp_fp, i)
     
 def create_pynmrstar_entry(mr_file):
     # Patch the parser

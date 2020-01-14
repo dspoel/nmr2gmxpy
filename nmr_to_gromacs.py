@@ -124,21 +124,21 @@ if args.topfile[-3:] != "top":
     sys.exit(1);
 
 
-    print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
+print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     
-    restraint_type = "distance"
-    call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+restraint_type = "distance"
+call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
     
-    print("\n~~~~~~~TORSION RESTRAINTS~~~~~~~")
+print("\n~~~~~~~TORSION RESTRAINTS~~~~~~~")
     
-    restraint_type = "torsion"
-    call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+restraint_type = "torsion"
+call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
 
-    print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
+print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
     
-    restraint_type = "orientation"
-    call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+restraint_type = "orientation"
+call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
     
-    print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
+print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
     
 
