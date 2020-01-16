@@ -27,7 +27,6 @@ class Distance_restraint_list(Restraint_list.Restraint_list):
         total = data_array.shape[0]
         for i in range(total):
             self.restraints.append(Distance_restraint.Distance_restraint(data_array[i,]))
-        self.check()
     
     def set_type_average(self, type_in):
         type_average = type_in
@@ -39,11 +38,6 @@ class Distance_restraint_list(Restraint_list.Restraint_list):
             print("Change units from angstrom to nanometers...")
         super().change_units()
 
-    def check(self):
-        if self.restraints[0].check_if_zero():
-            raise Restraint_list.FormatError(
-                "different residue number in NMR restraints file '%s' for PDB id"%self.mr_file)
-                
         
         for element in self.restraints:
             if element.distance_upper_bound == '.' and element.distance_lower_bound == '.':

@@ -8,6 +8,11 @@ import mdjoy.top as top
 import numpy as np
 from random import randint
 
+class AtomsNamesError(Exception):
+    def __init__(self, msg=None):
+        pass
+
+
 def get_file(filenm): 
     global atoms
     
@@ -19,14 +24,19 @@ def get_atomno(res_nr,atom_nm):
     #top_info = []
     atom_no = 0
     for atom in atoms:
-        #print("Atom name :",atom_nm)
-        #print("residue name : ",res_nm)
-        #print("residue nr : ",res_nr)
+        #if atom_nm==5:
+            #print("Atom name :",atom_nm)
+            #print("residue name : ",res_nm)
+            #print("residue nr : ",res_nr)
         if atom.atom == atom_nm  and atom.resnr == res_nr :
             atom_no =  atom.nr
         #else:
             #print('[%s \t %s]' %(atom_nm,atom.atom))
-
+    if atom_no==0:
+        raise AtomsNamesError("Names of atoms in the NMRstar file does not coincide with names of atom in \
+the topology file. The topology file can be generated only with AMBER force field.\
+Also do not forget to use -ignh flag when you generate the .top file \
+with pdb2gmx program. This forces GROMAX to rename hydrogen atoms.")
     return atom_no
 
 def atom_replace(atom_nm,res_nm):
@@ -155,7 +165,7 @@ def atom_replace(atom_nm,res_nm):
             atom_nm = 'HG11'
         if atom_nm == 'HG13':
             atom_nm = 'HG12'
-
+#checked
     if res_nm == 'GLY':
         if atom_nm == 'HA2':
             atom_nm = 'HA1'
