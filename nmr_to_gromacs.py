@@ -97,7 +97,9 @@ def parse_arguments():
                             formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("-m", "--mrfile", help = "NMR star file with .str file name extension.",
                         required=True, type=str)
-    parser.add_argument("-p", "--topfile", help= "GROMACS topology file with .top file name extension.",
+    parser.add_argument("-p", "--topfile", help= "GROMACS topology file with .top file name extension.\
+                    The current version of the program works only for AMBER and CHARMM force fields.\
+                    IMPORTANT:When create topology with pdb2gmx use flag -ignh for proper H names.",
                         required=True, type=str)
     parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
 
@@ -141,4 +143,5 @@ call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.ver
     
 print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
     
+print(args)
 
