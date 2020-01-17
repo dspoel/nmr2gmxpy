@@ -1,5 +1,5 @@
 import pynmrstar
-import test_atomno
+#import test_atomno
 import os
 import numpy as np
 

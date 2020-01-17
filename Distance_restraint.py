@@ -1,5 +1,5 @@
 import Restraint
-import test_atomno
+from Atoms_names_amber import Atoms_names_amber
 
 class Distance_restraint (Restraint.Restraint):
     def __init__(self,data_array):
@@ -38,9 +38,9 @@ class Distance_restraint (Restraint.Restraint):
         #and assigns nuber of hydogens in the ME_group1 and ME_group2
         #for example, ME_group1 = 3 if methyle group, 2 if methylene group and 1 if methine group 
         # for more info see test_atomno.py
-        self.atom_id_1, self.group_1 = test_atomno.atom_replace(self.atom_id_1, self.comp_id_1)
-        self.atom_id_2, self.group_2 = test_atomno.atom_replace(self.atom_id_2, self.comp_id_2)
-    
+        self.atom_id_1, self.group_1 = Atoms_names_amber.atom_replace(self.atom_id_1, self.comp_id_1)
+        self.atom_id_2, self.group_2 = Atoms_names_amber.atom_replace(self.atom_id_2, self.comp_id_2)
+        pass
     
     def change_units(self):
     # Change distances angstrom to nanometer
@@ -66,8 +66,8 @@ class Distance_restraint (Restraint.Restraint):
                 # For residue number and atom name(current_atom1,current_atom2)
                 # find atom number from 2lv8.top 
                 # and assign it to ai(atom_no1) and aj(atom_no2)
-                atom_no1 = test_atomno.get_atomno(self.auth_seq_id_1, current_atom1)
-                atom_no2 = test_atomno.get_atomno(self.auth_seq_id_2, current_atom2)
+                atom_no1 = Atoms_names_amber.get_atomno(self.auth_seq_id_1, current_atom1)
+                atom_no2 = Atoms_names_amber.get_atomno(self.auth_seq_id_2, current_atom2)
                 
                 fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
                         (atom_no1, atom_no2, my_number,

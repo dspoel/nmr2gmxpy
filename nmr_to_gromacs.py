@@ -13,7 +13,9 @@ from Restraint_list import FormatError
 from Distance_restraint_list import Distance_restraint_list
 from Torsion_restraint_list import Torsion_restraint_list
 from Orientation_restraint_list import Orientation_restraint_list
-import test_atomno
+#from Atoms_names_amber import Atoms_names_amber
+import Atoms_names_amber
+
 
 import sys
 import os
@@ -40,8 +42,7 @@ def printException(printTraceback=True,):
 
 
 def make_restraint_file(restraint_type, mr_file, top_file, verbose):
-    # Reading topology file using module test_atomno.py
-    test_atomno.get_file(top_file)
+    
     
     if restraint_type == "distance":
         res = Distance_restraint_list(mr_file, verbose)
@@ -126,6 +127,15 @@ if args.topfile[-3:] != "top":
     sys.exit(1);
 
 
+# Reading topology file using module test_atomno.py
+
+#atom_names = Atoms_names_amber.Atoms_names_amber(args.topfile)
+Atoms_names_amber.Atoms_names_amber.init_atoms_list(args.topfile)
+#Atoms_names_amber.get_file(args.topfile)
+
+
+#print(Atoms_names_amber.Atoms_names_amber.atoms)
+
 print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     
 restraint_type = "distance"
@@ -143,5 +153,5 @@ call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.ver
     
 print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
     
-print(args)
+#print(args)
 
