@@ -30,7 +30,7 @@ class Atoms_names_amber():
     
     # statuc function
     @classmethod
-    def get_atomno(cls, res_nr, atom_name):
+    def get_atom_number(cls, res_nr, atom_name):
         #top_info = []
         atom_number = 0
 

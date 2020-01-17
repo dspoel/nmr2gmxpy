@@ -41,7 +41,7 @@ def printException(printTraceback=True,):
 #--------------------------------------------------------------------------------
 
 
-def make_restraint_file(restraint_type, mr_file, top_file, verbose):
+def make_restraint_file(restraint_type, mr_file, verbose):
     
     
     if restraint_type == "distance":
@@ -61,17 +61,17 @@ def make_restraint_file(restraint_type, mr_file, top_file, verbose):
     res.change_units()
 #    res.set_type_average(1)
 
-    file_out = top_file[0:-4] + '_' + restraint_type + '.itp'
+    file_out = mr_file[0:-7] + '_' + restraint_type + '.itp'
     fp = open(file_out, 'w')
     res.write_header_in_file(fp)
     res.write_data_in_file(fp)
     return file_out
 
 
-def call_restraint_make_function(restraint_type, mr_file, top_file, verbose, debug):
+def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
     
     try:
-        outf = make_restraint_file(restraint_type, mr_file, top_file, verbose)
+        outf = make_restraint_file(restraint_type, mr_file, verbose)
         print("SUCCESS: %s restraints were generated in file '%s'." % (restraint_type,outf))
     except FormatError as ex:
         print("Warning:")
@@ -127,29 +127,23 @@ if args.topfile[-3:] != "top":
     sys.exit(1);
 
 
-# Reading topology file using module test_atomno.py
-
-#atom_names = Atoms_names_amber.Atoms_names_amber(args.topfile)
+# Reading topology file
 Atoms_names_amber.Atoms_names_amber.init_atoms_list(args.topfile)
-#Atoms_names_amber.get_file(args.topfile)
-
-
-#print(Atoms_names_amber.Atoms_names_amber.atoms)
 
 print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     
 restraint_type = "distance"
-call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
     
 print("\n~~~~~~~TORSION RESTRAINTS~~~~~~~")
     
 restraint_type = "torsion"
-call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
 
 print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
     
 restraint_type = "orientation"
-call_restraint_make_function(restraint_type, args.mrfile, args.topfile, args.verbose, args.debug);
+call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
     
 print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
     
