@@ -90,27 +90,31 @@ with pdb2gmx program. This forces GROMAX to rename hydrogen atoms.")
             if atom_nm == 'QZ':
                 atom_nm = 'HZ'
                 ME_group = 3
-        
+#checked
         if res_nm == 'TRP':
             if atom_nm == 'HB2':
                 atom_nm = 'HB1'
             if atom_nm == 'HB3':
                 atom_nm = 'HB2'
 
-
-
-        if res_nm == 'HIS':
+#checked
+        if res_nm == "HIS": # cahnge name to 'HID' like in amber.ff !
             if atom_nm == 'HB2':
                 atom_nm = 'HB1'
             if atom_nm == 'HB3':
                 atom_nm = 'HB2'
-            if atom_nm == 'HE2':
-                atom_nm = 'HE1'
-            if atom_nm == 'HE3':
-                atom_nm = 'HE2'
+#        if res_nm == 'HIS':
+#            if atom_nm == 'HB2':
+#                atom_nm = 'HB1'
+#            if atom_nm == 'HB3':
+#                atom_nm = 'HB2'
+#            if atom_nm == 'HE2':
+#                atom_nm = 'HE1'
+#            if atom_nm == 'HE3':
+#                atom_nm = 'HE2'
 # SHOULD BE OTHER WAY AROUND?
-            if atom_nm == 'HD1':
-                atom_nm = 'HD2'
+#            if atom_nm == 'HD1':
+#                atom_nm = 'HD2'
 
 
         if res_nm == 'ARG':
@@ -133,7 +137,7 @@ with pdb2gmx program. This forces GROMAX to rename hydrogen atoms.")
             if atom_nm == 'HB3':
                 atom_nm = 'HB2'
     
-
+#checked
         if res_nm == 'TYR' or res_nm == 'PHE':
             if atom_nm == 'HB2':
                 atom_nm = 'HB1'
@@ -146,7 +150,7 @@ with pdb2gmx program. This forces GROMAX to rename hydrogen atoms.")
                 atom_nm = 'HE'
                 ME_group = 2
 
-
+#checked
         if res_nm == 'VAL':
             if atom_nm == 'MG2':
                 atom_nm = 'HG2'
@@ -155,12 +159,12 @@ with pdb2gmx program. This forces GROMAX to rename hydrogen atoms.")
                 atom_nm = 'HG1'
                 ME_group = 3
 
-
+#checked
         if res_nm == 'ALA':
             if atom_nm == 'MB':
                 atom_nm = 'HB' 
                 ME_group = 3
-
+#checked
         if res_nm == 'THR':
             if atom_nm == 'MG':
                 atom_nm = 'HG2'
