@@ -58,10 +58,13 @@ print("================================================")
 download(folder_str, file_strgz, file_strgz)
 unzip(file_strgz, file_str)
 print("SUCCESS")
+os.remove(file_strgz)
 
 download(folder_pdb, file_pdbgz, file_pdbgz)
 unzip(file_pdbgz, file_pdb)
 print("SUCCESS")
+os.remove(file_pdbgz)
+
 #unzip(file_strgz, file_str)
 file_top = protein + ".top"
 command_line = "gmx -quiet pdb2gmx -f " + file_pdb +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top
@@ -70,12 +73,27 @@ try:
     print("=============GROMACS output: ==============================================")
     os.system(command_line)
     print("=============END of GROMACS output ========================================")
+    print("SUCCESS")
 except Exception as ex:
     print(ex)
 
+with open(file_top) as search:
+    for number, line in enumerate(search,1):
+        line = line.rstrip()  # remove '\n' at end of line
+        if "; Include Position restraint file" == line:
+            print(line )
+            print(number)
 
+#import fileinput
+#for number, line in enumerate(fileinput.FileInput(file_top,inplace=1),1):#
+#    if "; Include Position restraint file" in line:
+        #line=line.replace(line,line+"NEW_TEXT")
+#        print(line[number])
+    #print line,
 
-
-
+#with open(file_top, "r+") as fp:
+#    for num, line in enumerate(fp,1):
+#        if num == number-1:
+#            fp.write("here I will put\n")
 
 
