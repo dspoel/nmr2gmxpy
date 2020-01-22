@@ -21,6 +21,8 @@ import sys
 import os
 import argparse
 
+DOWNLOAD_FROM_SERVER = False
+
 #------------------------EXEPTION PRINTING---------------------------------------
 import linecache
 import traceback
@@ -93,7 +95,7 @@ def include_in_topfile(filename):
         for line in fp:
             lines.append(line)
             line = line.rstrip()  # remove '\n' at end of line
-             if insert == line: # if the insert is already in the file
+            if insert == line: # if the insert is already in the file
                 return 
     lines = []
     with open(args.topfile) as fp:
@@ -123,41 +125,74 @@ class My_argument_parser(argparse.ArgumentParser):
         sys.stderr.write('error: %s\n' % message)
         self.print_help()
         sys.exit(2)
-
+    
 def parse_arguments():
     #parser = argparse.ArgumentParser()
     parser = My_argument_parser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("-m", "--mrfile", help = "NMR star file with .str file name extension.",
-                        required=True, type=str)
+                         type=str)
     parser.add_argument("-p", "--topfile", help= "GROMACS topology file with .top file name extension.\
                     The current version of the program works only for AMBER and CHARMM force fields.\
                     IMPORTANT:When create topology with pdb2gmx use flag -ignh for proper H names.",
-                        required=True, type=str)
+                         type=str)
     parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
 
     parser.add_argument("-d", "--debug", 
                         help="Print traceback for errors if any. Also print traceback for warnings.",
                          action="store_true")
-    
+    parser.add_argument("-n", "--name")
     args = parser.parse_args()
+    
+    topfile_flag=0
+    mrfile_flag=0
+    name_flag=0
+    
+    if args.name!=None:
+        name_flag=True
+    if args.mrfile!=None:
+        mrfile_flag=True
+    if args.topfile!=None:
+        topfile_flag=True
+    
+    if name_flag==topfile_flag or name_flag==mrfile_flag:
+        print("You should give me either files names or protein name I will download.")
+        print(__doc__)
+        sys.exit(1);
+    
+    if name_flag:
+        global DOWNLOAD_FROM_SERVER
+        DOWNLOAD_FROM_SERVER = True
+        return args
+    
+    if args.mrfile[-3:] != "str":
+        print("\tError: NMRstar file should have .str extansion.")
+        print(__doc__)
+        sys.exit(1);
+        
+    if args.topfile[-3:] != "top":
+        print("\tError: GROMACS topology file should have .top extansion.")
+        print(__doc__)
+        sys.exit(1);
+    
     return args
 
 #================================================================================
+# MAIN
 
-if __name__ == '__main__':
-    args  = parse_arguments()
+args  = parse_arguments()
 
-if args.mrfile[-3:] != "str":
-    print("\tError: NMRstar file should have .str extansion.")
-    print(__doc__)
-    sys.exit(1);
-        
-if args.topfile[-3:] != "top":
-    print("\tError: GROMACS topology file should have .top extansion.")
-    print(__doc__)
-    sys.exit(1);
+if DOWNLOAD_FROM_SERVER:
+    try:
+        errno = os.system("./file_manager_gromacs.py " + args.name)
+    except:
+        print("error")
 
+    if errno!=0:
+        sys.exit(1)
+
+    args.topfile = args.name + ".top"
+    args.mrfile = args.name + "_mr.str"
 
 # Reading topology file
 Atoms_names_amber.Atoms_names_amber.init_atoms_list(args.topfile)
@@ -183,5 +218,5 @@ if filename:
     include_in_topfile(filename)
 print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
     
-#print(args)
+
 

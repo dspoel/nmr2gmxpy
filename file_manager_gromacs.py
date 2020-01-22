@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import os
 import ftplib
@@ -6,7 +8,10 @@ import gzip
 import shutil
 
 #protein = '2I2J'
-protein = "2mv5"
+if len(sys.argv)<2:
+    print("ERROR: give me the name of the protein (4 symbols).")
+    exit(1)
+protein = sys.argv[1];
 # on ftp server they use lower case names
 protein_lowcase = protein.lower()
 subfolder = protein_lowcase[1:-1] # two middle characters
@@ -18,6 +23,8 @@ file_str = protein + "_mr.str"
 folder_pdb = "/pub/pdb/data/structures/divided/pdb/" + subfolder
 file_pdbgz = "pdb" + protein_lowcase + ".ent.gz"
 file_pdb = protein + ".pdb"
+
+file_top = protein + ".top"
 
 def download(folder_name, file_in, file_out):
     # /pub/pdb/data/structures/divided/nmr_restraints_v2/<2 middle character, i.e for 2l8s - l8>
@@ -49,38 +56,40 @@ def unzip(file_in, file_out):
         print(ex)
         exit(1)
 SERVER_NAME = 'ftp.rcsb.org'
-# Connect to RCSB PDB (US) ftp server
-print("Triying to connect to the server %s"%SERVER_NAME)
-print("Server message:=================================")
-try:
-    ftp = ftplib.FTP(SERVER_NAME)
-    print(ftp.login(user='anonymous', passwd='', acct=''))
-    print(ftp.getwelcome())
-except Exception as ex:
-    print("ERROR:")
-    print(ex);
-    sys.exit(1);
-print("================================================")
+
+if __name__ == "__main__":
+    # Connect to RCSB PDB (US) ftp server
+    print("Triying to connect to the server %s"%SERVER_NAME)
+    print("Server message:=================================")
+    try:
+        ftp = ftplib.FTP(SERVER_NAME)
+        print(ftp.login(user='anonymous', passwd='', acct=''))
+        print(ftp.getwelcome())
+    except Exception as ex:
+        print("ERROR:")
+        print(ex);
+        sys.exit(1);
+    print("================================================")
 
 
-download(folder_str, file_strgz, file_strgz)
-unzip(file_strgz, file_str)
-print("SUCCESS")
-os.remove(file_strgz)
-
-download(folder_pdb, file_pdbgz, file_pdbgz)
-unzip(file_pdbgz, file_pdb)
-print("SUCCESS")
-os.remove(file_pdbgz)
-
-#unzip(file_strgz, file_str)
-file_top = protein + ".top"
-command_line = "gmx -quiet pdb2gmx -f " + file_pdb +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top
-print("Run:\n\t" + command_line)
-try:
-    print("=============GROMACS output: ==============================================")
-    os.system(command_line)
-    print("=============END of GROMACS output ========================================")
+    download(folder_str, file_strgz, file_strgz)
+    unzip(file_strgz, file_str)
     print("SUCCESS")
-except Exception as ex:
-    print(ex)
+    os.remove(file_strgz)
+
+    download(folder_pdb, file_pdbgz, file_pdbgz)
+    unzip(file_pdbgz, file_pdb)
+    print("SUCCESS")
+    os.remove(file_pdbgz)
+
+    #unzip(file_strgz, file_str)
+    
+    command_line = "gmx -quiet pdb2gmx -f " + file_pdb +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top
+    print("Run:\n\t" + command_line)
+    try:
+        print("=============GROMACS output: ==============================================")
+        os.system(command_line)
+        print("=============END of GROMACS output ========================================")
+        print("SUCCESS")
+    except Exception as ex:
+        print(ex)
