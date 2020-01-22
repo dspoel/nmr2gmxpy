@@ -1,12 +1,12 @@
 import sys
 import os
-from ftplib import FTP
+import ftplib
 
 import gzip
 import shutil
 
 #protein = '2I2J'
-protein = "2L8S"
+protein = "2mv5"
 # on ftp server they use lower case names
 protein_lowcase = protein.lower()
 subfolder = protein_lowcase[1:-1] # two middle characters
@@ -25,11 +25,19 @@ def download(folder_name, file_in, file_out):
     try:
         print(ftp.cwd(folder_name))
         ftp.retrbinary("RETR " + file_in ,open(file_out, 'wb').write)
+    except ftplib.error_perm as ex:
+        print("Oops! Seems there is now NMR data for protein " + protein)
+        try:
+            os.remove(file_in)
+            os.remove(file_out)
+        except:
+            pass
+        sys.exit(1)
     except Exception as ex:
         print("ERROR:")
         print(ex)
         sys.exit(1)
-    
+
 
 def unzip(file_in, file_out):
     print("Try to unzip %s"%file_in)
@@ -45,7 +53,7 @@ SERVER_NAME = 'ftp.rcsb.org'
 print("Triying to connect to the server %s"%SERVER_NAME)
 print("Server message:=================================")
 try:
-    ftp = FTP(SERVER_NAME)
+    ftp = ftplib.FTP(SERVER_NAME)
     print(ftp.login(user='anonymous', passwd='', acct=''))
     print(ftp.getwelcome())
 except Exception as ex:
@@ -76,5 +84,3 @@ try:
     print("SUCCESS")
 except Exception as ex:
     print(ex)
-
-print("Everything is OK!")
