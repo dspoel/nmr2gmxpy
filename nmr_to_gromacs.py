@@ -73,6 +73,7 @@ def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
     try:
         outf = make_restraint_file(restraint_type, mr_file, verbose)
         print("SUCCESS: %s restraints were generated in file '%s'." % (restraint_type,outf))
+        return outf;
     except FormatError as ex:
         print("Warning:")
         print(ex)
@@ -82,6 +83,37 @@ def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
             printException(debug)
     except Exception as ex:
         printException(debug)
+
+def include_in_topfile(filename):
+    insert = "#include " + os.path.basename(filename)
+
+    val = 0
+    lines = []
+    with open(args.topfile) as fp:
+        for line in fp:
+            lines.append(line)
+            line = line.rstrip()  # remove '\n' at end of line
+             if insert == line: # if the insert is already in the file
+                return 
+    lines = []
+    with open(args.topfile) as fp:
+        for number, line in enumerate(fp,1):
+            lines.append(line)
+            line = line.rstrip()  # remove '\n' at end of line
+            if "; Include Position restraint file" == line:
+                val = number;
+
+    if val==0:
+        print("Warning!")
+        print("Cannnot write include in the topology file automatically.\n"
+            "You should add this line:\n" + insert + "\nat the end of '" + args.topfile + "'.")
+        return
+        
+    lines.insert(val-1, insert + "\n")
+
+    with open(args.topfile, "w") as fp:
+        for line in lines:
+            fp.write(line)
 
 
 #========================COMMAND LINE ARGUMENTS PARSING==========================
@@ -133,18 +165,22 @@ Atoms_names_amber.Atoms_names_amber.init_atoms_list(args.topfile)
 print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     
 restraint_type = "distance"
-call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
-    
+filename=call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug)
+if filename:
+    include_in_topfile(filename)
+
 print("\n~~~~~~~TORSION RESTRAINTS~~~~~~~")
     
 restraint_type = "torsion"
-call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
-
+filename = call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
+if filename:
+    include_in_topfile(filename)
 print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
     
 restraint_type = "orientation"
-call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
-    
+filename = call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
+if filename:
+    include_in_topfile(filename)
 print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
     
 #print(args)
