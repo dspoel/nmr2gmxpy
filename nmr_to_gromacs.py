@@ -87,7 +87,7 @@ def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
         printException(debug)
 
 def include_in_topfile(filename):
-    insert = "#include " + os.path.basename(filename)
+    insert = '#include "' + os.path.basename(filename) + '"'
 
     val = 0
     lines = []

@@ -84,11 +84,13 @@ if __name__ == "__main__":
 
     #unzip(file_strgz, file_str)
     
-    command_line = "gmx -quiet pdb2gmx -f " + file_pdb +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top
+    command_line = "gmx -quiet pdb2gmx -f " + file_pdb +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top + " -o " + protein + ".gro"
     print("Run:\n\t" + command_line)
     try:
         print("=============GROMACS output: ==============================================")
-        os.system(command_line)
+        if os.system(command_line)!=0:
+            raise Exception("wrong")
+        #subprocess.call([command_line])
         print("=============END of GROMACS output ========================================")
         print("SUCCESS")
     except Exception as ex:
