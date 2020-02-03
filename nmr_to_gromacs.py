@@ -11,7 +11,7 @@ Not every NMRstar file has all nessesary information, but I try my best!
 
 from Restraint_list import FormatError
 from Distance_restraint_list import Distance_restraint_list
-from Torsion_restraint_list import Torsion_restraint_list
+from Dihedral_restraint_list import Dihedral_restraint_list
 from Orientation_restraint_list import Orientation_restraint_list
 #from Atoms_names_amber import Atoms_names_amber
 import Atoms_names_amber
@@ -48,13 +48,13 @@ def make_restraint_file(restraint_type, mr_file, verbose):
     
     if restraint_type == "distance":
         res = Distance_restraint_list(mr_file, verbose)
-    elif restraint_type == "torsion":
-        res = Torsion_restraint_list(mr_file, verbose)
+    elif restraint_type == "dihedral":
+        res = Dihedral_restraint_list(mr_file, verbose)
     elif restraint_type == "orientation":
         res = Orientation_restraint_list(mr_file, verbose)
     else:
         print("Error: unknown restraint type.")
-        print("Restraint type can be: distance, torsion or orientation")
+        print("Restraint type can be: distance, dihedral or orientation")
     
     
     #res.set_verbose(verbose)
@@ -204,9 +204,9 @@ filename=call_restraint_make_function(restraint_type, args.mrfile, args.verbose,
 if filename:
     include_in_topfile(filename)
 
-print("\n~~~~~~~TORSION RESTRAINTS~~~~~~~")
+print("\n~~~~~~~DIHEDRAL RESTRAINTS~~~~~~~")
     
-restraint_type = "torsion"
+restraint_type = "dihedral"
 filename = call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
 if filename:
     include_in_topfile(filename)

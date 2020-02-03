@@ -1,7 +1,7 @@
 import Restraint_list
-import Torsion_restraint
+import Dihedral_restraint
 
-class Torsion_restraint_list(Restraint_list.Restraint_list):
+class Dihedral_restraint_list(Restraint_list.Restraint_list):
 
     def __init__(self, mr_file, verbose=False):
         Restraint_list.Restraint_list.__init__(self, mr_file, verbose)
@@ -31,4 +31,4 @@ class Torsion_restraint_list(Restraint_list.Restraint_list):
         self.restraints = [];
         total = data_array.shape[0]
         for i in range(total):
-            self.restraints.append(Torsion_restraint.Torsion_restraint(data_array[i,]))
+            self.restraints.append(Dihedral_restraint.Dihedral_restraint(data_array[i,]))

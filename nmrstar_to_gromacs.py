@@ -19,7 +19,7 @@ import Restraint
 import Restraint_list
 import Distance_restraint
 import Distance_restraint_list
-import Torsion_restraint_list
+import Dihedral_restraint_list
 import Orientation_restraint_list
 
 # for catching errors
@@ -231,7 +231,7 @@ def torsional_restraints(mr_file, top_file, verbose):
     # Restore the original parser
     unpatch_parser(pynmrstar)
 
-    #drl = Torsion_restraint_list.Torsion_restraint_list(mr_file);
+    #drl = Dihedral_restraint_list.Dihedral_restraint_list(mr_file);
     #print("my replacing")
     #drl.replace_atoms_names_and_groups();
     #drl.change_units();

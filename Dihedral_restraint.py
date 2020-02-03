@@ -1,7 +1,7 @@
 import Restraint
 from Atoms_names_amber import Atoms_names_amber
 
-class Torsion_restraint (Restraint.Restraint):
+class Dihedral_restraint (Restraint.Restraint):
     def __init__(self,data_array):
         Restraint.Restraint.__init__(self, data_array)
         self.id = data_array[0]
