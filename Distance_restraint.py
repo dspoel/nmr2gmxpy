@@ -17,8 +17,11 @@ class Distance_restraint (Restraint.Restraint):
         # will be changed
         self.group_1 = 0
         self.group_2 = 0
-
+        
         self.distance_lower_bound = data_array[7]
+        # if lower bound is not set in file then set to 0.0
+        if(data_array[7]=='.'):
+            self.distance_lower_bound = 0.0
         self.distance_upper_bound = data_array[8]
         # will be changed
         self.distance_upper_bound_2 = 0.0

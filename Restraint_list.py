@@ -23,7 +23,7 @@ class Restraint_list:
         # 3d array
         # If number of lines is 0 cause error
         if DR_array.shape == (0,):
-            raise FormatError("Different NMR restraint format for PDB id in file: '%s'"% mr_file)
+            raise FormatError("No information for the restraints in the file: '%s'"% mr_file)
         
         #take the first (and only one) element 
         DR_array_0 = np.array(DR_array[0,])
