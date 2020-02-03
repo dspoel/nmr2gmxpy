@@ -30,8 +30,7 @@ class Dihedral_restraint (Restraint.Restraint):
         self.group_3 = 0
         self.group_4 = 0
         
-        #value for force constant. Always 1?
-        self.fac = 1.0
+        self.fac = 1000.0
         
     def replace_atoms_names_and_groups(self):
         #replacing atom names by using atoms names and residue names 
