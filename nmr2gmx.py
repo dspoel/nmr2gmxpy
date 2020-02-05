@@ -22,6 +22,7 @@ import os
 import argparse
 
 DOWNLOAD_FROM_SERVER = False
+VERBOSE = False
 
 #------------------------EXEPTION PRINTING---------------------------------------
 import linecache
@@ -182,9 +183,15 @@ def parse_arguments():
 
 args  = parse_arguments()
 
+if args.verbose:
+    VERBOSE=True
+
 if DOWNLOAD_FROM_SERVER:
     try:
-        errno = os.system("./file_manager_gromacs.py " + args.name)
+        command = "./file_manager_gromacs.py -gmx -n" + args.name
+        if VERBOSE:
+            command += ' -v'
+        errno = os.system(command)
     except:
         print("error")
 

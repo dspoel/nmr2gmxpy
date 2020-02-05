@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 
 # stand alone program
+# used by nmr2gmx! Be careful when make any changes.
 
 '''
-Give me the name of the protein (4 symbols).
-Use flag -v to make me talkative.
+I will download nmr-star file and pdb file for the protein you give me
+from the server: ftp.rcsb.org.
+I can also call gromacs to create the topology file with amber99sb-ildn force field 
+and tip3p water model.
+
+I can be used as a stand alone program, but I am also a part of nmr2gmx program.
+
 '''
 import sys
 import os
@@ -13,20 +19,52 @@ import ftplib
 import gzip
 import shutil
 
+import argparse
+
 VERBOSE = False
-if len(sys.argv)<2:
-    print(__doc__)
-    exit(1)
+GROMACS = True
 
-elif len(sys.argv)==3 and sys.argv[2]=='-v':
-    VERBOSE = True
+#if len(sys.argv)<2:
+#    print(__doc__)
+#    exit(1)
 
-elif len(sys.argv)>3:
-    print("Input ERROR")
-    print(__doc__)
-    exit(1)
+#elif len(sys.argv)==3 and sys.argv[2]=='-v':
+#    VERBOSE = True
+
+#elif len(sys.argv)>3:
+#    print("Input ERROR")
+#    print(__doc__)
+#    exit(1)
+#protein = sys.argv[1];
+
+#========================COMMAND LINE ARGUMENTS PARSING==========================
+# When command line argument parser error occure, the program print --help
+class My_argument_parser(argparse.ArgumentParser):
+    def error(self, message):
+        sys.stderr.write('error: %s\n' % message)
+        self.print_help()
+        sys.exit(2)
     
-protein = sys.argv[1];
+def parse_arguments():
+    #parser = argparse.ArgumentParser()
+    parser = My_argument_parser(description=__doc__,
+                            formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("-n", "--name", help = "Conventional 4-symbol name for the protein.",
+                         type=str, required=True)
+    parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
+    parser.add_argument("-gmx", "--gromacs", help="GROMACS will be called to generate topology file", action="store_true")
+    args = parser.parse_args()
+    
+    return args
+
+#================================================================================
+
+args = parse_arguments();
+
+protein = args.name;
+VERBOSE = args.verbose;
+GROMACS = args.gromacs;
+
 # on ftp server they use lower case names
 protein_lowcase = protein.lower()
 subfolder = protein_lowcase[1:-1] # two middle characters
@@ -74,9 +112,15 @@ def unzip(file_in, file_out):
     except Exception as ex:
         print(ex)
         exit(1)
+        
+
+
+        
 SERVER_NAME = 'ftp.rcsb.org'
 
 if __name__ == "__main__":
+
+    
     # Connect to RCSB PDB (US) ftp server
     if VERBOSE:
         print("Triying to connect to the server %s"%SERVER_NAME)
@@ -109,25 +153,27 @@ if __name__ == "__main__":
         print("SUCCESS")
     os.remove(file_pdbgz)
 
-    if VERBOSE:
-        command_line = "gmx -quiet pdb2gmx -f " + file_pdb \
-                     +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
-                     + " -o " + protein + ".gro"
-        print("Run:\n\t" + command_line)
-    else:
-        # make GROMACS to shut up
-        command_line = "gmx -quiet pdb2gmx -f " + file_pdb \
-                     +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
-                     + " -o " + protein + ".gro > /dev/null 2>1"
-    try:
+#--------------------------CALL GROMACS-------------------------------------------------
+    if GROMACS:
         if VERBOSE:
-            print("============= GROMACS output: ==============================================")
-        if os.system(command_line)!=0:
-            raise Exception("I cannot find GROMACS.\nMaybe you forget to do 'source /usr/local/gromacs/bin/GMXRC'?")
-        #subprocess.call([command_line])
-        if VERBOSE:
-            print("============= END of GROMACS output ========================================")
-        if VERBOSE:
-            print("SUCCESS")
-    except Exception as ex:
-        print(ex)
+            command_line = "gmx -quiet pdb2gmx -f " + file_pdb \
+                        +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
+                        + " -o " + protein + ".gro"
+            print("Run:\n\t" + command_line)
+        else:
+            # make GROMACS to shut up
+            command_line = "gmx -quiet pdb2gmx -f " + file_pdb \
+                        +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
+                        + " -o " + protein + ".gro > /dev/null 2>&1"
+        try:
+            if VERBOSE:
+                print("============= GROMACS output: ==============================================")
+            if os.system(command_line)!=0:
+                raise Exception("I cannot find GROMACS.\nMaybe you forget to do 'source /usr/local/gromacs/bin/GMXRC'?")
+            #subprocess.call([command_line])
+            if VERBOSE:
+                print("============= END of GROMACS output ========================================")
+            if VERBOSE:
+                print("SUCCESS")
+        except Exception as ex:
+            print(ex)
