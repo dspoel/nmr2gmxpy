@@ -12,7 +12,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-import Restraint
+from nmr2gmxpy_lib.Restraint import Restraint
 import pynmrstar
 import os
 import numpy as np

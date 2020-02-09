@@ -23,12 +23,12 @@ dihedral restraint and orientation restraint.
 Not every NMRstar file has all nessesary information, but I try my best!
 """
 
-from Restraint_list import FormatError
-from Distance_restraint_list import Distance_restraint_list
-from Dihedral_restraint_list import Dihedral_restraint_list
-from Orientation_restraint_list import Orientation_restraint_list
+from nmr2gmxpy_lib.Restraint_list import FormatError
+from nmr2gmxpy_lib.Distance_restraint_list import Distance_restraint_list
+from nmr2gmxpy_lib.Dihedral_restraint_list import Dihedral_restraint_list
+from nmr2gmxpy_lib.Orientation_restraint_list import Orientation_restraint_list
 #from Atoms_names_amber import Atoms_names_amber
-import Atoms_names_amber
+from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
 
 
 import sys
@@ -216,7 +216,7 @@ if DOWNLOAD_FROM_SERVER:
     args.mrfile = args.name + "_mr.str"
 
 # Reading topology file
-Atoms_names_amber.Atoms_names_amber.init_atoms_list(args.topfile)
+Atoms_names_amber.init_atoms_list(args.topfile)
 
 print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     

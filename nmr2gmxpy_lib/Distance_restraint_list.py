@@ -12,13 +12,13 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-import Restraint_list
-import Distance_restraint
+from nmr2gmxpy_lib.Restraint_list import Restraint_list
+from nmr2gmxpy_lib.Distance_restraint import Distance_restraint
 
-class Distance_restraint_list(Restraint_list.Restraint_list):
+class Distance_restraint_list(Restraint_list):
 
     def __init__(self, mr_file, verbose=False):
-        Restraint_list.Restraint_list.__init__(self,mr_file, verbose)
+        Restraint_list.__init__(self,mr_file, verbose)
         # 1 - for time and ensemble average and
         # 2 - for no time and ensemble average
         self.type_average = 1
@@ -40,7 +40,7 @@ class Distance_restraint_list(Restraint_list.Restraint_list):
         self.restraints = [];
         total = data_array.shape[0]
         for i in range(total):
-            self.restraints.append(Distance_restraint.Distance_restraint(data_array[i,]))
+            self.restraints.append(Distance_restraint(data_array[i,]))
     
     def set_type_average(self, type_in):
         type_average = type_in

@@ -12,12 +12,12 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-import Restraint
-from Atoms_names_amber import Atoms_names_amber
+from nmr2gmxpy_lib.Restraint import Restraint
+from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
 
-class Distance_restraint (Restraint.Restraint):
+class Distance_restraint (Restraint):
     def __init__(self,data_array):
-        Restraint.Restraint.__init__(self, data_array)
+        Restraint.__init__(self, data_array)
         self.id = data_array[0]
         self.atom_id_1 = data_array[2]
         self.atom_id_2 = data_array[5]
