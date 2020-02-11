@@ -87,7 +87,7 @@ class Restraint_list:
     
 def create_pynmrstar_entry(mr_file):
     # Patch the parser
-    from monkeypatch import patch_parser, unpatch_parser
+    from pynmrstar_patch import patch_parser, unpatch_parser
     patch_parser(pynmrstar)
 
     # Check if there is a restraint file in the PDB
