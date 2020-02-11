@@ -35,6 +35,9 @@ import shutil
 
 import argparse
 
+# for logs
+from datetime import date
+
 VERBOSE = False
 GROMACS = True
 # will be set to true when/if the dir is created by this script
@@ -86,6 +89,8 @@ file_pdb = path + "/" + protein + ".pdb"
 file_top = protein + ".top"
 file_gro = protein + ".gro"
 
+logfile = path + "/file_manager.log"
+
 def download(folder_name, file_in, file_out):
     # /pub/pdb/data/structures/divided/nmr_restraints_v2/<2 middle character, i.e for 2l8s - l8>
     if VERBOSE:
@@ -126,13 +131,11 @@ def unzip(file_in, file_out):
         exit(1)
         
 
-
         
 SERVER_NAME = 'ftp.rcsb.org'
 
 if __name__ == "__main__":
 
-    
     # Connect to RCSB PDB (US) ftp server
     if VERBOSE:
         print("Triying to connect to the server %s"%SERVER_NAME)
@@ -163,6 +166,8 @@ if __name__ == "__main__":
             print(ex)
             sys.exit(1)
     
+    
+    
     download(folder_str, remote_file_strgz, file_strgz)
     unzip(file_strgz, file_str)
     if VERBOSE:
@@ -175,16 +180,20 @@ if __name__ == "__main__":
         print("SUCCESS")
     os.remove(file_pdbgz)
 
+    log = open(logfile, "w")
+    log.write("Date: " + str(date.today()))
+    log.write("\nThe data is downloaded from the server: %s.\n\n"%SERVER_NAME)
+    
 #--------------------------CALL GROMACS-------------------------------------------------
     if GROMACS:
         if VERBOSE:
-            command_line = "cd " + path + "/; " + "gmx -quiet pdb2gmx -f " + protein \
+            command_line = "cd " + path + "/; " + "gmx pdb2gmx -f " + protein \
                         +  ".pdb -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
                         + " -o " + file_gro
             print("Run:\n\t" + command_line)
         else:
             # make GROMACS to shut up
-            command_line = "cd " + path + "/; " +  "gmx -quiet pdb2gmx -f " + protein \
+            command_line = "cd " + path + "/; " +  "gmx pdb2gmx -f " + protein \
                         +  ".pdb -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
                         + " -o " + file_gro + " > /dev/null 2>&1"
         try:
@@ -203,5 +212,9 @@ if __name__ == "__main__":
                 print("============= END of GROMACS output ========================================")
             if VERBOSE:
                 print("SUCCESS")
+                
+            log.write("Call for GROMACS:\n");
+            log.write(command_line);
         except Exception as ex:
             print(ex)
+    log.close()
