@@ -1,8 +1,11 @@
+# Copyright 2020 Olivier Fisette
+
 import numpy as np
 
 cell_order = [(0,0), (1,1), (2,2), (1,0), (2,0), (0,1), (2,1), (0,2), (1,2)]
 
-class GROAtom():
+class GROAtom:
+    """An atom record in a Gromos87 structure"""
 
     def __init__(self, resid, resname, name, id, x, y, z):
         self.chain = ""
@@ -15,6 +18,8 @@ class GROAtom():
         self.z = z
 
 def read(infile):
+    """Read a Gromos87 structure from a filename or stream, returning an (atoms, 
+    cell, title) tuple"""
     if isinstance(infile, str):
         infile = open(infile)
 
@@ -51,6 +56,8 @@ def read(infile):
     return atoms, cell, title
 
 def write(outfile, atoms, cell = np.zeros((3,3)), title = ""):
+    """Write a Gromos87 structure to a filename or stream, from the given atoms
+    and, optionally, cell (3x3 matrix) and title"""
     if isinstance(outfile, str):
         outfile = open(outfile, "w")
 

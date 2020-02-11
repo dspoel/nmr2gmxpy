@@ -1,3 +1,5 @@
+# Copyright 2020 Olivier Fisette
+
 from progressbar import ProgressBar, ETA, Percentage, Bar, Counter
 from datetime import datetime as dt
 

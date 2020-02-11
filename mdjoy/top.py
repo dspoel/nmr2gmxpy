@@ -1,3 +1,11 @@
+# Copyright 2020 Olivier Fisette
+
+"""
+    Gromacs topology modification module
+
+    For documentation and examples, see the AK Schaefer wiki
+"""
+
 import re
 
 class GmxTopGlobalError(Exception):
@@ -38,6 +46,7 @@ class GmxTopInstError(Exception):
             return self.msg
 
 class GmxTopInst:
+    """Base class for all Gmx topology instructions"""
 
     def __init__(self, line):
         if line.endswith('\n'):
@@ -66,6 +75,7 @@ class GmxTopInst:
         pass
 
 class GmxTopComment(GmxTopInst):
+    """Gmx topology comment"""
 
     def parse(self, inst):
         pass
@@ -74,6 +84,7 @@ class GmxTopComment(GmxTopInst):
         return ""
 
 class GmxTopHeader(GmxTopInst):
+    """Gmx topology header"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -87,6 +98,7 @@ class GmxTopHeader(GmxTopInst):
         return '[ %s ]' % self.title
 
 class GmxTopDefaults(GmxTopInst):
+    """Gmx topology force field defaults"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -119,6 +131,7 @@ class GmxTopDefaults(GmxTopInst):
                                                     self.fudgeQQ)
 
 class GmxTopAtomType(GmxTopInst):
+    """Gmx topology atom type"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -151,6 +164,7 @@ class GmxTopAtomType(GmxTopInst):
                 self.sigma, self.epsilon)
 
 class GmxTopMoleculeType(GmxTopInst):
+    """Gmx topology molecule type"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -167,6 +181,7 @@ class GmxTopMoleculeType(GmxTopInst):
         return '%-16s %2d' % (self.name, self.nrexcl)
 
 class GmxTopAtom(GmxTopInst):
+    """Gmx topology atom record"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -244,6 +259,7 @@ class GmxTopAtom(GmxTopInst):
         self.nr = new_values[0]
 
 class GmxTopBond(GmxTopInst):
+    """Gmx topology atomic bond"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -312,6 +328,7 @@ class GmxTopBond(GmxTopInst):
         self.ai, self.aj = new_values
 
 class GmxTopConstraint(GmxTopInst):
+    """Gmx topology pairwise constraint"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -362,6 +379,7 @@ class GmxTopConstraint(GmxTopInst):
         self.ai, self.aj = new_values
 
 class GmxTopPair(GmxTopInst):
+    """Gmx topology pair potential"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -439,6 +457,7 @@ class GmxTopPair(GmxTopInst):
         self.ai, self.aj = new_values
 
 class GmxTopAngle(GmxTopInst):
+    """Gmx topology angle potential"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -512,6 +531,7 @@ class GmxTopAngle(GmxTopInst):
         self.ai, self.aj, self.ak = new_values
 
 class GmxTopDihedral(GmxTopInst):
+    """Gmx topology dihedral angle potential"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -625,6 +645,7 @@ class GmxTopDihedral(GmxTopInst):
         self.ai, self.aj, self.ak, self.al = new_values
 
 class GmxTopVirtualSite3(GmxTopInst):
+    """Gmx topology type 3 virtual site"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -690,6 +711,7 @@ class GmxTopVirtualSite3(GmxTopInst):
         self.ai, self.aj, self.ak, self.al = new_values
 
 class GmxTopVirtualSite4(GmxTopInst):
+    """Gmx topology type 4 virtual site"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -761,6 +783,7 @@ class GmxTopVirtualSite4(GmxTopInst):
         self.ai, self.aj, self.ak, self.al, self.am = new_values
 
 class GmxTopPositionRestraint(GmxTopInst):
+    """Gmx topology position restraint"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -808,6 +831,7 @@ class GmxTopSystem(GmxTopInst):
         return self.inst
 
 class GmxTopMolecule(GmxTopInst):
+    """Gmx topology molecule declaration"""
 
     def parse(self, inst):
         tokens = inst.split()
@@ -839,6 +863,8 @@ header_strings = {'defaults': GmxTopDefaults, \
                   'molecules': GmxTopMolecule}
 
 def read(infile):
+    """Read a Gromacs topology from a filename or stream, returning a list of
+    instructions"""
 
     if isinstance(infile, str):
         infile = open(infile)
@@ -875,6 +901,8 @@ def read(infile):
     return topology
 
 def write(topology, outfile):
+    """Write a Gromacs topology to a filename or stream, from the given list of
+    instructions"""
 
     if isinstance(outfile, str):
         outfile = open(outfile, 'w')

@@ -1,3 +1,5 @@
+# Copyright 2020 Olivier Fisette
+
 from random import shuffle
 import numpy as np
 try:
@@ -12,6 +14,7 @@ __all__ = ["cell2box", "box2cell", "get_R", "set_R", "extents", "is_inside",
         "is_heavy_atom", "is_clashing", "find_clashes"]
 
 def cell2box(cell):
+    """Return the lengths (3-tuple) and angles (3-tuple) of the given cell."""
     A, B, C = cell.transpose()
     a, b, c = lengths = [np.linalg.norm(V) for V in [A, B, C]]
     alpha = np.arccos(np.dot(B,C) / (b*c))
@@ -21,6 +24,7 @@ def cell2box(cell):
     return lengths, angles
 
 def box2cell(lengths, angles):
+    """Return a 3x3 cell matrix for the given box lengths and angles."""
     x, y, z = lengths
     alpha, beta, gamma = [np.deg2rad(angle) for angle in angles]
     # A lies along the positive X axis:
@@ -34,9 +38,11 @@ def box2cell(lengths, angles):
     return np.array([A, B, C]).transpose()
 
 def get_R(atoms):
+    """Return the (x,y,z) coordinates of the given atoms as a 3xN matrix."""
     return np.array([[atom.x, atom.y, atom.z] for atom in atoms]).transpose()
 
 def set_R(atoms, source):
+    """Set atoms (x,y,z) coordinates from the source 3xN matrix."""
     if len(source) > 0 and hasattr(source[0], "x"):
         set_R(atoms, get_R(source))
     else:
@@ -46,6 +52,9 @@ def set_R(atoms, source):
             atoms[n].z = source[2][n]
 
 def extents(atoms):
+    """Return the min/max coordinates of a collection of atoms.
+    
+    return value -- 3x2 array of (x,y,z) and min/max, respectively"""
     R = get_R(atoms)
     xmin = np.min(R[0])
     xmax = np.max(R[0])
@@ -56,6 +65,9 @@ def extents(atoms):
     return np.array([[xmin, xmax], [ymin, ymax], [zmin, zmax]])
 
 def is_inside(atom, ext):
+    """Check (bool) if an atom is inside the given extents.
+    
+    ext -- 3x2 array of (x,y,z) and min/max, respectively"""
     return atom.x >= ext[0,0] and \
             atom.x <= ext[0,1] and \
             atom.y >= ext[1,0] and \
@@ -64,12 +76,14 @@ def is_inside(atom, ext):
             atom.z <= ext[2,1]
 
 def renumber_atoms(atoms):
+    """Renumber the given atoms consecutively, starting at 1."""
     id = 1
     for atom in atoms:
         atom.id = id
         id += 1
 
 def renumber_residues(atoms):
+    """Renumber residues in the given atoms consecutively, starting at 1."""
     resid = 0
     last = None
     for atom in atoms:
@@ -79,6 +93,7 @@ def renumber_residues(atoms):
         atom.resid = resid
 
 def by_residue(atoms):
+    """Iterate over atoms by residue, returning a list of list of atoms."""
     residues = []
     current = []
     lastid = None
@@ -100,6 +115,7 @@ def by_residue(atoms):
     return residues
 
 def by_chain(atoms):
+    """Iterate over atoms by chain, returning a list of list of atoms."""
     chains = []
     current = []
     last = None
@@ -116,9 +132,12 @@ def by_chain(atoms):
     return chains
 
 def is_heavy_atom(atom):
+    """Check if an atom is neither a hydrogen or a virtual site."""
     return not (atom.resname.startswith("H") or atom.resname.startswith("M"))
 
 def is_clashing(atom, others, max_dist):
+    """Check if a given atom is closer than max_dist from at least one atom in
+    another given set."""
     # Avoid sqrt by comparing squared distances.
     max_dist2 = max_dist**2
     for atom2 in others:
@@ -132,6 +151,17 @@ def is_clashing(atom, others, max_dist):
 
 def find_clashes(insertion, target, max_dist = 3.0, grouping = by_residue, \
         filter = is_heavy_atom, Monitor = DefaultMonitor):
+    """Find clashes between the 'insertion' and 'target' sets of atoms.
+    
+    max_dist -- Atoms closer than this distance are clashing
+    grouping -- Function used to partition the insertion set into groups
+                (default: by_residue); if one atom in a group clashes with the
+                target, all atoms in the group are considered clashes
+    filter   -- Function to apply to the insertion set to determine which atoms
+                are used in distance comparisons (default: is_heavy_atom,
+                excluding virtual sites and hydrogens)
+    Monitor  -- A monitor class to display a progress bar (useful for very large
+                systems/insertions)"""
     groups = grouping(insertion)
     filtered_groups = []
     for group in groups:

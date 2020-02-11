@@ -1,3 +1,5 @@
+# Copyright 2020 Olivier Fisette
+
 class NullMonitor:
 
     def __init__(self, maxval=0):
