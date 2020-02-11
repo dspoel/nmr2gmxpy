@@ -37,7 +37,7 @@ import argparse
 
 DOWNLOAD_FROM_SERVER = False
 VERBOSE = False
-
+PATH = "."
 md_file = "ADD_THIS_TO_YOUR_MD_FILE.mdp"
 
 #------------------------EXEPTION PRINTING---------------------------------------
@@ -59,8 +59,10 @@ def printException(printTraceback=True,):
     print('=======================================\n')
 #--------------------------------------------------------------------------------
 
-def create_md_file():
-    with open (md_file, "w") as fp:
+#---------------------MD FILE----------------------------------------------------
+def create_md_file(topfile):
+    with open (PATH + "/" + md_file, "w") as fp:
+        fp.write("; Created automaticaly for this topology: %s.\n"%topfile)
         fp.write("; Add what is written in this file to your .mdp file for including constraints\n")
         fp.write("; in your MD calculations. Here are listed all the NMR parameters.\n")
         fp.write("; We suggest to not change them unless you know what you do.\n")
@@ -68,7 +70,7 @@ def create_md_file():
         fp.write("; NMR refinement stuff \n")
 
 def write_distance_constraints_in_md_file():
-    with open (md_file, "a") as fp:
+    with open (PATH + "/" + md_file, "a") as fp:
         fp.write("; Distance restraints type: No, Simple or Ensemble\n\
 disre                    = Simple\n\
 ; Force weighting of pairs in one distance restraint: Conservative or Equal\n\
@@ -93,6 +95,7 @@ orire-fitgrp             = \n\
 ; Output frequency for trace(SD) and S to energy file\n\
 nstorireout              = 100\n\n")
 
+#--------------------------------------------------------------------------------
 
 def make_restraint_file(restraint_type, mr_file, verbose):
     if restraint_type == "distance":
@@ -123,12 +126,14 @@ def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
     
     try:
         outf = make_restraint_file(restraint_type, mr_file, verbose)
-        print("SUCCESS: %s restraints were generated in file '%s'." % (restraint_type,outf))
+        if VERBOSE:
+            print("SUCCESS: %s restraints were generated in file '%s'." % (restraint_type,outf))
         return outf;
     except FormatError as ex:
-        print("Warning:")
-        print(ex)
-        print("NO %s restraint file was generated." % restraint_type)
+        if VERBOSE:
+            print("Warning:")
+            print(ex)
+            print("NO %s restraint file was generated." % restraint_type)
         
         if(debug):
             printException(debug)
@@ -234,7 +239,9 @@ args  = parse_arguments()
 if args.verbose:
     VERBOSE=True
 
+
 if DOWNLOAD_FROM_SERVER:
+    PATH = args.name
     try:
         command = "./file_manager_gromacs.py -gmx -n" + args.name
         if VERBOSE:
@@ -246,22 +253,24 @@ if DOWNLOAD_FROM_SERVER:
     if errno!=0:
         sys.exit(1)
 
-    args.topfile = args.name + ".top"
-    args.mrfile = args.name + "_mr.str"
+    args.topfile = PATH + "/" + args.name + ".top"
+    args.mrfile = PATH + "/" + args.name + "_mr.str"
 
 # Reading topology file
 Atoms_names_amber.init_atoms_list(args.topfile)
 
-print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
+if VERBOSE:
+    print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     
 restraint_type = "distance"
 filename=call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug)
 if filename:
     include_in_topfile(filename)
-    create_md_file()
+    create_md_file(args.topfile)
     write_distance_constraints_in_md_file()
 
-print("\n~~~~~~~DIHEDRAL RESTRAINTS~~~~~~~")
+if VERBOSE:
+    print("\n~~~~~~~DIHEDRAL RESTRAINTS~~~~~~~")
     
 restraint_type = "dihedral"
 filename = call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
@@ -269,14 +278,17 @@ if filename:
     include_in_topfile(filename)
     # nothing should be add to .mdp file
     # dihedral constraints counts automatically from only topology (itp) file.
-print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
+
+if VERBOSE:
+    print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
     
 restraint_type = "orientation"
 filename = call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
 if filename:
     include_in_topfile(filename)
     write_orientation_constraints_in_md_file()
-print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
-    
+
+#print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
+
 
 
