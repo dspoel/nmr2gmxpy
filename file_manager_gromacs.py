@@ -37,19 +37,8 @@ import argparse
 
 VERBOSE = False
 GROMACS = True
-
-#if len(sys.argv)<2:
-#    print(__doc__)
-#    exit(1)
-
-#elif len(sys.argv)==3 and sys.argv[2]=='-v':
-#    VERBOSE = True
-
-#elif len(sys.argv)>3:
-#    print("Input ERROR")
-#    print(__doc__)
-#    exit(1)
-#protein = sys.argv[1];
+# will be set to true when/if the dir is created by this script
+DELETE_DIR_RIGHT = False
 
 #========================COMMAND LINE ARGUMENTS PARSING==========================
 # When command line argument parser error occure, the program print --help
@@ -76,6 +65,7 @@ def parse_arguments():
 args = parse_arguments();
 
 protein = args.name;
+path = protein;
 VERBOSE = args.verbose;
 GROMACS = args.gromacs;
 
@@ -84,14 +74,17 @@ protein_lowcase = protein.lower()
 subfolder = protein_lowcase[1:-1] # two middle characters
 
 folder_str = "/pub/pdb/data/structures/divided/nmr_restraints_v2/" + subfolder
-file_strgz = protein_lowcase + "_mr.str.gz"
-file_str = protein + "_mr.str"
+remote_file_strgz = protein_lowcase + "_mr.str.gz"
+file_strgz = path + "/" + protein_lowcase + "_mr.str.gz"
+file_str = path + "/" + protein + "_mr.str"
 
 folder_pdb = "/pub/pdb/data/structures/divided/pdb/" + subfolder
-file_pdbgz = "pdb" + protein_lowcase + ".ent.gz"
-file_pdb = protein + ".pdb"
+remote_file_pdbgz = "pdb" + protein_lowcase + ".ent.gz"
+file_pdbgz = path + "/" + "pdb" + protein_lowcase + ".ent.gz"
+file_pdb = path + "/" + protein + ".pdb"
 
 file_top = protein + ".top"
+file_gro = protein + ".gro"
 
 def download(folder_name, file_in, file_out):
     # /pub/pdb/data/structures/divided/nmr_restraints_v2/<2 middle character, i.e for 2l8s - l8>
@@ -105,10 +98,15 @@ def download(folder_name, file_in, file_out):
     except ftplib.error_perm as ex:
         print("Oops! Seems there is now NMR data for protein " + protein)
         try:
-            os.remove(file_in)
             os.remove(file_out)
         except:
             pass
+
+        if DELETE_DIR_RIGHT:
+            try:
+                os.rmdir(path)
+            except:
+                pass
         sys.exit(1)
     except Exception as ex:
         print("ERROR:")
@@ -149,19 +147,29 @@ if __name__ == "__main__":
             print(message)
     except Exception as ex:
         print("ERROR:")
-        print(ex);
-        sys.exit(1);
+        print(ex)
+        sys.exit(1)
     if VERBOSE:
         print("================================================")
 
-
-    download(folder_str, file_strgz, file_strgz)
+    
+    # Create directory (if nit exist) where to download the files
+    if not os.path.exists(path):
+        DELETE_DIR_RIGHT = True
+        try:
+            os.mkdir(path)
+        except Exception as ex:
+            print ("ERROR:")
+            print(ex)
+            sys.exit(1)
+    
+    download(folder_str, remote_file_strgz, file_strgz)
     unzip(file_strgz, file_str)
     if VERBOSE:
         print("SUCCESS")
     os.remove(file_strgz)
 
-    download(folder_pdb, file_pdbgz, file_pdbgz)
+    download(folder_pdb, remote_file_pdbgz, file_pdbgz)
     unzip(file_pdbgz, file_pdb)
     if VERBOSE:
         print("SUCCESS")
@@ -170,21 +178,27 @@ if __name__ == "__main__":
 #--------------------------CALL GROMACS-------------------------------------------------
     if GROMACS:
         if VERBOSE:
-            command_line = "gmx -quiet pdb2gmx -f " + file_pdb \
-                        +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
-                        + " -o " + protein + ".gro"
+            command_line = "cd " + path + "/; " + "gmx -quiet pdb2gmx -f " + protein \
+                        +  ".pdb -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
+                        + " -o " + file_gro
             print("Run:\n\t" + command_line)
         else:
             # make GROMACS to shut up
-            command_line = "gmx -quiet pdb2gmx -f " + file_pdb \
-                        +  " -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
-                        + " -o " + protein + ".gro > /dev/null 2>&1"
+            command_line = "cd " + path + "/; " +  "gmx -quiet pdb2gmx -f " + protein \
+                        +  ".pdb -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
+                        + " -o " + file_gro + " > /dev/null 2>&1"
         try:
             if VERBOSE:
                 print("============= GROMACS output: ==============================================")
-            if os.system(command_line)!=0:
+            
+            errno = os.system(command_line)
+            # comand not found ERROR
+            if errno >1000:
                 raise Exception("I cannot find GROMACS.\nMaybe you forget to do 'source /usr/local/gromacs/bin/GMXRC'?")
-            #subprocess.call([command_line])
+            # GROMACS ERROR
+            elif errno > 0:
+                raise Exception();
+
             if VERBOSE:
                 print("============= END of GROMACS output ========================================")
             if VERBOSE:
