@@ -38,6 +38,8 @@ import argparse
 DOWNLOAD_FROM_SERVER = False
 VERBOSE = False
 
+md_file = "ADD_THIS_TO_YOUR_MD_FILE.mdp"
+
 #------------------------EXEPTION PRINTING---------------------------------------
 import linecache
 import traceback
@@ -57,10 +59,42 @@ def printException(printTraceback=True,):
     print('=======================================\n')
 #--------------------------------------------------------------------------------
 
+def create_md_file():
+    with open (md_file, "w") as fp:
+        fp.write("; Add what is written in this file to your .mdp file for including constraints\n")
+        fp.write("; in your MD calculations. Here are listed all the NMR parameters.\n")
+        fp.write("; We suggest to not change them unless you know what you do.\n")
+        fp.write("\n")
+        fp.write("; NMR refinement stuff \n")
+
+def write_distance_constraints_in_md_file():
+    with open (md_file, "a") as fp:
+        fp.write("; Distance restraints type: No, Simple or Ensemble\n\
+disre                    = Simple\n\
+; Force weighting of pairs in one distance restraint: Conservative or Equal\n\
+disre-weighting          = Conservative\n\
+; Use sqrt of the time averaged times the instantaneous violation\n\
+disre-mixed              = no\n\
+disre-fc                 = 1000\n\
+disre-tau                = 0\n\
+; Output frequency for pair distances to energy file\n\
+nstdisreout              = 0\n\n")
+
+# dihedral constraints counts automatically form juts topology (itp) file.
+
+def write_orientation_constraints_in_md_file():
+    with open (md_file, "a") as fp:
+        fp.write("; Orientation restraints: No or Yes\n\
+orire                    = Yes\n\
+; Orientation restraints force constant and tau for time averaging\n\
+orire-fc                 = 0\n\
+orire-tau                = 0\n\
+orire-fitgrp             = \n\
+; Output frequency for trace(SD) and S to energy file\n\
+nstorireout              = 100\n\n")
+
 
 def make_restraint_file(restraint_type, mr_file, verbose):
-    
-    
     if restraint_type == "distance":
         res = Distance_restraint_list(mr_file, verbose)
     elif restraint_type == "dihedral":
@@ -224,6 +258,8 @@ restraint_type = "distance"
 filename=call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug)
 if filename:
     include_in_topfile(filename)
+    create_md_file()
+    write_distance_constraints_in_md_file()
 
 print("\n~~~~~~~DIHEDRAL RESTRAINTS~~~~~~~")
     
@@ -231,12 +267,15 @@ restraint_type = "dihedral"
 filename = call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
 if filename:
     include_in_topfile(filename)
+    # nothing should be add to .mdp file
+    # dihedral constraints counts automatically from only topology (itp) file.
 print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
     
 restraint_type = "orientation"
 filename = call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
 if filename:
     include_in_topfile(filename)
+    write_orientation_constraints_in_md_file()
 print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
     
 
