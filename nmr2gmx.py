@@ -85,7 +85,7 @@ nstdisreout              = 0\n\n")
 # dihedral constraints counts automatically form juts topology (itp) file.
 
 def write_orientation_constraints_in_md_file():
-    with open (md_file, "a") as fp:
+    with open (PATH + "/" + md_file, "a") as fp:
         fp.write("; Orientation restraints: No or Yes\n\
 orire                    = Yes\n\
 ; Orientation restraints force constant and tau for time averaging\n\
