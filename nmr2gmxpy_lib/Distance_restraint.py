@@ -25,8 +25,8 @@ class Distance_restraint (Restraint):
         self.comp_id_1 = data_array[3]
         self.comp_id_2 = data_array[6]
         
-        self.auth_seq_id_1 = int(data_array[1])
-        self.auth_seq_id_2 = int(data_array[4])
+        self.seq_id_1 = int(data_array[1])
+        self.seq_id_2 = int(data_array[4])
         
         # will be changed
         self.group_1 = 0
@@ -83,8 +83,8 @@ class Distance_restraint (Restraint):
                 # For residue number and atom name(current_atom1,current_atom2)
                 # find atom number from 2lv8.top 
                 # and assign it to ai(atom_no1) and aj(atom_no2)
-                atom_no1 = Atoms_names_amber.get_atom_number(self.auth_seq_id_1, current_atom1)
-                atom_no2 = Atoms_names_amber.get_atom_number(self.auth_seq_id_2, current_atom2)
+                atom_no1 = Atoms_names_amber.get_atom_number(self.seq_id_1, current_atom1)
+                atom_no2 = Atoms_names_amber.get_atom_number(self.seq_id_2, current_atom2)
                 
                 fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
                         (atom_no1, atom_no2, my_number,
