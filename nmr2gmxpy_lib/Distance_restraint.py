@@ -18,7 +18,7 @@ from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
 class Distance_restraint (Restraint):
     def __init__(self,data_array):
         Restraint.__init__(self, data_array)
-        self.id = data_array[0]
+        self.id = int(data_array[0])
         self.atom_id_1 = data_array[2]
         self.atom_id_2 = data_array[5]
 
@@ -87,7 +87,7 @@ class Distance_restraint (Restraint):
                 atom_no2 = Atoms_names_amber.get_atom_number(self.seq_id_2, current_atom2)
                 
                 fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
-                        (atom_no1, atom_no2, my_number,
+                        (atom_no1, atom_no2, self.id,
                         self.type_average, 
                         self.distance_lower_bound, 
                         self.distance_upper_bound,
