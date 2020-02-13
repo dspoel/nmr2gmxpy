@@ -1,5 +1,7 @@
-NMRreader
+nmr2gmxpy
 =========
+
+This program gets distance, dihedral and orientation restraints from Nuclear Magnetic Resonance (NMR)data files and convert them to GROMACS format.
 
 Collection of python scripts to read files from NMR experiments
 on proteins and write input for GROMACS.
@@ -13,5 +15,4 @@ In order to test, go to the Examples directory and run
 
 to get instructions.
 
-![flow chart](/figures/flowchart_file_manager.pdf)
-Format: ![Alt Text](https://github.com/dspoel/nmr2gmxpy/blob/master/figures/flowchart_file_manager.pdf)
+![flow chart](/figures/flowchart_file_manager.png)
