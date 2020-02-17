@@ -33,8 +33,6 @@ class Atoms_names():
     # static
     atoms = []
     
-    # defind this name in every child
-    force_filed = "<force filed name>"
     
     # static function
     @classmethod
@@ -62,9 +60,9 @@ class Atoms_names():
                 #print('[%s \t %s]' %(atom_nm,atom.atom))
         if atom_number==0:
             raise AtomsNamesError("Names of atoms in the NMRstar file does not coincide with names of atom in \
-the topology file. Make sure that you use %s force field.\
+the topology file. Make sure that you use correct force field.\
 Also do not forget to use -ignh flag when you generate the .top file \
-with pdb2gmx program. This forces GROMAX to rename hydrogen atoms." %force_filed)
+with pdb2gmx program. This forces GROMACS to rename hydrogen atoms.")
         return atom_number
     
     # static method
