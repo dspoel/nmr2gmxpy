@@ -69,7 +69,7 @@ def create_md_file(topfile):
         fp.write("\n")
         fp.write("; NMR refinement stuff \n")
 
-def write_distance_constraints_in_md_file():
+def write_distance_restraints_in_md_file():
     with open (PATH + "/" + md_file, "a") as fp:
         fp.write("; Distance restraints type: No, Simple or Ensemble\n\
 disre                    = Simple\n\
@@ -83,8 +83,12 @@ disre-tau                = 0\n\
 nstdisreout              = 0\n\n")
 
 # dihedral constraints counts automatically form juts topology (itp) file.
+def write_dihedral_restraints_in_md_file():
+    with open (PATH + "/" + md_file, "a") as fp:
+        fp.write("; Dihedral restraints do not required any parameters. \
+It is enough to include them in topology.\n\n")
 
-def write_orientation_constraints_in_md_file():
+def write_orientation_restraints_in_md_file():
     with open (PATH + "/" + md_file, "a") as fp:
         fp.write("; Orientation restraints: No or Yes\n\
 orire                    = Yes\n\
@@ -184,7 +188,8 @@ def parse_arguments():
     #parser = argparse.ArgumentParser()
     parser = My_argument_parser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("-m", "--mrfile", help = "NMR star file with .str file name extension.",
+    parser.add_argument("-s", "--strfile", help = "NMR restraint V2 (STAR) data file\
+                         with .str file name extension. Ususlly the name is <protein>_mr.str",
                          type=str)
     parser.add_argument("-p", "--topfile", help= "GROMACS topology file with .top file name extension.\
                     The current version of the program works only for AMBER and CHARMM force fields.\
@@ -199,17 +204,17 @@ def parse_arguments():
     args = parser.parse_args()
     
     topfile_flag=0
-    mrfile_flag=0
+    strfile_flag=0
     name_flag=0
     
     if args.name!=None:
         name_flag=True
-    if args.mrfile!=None:
-        mrfile_flag=True
+    if args.strfile!=None:
+        strfile_flag=True
     if args.topfile!=None:
         topfile_flag=True
     
-    if name_flag==topfile_flag or name_flag==mrfile_flag:
+    if name_flag==topfile_flag or name_flag==strfile_flag:
         print("You should give me either files names or protein name I will download.")
         print(__doc__)
         sys.exit(1);
@@ -219,7 +224,7 @@ def parse_arguments():
         DOWNLOAD_FROM_SERVER = True
         return args
     
-    if args.mrfile[-3:] != "str":
+    if args.strfile[-3:] != "str":
         print("\tError: NMRstar file should have .str extansion.")
         print(__doc__)
         sys.exit(1);
@@ -243,7 +248,7 @@ if args.verbose:
 if DOWNLOAD_FROM_SERVER:
     PATH = args.name
     try:
-        command = "./file_manager_gromacs.py -gmx -n" + args.name
+        command = "./file_manager.py -gmx -n" + args.name
         if VERBOSE:
             command += ' -v'
         errno = os.system(command)
@@ -254,7 +259,7 @@ if DOWNLOAD_FROM_SERVER:
         sys.exit(1)
 
     args.topfile = PATH + "/" + args.name + ".top"
-    args.mrfile = PATH + "/" + args.name + "_mr.str"
+    args.strfile = PATH + "/" + args.name + "_mr.str"
 
 # Reading topology file
 Atoms_names_amber.init_atoms_list(args.topfile)
@@ -263,30 +268,29 @@ if VERBOSE:
     print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     
 restraint_type = "distance"
-filename=call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug)
+filename=call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug)
 if filename:
     include_in_topfile(filename)
     create_md_file(args.topfile)
-    write_distance_constraints_in_md_file()
+    write_distance_restraints_in_md_file()
 
 if VERBOSE:
     print("\n~~~~~~~DIHEDRAL RESTRAINTS~~~~~~~")
     
 restraint_type = "dihedral"
-filename = call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
+filename = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
 if filename:
     include_in_topfile(filename)
-    # nothing should be add to .mdp file
-    # dihedral constraints counts automatically from only topology (itp) file.
+    write_dihedral_restraints_in_md_file()
 
 if VERBOSE:
     print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
     
 restraint_type = "orientation"
-filename = call_restraint_make_function(restraint_type, args.mrfile, args.verbose, args.debug);
+filename = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
 if filename:
     include_in_topfile(filename)
-    write_orientation_constraints_in_md_file()
+    write_orientation_restraints_in_md_file()
 
 #print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
 

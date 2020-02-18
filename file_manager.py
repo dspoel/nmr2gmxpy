@@ -201,12 +201,13 @@ if __name__ == "__main__":
                 print("============= GROMACS output: ==============================================")
             
             errno = os.system(command_line)
+            #print("error number ", errno)
             # comand not found ERROR
             if errno >1000:
                 raise Exception("I cannot find GROMACS.\nMaybe you forget to do 'source /usr/local/gromacs/bin/GMXRC'?")
             # GROMACS ERROR
             elif errno > 0:
-                raise Exception();
+                raise Exception("ERROR: GROMACS had a problem. Run with -v to see the it.");
 
             if VERBOSE:
                 print("============= END of GROMACS output ========================================")
