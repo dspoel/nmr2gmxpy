@@ -3,6 +3,27 @@ nmr2gmxpy
 
 This program gets distance, dihedral and orientation restraints from Nuclear Magnetic Resonance (NMR)data files and convert them to GROMACS format.
 
+The package has two programs. The main nmr2gmx and the util file_manager.
+
+nmr2gmx
+=======
+There are two ways to run the program. 
+
+1. The most convenient way is to just pass the name of the protein of interset and let the program do the rest.
+It will download all nessesary files (you need an internet connection for this). And then it will run GROMACS to create topology file (you need GROMACS; don't forget to do source /usr/local/gromacs/bin/GMXRC before). The command line is:
+```
+./nmr2gmx -n 1LVZ
+```
+2. Another option is to pass the .str and .top files (see Cheatsheet) directly like this:
+```
+./nmx2gmx -s 1LVZ/1LVZ.str -t 1LVZ/1LVZ.top
+```
+This can be convenient if you don't have GROMACS installation on the machine or/and no internet connection.
+
+In both cases you can use verbose flag -v to see what is going on dureng the run. By default the program does not create any screen output (except errors if any).
+
+For developers there is a debug flag -d which will provide erros traceback. Use it if you modify the library.
+
 Cheatsheet
 ----------
 Here are the terms and abbriviation we will use:
