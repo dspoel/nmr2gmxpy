@@ -84,7 +84,7 @@ If you pass GROMACS flag -gmx:
 GROMACS will be called to create a .top file (if there is an available installation on your computer, otherwise you will see an error message).
 The command line for gromacs will be:
 ```
-gmx pdb2gmx -f 1lvz.pdb -ignh -ff amber99sb-ildn -water tip3p -p 1lvz.top -o 1lvz.gro
+gmx pdb2gmx -f 1lvz.pdb -p 1lvz.top -o 1lvz.gro -ff amber99sb-ildn -water tip3p -ignh 
 ```
 or gmx_mpi if there is no gmx. As you see the force field and water model are fixed. The current version of nmr2gmx program can only support AMBER force fields. The water model can be any, however we recomend to not change these paramenetrs.
 But if you are brave enough or you want to implement a new force field go to the Developer area.
@@ -93,3 +93,5 @@ But if you are brave enough or you want to implement a new force field go to the
 The program generates a folder with protein name and put there .str file, .pdb file and if you use -gmx flag, .top file
 ## For Developer
 Warning: nmr2gmx depends on the API of file_manager. So be very careful if do any changes and read the Developer quide for nmr2gmx.
+
+In file_manager.py you can find two global variables: FORCE_FIELD and WATER_MODEL which are passed to GROMACS under flags -ff and -water respectively (if -gmx flag is on). The latter one can be changed without any extra modifications, while the former one is bined to class Atoms_names. The current release is only distributed with Amber_atoms_names, which means only amber force fiels will work properly.
