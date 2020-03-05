@@ -37,8 +37,12 @@ import argparse
 
 # for logs
 from datetime import date
-
 VERBOSE = False
+
+# DO NOT change this untill you read README!
+FORCE_FIELD = "amber99sb-ildn"
+WATER_MODEL = "tip3p"
+
 GROMACS = True
 # will be set to true when/if the dir is created by this script
 DELETE_DIR_RIGHT = False
@@ -131,7 +135,25 @@ def unzip(file_in, file_out):
         exit(1)
         
 
+
+def gromacs_command_line(protein, top_file, gro_file, mpi=False):
+    
+    command_line = "cd " + path + "/; "
+    
+    if not mpi:
+        command_line += "gmx pdb2gmx"
         
+    else:
+        command_line += "gmx_mpi pdb2gmx"
+    
+    command_line += " -f " + protein + ".pdb" + " -p " + file_top + " -o " + file_gro
+    command_line += " -ff " + FORCE_FIELD + " -water " + WATER_MODEL + " -ignh"
+    
+    if not VERBOSE:
+        command_line += " > /dev/null 2>&1"
+    
+    return command_line
+    
 SERVER_NAME = 'ftp.rcsb.org'
 
 if __name__ == "__main__":
@@ -186,16 +208,9 @@ if __name__ == "__main__":
     
 #--------------------------CALL GROMACS-------------------------------------------------
     if GROMACS:
-        if VERBOSE:
-            command_line = "cd " + path + "/; " + "gmx pdb2gmx -f " + protein \
-                        +  ".pdb -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
-                        + " -o " + file_gro
-            print("Run:\n\t" + command_line)
-        else:
-            # make GROMACS to shut up
-            command_line = "cd " + path + "/; " +  "gmx pdb2gmx -f " + protein \
-                        +  ".pdb -ignh -ff amber99sb-ildn -water tip3p -p " + file_top \
-                        + " -o " + file_gro + " > /dev/null 2>&1"
+        command_line = gromacs_command_line(protein, file_top, file_gro)
+
+        print("Try to run:\n\t" + command_line)
         try:
             if VERBOSE:
                 print("============= GROMACS output: ==============================================")
@@ -211,7 +226,6 @@ if __name__ == "__main__":
 
             if VERBOSE:
                 print("============= END of GROMACS output ========================================")
-            if VERBOSE:
                 print("SUCCESS")
                 
             log.write("Call for GROMACS:\n");
