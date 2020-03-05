@@ -44,6 +44,8 @@ FORCE_FIELD = "amber99sb-ildn"
 WATER_MODEL = "tip3p"
 
 GROMACS = True
+# will be automatically change ti True if gmx_mpi is installed instead
+GMX_MPI = False
 # will be set to true when/if the dir is created by this script
 DELETE_DIR_RIGHT = False
 
@@ -136,11 +138,11 @@ def unzip(file_in, file_out):
         
 
 
-def gromacs_command_line(protein, top_file, gro_file, mpi=False):
+def gromacs_command_line(protein, top_file, gro_file):
     
     command_line = "cd " + path + "/; "
     
-    if not mpi:
+    if not GMX_MPI:
         command_line += "gmx pdb2gmx"
         
     else:
@@ -207,9 +209,22 @@ if __name__ == "__main__":
     log.write("\nThe data is downloaded from the server: %s.\n\n"%SERVER_NAME)
     
 #--------------------------CALL GROMACS-------------------------------------------------
+    # check whether gmx or gmx_mpi is installed
+    if GROMACS:
+        errno = os.system("gmx > /dev/null 2>&1")
+        # command not found
+        if errno!=0:
+            errno = os.system("gmx_mpi > /dev/null 2>&1")
+            if errno==0:
+                GMX_MPI=True
+                pass
+            else:
+                GROMACS=False
+                print("Warning: I cannot find GROMACS.\nMaybe you forget to do 'source /usr/local/gromacs/bin/GMXRC'?")
+    
     if GROMACS:
         command_line = gromacs_command_line(protein, file_top, file_gro)
-
+        
         print("Try to run:\n\t" + command_line)
         try:
             if VERBOSE:
@@ -217,11 +232,8 @@ if __name__ == "__main__":
             
             errno = os.system(command_line)
             #print("error number ", errno)
-            # comand not found ERROR
-            if errno >1000:
-                raise Exception("I cannot find GROMACS.\nMaybe you forget to do 'source /usr/local/gromacs/bin/GMXRC'?")
             # GROMACS ERROR
-            elif errno > 0:
+            if errno > 0:
                 raise Exception("ERROR: GROMACS had a problem. Run with -v to see the it.");
 
             if VERBOSE:
