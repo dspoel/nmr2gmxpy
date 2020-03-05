@@ -95,7 +95,7 @@ orire                    = Yes\n\
 ; Orientation restraints force constant and tau for time averaging\n\
 orire-fc                 = 0\n\
 orire-tau                = 0\n\
-orire-fitgrp             = \n\
+orire-fitgrp             = backbone\n\
 ; Output frequency for trace(SD) and S to energy file\n\
 nstorireout              = 100\n\n")
 
