@@ -46,7 +46,7 @@ If you run the program using the first method (with name flag -n), then the prog
 
 ## For Developer
 
-The flowchart of the nmr2gmx is presented [here](http://github.com). Remember that it represents the logic, but not the concrete implementation (i.e there is now structure top.atoms and str.atoms). In the flow chart we separated the processes of finding atom number, since it is the most important part of the program. We also explicitly show that if atom names in NMR file are different from your force field names, it will case an error. Knowing this fact will reduce your worries when you want to implement look-up-table for another force field (this will be discussed in more details further). In case you do it wrong, no result will be generated.
+The flowchart of the nmr2gmx is presented [here](https://github.com/dspoel/nmr2gmxpy/blob/master/figures/flowchart2.png). Remember that it represents the logic, but not the concrete implementation (i.e there is now structure top.atoms and str.atoms). In the flow chart we separated the processes of finding atom number, since it is the most important part of the program. We also explicitly show that if atom names in NMR file are different from your force field names, it will case an error. Knowing this fact will reduce your worries when you want to implement look-up-table for another force field (this will be discussed in more details further). In case you do it wrong, no result will be generated.
 
 ### Class Atom_names
 
@@ -93,5 +93,7 @@ But if you are brave enough or you want to implement a new force field go to the
 The program generates a folder with protein name and put there .str file, .pdb file and if you use -gmx flag, .top file
 ## For Developer
 Warning: nmr2gmx depends on the API of file_manager. So be very careful if do any changes and read the Developer quide for nmr2gmx.
+
+The flowchart of the file_manager is presented [here].(https://github.com/dspoel/nmr2gmxpy/blob/master/figures/flowchart_file_manager.png). 
 
 In file_manager.py you can find two global variables: FORCE_FIELD and WATER_MODEL which are passed to GROMACS under flags -ff and -water respectively (if -gmx flag is on). The latter one can be changed without any extra modifications, while the former one is bined to class Atoms_names. The current release is only distributed with Amber_atoms_names, which means only amber force fiels will work properly.
