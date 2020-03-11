@@ -292,6 +292,8 @@ if filename:
     include_in_topfile(filename)
     write_orientation_restraints_in_md_file()
 
+if VERBOSE:
+    print("")
 #print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
 
 

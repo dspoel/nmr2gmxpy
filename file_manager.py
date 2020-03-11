@@ -36,7 +36,7 @@ import shutil
 import argparse
 
 # for logs
-from datetime import date
+from datetime import datetime
 VERBOSE = False
 
 # DO NOT change this untill you read README!
@@ -96,6 +96,7 @@ file_top = protein + ".top"
 file_gro = protein + ".gro"
 
 logfile = path + "/file_manager.log"
+
 
 def download(folder_name, file_in, file_out):
     # /pub/pdb/data/structures/divided/nmr_restraints_v2/<2 middle character, i.e for 2l8s - l8>
@@ -205,7 +206,9 @@ if __name__ == "__main__":
     os.remove(file_pdbgz)
 
     log = open(logfile, "w")
-    log.write("Date: " + str(date.today()))
+    log.write(datetime.now().strftime("On %d %B %Y at %H:%M:%S"))
+    log.write("\n-----------------------------\n")
+    
     log.write("\nThe data is downloaded from the server: %s.\n\n"%SERVER_NAME)
     
 #--------------------------CALL GROMACS-------------------------------------------------
@@ -224,8 +227,8 @@ if __name__ == "__main__":
     
     if GROMACS:
         command_line = gromacs_command_line(protein, file_top, file_gro)
-        
-        print("Try to run:\n\t" + command_line)
+        if VERBOSE:
+            print("Try to run:\n\t" + command_line)
         try:
             if VERBOSE:
                 print("============= GROMACS output: ==============================================")
