@@ -48,7 +48,6 @@ class Atoms_names():
     def get_atom_number(cls, res_nr, atom_name):
         #top_info = []
         atom_number = 0
-
         for atom in cls.atoms:
             #if atom_nm==5:
             #print("Atom name :",atom_name)
@@ -62,7 +61,8 @@ class Atoms_names():
             raise AtomsNamesError("Names of atoms in the NMRstar file does not coincide with names of atom in \
 the topology file. Make sure that you use correct force field.\
 Also do not forget to use -ignh flag when you generate the .top file \
-with pdb2gmx program. This forces GROMACS to rename hydrogen atoms.")
+with pdb2gmx program. This forces GROMACS to rename hydrogen atoms.\n\n\
+Problem: cannot find in topology file the name for residue %d atom %s."%(res_nr, atom_name))
         return atom_number
     
     # static method

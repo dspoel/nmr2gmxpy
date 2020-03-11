@@ -19,11 +19,11 @@ class Distance_restraint (Restraint):
     def __init__(self,data_array):
         Restraint.__init__(self, data_array)
         self.id = int(data_array[0])
-        self.atom_id_1 = data_array[2]
-        self.atom_id_2 = data_array[5]
+        self.atom_id_1 = data_array[3]
+        self.atom_id_2 = data_array[6]
 
-        self.comp_id_1 = data_array[3]
-        self.comp_id_2 = data_array[6]
+        self.comp_id_1 = data_array[2]
+        self.comp_id_2 = data_array[5]
         
         self.seq_id_1 = int(data_array[1])
         self.seq_id_2 = int(data_array[4])
