@@ -13,7 +13,7 @@
 #   limitations under the License.
 
 from nmr2gmxpy_lib.Restraint import Restraint
-import pynmrstar
+from pynmrstar import pynmrstar
 import os
 import numpy as np
 
@@ -87,7 +87,7 @@ class Restraint_list:
     
 def create_pynmrstar_entry(mr_file):
     # Patch the parser
-    from pynmrstar_patch import patch_parser, unpatch_parser
+    from pynmrstar.pynmrstar_patch import patch_parser, unpatch_parser
     patch_parser(pynmrstar)
 
     # Check if there is a restraint file in the PDB
