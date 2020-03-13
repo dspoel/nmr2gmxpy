@@ -5,6 +5,14 @@ This program gets distance, dihedral and orientation restraints from Nuclear Mag
 
 The package has two programs. The main nmr2gmx and the util file_manager.
 
+### What is inside:
+1. Library nmr2gmxpy_lib for nmr2gmx script;
+2. Library [mdjoy](https://github.com/ofisette/mdjoy) for reading GROMACS .top file;
+3. Script [pyNMRSTAR](https://github.com/uwbmrb/PyNMRSTAR) + patch for reading \_mr.str file;
+4. The main script nmr2gmx which does all the job;
+5. Util script file_manager which can download data from web and run GROMACS to create .top file;
+6. Licence.
+
 Cheatsheet
 ----------
 Here are the terms and abbreviations we will use:
@@ -46,7 +54,8 @@ If you run the program using the first method (with name flag -n), then the prog
 
 ## For Developer
 
-The flowchart of the nmr2gmx is presented [here](https://github.com/dspoel/nmr2gmxpy/blob/master/figures/flowchart2.png). Remember that it represents the logic, but not the concrete implementation (i.e there is now structure top.atoms and str.atoms). In the flow chart we separated the processes of finding atom number, since it is the most important part of the program. We also explicitly show that if atom names in NMR file are different from your force field names, it will case an error. Knowing this fact will reduce your worries when you want to implement look-up-table for another force field (this will be discussed in more details further). In case you do it wrong, no result will be generated.
+The flowchart of the nmr2gmx is presented [here](https://github.com/dspoel/nmr2gmxpy/blob/master/figures/flowchart2.png). Remember that it represents the logic, but not the concrete implementation (e.g there is now structure top.atoms and str.atoms). In the flow chart we separated the processes of finding atom number, since it is the most important part of the program. We also explicitly show that if atom names in NMR file are different from your force field names, it will case an error. Knowing this fact will reduce your worries when you want to implement look-up-table for another force field (this will be discussed in more details further). In case you do it wrong, no result will be generated.
+
 
 ### Class Atom_names
 
@@ -97,3 +106,7 @@ Warning: nmr2gmx depends on the API of file_manager. So be very careful if do an
 The flowchart of the file_manager is presented [here].(https://github.com/dspoel/nmr2gmxpy/blob/master/figures/flowchart_file_manager.png). 
 
 In file_manager.py you can find two global variables: FORCE_FIELD and WATER_MODEL which are passed to GROMACS under flags -ff and -water respectively (if -gmx flag is on). The latter one can be changed without any extra modifications, while the former one is bined to class Atoms_names. The current release is only distributed with Amber_atoms_names, which means only amber force fiels will work properly.
+
+License
+=======
+The package is distributed under Apache License 2.0. Read more in LICENCE file.
