@@ -109,4 +109,4 @@ In file_manager.py you can find two global variables: FORCE_FIELD and WATER_MODE
 
 License
 =======
-The package is distributed under Apache License 2.0. Read more in LICENCE file.
+The package is distributed under Apache License 2.0. Read more in LICENSE file.
