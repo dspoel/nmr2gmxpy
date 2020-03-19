@@ -86,18 +86,11 @@ class Restraint_list:
             element.write_data_in_file(itp_fp, i)
     
 def create_pynmrstar_entry(mr_file):
-    # Patch the parser
-    from pynmrstar.pynmrstar_patch import patch_parser, unpatch_parser
-    patch_parser(pynmrstar)
-
     # Check if there is a restraint file in the PDB
     exists = os.path.isfile(mr_file)
     if exists:
         entry = pynmrstar.Entry.from_file(mr_file)
     else:
         print("**Error : No NMR restraint file on PDB")
-#CATCH   #return None
 
-    # Restore the original parser .. recall we patched the parser before.
-    unpatch_parser(pynmrstar)
     return entry
