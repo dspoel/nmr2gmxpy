@@ -54,7 +54,7 @@ If you run the program using the first method (with name flag -n), then the prog
 
 ## For Developer
 
-The flowchart of the nmr2gmx is presented [here](https://github.com/dspoel/nmr2gmxpy/blob/master/figures/flowchart2.png). Remember that it represents the logic, but not the concrete implementation (e.g there is now structure top.atoms and str.atoms). In the flow chart we separated the processes of finding atom number, since it is the most important part of the program. We also explicitly show that if atom names in NMR file are different from your force field names, it will case an error. Knowing this fact will reduce your worries when you want to implement look-up-table for another force field (this will be discussed in more details further). In case you do it wrong, no result will be generated.
+The flowchart of the nmr2gmx is presented [here](https://github.com/dspoel/nmr2gmxpy/blob/master/figures/flowchart_nmr2gmx.pdf). Remember that it represents the logic, but not the concrete implementation (e.g there is now structure top.atoms and str.atoms). In the flow chart we separated the processes of finding atom number, since it is the most important part of the program. We also explicitly show that if atom names in NMR file are different from your force field names, it will case an error. Knowing this fact will reduce your worries when you want to implement look-up-table for another force field (this will be discussed in more details further). In case you do it wrong, no result will be generated.
 
 
 ### Class Atom_names
