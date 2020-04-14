@@ -35,7 +35,7 @@ It will download all nessesary files (you need an internet connection for this).
 ```
 2. Another option is to pass the .str and .top files (see Cheatsheet) directly like this:
 ```
-./nmx2gmx -s 1LVZ/1LVZ.str -t 1LVZ/1LVZ.top -v
+./nmx2gmx -s 1LVZ/1LVZ.str -p 1LVZ/1LVZ.top -v
 ```
 This can be convenient if you don't have GROMACS installation on the machine or/and no internet connection.
 
