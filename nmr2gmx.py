@@ -109,7 +109,7 @@ def make_restraint_file(restraint_type, mr_file, verbose):
     elif restraint_type == "orientation":
         res = Orientation_restraint_list(mr_file, verbose)
     else:
-        print("Error: unknown restraint type.")
+        print("Error: unknown restraint type " + restraint_type)
         print("Restraint type can be: distance, dihedral or orientation")
     
     
@@ -175,6 +175,11 @@ def include_in_topfile(filename):
         for line in lines:
             fp.write(line)
 
+def check_extension(filetype, filenm, extension):
+    if filenm[-3:] != extension:
+        print("\tError: %s file (%s) does not have %s extension." % (filetype, filenm, extension))
+        print(__doc__)
+        sys.exit(1);
 
 #========================COMMAND LINE ARGUMENTS PARSING==========================
 # When command line argument parser error occure, the program print --help
@@ -191,48 +196,43 @@ def parse_arguments():
     parser.add_argument("-s", "--strfile", help = "NMR restraint V2 (STAR) data file\
                          with .str file name extension. Ususlly the name is <protein>_mr.str",
                          type=str)
-    parser.add_argument("-p", "--topfile", help= "GROMACS topology file with .top file name extension.\
-                    The current version of the program works only for AMBER and CHARMM force fields.\
-                    IMPORTANT:When create topology with pdb2gmx use flag -ignh for proper H names.",
+    default_top = "topol.top"
+    parser.add_argument("-p", "--topfile", help= "GROMACS topology file with .top file name extension to generatem default is "+default_top, type=str, default=default_top)
+    parser.add_argument("-q", "--pdbfile", help= "Protein data bank file with .pdb file name extension, corresponding to the NMR star file.",
                          type=str)
+    default_ff = "amber99sb-ildn"
+    parser.add_argument("-ff", "--force_field", help="Force field to choose for GROMACS simulations. Default is "+default_ff, type=str, default=default_ff)
+    default_water = "tip3p"
+    parser.add_argument("-water", "--water_model", help="Water model to choose for GROMACS simulations. Default is "+default_water, type=str, default=default_water)
     parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
 
     parser.add_argument("-d", "--debug", 
                         help="Print traceback for errors if any. Also print traceback for warnings.",
                          action="store_true")
     parser.add_argument("-n", "--name")
+    default_gmx = "gmx"
+    parser.add_argument("-gmx", "--gromacs", help="GROMACS executable to run. Note that you need at least version 2019.6 or 2020.1 to run NMR refinement. Default is " + default_gmx, type=str, default=default_gmx)
     args = parser.parse_args()
     
-    topfile_flag=0
-    strfile_flag=0
-    name_flag=0
-    
-    if args.name!=None:
-        name_flag=True
-    if args.strfile!=None:
-        strfile_flag=True
-    if args.topfile!=None:
-        topfile_flag=True
-    
-    if name_flag==topfile_flag or name_flag==strfile_flag:
-        print("You should give me either files names or protein name I will download.")
+    if not args.pdbfile or not args.strfile:
+        print("Please provide both a pdb file and a MR file *or* a pdb id to download.")
         print(__doc__)
-        sys.exit(1);
+        sys.exit(1)
+
+    # Check input file names
+    check_extension("MR star", args.strfile, "str")
+    check_extension("GROMACS topology", args.topfile, "top")
+    check_extension("PDB", args.pdbfile, "pdb")
     
-    if name_flag:
-        global DOWNLOAD_FROM_SERVER
-        DOWNLOAD_FROM_SERVER = True
-        return args
-    
-    if args.strfile[-3:] != "str":
-        print("\tError: NMRstar file should have .str extansion.")
-        print(__doc__)
-        sys.exit(1);
-        
-    if args.topfile[-3:] != "top":
-        print("\tError: GROMACS topology file should have .top extansion.")
-        print(__doc__)
-        sys.exit(1);
+    # Time to run gromacs
+    clean_pdb = "clean.pdb"
+    os.system(("%s pdb2gmx -f %s -ff %s -water %s -ignh -merge all -o %s -p %s" % ( args.gromacs, args.pdbfile, args.force_field, args.water_model, clean_pdb, args.topfile )))
+    if not (os.path.exists(clean_pdb) and os.path.exists(args.topfile)):
+        print("Something went wrong running GROMACS. Sorry.")
+        sys.exit(1)
+
+    # Change pdb name for downstream processing
+    args.pdbfile = clean_pdb
     
     return args
 
@@ -262,7 +262,7 @@ if DOWNLOAD_FROM_SERVER:
     args.strfile = PATH + "/" + args.name + "_mr.str"
 
 # Reading topology file
-Atoms_names_amber.init_atoms_list(args.topfile)
+Atoms_names_amber.init_atoms_list(args.pdbfile)
 
 if VERBOSE:
     print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
