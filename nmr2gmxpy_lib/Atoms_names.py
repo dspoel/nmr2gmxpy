@@ -18,8 +18,6 @@
 # function 'atom_replace', where you replace atoms nmr names tp force filed
 # atom names.
 
-import mdjoy
-import mdjoy.top as top
 import numpy as np
 from random import randint
 
@@ -33,36 +31,40 @@ class Atoms_names():
     # static
     atoms = []
     
-    
     # static function
     @classmethod
-    def init_atoms_list(cls, topfile_name):
-        #atomsaa = [inst for inst in topfile if isinstance(inst, top.GmxTopAtom)]
-        topfile = top.read(topfile_name)
-        for inst in topfile:
-            if isinstance(inst, top.GmxTopAtom):
-                cls.atoms.append(inst)
-    
-    # statuc function
+    def init_atoms_list(cls, pdbfile_name):
+        try:
+            with open(pdbfile_name, "r") as inf:
+                for line in inf:
+                    if line.find("ATOM") == 0:
+                        atomnm = line[12:16].strip()
+                        # Some hacking required: if atomname starts with a number, we move it to the end.
+                        if atomnm[0] in [ "1", "2", "3" ]:
+                            atomnm = atomnm[1:] + atomnm[0]
+                        atom = { "nr": int(line[6:11]),
+                                 "atom": atomnm,
+                                 "resnm": line[17:20].strip(),
+                                 "chain_id": line[21:22].strip(),
+                                 "resnr": int(line[23:26]) }
+                        cls.atoms.append(atom)
+        except FileNotFoundError:
+            print("Cannot open %s" % pdbfile_name)
+            exit(1)
+
+    # static function
     @classmethod
-    def get_atom_number(cls, res_nr, atom_name):
-        #top_info = []
-        atom_number = 0
+    def get_atom_number(cls, chain_id, res_nr, atom_name):
+        atom_number = None
         for atom in cls.atoms:
-            #if atom_nm==5:
-            #print("Atom name :",atom_name)
-                #print("residue name : ",res_nm)
-                #print("residue nr : ",res_nr)
-            if atom.atom == atom_name  and atom.resnr == res_nr:
-                atom_number =  atom.nr
-            #else:
-                #print('[%s \t %s]' %(atom_nm,atom.atom))
-        if atom_number==0:
-            raise AtomsNamesError("Names of atoms in the NMRstar file does not coincide with names of atom in \
-the topology file. Make sure that you use correct force field.\
-Also do not forget to use -ignh flag when you generate the .top file \
-with pdb2gmx program. This forces GROMACS to rename hydrogen atoms.\n\n\
-Problem: cannot find in topology file the name for residue %d atom %s."%(res_nr, atom_name))
+            if ("atom" in atom and "resnr" in atom and "chain_id" in atom and "nr" in atom and
+                (atom["atom"] == atom_name  and atom["resnr"] == res_nr and atom["chain_id"] == chain_id)):
+                atom_number = atom["nr"]
+                break
+        if not atom_number:
+            raise AtomsNamesError(("Names of atoms in the NMRstar file does not coincide with names of atom in \
+the generated pdb file. Make sure that you use a supported force field.\n\n\
+Problem: cannot find the name for chain %s, residue %d, atom %s in the pdb file."%(chain_id, res_nr, atom_name)))
         return atom_number
     
     # static method

@@ -21,24 +21,28 @@ class Dihedral_restraint (Restraint):
         Restraint.__init__(self, data_array)
         self.id = data_array[0]
         
-        self.residue_1 = int(data_array[1])
-        self.comp_id_1 = data_array[2]
-        self.atom_id_1 = data_array[3]
+        self.residue_1  = int(data_array[1])
+        self.comp_id_1  = data_array[2]
+        self.atom_id_1  = data_array[3]
+        self.chain_id_1 = data_array[4]
         
-        self.residue_2 = int(data_array[4])
-        self.comp_id_2 = data_array[5]
-        self.atom_id_2 = data_array[6]
+        self.residue_2  = int(data_array[5])
+        self.comp_id_2  = data_array[6]
+        self.atom_id_2  = data_array[7]
+        self.chain_id_2 = data_array[8]
         
-        self.residue_3 = int(data_array[7])
-        self.comp_id_3 = data_array[8]
-        self.atom_id_3 = data_array[9]
+        self.residue_3  = int(data_array[9])
+        self.comp_id_3  = data_array[10]
+        self.atom_id_3  = data_array[11]
+        self.chain_id_3 = data_array[12]
         
-        self.residue_4 = int(data_array[10])
-        self.comp_id_4 = data_array[11]
-        self.atom_id_4 = data_array[12]
+        self.residue_4  = int(data_array[13])
+        self.comp_id_4  = data_array[14]
+        self.atom_id_4  = data_array[15]
+        self.chain_id_4 = data_array[16]
         
-        self.angle_lower_boundary = float(data_array[13])
-        self.angle_upper_boundary = float(data_array[14])
+        self.angle_lower_boundary = float(data_array[17])
+        self.angle_upper_boundary = float(data_array[18])
         
         self.group_1 = 0
         self.group_2 = 0
@@ -64,10 +68,10 @@ class Dihedral_restraint (Restraint):
     def write_data_in_file(self, fp, my_number):
         # g1,g2,g3 and g4 extra output from the fucntion atom_replace in module test_atomno.py
         # getting atom number from residue number and atom name
-        atom_1 = Atoms_names_amber.get_atom_number(self.residue_1, self.atom_id_1)
-        atom_2 = Atoms_names_amber.get_atom_number(self.residue_2, self.atom_id_2)
-        atom_3 = Atoms_names_amber.get_atom_number(self.residue_3, self.atom_id_3)
-        atom_4 = Atoms_names_amber.get_atom_number(self.residue_4, self.atom_id_4)
+        atom_1 = Atoms_names_amber.get_atom_number(self.chain_id_1, self.residue_1, self.atom_id_1)
+        atom_2 = Atoms_names_amber.get_atom_number(self.chain_id_2, self.residue_2, self.atom_id_2)
+        atom_3 = Atoms_names_amber.get_atom_number(self.chain_id_3, self.residue_3, self.atom_id_3)
+        atom_4 = Atoms_names_amber.get_atom_number(self.chain_id_4, self.residue_4, self.atom_id_4)
         phi = round(( self.angle_upper_boundary + self.angle_lower_boundary)/2.0, 2)
         dphi = round((self.angle_upper_boundary - self.angle_lower_boundary)/2.0, 2)
         fac = 1.0 # assign value for force constant
