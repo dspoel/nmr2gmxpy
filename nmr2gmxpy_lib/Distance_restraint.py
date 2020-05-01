@@ -18,25 +18,27 @@ from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
 class Distance_restraint (Restraint):
     def __init__(self,data_array):
         Restraint.__init__(self, data_array)
-        self.id = int(data_array[0])
-        self.atom_id_1 = data_array[3]
+        self.id = data_array[0]
+        self.atom_id_1 = data_array[2]
         self.atom_id_2 = data_array[6]
 
-        self.comp_id_1 = data_array[2]
-        self.comp_id_2 = data_array[5]
+        self.comp_id_1 = data_array[3]
+        self.comp_id_2 = data_array[7]
         
         self.seq_id_1 = int(data_array[1])
-        self.seq_id_2 = int(data_array[4])
-        
+        self.seq_id_2 = int(data_array[5])
+
+        self.chain_id_1 = data_array[4]
+        self.chain_id_2 = data_array[8]
         # will be changed
         self.group_1 = 0
         self.group_2 = 0
         
-        self.distance_lower_bound = data_array[7]
+        self.distance_lower_bound = data_array[9]
         # if lower bound is not set in file then set to 0.0
-        if(data_array[7]=='.'):
+        if(data_array[9]=='.'):
             self.distance_lower_bound = 0.0
-        self.distance_upper_bound = data_array[8]
+        self.distance_upper_bound = data_array[10]
         # will be changed
         self.distance_upper_bound_2 = 0.0
         
@@ -83,13 +85,13 @@ class Distance_restraint (Restraint):
                 # For residue number and atom name(current_atom1,current_atom2)
                 # find atom number from 2lv8.top 
                 # and assign it to ai(atom_no1) and aj(atom_no2)
-                atom_no1 = Atoms_names_amber.get_atom_number(self.seq_id_1, current_atom1)
-                atom_no2 = Atoms_names_amber.get_atom_number(self.seq_id_2, current_atom2)
-                
-                fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
-                        (atom_no1, atom_no2, self.id,
-                        self.type_average, 
-                        self.distance_lower_bound, 
-                        self.distance_upper_bound,
-                        self.distance_upper_bound_2,
-                        self.fac))
+                atom_no1 = Atoms_names_amber.get_atom_number(self.chain_id_1, self.seq_id_1, current_atom1)
+                atom_no2 = Atoms_names_amber.get_atom_number(self.chain_id_2, self.seq_id_2, current_atom2)
+                if atom_no1 and atom_no2:
+                    fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
+                            (atom_no1, atom_no2, my_number,
+                            self.type_average, 
+                            self.distance_lower_bound, 
+                            self.distance_upper_bound,
+                            self.distance_upper_bound_2,
+                            self.fac))
