@@ -149,7 +149,7 @@ def gromacs_command_line(protein, top_file, gro_file):
     else:
         command_line += "gmx_mpi pdb2gmx"
     
-    command_line += " -f " + protein + ".pdb" + " -p " + file_top + " -o " + file_gro
+    command_line += " -f " + protein + ".pdb" + " -p " + top_file + " -o " + gro_file
     command_line += " -ff " + FORCE_FIELD + " -water " + WATER_MODEL + " -ignh -merge all "
     
     if not VERBOSE:
