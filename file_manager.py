@@ -18,7 +18,7 @@
 # used by nmr2gmx! Be careful when make any changes.
 
 '''
-I will download nmr-star file and pdb file for the protein you give me
+I will download a NMR-STAR file and corresponding pdb file for the pdb-entry you give me
 from the server: ftp.rcsb.org.
 I can also call gromacs to create the topology file with amber99sb-ildn force field 
 and tip3p water model.
@@ -37,15 +37,8 @@ import argparse
 
 # for logs
 from datetime import datetime
-VERBOSE = False
 
 # DO NOT change this untill you read README!
-FORCE_FIELD = "amber99sb-ildn"
-WATER_MODEL = "tip3p"
-
-GROMACS = True
-# will be automatically change ti True if gmx_mpi is installed instead
-GMX_MPI = False
 # will be set to true when/if the dir is created by this script
 DELETE_DIR_RIGHT = False
 
@@ -64,69 +57,18 @@ def parse_arguments():
     parser.add_argument("-n", "--name", help = "Conventional 4-symbol name for the protein.",
                          type=str, required=True)
     parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
-    parser.add_argument("-gmx", "--gromacs", help="GROMACS will be called to generate topology file", action="store_true")
+    FORCE_FIELD = "amber99sb-ildn"
+    parser.add_argument("-ff", "--force_field", help="Force field to use. Only AMBER variants will work for now", default=FORCE_FIELD)
+    WATER_MODEL = "tip3p"
+    parser.add_argument("-water", "--water_model", help="Water model to use. Only AMBER variants will work for now", default=WATER_MODEL)
+    parser.add_argument("-gmx", "--run_gromacs", help="GROMACS will be called to generate topology file", action="store_true")
     args = parser.parse_args()
     
     return args
 
 #================================================================================
 
-args = parse_arguments();
-
-protein = args.name;
-path = protein;
-VERBOSE = args.verbose;
-GROMACS = args.gromacs;
-
-# on ftp server they use lower case names
-protein_lowcase = protein.lower()
-subfolder = protein_lowcase[1:-1] # two middle characters
-
-folder_str = "/pub/pdb/data/structures/divided/nmr_restraints_v2/" + subfolder
-remote_file_strgz = protein_lowcase + "_mr.str.gz"
-file_strgz = path + "/" + protein_lowcase + "_mr.str.gz"
-file_str = path + "/" + protein + "_mr.str"
-
-folder_pdb = "/pub/pdb/data/structures/divided/pdb/" + subfolder
-remote_file_pdbgz = "pdb" + protein_lowcase + ".ent.gz"
-file_pdbgz = path + "/" + "pdb" + protein_lowcase + ".ent.gz"
-file_pdb = path + "/" + protein + ".pdb"
-
-file_top = protein + ".top"
-file_gro = protein + ".gro"
-
-logfile = path + "/file_manager.log"
-
-
-def download(folder_name, file_in, file_out):
-    # /pub/pdb/data/structures/divided/nmr_restraints_v2/<2 middle character, i.e for 2l8s - l8>
-    if VERBOSE:
-        print("Try to download %s"%file_in)
-    try:
-        message = ftp.cwd(folder_name)
-        if VERBOSE:
-            print(message)
-        ftp.retrbinary("RETR " + file_in ,open(file_out, 'wb').write)
-    except ftplib.error_perm as ex:
-        print("Oops! Seems there is now NMR data for protein " + protein)
-        try:
-            os.remove(file_out)
-        except:
-            pass
-
-        if DELETE_DIR_RIGHT:
-            try:
-                os.rmdir(path)
-            except:
-                pass
-        sys.exit(1)
-    except Exception as ex:
-        print("ERROR:")
-        print(ex)
-        sys.exit(1)
-
-
-def unzip(file_in, file_out):
+def unzip(file_in, file_out, VERBOSE):
     if VERBOSE:
         print("Try to unzip %s"%file_in)
     try:
@@ -136,34 +78,80 @@ def unzip(file_in, file_out):
     except Exception as ex:
         print(ex)
         exit(1)
-        
+
+def download(ftp, folder_name, file_in, file_out, VERBOSE, protein):
+    # /pub/pdb/data/structures/divided/nmr_restraints_v2/<2 middle character, i.e for 2l8s - l8>
+    if VERBOSE:
+        print("Try to download %s"%file_in)
+    try:
+        message = ftp.cwd(folder_name)
+        if VERBOSE:
+            print(message)
+        ftp.retrbinary("RETR " + file_in ,open(file_out, 'wb').write)
+    except ftplib.error_perm as ex:
+        print("Oops! Seems there is no NMR data for protein " + protein)
+        try:
+            os.remove(file_out)
+        except:
+            pass
+
+        if DELETE_DIR_RIGHT:
+            try:
+                os.chdir("..")
+                os.rmdir(protein)
+            except:
+                pass
+        sys.exit(1)
+    except Exception as ex:
+        print("ERROR:")
+        print(ex)
+        sys.exit(1)
 
 
-def gromacs_command_line(protein, top_file, gro_file):
-    
-    command_line = "cd " + path + "/; "
-    
-    if not GMX_MPI:
-        command_line += "gmx pdb2gmx"
         
+def which(program):
+    def is_exe(fpath):
+        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+    fpath, fname = os.path.split(program)
+    if fpath:
+        if is_exe(program):
+            return program
     else:
-        command_line += "gmx_mpi pdb2gmx"
-    
+        for path in os.environ["PATH"].split(os.pathsep):
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return exe_file
+
+    return None
+
+def find_gmx():
+    for mpi in [ "_mpi", "" ]:
+        for double in [ "_d", ""]:
+            gmx = which("gmx" + mpi + double)
+            if gmx:
+                return gmx
+    return None
+
+def gromacs_command_line(protein, top_file, gro_file, VERBOSE, FORCE_FIELD, WATER_MODEL):
+    gmx = find_gmx()
+    if not gmx:
+        print("Can not find a GROMACS executable. Stopping here.")
+        exit(1)
+
+    command_line = gmx + " pdb2gmx"
     command_line += " -f " + protein + ".pdb" + " -p " + top_file + " -o " + gro_file
     command_line += " -ff " + FORCE_FIELD + " -water " + WATER_MODEL + " -ignh -merge all "
     
     if not VERBOSE:
         command_line += " > /dev/null 2>&1"
-    
     return command_line
     
-SERVER_NAME = 'ftp.rcsb.org'
-
-if __name__ == "__main__":
-
+def download_and_unzip(protein, log):
     # Connect to RCSB PDB (US) ftp server
+    SERVER_NAME = 'ftp.rcsb.org'
     if VERBOSE:
-        print("Triying to connect to the server %s"%SERVER_NAME)
+        print("Trying to connect to the server %s"%SERVER_NAME)
         print("Server message:=================================")
     try:
         ftp = ftplib.FTP(SERVER_NAME)
@@ -180,64 +168,70 @@ if __name__ == "__main__":
     if VERBOSE:
         print("================================================")
 
-    
-    # Create directory (if nit exist) where to download the files
-    if not os.path.exists(path):
-        DELETE_DIR_RIGHT = True
-        try:
-            os.mkdir(path)
-        except Exception as ex:
-            print ("ERROR:")
-            print(ex)
-            sys.exit(1)
-    
-    
-    
-    download(folder_str, remote_file_strgz, file_strgz)
-    unzip(file_strgz, file_str)
+    # on ftp server they use lower case names
+    protein_lowcase = protein.lower()
+    subfolder = protein_lowcase[1:-1] # two middle characters
+
+    # Download NMR data
+    folder_str = "/pub/pdb/data/structures/divided/nmr_restraints_v2/" + subfolder
+    remote_file_strgz = protein_lowcase + "_mr.str.gz"
+    file_strgz = protein_lowcase + "_mr.str.gz"
+    file_str = protein + "_mr.str"
+    download(ftp, folder_str, remote_file_strgz, file_strgz, VERBOSE, protein)
+    unzip(file_strgz, file_str, VERBOSE)
     if VERBOSE:
         print("SUCCESS")
     os.remove(file_strgz)
 
-    download(folder_pdb, remote_file_pdbgz, file_pdbgz)
-    unzip(file_pdbgz, file_pdb)
+    # Download pdb file
+    folder_pdb = "/pub/pdb/data/structures/divided/pdb/" + subfolder
+    remote_file_pdbgz = "pdb" + protein_lowcase + ".ent.gz"
+    file_pdbgz = "pdb" + protein_lowcase + ".ent.gz"
+    file_pdb = protein + ".pdb"
+    download(ftp, folder_pdb, remote_file_pdbgz, file_pdbgz, VERBOSE, protein)
+    unzip(file_pdbgz, file_pdb, VERBOSE)
     if VERBOSE:
         print("SUCCESS")
     os.remove(file_pdbgz)
+    
+    log.write("\nThe data has been downloaded from the server: %s.\n\n"%SERVER_NAME)
+    
+if __name__ == "__main__":
+    args = parse_arguments()
+    VERBOSE = args.verbose
 
+    protein = args.name
+
+    # Create directory (if not exist) where to download the files
+    if not os.path.exists(protein):
+        DELETE_DIR_RIGHT = True
+    os.makedirs(protein, exist_ok="True")
+    os.chdir(protein)
+    
+    logfile = "file_manager.log"
     log = open(logfile, "w")
     log.write(datetime.now().strftime("On %d %B %Y at %H:%M:%S"))
     log.write("\n-----------------------------\n")
     
-    log.write("\nThe data is downloaded from the server: %s.\n\n"%SERVER_NAME)
+    download_and_unzip(protein, log)
+    
     
 #--------------------------CALL GROMACS-------------------------------------------------
-    # check whether gmx or gmx_mpi is installed
-    if GROMACS:
-        errno = os.system("gmx > /dev/null 2>&1")
-        # command not found
-        if errno!=0:
-            errno = os.system("gmx_mpi > /dev/null 2>&1")
-            if errno==0:
-                GMX_MPI=True
-                pass
-            else:
-                GROMACS=False
-                print("Warning: I cannot find GROMACS.\nMaybe you forget to do 'source /usr/local/gromacs/bin/GMXRC'?")
     
-    if GROMACS:
-        command_line = gromacs_command_line(protein, file_top, file_gro)
-        if VERBOSE:
-            print("Try to run:\n\t" + command_line)
+    if args.run_gromacs:
+        file_top = protein + ".top"
+        file_gro = protein + "_clean.pdb"
+        command_line = gromacs_command_line(protein, file_top, file_gro, VERBOSE,
+                                            args.force_field, args.water_model)
         try:
             if VERBOSE:
+                print("Try to run:\n\t" + command_line)
                 print("============= GROMACS output: ==============================================")
-            
             errno = os.system(command_line)
             #print("error number ", errno)
             # GROMACS ERROR
             if errno > 0:
-                raise Exception("ERROR: GROMACS had a problem. Run with -v to see the it.");
+                raise Exception("ERROR: GROMACS had a problem. Run with -v to get more info.");
 
             if VERBOSE:
                 print("============= END of GROMACS output ========================================")
