@@ -15,34 +15,95 @@
 #   limitations under the License.
 
 """
-I can take restraint data from Nuclear Magnetic Resonance data 
-file (NMRstar) and convert it to GROMACS restraint files (itp).
-I also need corresponding GROMACS topology  file to get right atom names.
-I will try to generate 3 .itp files: distance restraint,
-dihedral restraint and orientation restraint.
-Not every NMRstar file has all nessesary information, but I try my best!
-"""
+This script can generate input for running restrained MD using the
+GROMACS software (http://www.gromacs.org). There are two modes of operation.
+1) the user provides a pdb ID (-n option) after which the script downloads 
+the pdb file and data from ftp://ftp.rcsb.org, or
+2) the user provides restraint data in a Nuclear Magnetic Resonance 
+file (NMRstar format) (-s option) plus a pdb file (-q option).
 
+The script will then process the pdb file to make GROMACS input, read
+the NMR data file and generate GROMACS restraint files (itp).
+The script will try to generate 3 different include topology (itp) files:
+distance restraint, dihedral restraint and orientation restraint, 
+dependent on the information available in the NMRstar file.
+
+In order to work properly, mode 1 needs an active internet connection.
+Both modes need a working GROMACS installation that is at least version 2019.6.
+"""
+# System libraries
+import sys, os, ftplib
+import gzip, shutil, argparse
+import linecache, traceback
+
+# For logs
+from datetime import datetime
+
+# Our owncode
 from nmr2gmxpy_lib.Restraint_list import FormatError
 from nmr2gmxpy_lib.Distance_restraint_list import Distance_restraint_list
 from nmr2gmxpy_lib.Dihedral_restraint_list import Dihedral_restraint_list
 from nmr2gmxpy_lib.Orientation_restraint_list import Orientation_restraint_list
-#from Atoms_names_amber import Atoms_names_amber
 from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
 
+# Low-level routines
+def unzip(file_in, file_out, VERBOSE):
+    if VERBOSE:
+        print("Try to unzip %s"%file_in)
+    try:
+        with gzip.open(file_in, 'rb') as f_in:
+            with open(file_out, 'wb') as f_out:
+                shutil.copyfileobj(f_in, f_out)
+    except Exception as ex:
+        print(ex)
+        exit(1)
 
-import sys
-import os
-import argparse
+def download(ftp, folder_name, file_in, file_out, VERBOSE, protein):
+    # /pub/pdb/data/structures/divided/nmr_restraints_v2/<2 middle character, i.e for 2l8s - l8>
+    if VERBOSE:
+        print("Try to download %s"%file_in)
+    try:
+        message = ftp.cwd(folder_name)
+        if VERBOSE:
+            print(message)
+        ftp.retrbinary("RETR " + file_in ,open(file_out, 'wb').write)
+    except ftplib.error_perm as ex:
+        print("Oops! Seems there is no NMR data for protein " + protein)
+        try:
+            os.remove(file_out)
+        except:
+            pass
 
-DOWNLOAD_FROM_SERVER = False
-VERBOSE = False
-PATH = "."
-md_file = "ADD_THIS_TO_YOUR_MD_FILE.mdp"
+    except Exception as ex:
+        print("ERROR:")
+        print(ex)
+        sys.exit(1)
+        
+def which(program):
+    def is_exe(fpath):
+        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+    fpath, fname = os.path.split(program)
+    if fpath:
+        if is_exe(program):
+            return program
+    else:
+        for path in os.environ["PATH"].split(os.pathsep):
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return exe_file
+
+    return None
+
+def find_gmx():
+    for mpi in [ "_mpi", "" ]:
+        for double in [ "_d", ""]:
+            gmx = which("gmx" + mpi + double)
+            if gmx:
+                return gmx
+    return None
 
 #------------------------EXEPTION PRINTING---------------------------------------
-import linecache
-import traceback
 
 def printException(printTraceback=True,):
     exc_type, exc_obj, tb = sys.exc_info()
@@ -61,16 +122,18 @@ def printException(printTraceback=True,):
 
 #---------------------MD FILE----------------------------------------------------
 def create_md_file(topfile):
+    md_file = "ADD_THIS_TO_YOUR_MD_FILE.mdp"
     with open (PATH + "/" + md_file, "w") as fp:
-        fp.write("; Created automaticaly for this topology: %s.\n"%topfile)
+        fp.write("; Created automaticaly for this topology: %s.\n" % topfile)
         fp.write("; Add what is written in this file to your .mdp file for including constraints\n")
         fp.write("; in your MD calculations. Here are listed all the NMR parameters.\n")
         fp.write("; We suggest to not change them unless you know what you do.\n")
         fp.write("\n")
         fp.write("; NMR refinement stuff \n")
+    return md_file
 
-def write_distance_restraints_in_md_file():
-    with open (PATH + "/" + md_file, "a") as fp:
+def write_distance_restraints_in_md_file(md_file):
+    with open (md_file, "a") as fp:
         fp.write("; Distance restraints type: No, Simple or Ensemble\n\
 disre                    = Simple\n\
 ; Force weighting of pairs in one distance restraint: Conservative or Equal\n\
@@ -83,13 +146,13 @@ disre-tau                = 0\n\
 nstdisreout              = 0\n\n")
 
 # dihedral constraints counts automatically form juts topology (itp) file.
-def write_dihedral_restraints_in_md_file():
-    with open (PATH + "/" + md_file, "a") as fp:
+def write_dihedral_restraints_in_md_file(md_file):
+    with open (md_file, "a") as fp:
         fp.write("; Dihedral restraints do not required any parameters. \
 It is enough to include them in topology.\n\n")
 
-def write_orientation_restraints_in_md_file():
-    with open (PATH + "/" + md_file, "a") as fp:
+def write_orientation_restraints_in_md_file(md_file):
+    with open (md_file, "a") as fp:
         fp.write("; Orientation restraints: No or Yes\n\
 orire                    = Yes\n\
 ; Orientation restraints force constant and tau for time averaging\n\
@@ -127,14 +190,13 @@ def make_restraint_file(restraint_type, mr_file, verbose):
 
 
 def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
-    
     try:
         outf = make_restraint_file(restraint_type, mr_file, verbose)
-        if VERBOSE:
+        if verbose:
             print("SUCCESS: %s restraints were generated in file '%s'." % (restraint_type,outf))
         return outf;
     except FormatError as ex:
-        if VERBOSE:
+        if verbose:
             print("Warning:")
             print(ex)
             print("NO %s restraint file was generated." % restraint_type)
@@ -188,113 +250,183 @@ class My_argument_parser(argparse.ArgumentParser):
         sys.stderr.write('error: %s\n' % message)
         self.print_help()
         sys.exit(2)
-    
-def parse_arguments():
-    #parser = argparse.ArgumentParser()
-    parser = My_argument_parser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("-s", "--strfile", help = "NMR restraint V2 (STAR) data file\
-                         with .str file name extension. Ususlly the name is <protein>_mr.str",
-                         type=str)
-    default_top = "topol.top"
-    parser.add_argument("-p", "--topfile", help= "GROMACS topology file with .top file name extension to generatem default is "+default_top, type=str, default=default_top)
-    parser.add_argument("-q", "--pdbfile", help= "Protein data bank file with .pdb file name extension, corresponding to the NMR star file.",
-                         type=str)
-    default_ff = "amber99sb-ildn"
-    parser.add_argument("-ff", "--force_field", help="Force field to choose for GROMACS simulations. Default is "+default_ff, type=str, default=default_ff)
-    default_water = "tip3p"
-    parser.add_argument("-water", "--water_model", help="Water model to choose for GROMACS simulations. Default is "+default_water, type=str, default=default_water)
-    parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
 
-    parser.add_argument("-d", "--debug", 
+class FileManager():
+#    def __init__(self):
+        # Do nothing
+    def addArguments(self, parser):
+        parser.add_argument("-n", "--protein", help = "4-symbol protein databank identifier. The files corresponding to this pdb ID will be downloaded.",
+                            type=str, required=True)
+        parser.add_argument("-s", "--strfile", help = "NMR restraint V2 (STAR) data file\
+        with .str file name extension. Ususlly the name is <protein>_mr.str",
+                         type=str)
+        parser.add_argument("-q", "--pdbfile", help= "Protein data bank file with .pdb file name extension, corresponding to the NMR star file.",
+                         type=str)
+        FORCE_FIELD = "amber99sb-ildn"
+        parser.add_argument("-ff", "--force_field", help="Force field to use. Only AMBER variants will work for now", default=FORCE_FIELD)
+        WATER_MODEL = "tip3p"
+        parser.add_argument("-water", "--water_model", help="Water model to use. Only AMBER variants will work for now", default=WATER_MODEL)
+        parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
+        parser.add_argument("-d", "--debug", 
                         help="Print traceback for errors if any. Also print traceback for warnings.",
                          action="store_true")
-    parser.add_argument("-n", "--name")
-    default_gmx = "gmx"
-    parser.add_argument("-gmx", "--gromacs", help="GROMACS executable to run. Note that you need at least version 2019.6 or 2020.1 to run NMR refinement. Default is " + default_gmx, type=str, default=default_gmx)
-    args = parser.parse_args()
-    
-    if not args.pdbfile or not args.strfile:
-        print("Please provide both a pdb file and a MR file *or* a pdb id to download.")
-        print(__doc__)
-        sys.exit(1)
 
-    # Check input file names
-    check_extension("MR star", args.strfile, "str")
-    check_extension("GROMACS topology", args.topfile, "top")
-    check_extension("PDB", args.pdbfile, "pdb")
-    
-    # Time to run gromacs
-    clean_pdb = "clean.pdb"
-    os.system(("%s pdb2gmx -f %s -ff %s -water %s -ignh -merge all -o %s -p %s" % ( args.gromacs, args.pdbfile, args.force_field, args.water_model, clean_pdb, args.topfile )))
-    if not (os.path.exists(clean_pdb) and os.path.exists(args.topfile)):
-        print("Something went wrong running GROMACS. Sorry.")
-        sys.exit(1)
 
-    # Change pdb name for downstream processing
-    args.pdbfile = clean_pdb
-    
-    return args
+    def parseArguments(self, parser):
+        self.args = parser.parse_args()
+        return self.args
 
+    def gromacsCommandLine(self, top_file, gro_file):
+        gmx = find_gmx()
+        if not gmx:
+            print("Can not find a GROMACS executable. Stopping here.")
+            exit(1)
+
+        command_line = gmx + " pdb2gmx" + " -f " + self.args.protein + ".pdb" + " -p " + top_file + " -o " + gro_file + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh -merge all "
+    
+        if not self.args.verbose:
+            command_line += " > /dev/null 2>&1"
+        return command_line
+
+    def downloadAndUnzip(self, log):
+        # Connect to RCSB PDB (US) ftp server
+        SERVER_NAME = 'ftp.rcsb.org'
+        if self.args.verbose:
+            print("Trying to connect to the server %s" % SERVER_NAME)
+            print("Server message:=================================")
+        try:
+            ftp = ftplib.FTP(SERVER_NAME)
+            message = ftp.login(user='anonymous', passwd='', acct='')
+            if self.args.verbose:
+                print(message)
+            message = ftp.getwelcome()
+            if self.args.verbose:
+                print(message)
+        except Exception as ex:
+            print("ERROR:")
+            print(ex)
+            sys.exit(1)
+        if self.args.verbose:
+            print("================================================")
+
+        # on ftp server they use lower case names
+        protein_lowcase = self.args.protein.lower()
+        subfolder = protein_lowcase[1:-1] # two middle characters
+
+        # Download NMR data
+        folder_str = "/pub/pdb/data/structures/divided/nmr_restraints_v2/" + subfolder
+        remote_file_strgz = protein_lowcase + "_mr.str.gz"
+        file_strgz = protein_lowcase + "_mr.str.gz"
+        file_str = self.args.protein + "_mr.str"
+        download(ftp, folder_str, remote_file_strgz, file_strgz, self.args.verbose, self.args.protein)
+        unzip(file_strgz, file_str, self.args.verbose)
+        if self.args.verbose:
+            print("SUCCESS")
+        os.remove(file_strgz)
+
+        # Download pdb file
+        folder_pdb = "/pub/pdb/data/structures/divided/pdb/" + subfolder
+        remote_file_pdbgz = "pdb" + protein_lowcase + ".ent.gz"
+        file_pdbgz = "pdb" + protein_lowcase + ".ent.gz"
+        file_pdb = self.args.protein + ".pdb"
+        download(ftp, folder_pdb, remote_file_pdbgz, file_pdbgz, self.args.verbose, self.args.protein)
+        unzip(file_pdbgz, file_pdb, self.args.verbose)
+        if self.args.verbose:
+            print("SUCCESS")
+        os.remove(file_pdbgz)
+    
+        log.write("\nThe data has been downloaded from the server: %s.\n\n"%SERVER_NAME)
+
+        return file_str, file_pdb
+
+    def runGromacs(self, log):
+        #------CALL GROMACS-------------------------------------------------
+        file_top = self.args.protein + ".top"
+        file_gro = self.args.protein + "_clean.pdb"
+        command_line = self.gromacsCommandLine(file_top, file_gro)
+        try:
+            if self.args.verbose:
+                print("Try to run:\n\t" + command_line)
+                print("============= GROMACS output: ==============================================")
+            errno = os.system(command_line)
+            if errno > 0:
+                raise Exception("ERROR: GROMACS had a problem. Run with -v to get more info.");
+
+            if self.args.verbose:
+                print("============= END of GROMACS output ========================================")
+                print("SUCCESS")
+                
+            log.write("Call for GROMACS:\n");
+            log.write(command_line);
+        except Exception as ex:
+            print(ex)
+        
 #================================================================================
 # MAIN
-
-args  = parse_arguments()
-
-if args.verbose:
-    VERBOSE=True
-
-
-if DOWNLOAD_FROM_SERVER:
-    PATH = args.name
+if __name__ == "__main__":
+    parser  = My_argument_parser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    logfile = "nmr2gmx.log"
     try:
-        command = "./file_manager.py -gmx -n" + args.name
-        if VERBOSE:
-            command += ' -v'
-        errno = os.system(command)
-    except:
-        print("error")
+        log = open(logfile, "w")
+    except Exception as e:
+        print("Could not open log file %s. Error message %s" % ( logfile, e.message ) )
+        exit(1)
+        
+    log.write(datetime.now().strftime("On %d %B %Y at %H:%M:%S"))
+    log.write("\n-----------------------------\n")
+    manager = FileManager()
+    manager.addArguments(parser)
+    args    = manager.parseArguments(parser)
+    # Check for correct options
+    if args.protein:
+        print("Will try to download pdb ID %s" % args.protein)
+        if args.pdbfile or args.strfile:
+            print("Ignoring options given for pdbfile or strfile")
+        args.pdbfile, args.strfile = manager.downloadAndUnzip(log)
+    elif not (args.pdbfile and args.strfile):
+        print("Usage error, please read the documentation.")
+        print(__doc__)
+        exit(1)
+    else:
+        # Check input file names
+        check_extension("MR star", args.strfile, "str")
+        check_extension("PDB", args.pdbfile, "pdb")
 
-    if errno!=0:
-        sys.exit(1)
+    manager.runGromacs(log)
 
-    args.topfile = PATH + "/" + args.name + ".top"
-    args.strfile = PATH + "/" + args.name + "_mr.str"
+    # Reading pdb file to get correct atom names
+    Atoms_names_amber.init_atoms_list(args.pdbfile)
 
-# Reading topology file
-Atoms_names_amber.init_atoms_list(args.pdbfile)
-
-if VERBOSE:
-    print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
+    if args.verbose:
+        print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     
-restraint_type = "distance"
-filename=call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug)
-if filename:
-    include_in_topfile(filename)
-    create_md_file(args.topfile)
-    write_distance_restraints_in_md_file()
+    restraint_type = "distance"
+    filename=call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug)
+    mdp_file = None
+    if filename:
+        include_in_topfile(filename)
+        mdp_file = create_md_file(args.topfile)
+        write_distance_restraints_in_md_file(mdp_file)
 
-if VERBOSE:
-    print("\n~~~~~~~DIHEDRAL RESTRAINTS~~~~~~~")
+    if args.verbose:
+        print("\n~~~~~~~DIHEDRAL RESTRAINTS~~~~~~~")
     
-restraint_type = "dihedral"
-filename = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
-if filename:
-    include_in_topfile(filename)
-    write_dihedral_restraints_in_md_file()
+    restraint_type = "dihedral"
+    filename = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
+    if filename and mdp_file:
+        include_in_topfile(filename)
+        write_dihedral_restraints_in_md_file(mdp_file)
 
-if VERBOSE:
-    print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
+    if args.verbose:
+        print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
     
-restraint_type = "orientation"
-filename = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
-if filename:
-    include_in_topfile(filename)
-    write_orientation_restraints_in_md_file()
+    restraint_type = "orientation"
+    filename = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
+    if filename and mdp_file:
+        include_in_topfile(filename)
+        write_orientation_restraints_in_md_file(mdp_file)
 
-if VERBOSE:
-    print("")
-#print("\ngmx #666: 'It is important to not generate senseless output.' (Anyone who's ever used a computer)")
 
 
 
