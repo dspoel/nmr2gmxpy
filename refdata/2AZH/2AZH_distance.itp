@@ -1,0 +1,6 @@
+[ distance_restraints ]
+;    ai	    aj	  type	 index	 type'	   low	   up1	   up2	   fac
+
+   649	  1026	     1	     1	     1	  0.36	  0.39	  0.49	   1.0
+   649	  1959	     1	     2	     1	  0.36	  0.39	  0.49	   1.0
+  1026	  1959	     1	     3	     1	  0.36	  0.39	  0.49	   1.0

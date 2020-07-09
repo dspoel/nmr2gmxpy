@@ -189,7 +189,7 @@ def parse_arguments():
     parser = My_argument_parser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("-s", "--strfile", help = "NMR restraint V2 (STAR) data file\
-                         with .str file name extension. Ususlly the name is <protein>_mr.str",
+                         with .str file name extension. Usually the name is <protein>_mr.str",
                          type=str)
     parser.add_argument("-p", "--topfile", help= "GROMACS topology file with .top file name extension.\
                     The current version of the program works only for AMBER and CHARMM force fields.\
