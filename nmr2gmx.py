@@ -258,7 +258,7 @@ class FileManager():
         parser.add_argument("-n", "--protein", help = "4-symbol protein databank identifier. The files corresponding to this pdb ID will be downloaded.",
                             type=str, required=True)
         parser.add_argument("-s", "--strfile", help = "NMR restraint V2 (STAR) data file\
-        with .str file name extension. Ususlly the name is <protein>_mr.str",
+        with .str file name extension. Usually the name is <protein>_mr.str",
                          type=str)
         parser.add_argument("-q", "--pdbfile", help= "Protein data bank file with .pdb file name extension, corresponding to the NMR star file.",
                          type=str)
