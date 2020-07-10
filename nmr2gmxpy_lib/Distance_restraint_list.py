@@ -29,7 +29,7 @@ class Distance_restraint_list(Restraint_list):
         
         result_sets = []
         for loop in entry.get_loops_by_category("_Gen_dist_constraint") :
-            result_sets.append(loop.get_tag(['ID','Auth_seq_ID_1' ,'Atom_ID_1','Comp_ID_1', 'Auth_asym_ID_1', 'Auth_seq_ID_2','Atom_ID_2' ,'Comp_ID_2', 'Auth_asym_ID_2', 'Distance_lower_bound_val','Distance_upper_bound_val'])) 
+            result_sets.append(loop.get_tag(['ID','PDB_residue_no_1' ,'Auth_Atom_ID_1','Comp_ID_1', 'PDB_strand_ID_1', 'PDB_residue_no_2','Auth_Atom_ID_2' ,'Comp_ID_2', 'PDB_strand_ID_2', 'Distance_lower_bound_val','Distance_upper_bound_val'])) 
         
         return result_sets
     

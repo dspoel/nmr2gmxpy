@@ -48,6 +48,7 @@ class Atoms_names():
                                  "chain_id": line[21:22].strip(),
                                  "resnr": int(line[23:26]) }
                         cls.atoms.append(atom)
+            print("There are %d atoms in the translation table" % len(cls.atoms))
         except FileNotFoundError:
             print("Cannot open %s" % pdbfile_name)
             exit(1)
@@ -62,9 +63,10 @@ class Atoms_names():
                 atom_number = atom["nr"]
                 break
         if not atom_number:
-            raise AtomsNamesError(("Names of atoms in the NMRstar file does not coincide with names of atom in \
-the generated pdb file. Make sure that you use a supported force field.\n\n\
-Problem: cannot find the name for chain %s, residue %d, atom %s in the pdb file."%(chain_id, res_nr, atom_name)))
+#            myatom = ("Chain %s Residue %d Name %s" % ( chain_id, res_nr, atom_name ))
+            raise AtomsNamesError(("Name of an atom in the NMRstar file does not coincide with names of atom in \
+the generated pdb file (there are %d). Make sure that you use a supported force field.\n\n\
+Problem: cannot find the name for chain %s, residue %d, atom %s in the pdb file." % ( len(cls.atoms), chain_id, res_nr, atom_name)))
         return atom_number
     
     # static method

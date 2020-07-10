@@ -30,10 +30,10 @@ class Dihedral_restraint_list(Restraint_list):
         result_sets = []
         for loop in entry.get_loops_by_category("_Torsion_angle_constraint") :
             result_sets.append(loop.get_tag(['ID',
-                            'PDB_residue_no_1', 'Comp_ID_1', 'Atom_ID_1', 'Auth_asym_ID_1',
-                            'PDB_residue_no_2', 'Comp_ID_2', 'Atom_ID_2', 'Auth_asym_ID_2',
-                            'PDB_residue_no_3', 'Comp_ID_3', 'Atom_ID_3', 'Auth_asym_ID_3',
-                            'PDB_residue_no_4', 'Comp_ID_4', 'Atom_ID_4', 'Auth_asym_ID_4', 
+                            'PDB_residue_no_1', 'Comp_ID_1', 'Atom_ID_1', 'PDB_strand_ID_1',
+                            'PDB_residue_no_2', 'Comp_ID_2', 'Atom_ID_2', 'PDB_strand_ID_2',
+                            'PDB_residue_no_3', 'Comp_ID_3', 'Atom_ID_3', 'PDB_strand_ID_3',
+                            'PDB_residue_no_4', 'Comp_ID_4', 'Atom_ID_4', 'PDB_strand_ID_4', 
                             'Angle_lower_bound_val','Angle_upper_bound_val']))
 
         return result_sets

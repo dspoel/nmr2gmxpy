@@ -123,11 +123,11 @@ def printException(printTraceback=True,):
 #---------------------MD FILE----------------------------------------------------
 def create_md_file(topfile):
     md_file = "ADD_THIS_TO_YOUR_MD_FILE.mdp"
-    with open (PATH + "/" + md_file, "w") as fp:
+    with open (md_file, "w") as fp:
         fp.write("; Created automaticaly for this topology: %s.\n" % topfile)
         fp.write("; Add what is written in this file to your .mdp file for including constraints\n")
         fp.write("; in your MD calculations. Here are listed all the NMR parameters.\n")
-        fp.write("; We suggest to not change them unless you know what you do.\n")
+        fp.write("; We suggest to not change them unless you know what you are doing.\n")
         fp.write("\n")
         fp.write("; NMR refinement stuff \n")
     return md_file
@@ -190,6 +190,8 @@ def make_restraint_file(restraint_type, mr_file, verbose):
 
 
 def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
+    if verbose:
+        print("restraint_type %s mr_file %s" % ( restraint_type, mr_file ))
     try:
         outf = make_restraint_file(restraint_type, mr_file, verbose)
         if verbose:
@@ -206,19 +208,19 @@ def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
     except Exception as ex:
         printException(debug)
 
-def include_in_topfile(filename):
-    insert = '#include "' + os.path.basename(filename) + '"'
+def include_in_topfile(top_file, include_file):
+    insert = '#include "' + os.path.basename(include_file) + '"'
 
     val = 0
     lines = []
-    with open(args.topfile) as fp:
+    with open(top_file) as fp:
         for line in fp:
             lines.append(line)
             line = line.rstrip()  # remove '\n' at end of line
             if insert == line: # if the insert is already in the file
                 return 
     lines = []
-    with open(args.topfile) as fp:
+    with open(top_file) as fp:
         for number, line in enumerate(fp,1):
             lines.append(line)
             line = line.rstrip()  # remove '\n' at end of line
@@ -228,12 +230,12 @@ def include_in_topfile(filename):
     if val==0:
         print("Warning!")
         print("Cannnot write include in the topology file automatically.\n"
-            "You should add this line:\n" + insert + "\nat the end of '" + args.topfile + "'.")
+            "You should add this line:\n" + insert + "\nat the end of '" + top_file + "'.")
         return
         
     lines.insert(val-1, insert + "\n")
 
-    with open(args.topfile, "w") as fp:
+    with open(top_file, "w") as fp:
         for line in lines:
             fp.write(line)
 
@@ -342,8 +344,8 @@ class FileManager():
     def runGromacs(self, log):
         #------CALL GROMACS-------------------------------------------------
         file_top = self.args.protein + ".top"
-        file_gro = self.args.protein + "_clean.pdb"
-        command_line = self.gromacsCommandLine(file_top, file_gro)
+        file_pdb = self.args.protein + "_clean.pdb"
+        command_line = self.gromacsCommandLine(file_top, file_pdb)
         try:
             if self.args.verbose:
                 print("Try to run:\n\t" + command_line)
@@ -360,7 +362,8 @@ class FileManager():
             log.write(command_line);
         except Exception as ex:
             print(ex)
-        
+        return file_pdb, file_top
+
 #================================================================================
 # MAIN
 if __name__ == "__main__":
@@ -383,7 +386,7 @@ if __name__ == "__main__":
         print("Will try to download pdb ID %s" % args.protein)
         if args.pdbfile or args.strfile:
             print("Ignoring options given for pdbfile or strfile")
-        args.pdbfile, args.strfile = manager.downloadAndUnzip(log)
+        args.strfile, args.pdbfile = manager.downloadAndUnzip(log)
     elif not (args.pdbfile and args.strfile):
         print("Usage error, please read the documentation.")
         print(__doc__)
@@ -393,38 +396,39 @@ if __name__ == "__main__":
         check_extension("MR star", args.strfile, "str")
         check_extension("PDB", args.pdbfile, "pdb")
 
-    manager.runGromacs(log)
+    clean_pdb, top_file = manager.runGromacs(log)
 
     # Reading pdb file to get correct atom names
-    Atoms_names_amber.init_atoms_list(args.pdbfile)
+    Atoms_names_amber.init_atoms_list(clean_pdb)
 
     if args.verbose:
         print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
     
     restraint_type = "distance"
-    filename=call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug)
+    include_file   = call_restraint_make_function(restraint_type, args.strfile,
+                                                  args.verbose, args.debug)
     mdp_file = None
-    if filename:
-        include_in_topfile(filename)
-        mdp_file = create_md_file(args.topfile)
+    if include_file:
+        include_in_topfile(top_file, include_file)
+        mdp_file = create_md_file(top_file)
         write_distance_restraints_in_md_file(mdp_file)
 
     if args.verbose:
         print("\n~~~~~~~DIHEDRAL RESTRAINTS~~~~~~~")
     
     restraint_type = "dihedral"
-    filename = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
-    if filename and mdp_file:
-        include_in_topfile(filename)
+    include_file = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
+    if include_file and mdp_file:
+        include_in_topfile(top_file, include_file)
         write_dihedral_restraints_in_md_file(mdp_file)
 
     if args.verbose:
         print("\n~~~~~ORIENTATION RESTRAINTS~~~~~")
     
     restraint_type = "orientation"
-    filename = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
-    if filename and mdp_file:
-        include_in_topfile(filename)
+    include_file = call_restraint_make_function(restraint_type, args.strfile, args.verbose, args.debug);
+    if include_file and mdp_file:
+        include_in_topfile(top_file, include_file)
         write_orientation_restraints_in_md_file(mdp_file)
 
 

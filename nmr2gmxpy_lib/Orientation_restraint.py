@@ -23,12 +23,14 @@ class Orientation_restraint (Restraint):
         self.residue_1 = int(data_array[1])
         self.comp_id_1 = data_array[2]
         self.atom_id_1 = data_array[3]
+        self.seq_id_1  = data_array[4]
         
-        self.residue_2 = int(data_array[4])
-        self.comp_id_2 = data_array[5]
-        self.atom_id_2 = data_array[6]
+        self.residue_2 = int(data_array[5])
+        self.comp_id_2 = data_array[6]
+        self.atom_id_2 = data_array[7]
+        self.seq_id_2  = data_array[8]
         
-        self.RDC = data_array[7]
+        self.RDC = data_array[9]
         
         self.group_1 = 0
         self.group_2 = 0
@@ -50,8 +52,8 @@ class Orientation_restraint (Restraint):
         fp.write(";      \t      \t      \t      \t      \t   Hz \t nm^3 \t   Hz \t Hz^-2\n\n")
     
     def write_data_in_file(self, fp, my_number):
-        atom_1 = Atoms_names_amber.get_atom_number(self.residue_1, self.atom_id_1)
-        atom_2 = Atoms_names_amber.get_atom_number(self.residue_2, self.atom_id_2)
+        atom_1 = Atoms_names_amber.get_atom_number(self.seq_id_1, self.residue_1, self.atom_id_1)
+        atom_2 = Atoms_names_amber.get_atom_number(self.seq_id_2, self.residue_2, self.atom_id_2)
         alpha = 3 #assign value for alpha
         const = 6.083 #assign value for constant
         weight = 1.0 # assign value for weight
