@@ -28,21 +28,13 @@ class Orientation_restraint (Restraint):
             self.residue_1 = int(data_array[4])
         self.comp_id_1 = data_array[2]
         self.atom_id_1 = data_array[3]
-        self.seq_id_1  = data_array[4]
         
-<<<<<<< HEAD
-        self.residue_2 = int(data_array[5])
-        self.comp_id_2 = data_array[6]
-        self.atom_id_2 = data_array[7]
-        self.seq_id_2  = data_array[8]
-=======
         if data_array[5] != ".":
             self.residue_2 = int(data_array[5])
         else:
             self.residue_2 = int(data_array[8])
         self.comp_id_2 = data_array[6]
         self.atom_id_2 = data_array[7]
->>>>>>> master
         
         self.RDC = data_array[9]
         
