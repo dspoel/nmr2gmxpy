@@ -18,6 +18,8 @@ from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
 
 class Dihedral_restraint (Restraint):
     def __init__(self,data_array):
+        if len(data_array) < 15:
+            return
         Restraint.__init__(self, data_array)
         self.id = data_array[0]
         
@@ -56,10 +58,10 @@ class Dihedral_restraint (Restraint):
         #and assigns nuber of hydogens in the ME_group1 and ME_group2
         #for example, ME_group1 = 3 if methyle group, 2 if methylene group and 1 if methine group 
         # for more info see test_atomno.py
-        self.atom_id_1, self.group_1 = Atoms_names_amber.atom_replace(self.atom_id_1, self.comp_id_1)
-        self.atom_id_2, self.group_2 = Atoms_names_amber.atom_replace(self.atom_id_2, self.comp_id_2)
-        self.atom_id_3, self.group_3 = Atoms_names_amber.atom_replace(self.atom_id_3, self.comp_id_3)
-        self.atom_id_4, self.group_4 = Atoms_names_amber.atom_replace(self.atom_id_4, self.comp_id_4)
+        self.atom_id_1, self.group_1 = Atoms_names_amber.atom_replace(self.atom_id_1, self.comp_id_1, self.residue_1)
+        self.atom_id_2, self.group_2 = Atoms_names_amber.atom_replace(self.atom_id_2, self.comp_id_2, self.residue_1)
+        self.atom_id_3, self.group_3 = Atoms_names_amber.atom_replace(self.atom_id_3, self.comp_id_3, self.residue_1)
+        self.atom_id_4, self.group_4 = Atoms_names_amber.atom_replace(self.atom_id_4, self.comp_id_4, self.residue_1)
         
     def write_header_in_file(self, fp):
         fp.write("[ dihedral_restraints ]\n")

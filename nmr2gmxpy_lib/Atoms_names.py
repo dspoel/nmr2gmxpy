@@ -64,9 +64,16 @@ class Atoms_names():
                 break
         if not atom_number:
 #            myatom = ("Chain %s Residue %d Name %s" % ( chain_id, res_nr, atom_name ))
-            raise AtomsNamesError(("Name of an atom in the NMRstar file does not coincide with names of atom in \
-the generated pdb file (there are %d). Make sure that you use a supported force field.\n\n\
-Problem: cannot find the name for chain %s, residue %d, atom %s in the pdb file." % ( len(cls.atoms), chain_id, res_nr, atom_name)))
+            raise AtomsNamesError("""
+Names of atom in the NMRstar file does not coincide with any name of an atom
+in the topology file. Make sure that you use the correct force field.
+Do not forget to use -ignh flag when you generate the .top file with the
+pdb2gmx program. This forces GROMACS to remove and recreate hydrogen atoms.
+In some cases this can lead to problems though, for instance if GROMACS cannot
+guess the correct protonatation. In that case assign the side chain protonation
+state manually.
+
+Problem: cannot find in topology file the name for residue %d atom %s.""" % ( res_nr, atom_name ) )
         return atom_number
     
     # static method

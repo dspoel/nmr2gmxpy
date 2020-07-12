@@ -35,7 +35,11 @@ def compare_topologies(refdir, testdir, verbose):
                         if verbose:
                             print(line)
             if ndiff > 0:
+<<<<<<< HEAD
                 print("There were %d differences between reference file %s and test file" % (ndiff, rf))
+=======
+                print("There were %d differences between reference file %s and test file" % ( ndiff, rf ) )
+>>>>>>> master
                 ndifftot += ndiff
     return ndifftot
 
@@ -76,4 +80,8 @@ test_dir = mycwd + "/tests"
 ref_dir  = mycwd + "/refdata"
 pdbs = get_pdb_list(ref_dir)
 for pdb in pdbs:
+<<<<<<< HEAD
     run_one_test(pdb, test_dir, ref_dir, False)
+=======
+    run_one_test(pdb, test_dir, ref_dir, False, False)
+>>>>>>> master
