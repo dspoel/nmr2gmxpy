@@ -25,9 +25,15 @@ class Atoms_names_amber(Atoms_names):
     
     # static method
     @classmethod 
-    def atom_replace(cls, atom_nm,res_nm):
+    def atom_replace(cls, atom_nm, res_nm, res_nr):
         ME_group = 1
 
+        # N-terminal H: needs debugging.
+        if res_nr == 1 and atom_nm == 'H' and False:
+            if res_nm == 'PRO':
+                ME_group = 2
+            else:
+                ME_group = 3
         if res_nm == 'MET':
             if atom_nm == 'ME':
                 atom_nm = 'HE' 

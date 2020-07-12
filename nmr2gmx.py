@@ -127,7 +127,8 @@ def make_restraint_file(restraint_type, mr_file, verbose):
 
 
 def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
-    
+    if verbose:
+        print("Going to generate %s file" % restraint_type)
     try:
         outf = make_restraint_file(restraint_type, mr_file, verbose)
         if VERBOSE:
