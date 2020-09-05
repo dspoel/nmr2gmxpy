@@ -95,12 +95,15 @@ def which(program):
 
     return None
 
-def find_gmx():
+def find_gmx(fatal=True):
     for mpi in [ "_mpi", "" ]:
         for double in [ "_d", ""]:
             gmx = which("gmx" + mpi + double)
             if gmx:
                 return gmx
+    if fatal:
+        print("Can not find a GROMACS executable. Stopping here.")
+        exit(1)
     return None
 
 #------------------------EXEPTION PRINTING---------------------------------------
@@ -258,12 +261,13 @@ class FileManager():
         # Do nothing
     def addArguments(self, parser):
         parser.add_argument("-n", "--protein", help = "4-symbol protein databank identifier. The files corresponding to this pdb ID will be downloaded.",
-                            type=str, required=True)
+                            type=str)
         parser.add_argument("-s", "--strfile", help = "NMR restraint V2 (STAR) data file\
         with .str file name extension. Usually the name is <protein>_mr.str",
                          type=str)
         parser.add_argument("-q", "--pdbfile", help= "Protein data bank file with .pdb file name extension, corresponding to the NMR star file.",
                          type=str)
+        parser.add_argument("-p", "--topfile", help= "GROMACS topology consistent with the pdb file", type=str)
         FORCE_FIELD = "amber99sb-ildn"
         parser.add_argument("-ff", "--force_field", help="Force field to use. Only AMBER variants will work for now", default=FORCE_FIELD)
         WATER_MODEL = "tip3p"
@@ -279,12 +283,7 @@ class FileManager():
         return self.args
 
     def gromacsCommandLine(self, top_file, gro_file):
-        gmx = find_gmx()
-        if not gmx:
-            print("Can not find a GROMACS executable. Stopping here.")
-            exit(1)
-
-        command_line = gmx + " pdb2gmx" + " -f " + self.args.protein + ".pdb" + " -p " + top_file + " -o " + gro_file + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh -merge all "
+        command_line = find_gmx(True) + " pdb2gmx" + " -f " + self.args.protein + ".pdb" + " -p " + top_file + " -o " + gro_file + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh -merge all "
     
         if not self.args.verbose:
             command_line += " > /dev/null 2>&1"
@@ -345,7 +344,37 @@ class FileManager():
         #------CALL GROMACS-------------------------------------------------
         file_top = self.args.protein + ".top"
         file_pdb = self.args.protein + "_clean.pdb"
-        command_line = self.gromacsCommandLine(file_top, file_pdb)
+        command_line = find_gmx(True) + " pdb2gmx" + " -f " + self.args.protein + ".pdb" + " -p " + file_top + " -o " + file_pdb + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh -merge all "
+    
+        if not self.args.verbose:
+            command_line += " > /dev/null 2>&1"
+
+        try:
+            if self.args.verbose:
+                print("Try to run:\n\t" + command_line)
+                print("============= GROMACS output: ==============================================")
+            errno = os.system(command_line)
+            if errno > 0:
+                raise Exception("ERROR: GROMACS had a problem. Run with -v to get more info.");
+
+            if self.args.verbose:
+                print("============= END of GROMACS output ========================================")
+                print("SUCCESS")
+                
+            log.write("Call for GROMACS:\n");
+            log.write(command_line);
+        except Exception as ex:
+            print(ex)
+        return file_pdb, file_top
+
+    def runGromacs2(self, log, in_pdb):
+        #------CALL GROMACS-------------------------------------------------
+        file_top = in_pdb[:-4] + ".top"
+        file_pdb = in_pdb[:-4] + "_out.pdb"
+        command_line = find_gmx(True) + " pdb2gmx" + " -f " + in_pdb + " -p " + file_top + " -o " + file_pdb + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh -merge all "
+    
+        if not self.args.verbose:
+            command_line += " > /dev/null 2>&1"
         try:
             if self.args.verbose:
                 print("Try to run:\n\t" + command_line)
@@ -387,7 +416,8 @@ if __name__ == "__main__":
         if args.pdbfile or args.strfile:
             print("Ignoring options given for pdbfile or strfile")
         args.strfile, args.pdbfile = manager.downloadAndUnzip(log)
-    elif not (args.pdbfile and args.strfile):
+        clean_pdb, top_file = manager.runGromacs(log)
+    elif not (args.pdbfile and args.strfile and args.topfile):
         print("Usage error, please read the documentation.")
         print(__doc__)
         exit(1)
@@ -395,8 +425,8 @@ if __name__ == "__main__":
         # Check input file names
         check_extension("MR star", args.strfile, "str")
         check_extension("PDB", args.pdbfile, "pdb")
-
-    clean_pdb, top_file = manager.runGromacs(log)
+        clean_pdb = args.pdbfile
+        top_file  = args.topfile
 
     # Reading pdb file to get correct atom names
     Atoms_names_amber.init_atoms_list(clean_pdb)

@@ -21,14 +21,16 @@ class Distance_restraint (Restraint):
             return
         Restraint.__init__(self, data_array)
         self.id = data_array[0]
-        self.seq_id_1 = int(data_array[1])
-        self.atom_id_1 = data_array[2]
-        self.comp_id_1 = data_array[3]
-        self.chain_id_1 = data_array[4]
+        self.atom_id_1 = data_array[3]
+        self.atom_id_2 = data_array[7]
+
+        self.comp_id_1 = data_array[2]
+        self.comp_id_2 = data_array[6]
         
+        self.seq_id_1 = int(data_array[1])
         self.seq_id_2 = int(data_array[5])
-        self.atom_id_2 = data_array[6]
-        self.comp_id_2 = data_array[7]
+
+        self.chain_id_1 = data_array[4]
         self.chain_id_2 = data_array[8]
         # will be changed
         self.group_1 = 0
@@ -89,7 +91,7 @@ class Distance_restraint (Restraint):
                 atom_no2 = Atoms_names_amber.get_atom_number(self.chain_id_2, self.seq_id_2, current_atom2)
                 if atom_no1 and atom_no2:
                     fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
-                            (atom_no1, atom_no2, 1+my_number,
+                            (atom_no1, atom_no2, int(self.id),
                             self.type_average, 
                             self.distance_lower_bound, 
                             self.distance_upper_bound,

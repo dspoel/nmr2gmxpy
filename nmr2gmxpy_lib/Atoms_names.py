@@ -59,7 +59,7 @@ class Atoms_names():
         atom_number = None
         for atom in cls.atoms:
             if ("atom" in atom and "resnr" in atom and "chain_id" in atom and "nr" in atom and
-                (atom["atom"] == atom_name  and atom["resnr"] == res_nr and atom["chain_id"] == chain_id)):
+                (atom["atom"] == atom_name  and atom["resnr"] == res_nr)): # and atom["chain_id"] == chain_id)):
                 atom_number = atom["nr"]
                 break
         if not atom_number:
