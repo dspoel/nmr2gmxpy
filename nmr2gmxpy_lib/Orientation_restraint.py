@@ -60,14 +60,19 @@ class Orientation_restraint (Restraint):
     def write_data_in_file(self, fp, my_number):
         atom_1 = Atoms_names_amber.get_atom_number(self.residue_1, self.atom_id_1)
         atom_2 = Atoms_names_amber.get_atom_number(self.residue_2, self.atom_id_2)
-        alpha = 3 #assign value for alpha
-        const = 6.083 #assign value for constant
-        weight = 1.0 # assign value for weight
-        type_orientation = 1
-        exp = 1
-        fp.write("%6s\t%6s\t%6s\t%6s\t%6s\t%6s\t%6s\t%6s\t%6s\n" %
-                (atom_1, atom_2, type_orientation, exp, my_number+1,
-                alpha, const, self.RDC, weight))
+        if atom_1 and atom_2:
+            alpha = 3 #assign value for alpha
+            const = 6.083 #assign value for constant
+            weight = 1.0 # assign value for weight
+            type_orientation = 1
+            exp = 1
+            fp.write("%6s\t%6s\t%6s\t%6s\t%6s\t%6s\t%6s\t%6s\t%6s\n" %
+                    (atom_1, atom_2, type_orientation, exp, my_number+1,
+                    alpha, const, self.RDC, weight))
+        else:
+            fp.write("; Could not find all atoms for orientation restraint %s-%s - %s-%s\n" %
+                    ( self.residue_1, self.atom_id_1, self.residue_2, self.atom_id_2 ))
+
         
 
 

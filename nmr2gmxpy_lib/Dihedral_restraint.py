@@ -70,10 +70,15 @@ class Dihedral_restraint (Restraint):
         atom_2 = Atoms_names_amber.get_atom_number(self.residue_2, self.atom_id_2)
         atom_3 = Atoms_names_amber.get_atom_number(self.residue_3, self.atom_id_3)
         atom_4 = Atoms_names_amber.get_atom_number(self.residue_4, self.atom_id_4)
-        phi = round(( self.angle_upper_boundary + self.angle_lower_boundary)/2.0, 2)
-        dphi = round((self.angle_upper_boundary - self.angle_lower_boundary)/2.0, 2)
-        fac = 1.0 # assign value for force constant
-        fp.write("%6s\t%6s\t%6s\t%6s\t     1\t%6s\t%6s\t%6s\n" %(atom_1,atom_2,atom_3,atom_4,phi,dphi,self.fac))
+        if atom_1 > 0 and atom_2 > 0 and atom_3 > 0 and atom_4 >0:
+            phi = round(( self.angle_upper_boundary + self.angle_lower_boundary)/2.0, 2)
+            dphi = round((self.angle_upper_boundary - self.angle_lower_boundary)/2.0, 2)
+            fac = 1.0 # assign value for force constant
+            fp.write("%6s\t%6s\t%6s\t%6s\t     1\t%6s\t%6s\t%6s\n" %(atom_1,atom_2,atom_3,atom_4,phi,dphi,self.fac))
+        else:
+            fp.write("; Could not find all atoms for dihedral restraint %s-%s - %s-%s - %s-%s - %s-%s\n" %
+                         ( self.residue_1, self.atom_id_1, self.residue_2, self.atom_id_2,
+                            self.residue_3, self.atom_id_3, self.residue_4, self.atom_id_4) )
 
 
 

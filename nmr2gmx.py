@@ -104,6 +104,8 @@ nstorireout              = 100\n\n")
 def make_restraint_file(restraint_type, mr_file, verbose):
     if restraint_type == "distance":
         res = Distance_restraint_list(mr_file, verbose)
+        # only for distance
+        res.change_units()
     elif restraint_type == "dihedral":
         res = Dihedral_restraint_list(mr_file, verbose)
     elif restraint_type == "orientation":
@@ -111,12 +113,10 @@ def make_restraint_file(restraint_type, mr_file, verbose):
     else:
         print("Error: unknown restraint type.")
         print("Restraint type can be: distance, dihedral or orientation")
-    
+        return
     
     #res.set_verbose(verbose)
     res.replace_atoms_names_and_groups()
-    # only for distance
-    res.change_units()
 #    res.set_type_average(1)
 
     file_out = mr_file[0:-7] + '_' + restraint_type + '.itp'

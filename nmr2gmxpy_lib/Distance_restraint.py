@@ -53,9 +53,9 @@ class Distance_restraint (Restraint):
         self.type_average = value
         
     def replace_atoms_names_and_groups(self):
-        #replacing atom names by using atoms names and residue names 
-        #and assigns nuber of hydogens in the ME_group1 and ME_group2
-        #for example, ME_group1 = 3 if methyle group, 2 if methylene group and 1 if methine group 
+        # Replacing atom names by using atoms names and residue names 
+        # and assigns nuber of hydogens in the ME_group1 and ME_group2
+        # for example, ME_group1 = 3 if methyle group, 2 if methylene group and 1 if methine group 
         # for more info see test_atomno.py
         self.atom_id_1, self.group_1 = Atoms_names_amber.atom_replace(self.atom_id_1, self.comp_id_1, self.seq_id_1)
         self.atom_id_2, self.group_2 = Atoms_names_amber.atom_replace(self.atom_id_2, self.comp_id_2, self.seq_id_1)
@@ -81,17 +81,20 @@ class Distance_restraint (Restraint):
                     current_atom1 = current_atom1 + str(p+1)
                 if self.group_2 == 3 or self.group_2 == 2:
                     current_atom2 = current_atom2 + str(q+1)
-                
                 # For residue number and atom name(current_atom1,current_atom2)
                 # find atom number from 2lv8.top 
                 # and assign it to ai(atom_no1) and aj(atom_no2)
                 atom_no1 = Atoms_names_amber.get_atom_number(self.seq_id_1, current_atom1)
                 atom_no2 = Atoms_names_amber.get_atom_number(self.seq_id_2, current_atom2)
-                
-                fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
-                        (atom_no1, atom_no2, self.id,
-                        self.type_average, 
-                        self.distance_lower_bound, 
-                        self.distance_upper_bound,
-                        self.distance_upper_bound_2,
-                        self.fac))
+                if atom_no1 > 0 and atom_no2 > 0:
+                    fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
+                             (atom_no1, atom_no2, self.id,
+                            self.type_average, 
+                            self.distance_lower_bound, 
+                            self.distance_upper_bound,
+                            self.distance_upper_bound_2,
+                            self.fac))
+                else:
+                    fp.write("; Could not find all atoms for distance restraint %s-%s - %s-%s\n" %
+                         ( self.seq_id_1, current_atom1, self.seq_id_2, current_atom2 ))
+

@@ -42,16 +42,16 @@ class Atoms_names():
             if isinstance(inst, top.GmxTopAtom):
                 cls.atoms.append(inst)
     
-    # statuc function
+    # static function
     @classmethod
-    def get_atom_number(cls, res_nr, atom_name):
+    def get_atom_number(cls, res_nr, atom_name, fatal=False, verbose=True):
         #top_info = []
         atom_number = 0
         for atom in cls.atoms:
             if atom.atom == atom_name  and atom.resnr == res_nr:
                 atom_number =  atom.nr
         if atom_number==0:
-            raise AtomsNamesError("""
+            error_str = ("""
 Names of atom in the NMRstar file does not coincide with any name of an atom
 in the topology file. Make sure that you use the correct force field.
 Do not forget to use -ignh flag when you generate the .top file with the
@@ -59,8 +59,12 @@ pdb2gmx program. This forces GROMACS to remove and recreate hydrogen atoms.
 In some cases this can lead to problems though, for instance if GROMACS cannot
 guess the correct protonatation. In that case assign the side chain protonation
 state manually.
-
-Problem: cannot find in topology file the name for residue %d atom %s.""" % ( res_nr, atom_name ) )
+""")
+            short_str = ("Warning: cannot find the GROMACS name for residue %d atom %s.""" % ( res_nr, atom_name ) )
+            if fatal:
+                raise AtomsNamesError(error_str + short_str)
+            elif verbose:
+                print(short_str)
         return atom_number
     
     # static method
