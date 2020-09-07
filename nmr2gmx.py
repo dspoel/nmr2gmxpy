@@ -32,7 +32,7 @@ In order to work properly, mode 1 needs an active internet connection.
 Both modes need a working GROMACS installation that is at least version 2019.6.
 """
 # System libraries
-import sys, os, ftplib
+import sys, os, ftplib, glob
 import gzip, shutil, argparse
 import linecache, traceback
 
@@ -170,6 +170,8 @@ nstorireout              = 100\n\n")
 def make_restraint_file(restraint_type, mr_file, verbose):
     if restraint_type == "distance":
         res = Distance_restraint_list(mr_file, verbose)
+        # only for distance
+        res.change_units()
     elif restraint_type == "dihedral":
         res = Dihedral_restraint_list(mr_file, verbose)
     elif restraint_type == "orientation":
@@ -177,12 +179,10 @@ def make_restraint_file(restraint_type, mr_file, verbose):
     else:
         print("Error: unknown restraint type " + restraint_type)
         print("Restraint type can be: distance, dihedral or orientation")
-    
+        return
     
     #res.set_verbose(verbose)
     res.replace_atoms_names_and_groups()
-    # only for distance
-    res.change_units()
 #    res.set_type_average(1)
 
     file_out = mr_file[0:-7] + '_' + restraint_type + '.itp'
@@ -267,7 +267,7 @@ class FileManager():
                          type=str)
         parser.add_argument("-q", "--pdbfile", help= "Protein data bank file with .pdb file name extension, corresponding to the NMR star file.",
                          type=str)
-        parser.add_argument("-p", "--topfile", help= "GROMACS topology consistent with the pdb file", type=str)
+#        parser.add_argument("-p", "--topfile", help= "GROMACS topology consistent with the pdb file", type=str)
         FORCE_FIELD = "amber99sb-ildn"
         parser.add_argument("-ff", "--force_field", help="Force field to use. Only AMBER variants will work for now", default=FORCE_FIELD)
         WATER_MODEL = "tip3p"
@@ -283,7 +283,7 @@ class FileManager():
         return self.args
 
     def gromacsCommandLine(self, top_file, gro_file):
-        command_line = find_gmx(True) + " pdb2gmx" + " -f " + self.args.protein + ".pdb" + " -p " + top_file + " -o " + gro_file + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh -merge all "
+        command_line = find_gmx(True) + " pdb2gmx" + " -f " + self.args.protein + ".pdb" + " -p " + top_file + " -o " + gro_file + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh " #-merge all "
     
         if not self.args.verbose:
             command_line += " > /dev/null 2>&1"
@@ -340,32 +340,52 @@ class FileManager():
 
         return file_str, file_pdb
 
-    def runGromacs(self, log):
+    def runGromacs(self, log, clean_pdb=None):
         #------CALL GROMACS-------------------------------------------------
-        file_top = self.args.protein + ".top"
-        file_pdb = self.args.protein + "_clean.pdb"
-        command_line = find_gmx(True) + " pdb2gmx" + " -f " + self.args.protein + ".pdb" + " -p " + file_top + " -o " + file_pdb + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh -merge all "
+        if clean_pdb:
+            file_pdb = clean_pdb
+            in_pdb   = clean_pdb
+        else:
+            file_pdb = self.args.protein + "_clean.pdb"
+            in_pdb   = self.args.protein + ".pdb"
+        file_top = in_pdb[:-3] + "top"
+        file_gro = in_pdb[:-3] + "gro"
+        # First we produce a pdb file without merging the chains. This leaves
+        # the chain labels in the pdb file that are needed to interpret the
+        # NMR files.
+        command_line = find_gmx(True) + " pdb2gmx" + " -f " + in_pdb + " -p " + file_top + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh "
     
-        if not self.args.verbose:
-            command_line += " > /dev/null 2>&1"
-
         try:
-            if self.args.verbose:
-                print("Try to run:\n\t" + command_line)
-                print("============= GROMACS output: ==============================================")
-            errno = os.system(command_line)
-            if errno > 0:
-                raise Exception("ERROR: GROMACS had a problem. Run with -v to get more info.");
+            cmds = [ command_line + " -o " + file_pdb, 
+                     command_line + " -merge all -o " + file_gro ]
+            first = 0
+            if clean_pdb:
+                first = 1
+            for mycmd in range(first,len(cmds)):
+                cmd = cmds[mycmd]
+                if self.args.verbose:
+                    print("Try to run:\n\t" + cmd)
+                    print("============= GROMACS output: ==============================================")
+                else:
+                    cmd += " > /dev/null 2>&1"
+                errno = os.system(cmd)
+                if errno > 0:
+                    raise Exception("ERROR: GROMACS had a problem. Run with -v to get more info.");
 
-            if self.args.verbose:
-                print("============= END of GROMACS output ========================================")
-                print("SUCCESS")
+                if self.args.verbose:
+                    print("============= END of GROMACS output ========================================")
+                    print("SUCCESS")
                 
-            log.write("Call for GROMACS:\n");
-            log.write(command_line);
+                log.write("Call for GROMACS was:\n")
+                log.write("%s\n" % cmd)
+                if mycmd == 0:
+                    rm_file = glob.glob("posre_*_chain*") + glob.glob("%s_*_chain*itp" % file_top[:-4]) + [ file_top, "posre.itp" ]
+                    for rmf in rm_file:
+                        if os.path.exists(rmf):
+                            os.remove(rmf)
         except Exception as ex:
             print(ex)
-        return file_pdb, file_top
+        return file_pdb, file_top, file_gro
 
     def runGromacs2(self, log, in_pdb):
         #------CALL GROMACS-------------------------------------------------
@@ -393,6 +413,12 @@ class FileManager():
             print(ex)
         return file_pdb, file_top
 
+def get_gro_natoms(gro_file):
+    with open(gro_file, "r") as inf:
+        l = inf.readline()
+        w = int(inf.readline().strip())
+        return w
+    
 #================================================================================
 # MAIN
 if __name__ == "__main__":
@@ -416,8 +442,8 @@ if __name__ == "__main__":
         if args.pdbfile or args.strfile:
             print("Ignoring options given for pdbfile or strfile")
         args.strfile, args.pdbfile = manager.downloadAndUnzip(log)
-        clean_pdb, top_file = manager.runGromacs(log)
-    elif not (args.pdbfile and args.strfile and args.topfile):
+        clean_pdb, top_file, gro_file = manager.runGromacs(log)
+    elif not (args.pdbfile and args.strfile):
         print("Usage error, please read the documentation.")
         print(__doc__)
         exit(1)
@@ -425,11 +451,20 @@ if __name__ == "__main__":
         # Check input file names
         check_extension("MR star", args.strfile, "str")
         check_extension("PDB", args.pdbfile, "pdb")
-        clean_pdb = args.pdbfile
-        top_file  = args.topfile
+        clean_pdb, top_file, gro_file = manager.runGromacs(log, args.pdbfile)
 
     # Reading pdb file to get correct atom names
-    Atoms_names_amber.init_atoms_list(clean_pdb)
+    natoms = Atoms_names_amber.init_atoms_list(clean_pdb)
+    print("There are %d atoms in %s" % ( natoms, clean_pdb ) )
+    # Check that the number of atoms matches the gro file. This may
+    # seem excessive but can be a problem in case of intermolecular
+    # SS bond.
+    natom_gro = get_gro_natoms(gro_file)
+    if natoms != natom_gro:
+        print("Your system likely has intermolecular disulfide bridges")
+        print("or other covalent links between chains. Sorry but this")
+        print("script can not handle this.")
+        exit(1)
 
     if args.verbose:
         print("\n~~~~~~DISTANCE RESTRAINTS~~~~~~~")
@@ -460,7 +495,5 @@ if __name__ == "__main__":
     if include_file and mdp_file:
         include_in_topfile(top_file, include_file)
         write_orientation_restraints_in_md_file(mdp_file)
-
-
-
-
+    if not args.verbose:
+        os.remove(clean_pdb)

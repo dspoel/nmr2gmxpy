@@ -14,14 +14,13 @@
 
 
 """
-For some residues in NMR filec change arom number to number-1 for gromacs
-except ~line 89
+For some residues in NMR file, change the atom names to the Amber FF.
 """
 
 from nmr2gmxpy_lib.Atoms_names import Atoms_names
 
 class Atoms_names_amber(Atoms_names):
-    force_filed = "AMBER"
+    force_field = "AMBER"
     
     # static method
     @classmethod 
@@ -77,7 +76,7 @@ class Atoms_names_amber(Atoms_names):
                 atom_nm = 'HB2'
 
 #checked
-        if res_nm == "HIS": # cahnge name to 'HID' like in amber.ff !
+        if res_nm == "HIS": # change name to 'HID' like in amber.ff !
             if atom_nm == 'HB2':
                 atom_nm = 'HB1'
             if atom_nm == 'HB3':
@@ -94,7 +93,6 @@ class Atoms_names_amber(Atoms_names):
 # SHOULD BE OTHER WAY AROUND?
 #            if atom_nm == 'HD1':
 #                atom_nm = 'HD2'
-
 
         if res_nm == 'ARG':
             if atom_nm == 'QH1':
@@ -177,7 +175,16 @@ class Atoms_names_amber(Atoms_names):
                 atom_nm = 'HA1'
             if atom_nm == 'HA3':
                 atom_nm = 'HA2'
-
+#DNA/RNA, checked
+        if res_nm == 'G' or res_nm == "A" or res_nm == "U" or res_nm == "C":
+            if atom_nm == "HO2'":
+                atom_nm = "HO'2"
+            elif atom_nm == "H5'":
+                atom_nm = "H5'1"
+            elif atom_nm == "H5''":
+                atom_nm = "H5'2"
+            elif atom_nm == "H2'":
+                atom_nm = "H2'1"
     
         return atom_nm,ME_group
 

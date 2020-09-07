@@ -13,7 +13,7 @@
 #   limitations under the License.
 
 from nmr2gmxpy_lib.Restraint import Restraint
-from pynmrstar import pynmrstar
+import pynmrstar
 import os
 import numpy as np
 

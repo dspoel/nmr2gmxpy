@@ -25,7 +25,6 @@ class AtomsNamesError(Exception):
     def __init__(self, msg=None):
         pass
 
-
 # static class
 class Atoms_names():
     # static
@@ -45,26 +44,28 @@ class Atoms_names():
                         atom = { "nr": int(line[6:11]),
                                  "atom": atomnm,
                                  "resnm": line[17:20].strip(),
-                                 "chain_id": line[21:22].strip(),
-                                 "resnr": int(line[23:26]) }
+                                 "chain_id": line[21:22],
+                                 "resnr": int(line[22:26]) }
                         cls.atoms.append(atom)
-            print("There are %d atoms in the translation table" % len(cls.atoms))
         except FileNotFoundError:
             print("Cannot open %s" % pdbfile_name)
             exit(1)
+        return len(cls.atoms)
 
     # static function
     @classmethod
-    def get_atom_number(cls, chain_id, res_nr, atom_name):
-        atom_number = None
+    def get_atom_number(cls, chain_id, res_nr, atom_name, fatal=False, verbose=True):
+        atom_number = 0
         for atom in cls.atoms:
             if ("atom" in atom and "resnr" in atom and "chain_id" in atom and "nr" in atom and
-                (atom["atom"] == atom_name  and atom["resnr"] == res_nr)): # and atom["chain_id"] == chain_id)):
+                (atom["atom"] == atom_name  and atom["resnr"] == res_nr and
+                (atom["chain_id"] == chain_id or atom["chain_id"] == ' ' or chain_id == '.'))):
+                # Note the atom["chain_id"] == ' ' is a workaround for gromacs messing
+                # up pdb files.
                 atom_number = atom["nr"]
                 break
-        if not atom_number:
-#            myatom = ("Chain %s Residue %d Name %s" % ( chain_id, res_nr, atom_name ))
-            raise AtomsNamesError("""
+        if atom_number == 0:
+            error_str = ("""
 Names of atom in the NMRstar file does not coincide with any name of an atom
 in the topology file. Make sure that you use the correct force field.
 Do not forget to use -ignh flag when you generate the .top file with the
@@ -72,8 +73,12 @@ pdb2gmx program. This forces GROMACS to remove and recreate hydrogen atoms.
 In some cases this can lead to problems though, for instance if GROMACS cannot
 guess the correct protonatation. In that case assign the side chain protonation
 state manually.
-
-Problem: cannot find in topology file the name for residue %d atom %s.""" % ( res_nr, atom_name ) )
+""")
+            short_str = ("Warning: cannot find the GROMACS name for chain %s residue %d atom %s.""" % ( chain_id, res_nr, atom_name ) )
+            if fatal:
+                raise AtomsNamesError(error_str + short_str)
+            elif verbose:
+                print(short_str)
         return atom_number
     
     # static method

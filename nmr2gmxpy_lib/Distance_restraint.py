@@ -20,18 +20,15 @@ class Distance_restraint (Restraint):
         if len(data_array) < 9:
             return
         Restraint.__init__(self, data_array)
-        self.id = data_array[0]
-        self.atom_id_1 = data_array[3]
-        self.atom_id_2 = data_array[7]
-
-        self.comp_id_1 = data_array[2]
-        self.comp_id_2 = data_array[6]
-        
-        self.seq_id_1 = int(data_array[1])
-        self.seq_id_2 = int(data_array[5])
-
-        self.chain_id_1 = data_array[4]
-        self.chain_id_2 = data_array[8]
+        self.id         = data_array[0]
+        self.resnr_1   = int(data_array[1])
+        self.resname_1  = data_array[2]
+        self.atomname_1  = data_array[3]
+        self.chain_1 = data_array[4]
+        self.resnr_2   = int(data_array[5])
+        self.resname_2  = data_array[6]
+        self.atomname_2  = data_array[7]
+        self.chain_2 = data_array[8]
         # will be changed
         self.group_1 = 0
         self.group_2 = 0
@@ -55,12 +52,12 @@ class Distance_restraint (Restraint):
         self.type_average = value
         
     def replace_atoms_names_and_groups(self):
-        #replacing atom names by using atoms names and residue names 
-        #and assigns nuber of hydogens in the ME_group1 and ME_group2
-        #for example, ME_group1 = 3 if methyle group, 2 if methylene group and 1 if methine group 
+        # Replacing atom names by using atoms names and residue names 
+        # and assigns nuber of hydogens in the ME_group1 and ME_group2
+        # for example, ME_group1 = 3 if methyle group, 2 if methylene group and 1 if methine group 
         # for more info see test_atomno.py
-        self.atom_id_1, self.group_1 = Atoms_names_amber.atom_replace(self.atom_id_1, self.comp_id_1, self.seq_id_1)
-        self.atom_id_2, self.group_2 = Atoms_names_amber.atom_replace(self.atom_id_2, self.comp_id_2, self.seq_id_1)
+        self.atomname_1, self.group_1 = Atoms_names_amber.atom_replace(self.atomname_1, self.resname_1, self.resnr_1)
+        self.atomname_2, self.group_2 = Atoms_names_amber.atom_replace(self.atomname_2, self.resname_2, self.resnr_1)
         pass
     
     def change_units(self):
@@ -77,19 +74,19 @@ class Distance_restraint (Restraint):
     def write_data_in_file(self, fp, my_number):
         for p in range(self.group_1):
             for q in range(self.group_2):
-                current_atom1 = self.atom_id_1
-                current_atom2 = self.atom_id_2
+                current_atom1 = self.atomname_1
+                current_atom2 = self.atomname_2
+                #print("Atom 1 %s 2 %s" % ( current_atom1, current_atom2 ))
                 if self.group_1 == 3 or self.group_1 == 2:
                     current_atom1 = current_atom1 + str(p+1)
                 if self.group_2 == 3 or self.group_2 == 2:
                     current_atom2 = current_atom2 + str(q+1)
-                
                 # For residue number and atom name(current_atom1,current_atom2)
                 # find atom number from 2lv8.top 
                 # and assign it to ai(atom_no1) and aj(atom_no2)
-                atom_no1 = Atoms_names_amber.get_atom_number(self.chain_id_1, self.seq_id_1, current_atom1)
-                atom_no2 = Atoms_names_amber.get_atom_number(self.chain_id_2, self.seq_id_2, current_atom2)
-                if atom_no1 and atom_no2:
+                atom_no1 = Atoms_names_amber.get_atom_number(self.chain_1, self.resnr_1, current_atom1)
+                atom_no2 = Atoms_names_amber.get_atom_number(self.chain_2, self.resnr_2, current_atom2)
+                if atom_no1 > 0 and atom_no2 > 0:
                     fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
                             (atom_no1, atom_no2, int(self.id),
                             self.type_average, 
@@ -97,3 +94,7 @@ class Distance_restraint (Restraint):
                             self.distance_upper_bound,
                             self.distance_upper_bound_2,
                             self.fac))
+                else:
+                    fp.write("; Could not find all atoms for distance restraint %s-%s - %s-%s\n" %
+                         ( self.resnr_1, current_atom1, self.resnr_2, current_atom2 ))
+
