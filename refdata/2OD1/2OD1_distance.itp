@@ -1379,8 +1379,8 @@
    623	   627	     1	   558	     1	  0.18	  0.55	  0.65	   1.0
    627	   622	     1	   559	     1	  0.18	  0.35	  0.45	   1.0
    623	   627	     1	   559	     1	  0.18	  0.35	  0.45	   1.0
-; Could not find all atoms for distance restraint 658-H - 658-HB1
-; Could not find all atoms for distance restraint 658-H - 658-HB2
+; Could not find all atoms for distance restraint A-ASP658-H A-ASP658-HB1
+; Could not find all atoms for distance restraint A-ASP658-H A-ASP658-HB2
     53	    40	     1	   561	     1	  0.18	  0.27	  0.37	   1.0
     53	    42	     1	   562	     1	  0.18	  0.55	  0.65	   1.0
     53	    43	     1	   562	     1	  0.18	  0.55	  0.65	   1.0

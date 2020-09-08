@@ -14597,8 +14597,8 @@
   3872	  3815	     1	  5071	     1	  0.18	  0.45	  0.55	   1.0
   3873	  3815	     1	  5071	     1	  0.18	  0.45	  0.55	   1.0
   3874	  3815	     1	  5071	     1	  0.18	  0.45	  0.55	   1.0
-; Could not find all atoms for distance restraint 134-HD1 - 134-HB1
-; Could not find all atoms for distance restraint 134-HB2 - 134-HD1
+; Could not find all atoms for distance restraint D-HIS134-HD1 D-HIS134-HB1
+; Could not find all atoms for distance restraint D-HIS134-HB2 D-HIS134-HD1
   3909	  3900	     1	  5073	     1	  0.18	  0.43	  0.53	   1.0
   3901	  3909	     1	  5073	     1	  0.18	  0.43	  0.53	   1.0
    141	   574	     1	  5074	     1	  0.18	  0.47	  0.57	   1.0
@@ -15282,8 +15282,8 @@
   1879	  1822	     1	  5209	     1	  0.18	  0.45	  0.55	   1.0
   1880	  1822	     1	  5209	     1	  0.18	  0.45	  0.55	   1.0
   1881	  1822	     1	  5209	     1	  0.18	  0.45	  0.55	   1.0
-; Could not find all atoms for distance restraint 134-HD1 - 134-HB1
-; Could not find all atoms for distance restraint 134-HB2 - 134-HD1
+; Could not find all atoms for distance restraint B-HIS134-HD1 B-HIS134-HB1
+; Could not find all atoms for distance restraint B-HIS134-HB2 B-HIS134-HD1
   1916	  1907	     1	  5211	     1	  0.18	  0.43	  0.53	   1.0
   1908	  1916	     1	  5211	     1	  0.18	  0.43	  0.53	   1.0
   2134	  2567	     1	  5212	     1	  0.18	  0.47	  0.57	   1.0

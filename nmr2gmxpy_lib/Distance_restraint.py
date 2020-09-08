@@ -13,31 +13,28 @@
 #   limitations under the License.
 
 from nmr2gmxpy_lib.Restraint import Restraint
+from nmr2gmxpy_lib.AtomDefinition import AtomDefinition, NMRStarNelements
 from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
 
 class Distance_restraint (Restraint):
-    def __init__(self,data_array):
-        if len(data_array) < 9:
+    def __init__(self,data):
+        if len(data) < 9:
             return
-        Restraint.__init__(self, data_array)
-        self.id         = data_array[0]
-        self.resnr_1   = int(data_array[1])
-        self.resname_1  = data_array[2]
-        self.atomname_1  = data_array[3]
-        self.chain_1 = data_array[4]
-        self.resnr_2   = int(data_array[5])
-        self.resname_2  = data_array[6]
-        self.atomname_2  = data_array[7]
-        self.chain_2 = data_array[8]
-        # will be changed
-        self.group_1 = 0
-        self.group_2 = 0
+        Restraint.__init__(self)
+        self.id = data[0]
+        index   = 1
+        nelem = NMRStarNelements()
+        for i in range(2):
+            self.atoms.append(AtomDefinition.fromList(data[index:index+nelem]))
+            index += nelem
         
-        self.distance_lower_bound = data_array[9]
+        self.distance_lower_bound = data[index]
+        index += 1
         # if lower bound is not set in file then set to 0.0
-        if(data_array[9]=='.'):
+        if (self.distance_lower_bound == '.'):
             self.distance_lower_bound = 0.0
-        self.distance_upper_bound = data_array[10]
+        self.distance_upper_bound = data[index]
+        index += 1
         # will be changed
         self.distance_upper_bound_2 = 0.0
         
@@ -51,19 +48,16 @@ class Distance_restraint (Restraint):
     def set_type_average(self, value):
         self.type_average = value
         
-    def replace_atoms_names_and_groups(self):
+#    def replace_atoms_names_and_groups(self):
         # Replacing atom names by using atoms names and residue names 
         # and assigns nuber of hydogens in the ME_group1 and ME_group2
-        # for example, ME_group1 = 3 if methyle group, 2 if methylene group and 1 if methine group 
-        # for more info see test_atomno.py
-        self.atomname_1, self.group_1 = Atoms_names_amber.atom_replace(self.atomname_1, self.resname_1, self.resnr_1)
-        self.atomname_2, self.group_2 = Atoms_names_amber.atom_replace(self.atomname_2, self.resname_2, self.resnr_1)
-        pass
+        # for example, ME_group1 = 3 if methyl group, 2 if methylene group and 1 if methine group
+ #       self.atoms[0].atom_name, self.group_1 = Atoms_names_amber.atom_replace(self.atoms[0])
+ #       self.atoms[1].atom_name, self.group_2 = Atoms_names_amber.atom_replace(self.atoms[1])
     
     def change_units(self):
     # Change distances angstrom to nanometer
         self.distance_lower_bound = round(float(self.distance_lower_bound) * 0.10, 2)
-        
         self.distance_upper_bound = round(float(self.distance_upper_bound) * 0.10, 2)
         self.distance_upper_bound_2 = round(float(self.distance_upper_bound) + 0.1, 2)
     
@@ -72,21 +66,23 @@ class Distance_restraint (Restraint):
         fp.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
 
     def write_data_in_file(self, fp, my_number):
-        for p in range(self.group_1):
-            for q in range(self.group_2):
-                current_atom1 = self.atomname_1
-                current_atom2 = self.atomname_2
-                #print("Atom 1 %s 2 %s" % ( current_atom1, current_atom2 ))
-                if self.group_1 == 3 or self.group_1 == 2:
-                    current_atom1 = current_atom1 + str(p+1)
-                if self.group_2 == 3 or self.group_2 == 2:
-                    current_atom2 = current_atom2 + str(q+1)
-                # For residue number and atom name(current_atom1,current_atom2)
-                # find atom number from 2lv8.top 
-                # and assign it to ai(atom_no1) and aj(atom_no2)
-                atom_no1 = Atoms_names_amber.get_atom_number(self.chain_1, self.resnr_1, current_atom1)
-                atom_no2 = Atoms_names_amber.get_atom_number(self.chain_2, self.resnr_2, current_atom2)
-                if atom_no1 > 0 and atom_no2 > 0:
+        orig_atoms = []
+        for i in range(len(self.atoms)):
+            orig_atoms.append(self.atoms[i].atom_name)
+
+        for p in range(self.atoms[0].group):
+            if self.atoms[0].group > 1:
+                self.atoms[0].setName(orig_atoms[0] + str(p+1))
+            for q in range(self.atoms[1].group):
+                if self.atoms[1].group > 1:
+                    self.atoms[1].setName(orig_atoms[1] + str(q+1))
+                # For residue number and atom name(orig_atom1,orig_atom2)
+                # find atom number from 2lv8.top and assign it to ai(atom_no1) and aj(atom_no2)
+                for i in range(2):
+                    self.atoms[i].setAtomId(Atoms_names_amber.get_atom_number(self.atoms[i]))
+                atom_no1 = self.atoms[0].atomId()
+                atom_no2 = self.atoms[1].atomId()
+                if atom_no1 and atom_no2:
                     fp.write("%6s\t%6s\t     1\t%6d\t%6d\t%6s\t%6s\t%6s\t%6s\n"%
                             (atom_no1, atom_no2, int(self.id),
                             self.type_average, 
@@ -95,6 +91,8 @@ class Distance_restraint (Restraint):
                             self.distance_upper_bound_2,
                             self.fac))
                 else:
-                    fp.write("; Could not find all atoms for distance restraint %s-%s - %s-%s\n" %
-                         ( self.resnr_1, current_atom1, self.resnr_2, current_atom2 ))
+                    fp.write("; Could not find all atoms for distance restraint %s %s\n" %
+                         ( self.atoms[0].string(), self.atoms[1].string() ))
+            for i in range(len(self.atoms)):
+                self.atoms[i].setName(orig_atoms[i])
 

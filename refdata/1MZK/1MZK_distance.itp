@@ -1981,7 +1981,7 @@
    717	   710	     1	   597	     1	  0.18	   0.5	   0.6	   1.0
    721	   709	     1	   598	     1	  0.18	   0.5	   0.6	   1.0
    721	   710	     1	   598	     1	  0.18	   0.5	   0.6	   1.0
-; Could not find all atoms for distance restraint 225-HA - 229-HD1
+; Could not find all atoms for distance restraint A-VAL225-HA A-HIS229-HD1
    773	   719	     1	   600	     1	  0.18	   0.5	   0.6	   1.0
    790	   807	     1	   601	     1	  0.18	   0.5	   0.6	   1.0
    808	   790	     1	   601	     1	  0.18	   0.5	   0.6	   1.0
@@ -1989,9 +1989,9 @@
    817	   807	     1	   602	     1	  0.18	   0.5	   0.6	   1.0
    817	   808	     1	   602	     1	  0.18	   0.5	   0.6	   1.0
    817	   721	     1	   602	     1	  0.18	   0.5	   0.6	   1.0
-; Could not find all atoms for distance restraint 225-HG11 - 229-HD1
-; Could not find all atoms for distance restraint 225-HG12 - 229-HD1
-; Could not find all atoms for distance restraint 225-HG13 - 229-HD1
+; Could not find all atoms for distance restraint A-VAL225-HG11 A-HIS229-HD1
+; Could not find all atoms for distance restraint A-VAL225-HG12 A-HIS229-HD1
+; Could not find all atoms for distance restraint A-VAL225-HG13 A-HIS229-HD1
    723	   777	     1	   604	     1	  0.18	   0.5	   0.6	   1.0
    724	   777	     1	   604	     1	  0.18	   0.5	   0.6	   1.0
    725	   777	     1	   604	     1	  0.18	   0.5	   0.6	   1.0

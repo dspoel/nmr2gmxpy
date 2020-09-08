@@ -50,23 +50,30 @@ def run_one_test(pdbname, test_dir, ref_dir, verbose):
     error_msg = ("Could not download and/or process data for %s" % pdbname)
     try:
         os.chdir(tmpdir)
-        os.system("%s/nmr2gmx.py -n %s" % (mycwd, pdbname))
+        command = ("%s/nmr2gmx.py -n %s" % (mycwd, pdbname))
+        if verbose:
+            command += " -v"
+        return_value = os.WEXITSTATUS(os.system(command))
         os.chdir(mycwd)
     except:
         print(error_msg)
         return
     if os.path.exists(tmpdir):
-        myrefdir = ref_dir + "/" + pdb
-        ndiff    = compare_topologies(myrefdir, tmpdir, verbose)
-        os.chdir(tmpdir)
-        gromacs_ok = run_gromacs(pdb)
-        os.chdir(mycwd)
-        if ndiff == 0 and gromacs_ok:
+        ndiff      = 0
+        gromacs_ok = True
+        if return_value == 0:
+            myrefdir = ref_dir + "/" + pdbname
+            ndiff    = compare_topologies(myrefdir, tmpdir, verbose)
+            os.chdir(tmpdir)
+            gromacs_ok = run_gromacs(pdbname)
+            os.chdir(mycwd)
+        if return_value == 0 and ndiff == 0 and gromacs_ok:
             print("%s - Passed" % pdbname)
             shutil.rmtree(tmpdir)
         else:
-            print("%s - %d file errors, gromacs: %r" % ( pdbname, ndiff, gromacs_ok  ) )
-            exit(1)
+            print("%s - Failed. %d file errors, gromacs: %r" % ( pdbname, ndiff, gromacs_ok  ) )
+            print("Check output in %s" % tmpdir)
+            
     else:
         print(error_msg)
 
@@ -77,3 +84,4 @@ ref_dir  = mycwd + "/refdata"
 pdbs = get_pdb_list(ref_dir)
 for pdb in pdbs:
     run_one_test(pdb, test_dir, ref_dir, False)
+#run_one_test("2KYB", test_dir, ref_dir, False)

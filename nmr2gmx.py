@@ -47,8 +47,8 @@ from nmr2gmxpy_lib.Orientation_restraint_list import Orientation_restraint_list
 from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
 
 # Low-level routines
-def unzip(file_in, file_out, VERBOSE):
-    if VERBOSE:
+def unzip(file_in, file_out, verbose):
+    if verbose:
         print("Try to unzip %s"%file_in)
     try:
         with gzip.open(file_in, 'rb') as f_in:
@@ -58,13 +58,13 @@ def unzip(file_in, file_out, VERBOSE):
         print(ex)
         exit(1)
 
-def download(ftp, folder_name, file_in, file_out, VERBOSE, protein):
+def download(ftp, folder_name, file_in, file_out, verbose, protein):
     # /pub/pdb/data/structures/divided/nmr_restraints_v2/<2 middle character, i.e for 2l8s - l8>
-    if VERBOSE:
+    if verbose:
         print("Try to download %s"%file_in)
     try:
         message = ftp.cwd(folder_name)
-        if VERBOSE:
+        if verbose:
             print(message)
         ftp.retrbinary("RETR " + file_in ,open(file_out, 'wb').write)
     except ftplib.error_perm as ex:
@@ -73,7 +73,7 @@ def download(ftp, folder_name, file_in, file_out, VERBOSE, protein):
             os.remove(file_out)
         except:
             pass
-
+        sys.exit(1)
     except Exception as ex:
         print("ERROR:")
         print(ex)
@@ -169,27 +169,28 @@ nstorireout              = 100\n\n")
 
 def make_restraint_file(restraint_type, mr_file, verbose):
     if restraint_type == "distance":
-        res = Distance_restraint_list(mr_file, verbose)
-        # only for distance
-        res.change_units()
+        res = Distance_restraint_list(verbose)
     elif restraint_type == "dihedral":
-        res = Dihedral_restraint_list(mr_file, verbose)
+        res = Dihedral_restraint_list(verbose)
     elif restraint_type == "orientation":
-        res = Orientation_restraint_list(mr_file, verbose)
+        res = Orientation_restraint_list(verbose)
     else:
         print("Error: unknown restraint type " + restraint_type)
         print("Restraint type can be: distance, dihedral or orientation")
-        return
-    
-    #res.set_verbose(verbose)
-    res.replace_atoms_names_and_groups()
-#    res.set_type_average(1)
+        return None
 
-    file_out = mr_file[0:-7] + '_' + restraint_type + '.itp'
-    fp = open(file_out, 'w')
-    res.write_header_in_file(fp)
-    res.write_data_in_file(fp)
-    return file_out
+    res.read_file(mr_file)
+    if res.number_of_restraints() > 0:
+        res.change_units()
+        res.replace_atoms_names_and_groups()
+
+        file_out = mr_file[0:-7] + '_' + restraint_type + '.itp'
+        fp = open(file_out, 'w')
+        res.write_header_in_file(fp)
+        res.write_data_in_file(fp)
+        return file_out
+    else:
+        return None
 
 
 def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
@@ -197,7 +198,7 @@ def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
         print("restraint_type %s mr_file %s" % ( restraint_type, mr_file ))
     try:
         outf = make_restraint_file(restraint_type, mr_file, verbose)
-        if verbose:
+        if outf and verbose:
             print("SUCCESS: %s restraints were generated in file '%s'." % (restraint_type,outf))
         return outf;
     except FormatError as ex:
@@ -206,10 +207,12 @@ def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
             print(ex)
             print("NO %s restraint file was generated." % restraint_type)
         
-        if(debug):
+        if (debug):
             printException(debug)
+        sys.exit(1)
     except Exception as ex:
         printException(debug)
+        sys.exit(1)
 
 def include_in_topfile(top_file, include_file):
     insert = '#include "' + os.path.basename(include_file) + '"'
@@ -385,6 +388,7 @@ class FileManager():
                             os.remove(rmf)
         except Exception as ex:
             print(ex)
+            sys.exit(1)
         return file_pdb, file_top, file_gro
 
     def runGromacs2(self, log, in_pdb):
@@ -411,6 +415,7 @@ class FileManager():
             log.write(command_line);
         except Exception as ex:
             print(ex)
+            sys.exit(1)
         return file_pdb, file_top
 
 def get_gro_natoms(gro_file):
@@ -419,7 +424,7 @@ def get_gro_natoms(gro_file):
         w = int(inf.readline().strip())
         return w
     
-#================================================================================
+#========================================
 # MAIN
 if __name__ == "__main__":
     parser  = My_argument_parser(description=__doc__,
@@ -429,7 +434,7 @@ if __name__ == "__main__":
         log = open(logfile, "w")
     except Exception as e:
         print("Could not open log file %s. Error message %s" % ( logfile, e.message ) )
-        exit(1)
+        sys.exit(1)
         
     log.write(datetime.now().strftime("On %d %B %Y at %H:%M:%S"))
     log.write("\n-----------------------------\n")
@@ -438,7 +443,8 @@ if __name__ == "__main__":
     args    = manager.parseArguments(parser)
     # Check for correct options
     if args.protein:
-        print("Will try to download pdb ID %s" % args.protein)
+        if args.verbose:
+            print("Will try to download pdb ID %s" % args.protein)
         if args.pdbfile or args.strfile:
             print("Ignoring options given for pdbfile or strfile")
         args.strfile, args.pdbfile = manager.downloadAndUnzip(log)
@@ -455,7 +461,8 @@ if __name__ == "__main__":
 
     # Reading pdb file to get correct atom names
     natoms = Atoms_names_amber.init_atoms_list(clean_pdb)
-    print("There are %d atoms in %s" % ( natoms, clean_pdb ) )
+    if args.verbose:
+        print("There are %d atoms in %s" % ( natoms, clean_pdb ) )
     # Check that the number of atoms matches the gro file. This may
     # seem excessive but can be a problem in case of intermolecular
     # SS bond.

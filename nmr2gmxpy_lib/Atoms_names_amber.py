@@ -18,15 +18,19 @@ For some residues in NMR file, change the atom names to the Amber FF.
 """
 
 from nmr2gmxpy_lib.Atoms_names import Atoms_names
+from nmr2gmxpy_lib.AtomDefinition import AtomDefinition
 
 class Atoms_names_amber(Atoms_names):
     force_field = "AMBER"
     
     # static method
     @classmethod 
-    def atom_replace(cls, atom_nm, res_nm, res_nr):
+    def atom_replace(cls, atom_def):
         ME_group = 1
 
+        atom_nm = atom_def.atom_name
+        res_nm  = atom_def.res_name
+        res_nr  = atom_def.res_id
         # N-terminal H: needs debugging.
         if res_nr == 1 and atom_nm == 'H' and False:
             if res_nm == 'PRO':
@@ -176,7 +180,7 @@ class Atoms_names_amber(Atoms_names):
             if atom_nm == 'HA3':
                 atom_nm = 'HA2'
 #DNA/RNA, checked
-        if res_nm == 'G' or res_nm == "A" or res_nm == "U" or res_nm == "C":
+        if res_nm == 'G' or res_nm == "A" or res_nm == "U" or res_nm == "C" or res_nm == 'DG' or res_nm == "DA" or res_nm == "DT" or res_nm == "DC":
             if atom_nm == "HO2'":
                 atom_nm = "HO'2"
             elif atom_nm == "H5'":

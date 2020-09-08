@@ -12,34 +12,21 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+from nmr2gmxpy_lib.AtomDefinition import NMRStarNames
 from nmr2gmxpy_lib.Restraint_list import Restraint_list
 from nmr2gmxpy_lib.Distance_restraint import Distance_restraint
 
 class Distance_restraint_list(Restraint_list):
 
-    def __init__(self, mr_file, verbose=False):
-        Restraint_list.__init__(self,mr_file, verbose)
-        # 1 - for time and ensemble average and
-        # 2 - for no time and ensemble average
-        self.type_average = 1
-    
     def create_data_array_from_pynmrstar_entry(self, entry):
-        # print output if verbose
-        super().create_data_array_from_pynmrstar_entry(entry)
-        
         result_sets = []
-        for loop in entry.get_loops_by_category("_Gen_dist_constraint") :
-            result_sets.append(loop.get_tag(['ID',
-                                            'PDB_residue_no_1','Comp_ID_1','Atom_ID_1', 'PDB_strand_ID_1',
-                                            'PDB_residue_no_2','Comp_ID_2','Atom_ID_2', 'PDB_strand_ID_2',
-                                            'Distance_lower_bound_val','Distance_upper_bound_val']))
+        for loop in entry.get_loops_by_category("_Gen_dist_constraint"):
+            mylist = [ 'ID' ] + NMRStarNames(1) + NMRStarNames(2) + ['Distance_lower_bound_val','Distance_upper_bound_val']
+            result_sets.append(loop.get_tag(mylist))
 
         return result_sets
     
     def init_list(self, data_array):
-        # print output if verbose
-        super().init_list(data_array)
-        
         self.restraints = [];
         total = data_array.shape[0]
         for i in range(total):
@@ -54,7 +41,6 @@ class Distance_restraint_list(Restraint_list):
         if self.verbose:
             print("Change units from angstrom to nanometers...")
         super().change_units()
-
         
         for element in self.restraints:
             if element.distance_upper_bound == '.' and element.distance_lower_bound == '.':

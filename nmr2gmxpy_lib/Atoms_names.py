@@ -1,4 +1,5 @@
 #   Copyright 2020 Anna Sinelnikova
+#   Copyright 2020 Anna Sinelnikova
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -18,8 +19,7 @@
 # function 'atom_replace', where you replace atoms nmr names tp force filed
 # atom names.
 
-import numpy as np
-from random import randint
+from nmr2gmxpy_lib.AtomDefinition import AtomDefinition
 
 class AtomsNamesError(Exception):
     def __init__(self, msg=None):
@@ -40,13 +40,14 @@ class Atoms_names():
                         atomnm = line[12:16].strip()
                         # Some hacking required: if atomname starts with a number, we move it to the end.
                         if atomnm[0] in [ "1", "2", "3" ]:
+                            print("renaming atom %s" % atonnm)
                             atomnm = atomnm[1:] + atomnm[0]
-                        atom = { "nr": int(line[6:11]),
-                                 "atom": atomnm,
-                                 "resnm": line[17:20].strip(),
-                                 "chain_id": line[21:22],
-                                 "resnr": int(line[22:26]) }
-                        cls.atoms.append(atom)
+                        AD = AtomDefinition(line[22:26],
+                                            line[17:20].strip(),
+                                            atomnm,
+                                            line[21:22])
+                        AD.setAtomId(int(line[6:11]))
+                        cls.atoms.append(AD)
         except FileNotFoundError:
             print("Cannot open %s" % pdbfile_name)
             exit(1)
@@ -54,15 +55,11 @@ class Atoms_names():
 
     # static function
     @classmethod
-    def get_atom_number(cls, chain_id, res_nr, atom_name, fatal=False, verbose=True):
+    def get_atom_number(cls, atom_def, fatal=False, verbose=False):
         atom_number = 0
         for atom in cls.atoms:
-            if ("atom" in atom and "resnr" in atom and "chain_id" in atom and "nr" in atom and
-                (atom["atom"] == atom_name  and atom["resnr"] == res_nr and
-                (atom["chain_id"] == chain_id or atom["chain_id"] == ' ' or chain_id == '.'))):
-                # Note the atom["chain_id"] == ' ' is a workaround for gromacs messing
-                # up pdb files.
-                atom_number = atom["nr"]
+            if atom == atom_def:
+                atom_number = atom.atom_id
                 break
         if atom_number == 0:
             error_str = ("""
@@ -74,7 +71,7 @@ In some cases this can lead to problems though, for instance if GROMACS cannot
 guess the correct protonatation. In that case assign the side chain protonation
 state manually.
 """)
-            short_str = ("Warning: cannot find the GROMACS name for chain %s residue %d atom %s.""" % ( chain_id, res_nr, atom_name ) )
+            short_str = ("Warning: cannot find the GROMACS name for chain %s residue %s-%d atom %s.""" % ( atom_def.chain_id, atom_def.res_name, atom_def.res_id, atom_def.atom_name ) )
             if fatal:
                 raise AtomsNamesError(error_str + short_str)
             elif verbose:
