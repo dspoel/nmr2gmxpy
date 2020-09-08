@@ -8,8 +8,8 @@ and converts it into GROMACS format.
 ## What is in the box:
 1. The script nmr2gmx.py which does all the work,
 2. Library routines in nmr2gmxpy_lib,
-3. A script to install the software
-4. A script to run tests
+3. A script setup.py to install the software
+4. A script run_tests.py to run tests
 5. Licence file.
 
 ## Installation
