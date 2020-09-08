@@ -41,9 +41,12 @@ It will download all nessesary files (you need an internet connection for this).
 ```
 This can be convenient if you don't have GROMACS installation on the machine or/and no internet connection or if your structure is not (yet) in the protein databank.
 
-In both cases you can skip the verbose flag -v to which allows you to see what is going on running the script. By default (no -v flag is passed) the program does not create any screen output (except errors).
+In both cases you can skip the verbosity flag -v,  which allows you to
+see what is going on when running the script. By default (no -v flag
+is passed) the program does not create any screen output except for
+error messages.
 
-For developers there is a debug flag -d which will provide errors traceback. Use it if you modify the library.
+For developers there is a debug flag -d which will provide some error traceback. Use it if you modify the library.
 
 ## Output
 
@@ -71,7 +74,14 @@ Warning: cannot find the GROMACS name for chain A residue ASP-658 atom H.
 2OD1 - Passed
 <snip>
 ```
-(the warning above is due to a missing atom in the structure). The test set contains proteins, RNA and DNA compounds.
+(the warning above is due to a missing atom in the structure). The
+test set contains proteins, RNA and DNA compounds.
+
+### TODO
+
+Testing should including running a short energy minimization on all
+the generated files and comparing the restraint energies to a
+reference file. 
 
 # Developer info
 
