@@ -55,7 +55,7 @@ class Atoms_names():
 
     # static function
     @classmethod
-    def get_atom_number(cls, atom_def, fatal=False, verbose=False):
+    def get_atom_number(cls, atom_def, fatal=False, verbose=True):
         atom_number = 0
         for atom in cls.atoms:
             if atom == atom_def:
