@@ -95,6 +95,7 @@ def runArgumentParser():
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", "--protein", help = "Run test for 4-symbol protein databank identifier. The files corresponding to this pdb ID will be downloaded. and output compared to pre-existing output.",
                         type=str)
+    parser.add_argument("-l", "--list", help="List the PDB files in the reference data set", action="store_true")
     parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
 
     return parser.parse_args()
@@ -108,7 +109,18 @@ if __name__ == "__main__":
     test_dir = mycwd + "/tests"
     ref_dir  = mycwd + "/refdata"
     pdbs = get_pdb_list(ref_dir)
-    if args.protein and args.protein in pdbs:
+    if args.list:
+        print("The following PDB files are in the reference data set:")
+        string = None
+        for i in range(len(pdbs)):
+            if i % 15 == 0:
+                if string:
+                    print(string)
+                string = ""
+            string += " " + pdbs[i][:-1]
+        if len(string) > 0:
+            print(string)
+    elif args.protein and args.protein in pdbs:
         run_one_test(args.protein, test_dir, ref_dir, args.verbose)
     else:
         for pdb in pdbs:
