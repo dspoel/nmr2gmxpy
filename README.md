@@ -109,6 +109,6 @@ Citations
 A paper about the software is about to be submitted.
 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4019827.svg)](https://doi.org/10.5281/zenodo.4019827)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4019826.svg)](https://doi.org/10.5281/zenodo.4019826)
 
 
