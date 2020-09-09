@@ -12,7 +12,12 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-import pynmrstar, os
+import os
+try:
+    import pynmrstar
+except ImportError:
+    print("pyNMR-STAR is not installed. Giving up.")
+    exit(1)
 from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
 
 class Restraint():

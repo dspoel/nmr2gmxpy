@@ -12,8 +12,13 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+try:
+    import pynmrstar
+except ImportError:
+    print("pyNMR-STAR is not installed. Giving up.")
+    exit(1)
+
 from nmr2gmxpy_lib.Restraint import Restraint
-import pynmrstar
 import os
 import numpy as np
 

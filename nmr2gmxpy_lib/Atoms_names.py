@@ -40,7 +40,7 @@ class Atoms_names():
                         atomnm = line[12:16].strip()
                         # Some hacking required: if atomname starts with a number, we move it to the end.
                         if atomnm[0] in [ "1", "2", "3" ]:
-                            print("renaming atom %s" % atomnm)
+                            # print("renaming atom %s" % atomnm)
                             atomnm = atomnm[1:] + atomnm[0]
                         AD = AtomDefinition(line[22:26],
                                             line[17:20].strip(),
