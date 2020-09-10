@@ -144,7 +144,7 @@ disre-weighting          = Conservative\n\
 ; Use sqrt of the time averaged times the instantaneous violation\n\
 disre-mixed              = no\n\
 disre-fc                 = 1000\n\
-disre-tau                = 0\n\
+disre-tau                = 500\n\
 ; Output frequency for pair distances to energy file\n\
 nstdisreout              = 0\n\n")
 
@@ -159,7 +159,7 @@ def write_orientation_restraints_in_md_file(md_file):
         fp.write("; Orientation restraints: No or Yes\n\
 orire                    = Yes\n\
 ; Orientation restraints force constant and tau for time averaging\n\
-orire-fc                 = 0\n\
+orire-fc                 = 10\n\
 orire-tau                = 0\n\
 orire-fitgrp             = backbone\n\
 ; Output frequency for trace(SD) and S to energy file\n\
