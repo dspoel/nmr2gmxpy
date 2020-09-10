@@ -56,7 +56,12 @@ This can be convenient if you don't have an internet connection or if your struc
 ```
 echo 6 1 | gmx pdb2gmx -f 1D3Z.pdb -o 1D3Z_clean.pdb -ignh
 ```
-(the echo command selects the Amber99sb-ildn force field and TIP3P water model).
+(the echo command selects the Amber99sb-ildn force field and TIP3P water model). Note that in this case the output file names  change, since they are derived from the  input PDB file. You will instead get:
+```
+1D3Z_clean.gro			1D3Z_dihedral.itp		1D3Z_orientation.itp
+1D3Z_clean.top			1D3Z_distance.itp		ADD_THIS_TO_YOUR_MD_FILE.mdp
+1D3Z_clean_posre.itp		1D3Z_mr.str			nmr2gmx.log
+```
 
 In both cases you can skip the verbosity flag -v,  which allows you to
 see what is going on when running the script. By default (no -v flag
