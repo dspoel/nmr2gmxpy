@@ -31,13 +31,26 @@ Here are the terms and abbreviations used here:
 There are two ways to run the program. 
 
 1. The most convenient way is to just pass the pdb code of the protein of interest and let the program do the rest.
-It will download all nessesary files (you need an internet connection for this). And then it will run GROMACS to create topology file (you need GROMACS installed in your path, at least version 2019.6). The command line is:
+It will download all nessesary files (you need an internet connection for this). And then it will run GROMACS to create topology file (you need GROMACS installed in your path, at least version 2019.6). The command line (assuming the script is installed in $INSTALL_DIR) is:
 ```
-./nmr2gmx.py -n 1LVZ [-v]
+$INSTALL_DIR/nmr2gmx.py -n 1D3Z [-v]
+```
+in which case the output to the terminal looks like
+```
+5888 distance restraints were generated in file '1D3Z_distance.itp'.
+98 dihedral restraints were generated in file '1D3Z_dihedral.itp'.
+61 orientation restraints were generated in file '1D3Z_orientation.itp'.
+```
+and the following files will be generated:
+```
+1D3Z.gro			1D3Z_distance.itp		ADD_THIS_TO_YOUR_MD_FILE.mdp
+1D3Z.pdb			1D3Z_mr.str			nmr2gmx.log
+1D3Z.top			1D3Z_orientation.itp
+1D3Z_dihedral.itp		1D3Z_posre.itp
 ```
 2. The second option is to pass the .str and .pdb files (see Cheatsheet) directly like this:
 ```
-./nmx2gmx.py -s 1LVZ/1LVZ.str -q 1LVZ/1LVZ.pdb [-v]
+$INSTALL_DIR//nmx2gmx.py -s 1LVZ/1LVZ.str -q 1LVZ/1LVZ.pdb [-v]
 ```
 This can be convenient if you don't have GROMACS installation on the machine or/and no internet connection or if your structure is not (yet) in the protein databank.
 
