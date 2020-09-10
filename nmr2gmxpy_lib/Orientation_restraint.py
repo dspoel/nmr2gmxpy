@@ -39,11 +39,12 @@ class Orientation_restraint (Restraint):
         fp.write(";    ai\t    aj\t  type\t  exp.\t label\t alpha\tconst.\t  obs.\tweight\n")
         fp.write(";      \t      \t      \t      \t      \t   Hz \t nm^3 \t   Hz \t Hz^-2\n\n")
     
-    def write_data_in_file(self, fp, my_number):
+    def write_data_in_file(self, fp, my_number, verbose):
         atom_no = []
         for i in range(2):
-            self.atoms[i].setAtomId(Atom_names.get_atom_number(self.atoms[i]))
+            self.atoms[i].setAtomId(Atom_names.get_atom_number(self.atoms[i], verbose))
             atom_no.append(self.atoms[i].atom_id)
+        nwritten = 0
         if atom_no[0] and atom_no[1]:
             alpha = 3 #assign value for alpha
             const = 6.083 #assign value for constant
@@ -53,9 +54,11 @@ class Orientation_restraint (Restraint):
             fp.write("%6s\t%6s\t%6s\t%6s\t%6s\t%6s\t%6s\t%6s\t%6s\n" %
                     (atom_no[0], atom_no[1], type_orientation, exp, my_number+1,
                     alpha, const, self.RDC, weight))
-        else:
+            nwritten += 1
+        elif verbose:
             fp.write("; Could not find all atoms for orientation restraint %s %s\n" %
                     ( self.atoms[0].string(), self.atoms[1].string() ))
+        return nwritten
 
         
 

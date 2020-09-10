@@ -40,12 +40,13 @@ class Dihedral_restraint (Restraint):
         fp.write("[ dihedral_restraints ]\n")
         fp.write(";    ai\t    aj\t    ak\t    al\t  type\t   phi\t  dphi\t   fac\n\n")
         
-    def write_data_in_file(self, fp, my_number):
+    def write_data_in_file(self, fp, my_number, verbose):
         # getting atom number from residue number and atom name
         atom_no = []
         for i in range(len(self.atoms)):
-            self.atoms[i].setAtomId(Atom_names.get_atom_number(self.atoms[i]))
+            self.atoms[i].setAtomId(Atom_names.get_atom_number(self.atoms[i], verbose))
             atom_no.append(self.atoms[i].atom_id)
+        nwritten = 0
         if atom_no[0] and atom_no[1] and atom_no[2] and atom_no[3]:
             phi = round(( self.angle_upper_boundary + self.angle_lower_boundary)/2.0, 2)
             dphi = round((self.angle_upper_boundary - self.angle_lower_boundary)/2.0, 2)
@@ -53,10 +54,12 @@ class Dihedral_restraint (Restraint):
             fp.write("%6s\t%6s\t%6s\t%6s\t     1\t%6s\t%6s\t%6s\n" % (atom_no[0], atom_no[1],
                                                                       atom_no[2],atom_no[3],
                                                                       phi,dphi,self.fac))
-        else:
+            nwritten += 1
+        elif verbose:
             fp.write("; Could not find all atoms for dihedral restraint %s %s %s %s\n" %
                          ( self.atoms[0].string(), self.atoms[1].string(),
                            self.atoms[2].string(), self.atoms[3].string()))
+        return nwritten
 
 
 

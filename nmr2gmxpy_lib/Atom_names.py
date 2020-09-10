@@ -67,7 +67,7 @@ class Atom_names():
 
     # static function
     @classmethod
-    def get_atom_number(cls, atom_def, fatal=False, verbose=True):
+    def get_atom_number(cls, atom_def, verbose, fatal=False):
         atom_number = 0
         for atom in cls.atoms:
             if atom == atom_def:
@@ -96,7 +96,7 @@ state manually.
         if cls.force_field == ForceField.Amber:
             return cls.replace_name_amber(atom_def)
         else:
-            return None, None
+            return None, 0
 
     # static method
     @classmethod 

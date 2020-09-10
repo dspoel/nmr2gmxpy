@@ -94,6 +94,8 @@ class Restraint_list:
     def write_data_in_file(self, itp_fp):
         if self.verbose:
             print("Writting .itp file...")
+        nwritten = 0
         for i, element in enumerate(self.restraints):
-            element.write_data_in_file(itp_fp, i)
+            nwritten += element.write_data_in_file(itp_fp, i, self.verbose)
+        return nwritten
     

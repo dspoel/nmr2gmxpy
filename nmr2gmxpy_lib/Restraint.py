@@ -53,8 +53,9 @@ class Restraint():
         # for example, ME_group1 = 3 if methyl group, 2 if methylene group and 1 if methine group
         for i in range(len(self.atoms)):
             aname, group = Atom_names.replace_name(self.atoms[i])
-            self.atoms[i].setName(aname)
-            self.atoms[i].setGroup(group)
+            if aname and group > 0:
+                self.atoms[i].setName(aname)
+                self.atoms[i].setGroup(group)
     
     def change_units(self):
         # if is needed should be implemented in a child

@@ -58,11 +58,12 @@ class Distance_restraint (Restraint):
         fp.write("[ distance_restraints ]\n")
         fp.write(";    ai\t    aj\t  type\t index\t type'\t   low\t   up1\t   up2\t   fac\n\n")
 
-    def write_data_in_file(self, fp, my_number):
+    def write_data_in_file(self, fp, my_number, verbose):
         orig_atoms = []
         for i in range(len(self.atoms)):
             orig_atoms.append(self.atoms[i].atom_name)
 
+        nwritten = 0
         for p in range(self.atoms[0].group):
             if self.atoms[0].group > 1:
                 self.atoms[0].setName(orig_atoms[0] + str(p+1))
@@ -72,7 +73,7 @@ class Distance_restraint (Restraint):
                 # For residue number and atom name(orig_atom1,orig_atom2)
                 # find atom number from 2lv8.top and assign it to ai(atom_no1) and aj(atom_no2)
                 for i in range(2):
-                    self.atoms[i].setAtomId(Atom_names.get_atom_number(self.atoms[i]))
+                    self.atoms[i].setAtomId(Atom_names.get_atom_number(self.atoms[i], verbose))
                 atom_no1 = self.atoms[0].atomId()
                 atom_no2 = self.atoms[1].atomId()
                 if atom_no1 and atom_no2:
@@ -83,9 +84,11 @@ class Distance_restraint (Restraint):
                             self.distance_upper_bound,
                             self.distance_upper_bound_2,
                             self.fac))
-                else:
+                    nwritten += 1
+                elif verbose:
                     fp.write("; Could not find all atoms for distance restraint %s %s\n" %
                          ( self.atoms[0].string(), self.atoms[1].string() ))
             for i in range(len(self.atoms)):
                 self.atoms[i].setName(orig_atoms[i])
+        return nwritten
 

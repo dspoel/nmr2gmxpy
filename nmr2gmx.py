@@ -187,19 +187,19 @@ def make_restraint_file(restraint_type, mr_file, verbose):
         file_out = mr_file[0:-7] + '_' + restraint_type + '.itp'
         fp = open(file_out, 'w')
         res.write_header_in_file(fp)
-        res.write_data_in_file(fp)
-        return file_out, res.number_of_restraints()
+        nwritten = res.write_data_in_file(fp)
+        return file_out, nwritten, res.number_of_restraints()
     else:
-        return None, 0
+        return None, 0, 0
 
 
 def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
     if verbose:
         print("restraint_type %s mr_file %s" % ( restraint_type, mr_file ))
-    outf, nrestraints = make_restraint_file(restraint_type, mr_file, verbose)
+    outf, nwritten, nrestraints = make_restraint_file(restraint_type, mr_file, verbose)
     try:
         if outf:
-            print("%d %s restraints were generated in file '%s'." % ( nrestraints, restraint_type,outf ) )
+            print("%d out of %d %s restraints were generated in file '%s'." % ( nwritten, nrestraints, restraint_type, outf ) )
         return outf;
     except FormatError as ex:
         if verbose:
