@@ -31,15 +31,37 @@ Here are the terms and abbreviations used here:
 There are two ways to run the program. 
 
 1. The most convenient way is to just pass the pdb code of the protein of interest and let the program do the rest.
-It will download all nessesary files (you need an internet connection for this). And then it will run GROMACS to create topology file (you need GROMACS installed in your path, at least version 2019.6). The command line is:
+It will download all nessesary files (you need an internet connection for this). And then it will run GROMACS to create topology file (you need GROMACS installed in your path, at least version 2019.6). The command line (assuming the script is installed in $INSTALL_DIR) is:
 ```
-./nmr2gmx.py -n 1LVZ [-v]
+$INSTALL_DIR/nmr2gmx.py -n 1D3Z [-v]
+```
+in which case the output to the terminal looks like
+```
+5888 distance restraints were generated in file '1D3Z_distance.itp'.
+98 dihedral restraints were generated in file '1D3Z_dihedral.itp'.
+61 orientation restraints were generated in file '1D3Z_orientation.itp'.
+```
+and the following files will be generated:
+```
+1D3Z.gro			1D3Z_distance.itp		ADD_THIS_TO_YOUR_MD_FILE.mdp
+1D3Z.pdb			1D3Z_mr.str			nmr2gmx.log
+1D3Z.top			1D3Z_orientation.itp
+1D3Z_dihedral.itp		1D3Z_posre.itp
 ```
 2. The second option is to pass the .str and .pdb files (see Cheatsheet) directly like this:
 ```
-./nmx2gmx.py -s 1LVZ/1LVZ.str -q 1LVZ/1LVZ.pdb [-v]
+$INSTALL_DIR/nmr2gmx.py -s 1D3Z_mr.str -q 1D3Z_clean.pdb [-v]
 ```
-This can be convenient if you don't have GROMACS installation on the machine or/and no internet connection or if your structure is not (yet) in the protein databank.
+This can be convenient if you don't have an internet connection or if your structure is not (yet) in the protein databank. To generate the input pdb file for the above command you need to run GROMACS pdb2gmx command like this:
+```
+echo 6 1 | gmx pdb2gmx -f 1D3Z.pdb -o 1D3Z_clean.pdb -ignh
+```
+(the echo command selects the Amber99sb-ildn force field and TIP3P water model). Note that in this case the output file names  change, since they are derived from the  input PDB file. You will instead get:
+```
+1D3Z_clean.gro			1D3Z_dihedral.itp		1D3Z_orientation.itp
+1D3Z_clean.top			1D3Z_distance.itp		ADD_THIS_TO_YOUR_MD_FILE.mdp
+1D3Z_clean_posre.itp		1D3Z_mr.str			nmr2gmx.log
+```
 
 In both cases you can skip the verbosity flag -v,  which allows you to
 see what is going on when running the script. By default (no -v flag
@@ -66,13 +88,22 @@ There is a simple script that runs tests by downloading pdb files and NMR data f
 ```
 which should give something like:
 ```shell
+728 distance restraints were generated in file '2KYB_distance.itp'.
+63 dihedral restraints were generated in file '2KYB_dihedral.itp'.
 2KYB - Passed
+412 distance restraints were generated in file '1LB0_distance.itp'.
+9 dihedral restraints were generated in file '1LB0_dihedral.itp'.
 1LB0 - Passed
+1070 distance restraints were generated in file '2RQJ_distance.itp'.
 2RQJ - Passed
-1H3H - Passed
-Warning: cannot find the GROMACS name for chain A residue ASP-658 atom H.
-Warning: cannot find the GROMACS name for chain A residue ASP-658 atom H.
-2OD1 - Passed
+<snip>
+Warning: cannot find the GROMACS name for chain D residue HIS-134 atom HD1.
+Warning: cannot find the GROMACS name for chain D residue HIS-134 atom HD1.
+Warning: cannot find the GROMACS name for chain B residue HIS-134 atom HD1.
+Warning: cannot find the GROMACS name for chain B residue HIS-134 atom HD1.
+8230 distance restraints were generated in file '1Y76_distance.itp'.
+356 dihedral restraints were generated in file '1Y76_dihedral.itp'.
+1Y76 - Passed
 <snip>
 ```
 (the warning above is due to a missing atom in the structure). The
