@@ -15,7 +15,7 @@ and converts it into GROMACS format.
 ## Installation
 1. Install the PyNMRSTAR package. You can find that here
 https://github.com/uwbmrb/PyNMRSTAR. Download and run the setup script in that package according to instructions on that website.
-2. Use the nmr2gmxpy as described below from your working directory.
+2. Use the nmr2gmx.py script as described below from your working directory.
  
 Cheatsheet
 ----------
