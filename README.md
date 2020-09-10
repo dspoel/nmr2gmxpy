@@ -50,9 +50,13 @@ and the following files will be generated:
 ```
 2. The second option is to pass the .str and .pdb files (see Cheatsheet) directly like this:
 ```
-$INSTALL_DIR//nmx2gmx.py -s 1LVZ/1LVZ.str -q 1LVZ/1LVZ.pdb [-v]
+$INSTALL_DIR/nmx2gmx.py -s 1D3Z_mr.str -q 1D3Z_clean.pdb [-v]
 ```
-This can be convenient if you don't have GROMACS installation on the machine or/and no internet connection or if your structure is not (yet) in the protein databank.
+This can be convenient if you don't have an internet connection or if your structure is not (yet) in the protein databank. To generate the input pdb file for the above command you need to run GROMACS pdb2gmx command like this:
+```
+echo 6 1 | gmx pdb2gmx -f 1D3Z.pdb -o 1D3Z_clean.pdb -ignh
+```
+(the echo command selects the Amber99sb-ildn force field and TIP3P water model).
 
 In both cases you can skip the verbosity flag -v,  which allows you to
 see what is going on when running the script. By default (no -v flag
