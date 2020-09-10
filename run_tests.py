@@ -15,6 +15,7 @@
 #   limitations under the License.
 
 import os, shutil, difflib, glob, argparse
+from nmr2gmx import find_gmx
 
 def get_pdb_list(ref_dir):
     mydir = os.getcwd()
@@ -53,11 +54,56 @@ def compare_topologies(refdir, testdir, verbose):
                 ndifftot += ndiff
     return ndifftot
 
-def run_gromacs(pdb):
+def run_gromacs(pdb, gmx, verbose):
     # Implement running a simulation and running gmxcheck on the edr file.
-    return True
+    # Make the box large enough
+    redirect = ""
+    if not verbose:
+        redirect = ">& koko"
+    outgro = "out.gro"
+    os.system(gmx + (" editconf -f %s.gro -o %s -d 1  %s" % (pdb, outgro, redirect )))
+    if not os.path.exists(outgro):
+        return "editconf"
+
+    #  Run the gromacs preprocessor
+    mdp   = "../../MDP/em.mdp"
+    emtpr = pdb + "_em.tpr"
+    os.system(gmx + (" grompp -p %s.top -c %s -o %s -f %s  %s" % (pdb, outgro, emtpr, mdp, redirect )))
+    if not os.path.exists(emtpr):
+        return "grompp"
+
+    # Do an energy minimization
+    confout = ( "%s_confout.gro" % pdb )
+    os.system(gmx + (" mdrun -s %s -g %s -e %s -c %s %s" % (  emtpr, pdb, pdb, confout, redirect )))
+    if not os.path.exists(confout):
+        return "mdrun"
+
+    # Compare the structure before and after
+    fitpdb = pdb + "_fit.pdb"
+    fitlog = pdb + "_fit.log"
+    # First make another tpr file in order to have correct masses
+    outtpr = pdb + "_confout.tpr"
+    os.system(gmx + (" grompp -f %s -p %s -c %s -o %s %s" % ( mdp, pdb, confout, outtpr, redirect )))
+    if not os.path.exists(outtpr):
+        return "grompp 2"
+    os.system("echo 0 0 | %s confrms -f1 %s -f2 %s -o %s >& %s" % ( gmx, emtpr, outtpr, fitpdb, fitlog ))
     
-def run_one_test(pdbname, test_dir, ref_dir, verbose):
+    if not os.path.exists(fitlog):
+        return "confrms"
+    rmsd = None
+    with open(fitlog, "r") as inf:
+        for line in  inf:
+            if line.find("Root mean square deviation") >= 0:
+                rmsd =  float(line.split()[8])
+    if not rmsd:
+        return "RMSD"
+    # Compare RMSD before and after energy minization to 0.02 nm. 
+    if rmsd > 0.02:
+        print("Structure deviation after minimization %g" % rmsd)
+        return "structure"
+    return ""
+    
+def run_one_test(pdbname, gmx,  test_dir, ref_dir, verbose):
     tmpdir    = test_dir + "/" + pdbname
     os.makedirs(tmpdir, exist_ok=True)
     mycwd     = os.getcwd()
@@ -78,14 +124,15 @@ def run_one_test(pdbname, test_dir, ref_dir, verbose):
         if return_value == 0:
             myrefdir = ref_dir + "/" + pdbname
             ndiff    = compare_topologies(myrefdir, tmpdir, verbose)
-            os.chdir(tmpdir)
-            gromacs_ok = run_gromacs(pdbname)
-            os.chdir(mycwd)
-        if return_value == 0 and ndiff == 0 and gromacs_ok:
+            if gmx:
+                os.chdir(tmpdir)
+                gromacs_ok = run_gromacs(pdbname, gmx, verbose)
+                os.chdir(mycwd)
+        if return_value == 0 and ndiff == 0 and len(gromacs_ok) == 0:
             print("%s - Passed" % pdbname)
-            shutil.rmtree(tmpdir)
+#            shutil.rmtree(tmpdir)
         else:
-            print("%s - Failed. %d file errors, gromacs: %r" % ( pdbname, ndiff, gromacs_ok  ) )
+            print("%s - Failed. %d file errors, gromacs: '%s'" % ( pdbname, ndiff, gromacs_ok  ) )
             print("Check output in %s" % tmpdir)
             
     else:
@@ -120,8 +167,12 @@ if __name__ == "__main__":
             string += " " + pdbs[i][:-1]
         if len(string) > 0:
             print(string)
-    elif args.protein and args.protein in pdbs:
-        run_one_test(args.protein, test_dir, ref_dir, args.verbose)
     else:
-        for pdb in pdbs:
-            run_one_test(pdb, test_dir, ref_dir, args.verbose)
+        gmx = find_gmx(False)
+        if not gmx:
+            print("Cannot run GROMACS, please add it to your search path")
+        if args.protein and args.protein in pdbs:
+            run_one_test(args.protein, gmx, test_dir, ref_dir, args.verbose)
+        else:
+            for pdb in pdbs:
+                run_one_test(pdb, gmx, test_dir, ref_dir, args.verbose)
