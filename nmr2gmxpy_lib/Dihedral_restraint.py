@@ -55,7 +55,7 @@ class Dihedral_restraint (Restraint):
                                                                       atom_no[2],atom_no[3],
                                                                       phi,dphi,self.fac))
             nwritten += 1
-        elif verbose:
+        else:
             fp.write("; Could not find all atoms for dihedral restraint %s %s %s %s\n" %
                          ( self.atoms[0].string(), self.atoms[1].string(),
                            self.atoms[2].string(), self.atoms[3].string()))

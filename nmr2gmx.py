@@ -272,9 +272,9 @@ class FileManager():
                          type=str)
 #        parser.add_argument("-p", "--topfile", help= "GROMACS topology consistent with the pdb file", type=str)
         FORCE_FIELD = "amber99sb-ildn"
-        parser.add_argument("-ff", "--force_field", help="Force field to use. Only AMBER variants will work for now", default=FORCE_FIELD)
+        parser.add_argument("-ff", "--force_field", help="Force field to use. Both Amber and Charmm variants work.", default=FORCE_FIELD)
         WATER_MODEL = "tip3p"
-        parser.add_argument("-water", "--water_model", help="Water model to use. Only AMBER variants will work for now", default=WATER_MODEL)
+        parser.add_argument("-water", "--water_model", help="Water model to use.", default=WATER_MODEL)
         parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
         parser.add_argument("-d", "--debug", 
                         help="Print traceback for errors if any. Also print traceback for warnings.",

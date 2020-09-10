@@ -85,7 +85,7 @@ class Distance_restraint (Restraint):
                             self.distance_upper_bound_2,
                             self.fac))
                     nwritten += 1
-                elif verbose:
+                else:
                     fp.write("; Could not find all atoms for distance restraint %s %s\n" %
                          ( self.atoms[0].string(), self.atoms[1].string() ))
             for i in range(len(self.atoms)):

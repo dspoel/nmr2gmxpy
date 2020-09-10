@@ -26,6 +26,15 @@ class ForceField(Enum):
     Amber = 1
     Charmm = 2
 
+    def getFF(force_field):
+        if force_field.find("mber") >= 0:
+            return  ForceField.Amber
+        elif force_field.find("harmm") >= 0:
+            return ForceField.Charmm
+        else:
+            print("Unsupported force field %s" % force_field)
+            exit(1)
+
 class AtomNamesError(Exception):
     def __init__(self, msg=None):
         pass
@@ -39,13 +48,7 @@ class Atom_names():
     @classmethod
     def init_atoms_list(cls,  force_field, pdbfile_name):
         try:
-            if force_field.find("mber") >= 0:
-                cls.force_field = ForceField.Amber
-            elif force_field.find("harmm") >= 0:
-                cls.force_field = ForceField.Charmm
-            else:
-                print("Unsupported force field %s" % force_field)
-                exit(1)
+            cls.force_field = ForceField.getFF(force_field)
             with open(pdbfile_name, "r") as inf:
                 for line in inf:
                     if line.find("ATOM") == 0:
@@ -98,8 +101,12 @@ state manually.
         atom_nm = atom_def.atom_name
         res_nm  = atom_def.res_name
         res_nr  = atom_def.res_id
-        if atom_nm == "H" and cls.force_field == ForceField.Charmm:
-            atom_nm = "HN"
+        # A couple of force field specific things
+        if cls.force_field == ForceField.Charmm:
+            if atom_nm == "H":
+                atom_nm = "HN"
+            if (res_nm in [ "SER", "THR", "CYS" ]) and atom_nm == "HG":
+                atom_nm = "HG1"
         # N-terminal H: needs debugging.
         if res_nr == 1 and atom_nm == 'H' and False:
             if res_nm == 'PRO':

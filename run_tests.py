@@ -16,6 +16,7 @@
 
 import os, shutil, difflib, glob, argparse
 from nmr2gmx import find_gmx
+from nmr2gmxpy_lib.Atom_names import ForceField
 
 def get_pdb_list(ref_dir):
     mydir = os.getcwd()
@@ -61,7 +62,7 @@ def run_gromacs(pdb, gmx, verbose, tolerance):
     if not verbose:
         redirect = ">& koko"
     outgro = "out.gro"
-    os.system(gmx + (" editconf -f %s.gro -o %s -d 1  %s" % (pdb, outgro, redirect )))
+    os.system(gmx + (" editconf -f %s.gro -o %s -box 10 10 10 -center 5 5 5 %s" % (pdb, outgro, redirect )))
     if not os.path.exists(outgro):
         return "editconf"
 
@@ -95,6 +96,8 @@ def run_gromacs(pdb, gmx, verbose, tolerance):
         for line in  inf:
             if line.find("Root mean square deviation") >= 0:
                 rmsd =  float(line.split()[8])
+                if rmsd == 0.0:
+                    rmsd = 1e-12
     if not rmsd:
         return "RMSD"
     # Compare RMSD before and after energy minization. The structures
@@ -104,14 +107,14 @@ def run_gromacs(pdb, gmx, verbose, tolerance):
         return "structure"
     return ""
     
-def run_one_test(pdbname, gmx,  test_dir, ref_dir, verbose, tolerance):
+def run_one_test(pdbname, force_field, gmx,  test_dir, ref_dir, verbose, tolerance):
     tmpdir    = test_dir + "/" + pdbname
     os.makedirs(tmpdir, exist_ok=True)
     mycwd     = os.getcwd()
     error_msg = ("Could not download and/or process data for %s" % pdbname)
     try:
         os.chdir(tmpdir)
-        command = ("%s/nmr2gmx.py -n %s" % (mycwd, pdbname))
+        command = ("%s/nmr2gmx.py -n %s -ff %s" % ( mycwd, pdbname, force_field ))
         if verbose:
             command += " -v"
         return_value = os.WEXITSTATUS(os.system(command))
@@ -131,7 +134,7 @@ def run_one_test(pdbname, gmx,  test_dir, ref_dir, verbose, tolerance):
                 os.chdir(mycwd)
         if return_value == 0 and ndiff == 0 and len(gromacs_ok) == 0:
             print("%s - Passed" % pdbname)
-#            shutil.rmtree(tmpdir)
+            shutil.rmtree(tmpdir)
         else:
             print("%s - Failed. %d file errors, gromacs: '%s'" % ( pdbname, ndiff, gromacs_ok  ) )
             print("Check output in %s" % tmpdir)
@@ -143,6 +146,8 @@ def runArgumentParser():
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", "--protein", help = "Run test for 4-symbol protein databank identifier. The files corresponding to this pdb ID will be downloaded. and output compared to pre-existing output.",
                         type=str)
+    FORCE_FIELD = "amber99sb-ildn"
+    parser.add_argument("-ff", "--force_field", help="Force field to use. Both Amber and Charmm variants work.", default=FORCE_FIELD)
     parser.add_argument("-l", "--list", help="List the PDB files in the reference data set", action="store_true")
     parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
     deftoler = 0.02
@@ -155,9 +160,14 @@ def runArgumentParser():
 if __name__ == "__main__":
     args = runArgumentParser()
 
+    ff       = ForceField.getFF(args.force_field)
     mycwd    = os.getcwd()
     test_dir = mycwd + "/tests"
-    ref_dir  = mycwd + "/refdata"
+    ref_dir  = mycwd + "/refdata/"
+    if ff == ForceField.Amber:
+        ref_dir += "/Amber"
+    elif ff == ForceField.Charmm:
+        ref_dir += "/Charmm"
     pdbs = get_pdb_list(ref_dir)
     if args.list:
         print("The following PDB files are in the reference data set:")
@@ -175,11 +185,11 @@ if __name__ == "__main__":
         if not gmx:
             print("Cannot run GROMACS, please add it to your search path")
         if args.protein:
-           if args.protein in pdbs:
-               run_one_test(args.protein, gmx, test_dir, ref_dir, args.verbose, args.tolerance)
-           else:
-               print("No such system %s in the test set."  % args.protein)
+           #if args.protein in pdbs:
+            run_one_test(args.protein, args.force_field, gmx, test_dir, ref_dir, args.verbose, args.tolerance)
+           #else:
+            #   print("No such system %s in the test set."  % args.protein)
         else:
             for pdb in pdbs:
-                run_one_test(pdb, gmx, test_dir, ref_dir, args.verbose, args.tolerance)
+                run_one_test(pdb, args.force_field, gmx, test_dir, ref_dir, args.verbose, args.tolerance)
 

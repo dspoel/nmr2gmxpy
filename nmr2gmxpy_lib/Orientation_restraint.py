@@ -55,7 +55,7 @@ class Orientation_restraint (Restraint):
                     (atom_no[0], atom_no[1], type_orientation, exp, my_number+1,
                     alpha, const, self.RDC, weight))
             nwritten += 1
-        elif verbose:
+        else:
             fp.write("; Could not find all atoms for orientation restraint %s %s\n" %
                     ( self.atoms[0].string(), self.atoms[1].string() ))
         return nwritten
