@@ -383,7 +383,7 @@ class FileManager():
                 log.write("Call for GROMACS was:\n")
                 log.write("%s\n" % cmd)
                 if mycmd == 0:
-                    rm_file = glob.glob("posre_*_chain*") + glob.glob("%s_*_chain*itp" % file_top[:-4]) + [ file_top, "*_posre.itp" ]
+                    rm_file = glob.glob("posre_*_chain*") + glob.glob("%s_*_chain*itp" % file_top[:-4]) + [ file_top, file_posre ]
                     for rmf in rm_file:
                         if os.path.exists(rmf):
                             os.remove(rmf)
