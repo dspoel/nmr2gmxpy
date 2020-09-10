@@ -18,7 +18,7 @@ try:
 except ImportError:
     print("pyNMR-STAR is not installed. Giving up.")
     exit(1)
-from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
+from nmr2gmxpy_lib.Atom_names import Atom_names
 
 class Restraint():
     """
@@ -52,10 +52,9 @@ class Restraint():
         # and assigns nuber of hydogens in the ME_group1 and ME_group2
         # for example, ME_group1 = 3 if methyl group, 2 if methylene group and 1 if methine group
         for i in range(len(self.atoms)):
-            aname, group = Atoms_names_amber.atom_replace(self.atoms[i])
+            aname, group = Atom_names.replace_name(self.atoms[i])
             self.atoms[i].setName(aname)
             self.atoms[i].setGroup(group)
-#            self.atoms[i].setAtomId(Atoms_names_amber.get_atom_number(self.atoms[i]))
     
     def change_units(self):
         # if is needed should be implemented in a child

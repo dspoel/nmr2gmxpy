@@ -167,7 +167,7 @@ if __name__ == "__main__":
                 if string:
                     print(string)
                 string = ""
-            string += " " + pdbs[i][:-1]
+            string += " " + pdbs[i]
         if len(string) > 0:
             print(string)
     else:
@@ -182,3 +182,4 @@ if __name__ == "__main__":
         else:
             for pdb in pdbs:
                 run_one_test(pdb, gmx, test_dir, ref_dir, args.verbose, args.tolerance)
+

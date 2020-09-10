@@ -44,7 +44,7 @@ from nmr2gmxpy_lib.Restraint_list import FormatError
 from nmr2gmxpy_lib.Distance_restraint_list import Distance_restraint_list
 from nmr2gmxpy_lib.Dihedral_restraint_list import Dihedral_restraint_list
 from nmr2gmxpy_lib.Orientation_restraint_list import Orientation_restraint_list
-from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
+from nmr2gmxpy_lib.Atom_names import Atom_names
 
 # Low-level routines
 def unzip(file_in, file_out, verbose):
@@ -196,8 +196,8 @@ def make_restraint_file(restraint_type, mr_file, verbose):
 def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
     if verbose:
         print("restraint_type %s mr_file %s" % ( restraint_type, mr_file ))
+    outf, nrestraints = make_restraint_file(restraint_type, mr_file, verbose)
     try:
-        outf, nrestraints = make_restraint_file(restraint_type, mr_file, verbose)
         if outf:
             print("%d %s restraints were generated in file '%s'." % ( nrestraints, restraint_type,outf ) )
         return outf;
@@ -462,7 +462,7 @@ if __name__ == "__main__":
         clean_pdb, top_file, gro_file = manager.runGromacs(log, args.pdbfile)
 
     # Reading pdb file to get correct atom names
-    natoms = Atoms_names_amber.init_atoms_list(clean_pdb)
+    natoms = Atom_names.init_atoms_list(args.force_field, clean_pdb)
     if args.verbose:
         print("There are %d atoms in %s" % ( natoms, clean_pdb ) )
     # Check that the number of atoms matches the gro file. This may

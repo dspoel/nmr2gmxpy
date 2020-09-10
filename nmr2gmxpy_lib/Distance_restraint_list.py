@@ -12,7 +12,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-from nmr2gmxpy_lib.AtomDefinition import NMRStarNames
+from nmr2gmxpy_lib.Atom_definition import NMRStarNames
 from nmr2gmxpy_lib.Restraint_list import Restraint_list
 from nmr2gmxpy_lib.Distance_restraint import Distance_restraint
 

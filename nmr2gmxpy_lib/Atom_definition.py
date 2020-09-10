@@ -23,7 +23,7 @@ def NMRStarNames(atom_no):
         names[n] += str(atom_no)
     return names
         
-class AtomDefinition():
+class Atom_definition():
     def __init__(self, res_id, res_name, atom_name, chain_id):
         self.res_id    = int(res_id)
         self.res_name  = res_name

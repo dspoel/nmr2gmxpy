@@ -129,7 +129,9 @@ The current release solves this problem for the AMBER force field, but it will b
 2. change the names of atoms if needed;
 3. return the correct atom number for .itp file form the name of the atom and the residue ordinal number. 
 
-Functions 1 and 3 are force field independent and are implemented in the parent class itself. Function 2 should be implemented for every force field in a child class, like is done in Atoms_names_amber for the AMBER force field. Then in the "main function" the correct child class should be used. If in your force field all atom names are the same as in protein_mr.str files then you can use the parent class.
+Functions 1 and 3 are force field independent and are implemented in
+the parent class itself. Function 2 is to be implemented for every
+force field.
 
 License
 =======

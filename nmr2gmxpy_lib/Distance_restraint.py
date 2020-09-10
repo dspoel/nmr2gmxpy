@@ -13,8 +13,8 @@
 #   limitations under the License.
 
 from nmr2gmxpy_lib.Restraint import Restraint
-from nmr2gmxpy_lib.AtomDefinition import AtomDefinition, NMRStarNelements
-from nmr2gmxpy_lib.Atoms_names_amber import Atoms_names_amber
+from nmr2gmxpy_lib.Atom_definition import Atom_definition, NMRStarNelements
+from nmr2gmxpy_lib.Atom_names import Atom_names
 
 class Distance_restraint (Restraint):
     def __init__(self,data):
@@ -25,7 +25,7 @@ class Distance_restraint (Restraint):
         index   = 1
         nelem = NMRStarNelements()
         for i in range(2):
-            self.atoms.append(AtomDefinition.fromList(data[index:index+nelem]))
+            self.atoms.append(Atom_definition.fromList(data[index:index+nelem]))
             index += nelem
         
         self.distance_lower_bound = data[index]
@@ -48,15 +48,8 @@ class Distance_restraint (Restraint):
     def set_type_average(self, value):
         self.type_average = value
         
-#    def replace_atoms_names_and_groups(self):
-        # Replacing atom names by using atoms names and residue names 
-        # and assigns nuber of hydogens in the ME_group1 and ME_group2
-        # for example, ME_group1 = 3 if methyl group, 2 if methylene group and 1 if methine group
- #       self.atoms[0].atom_name, self.group_1 = Atoms_names_amber.atom_replace(self.atoms[0])
- #       self.atoms[1].atom_name, self.group_2 = Atoms_names_amber.atom_replace(self.atoms[1])
-    
     def change_units(self):
-    # Change distances angstrom to nanometer
+        # Change distances angstrom to nanometer
         self.distance_lower_bound = round(float(self.distance_lower_bound) * 0.10, 2)
         self.distance_upper_bound = round(float(self.distance_upper_bound) * 0.10, 2)
         self.distance_upper_bound_2 = round(float(self.distance_upper_bound) + 0.1, 2)
@@ -79,7 +72,7 @@ class Distance_restraint (Restraint):
                 # For residue number and atom name(orig_atom1,orig_atom2)
                 # find atom number from 2lv8.top and assign it to ai(atom_no1) and aj(atom_no2)
                 for i in range(2):
-                    self.atoms[i].setAtomId(Atoms_names_amber.get_atom_number(self.atoms[i]))
+                    self.atoms[i].setAtomId(Atom_names.get_atom_number(self.atoms[i]))
                 atom_no1 = self.atoms[0].atomId()
                 atom_no2 = self.atoms[1].atomId()
                 if atom_no1 and atom_no2:
