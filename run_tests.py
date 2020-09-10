@@ -54,7 +54,7 @@ def compare_topologies(refdir, testdir, verbose):
                 ndifftot += ndiff
     return ndifftot
 
-def run_gromacs(pdb, gmx, verbose):
+def run_gromacs(pdb, gmx, verbose, tolerance):
     # Implement running a simulation and running gmxcheck on the edr file.
     # Make the box large enough
     redirect = ""
@@ -97,13 +97,14 @@ def run_gromacs(pdb, gmx, verbose):
                 rmsd =  float(line.split()[8])
     if not rmsd:
         return "RMSD"
-    # Compare RMSD before and after energy minization to 0.02 nm. 
-    if rmsd > 0.02:
+    # Compare RMSD before and after energy minization. The structures
+    # should be within a user given tolerance (default 0.02 nm).
+    if rmsd > tolerance:
         print("Structure deviation after minimization %g" % rmsd)
         return "structure"
     return ""
     
-def run_one_test(pdbname, gmx,  test_dir, ref_dir, verbose):
+def run_one_test(pdbname, gmx,  test_dir, ref_dir, verbose, tolerance):
     tmpdir    = test_dir + "/" + pdbname
     os.makedirs(tmpdir, exist_ok=True)
     mycwd     = os.getcwd()
@@ -126,7 +127,7 @@ def run_one_test(pdbname, gmx,  test_dir, ref_dir, verbose):
             ndiff    = compare_topologies(myrefdir, tmpdir, verbose)
             if gmx:
                 os.chdir(tmpdir)
-                gromacs_ok = run_gromacs(pdbname, gmx, verbose)
+                gromacs_ok = run_gromacs(pdbname, gmx, verbose, tolerance)
                 os.chdir(mycwd)
         if return_value == 0 and ndiff == 0 and len(gromacs_ok) == 0:
             print("%s - Passed" % pdbname)
@@ -144,6 +145,8 @@ def runArgumentParser():
                         type=str)
     parser.add_argument("-l", "--list", help="List the PDB files in the reference data set", action="store_true")
     parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
+    deftoler = 0.02
+    parser.add_argument("-tol", "--tolerance", help="Max RMSD between conformations before and after minimization to pass the test.", type=float, default=deftoler)
 
     return parser.parse_args()
 
@@ -171,8 +174,11 @@ if __name__ == "__main__":
         gmx = find_gmx(False)
         if not gmx:
             print("Cannot run GROMACS, please add it to your search path")
-        if args.protein and args.protein in pdbs:
-            run_one_test(args.protein, gmx, test_dir, ref_dir, args.verbose)
+        if args.protein:
+           if args.protein in pdbs:
+               run_one_test(args.protein, gmx, test_dir, ref_dir, args.verbose, args.tolerance)
+           else:
+               print("No such system %s in the test set."  % args.protein)
         else:
             for pdb in pdbs:
-                run_one_test(pdb, gmx, test_dir, ref_dir, args.verbose)
+                run_one_test(pdb, gmx, test_dir, ref_dir, args.verbose, args.tolerance)

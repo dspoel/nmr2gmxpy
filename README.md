@@ -15,8 +15,8 @@ and converts it into GROMACS format.
 ## Installation
 1. Install the PyNMRSTAR package. You can find that here
 https://github.com/uwbmrb/PyNMRSTAR. Download and run the setup script in that package according to instructions on that website.
-2. Install nmr2gmxpy using the include setup.py script.
-
+2. Use the nmr2gmxpy as described below from your working directory.
+ 
 Cheatsheet
 ----------
 Here are the terms and abbreviations used here:
@@ -82,7 +82,14 @@ If you run the program using the first method (with name flag -n), then the prog
 
 ## Testing
 
-There is a simple script that runs tests by downloading pdb files and NMR data from the protein data bank, processing it by nmr2gmx.py and then compare the output restraint files to reference data. This is very useful when extending the scripts, since obviously, the reference data should be reproducible if not it is proven to be incorrect. To run:
+There is a simple script that runs tests by downloading pdb files and
+NMR data from the protein data bank, processing it by nmr2gmx.py and
+then compare the output restraint files to reference data. In addition
+the script runs an energy minimization using GROMACS and compares the
+output structure to the input structure. Since the energy minimization
+is in vacuo the structures may change by up to 0.02 nm.
+
+This testing script is very useful when extending the scripts, since obviously, the reference data should be reproducible if not it is proven to be incorrect. To run:
 ```shell
 % ./run_tests.py
 ```
@@ -108,12 +115,6 @@ Warning: cannot find the GROMACS name for chain B residue HIS-134 atom HD1.
 ```
 (the warning above is due to a missing atom in the structure). The
 test set contains proteins, RNA and DNA compounds.
-
-### TODO
-
-Testing should including running a short energy minimization on all
-the generated files and comparing the restraint energies to a
-reference file. 
 
 # Developer info
 

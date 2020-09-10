@@ -472,7 +472,8 @@ if __name__ == "__main__":
     if natoms != natom_gro:
         print("Your system likely has intermolecular disulfide bridges")
         print("or other covalent links between chains. Sorry but this")
-        print("script can not handle this.")
+        print("script can not handle this. Please run GROMACS manually")
+        print("and then rerun this script in mode 2.")
         exit(1)
 
     if args.verbose:

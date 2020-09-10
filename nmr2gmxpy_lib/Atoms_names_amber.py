@@ -189,6 +189,11 @@ class Atoms_names_amber(Atoms_names):
                 atom_nm = "H5'2"
             elif atom_nm == "H2'":
                 atom_nm = "H2'1"
+            elif atom_nm == "H2''":
+                atom_nm = "H2'2"
+            elif atom_nm == "M7" and res_nm == "DT":
+                atom_nm = "H7"
+                ME_group = 3
     
         return atom_nm,ME_group
 
