@@ -188,18 +188,18 @@ def make_restraint_file(restraint_type, mr_file, verbose):
         fp = open(file_out, 'w')
         res.write_header_in_file(fp)
         res.write_data_in_file(fp)
-        return file_out
+        return file_out, res.number_of_restraints()
     else:
-        return None
+        return None, 0
 
 
 def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
     if verbose:
         print("restraint_type %s mr_file %s" % ( restraint_type, mr_file ))
     try:
-        outf = make_restraint_file(restraint_type, mr_file, verbose)
-        if outf and verbose:
-            print("SUCCESS: %s restraints were generated in file '%s'." % (restraint_type,outf))
+        outf, nrestraints = make_restraint_file(restraint_type, mr_file, verbose)
+        if outf:
+            print("%d %s restraints were generated in file '%s'." % ( nrestraints, restraint_type,outf ) )
         return outf;
     except FormatError as ex:
         if verbose:
@@ -351,12 +351,13 @@ class FileManager():
         else:
             file_pdb = self.args.protein + "_clean.pdb"
             in_pdb   = self.args.protein + ".pdb"
-        file_top = in_pdb[:-3] + "top"
-        file_gro = in_pdb[:-3] + "gro"
+        file_top   = in_pdb[:-3] + "top"
+        file_gro   = in_pdb[:-3] + "gro"
+        file_posre = in_pdb[:-4] + "_posre.itp"
         # First we produce a pdb file without merging the chains. This leaves
         # the chain labels in the pdb file that are needed to interpret the
         # NMR files.
-        command_line = find_gmx(True) + " pdb2gmx" + " -f " + in_pdb + " -p " + file_top + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh "
+        command_line = find_gmx(True) + " pdb2gmx" + " -f " + in_pdb + " -p " + file_top + " -ff " + self.args.force_field + " -i " + file_posre + " -water " + self.args.water_model + " -ignh "
     
         try:
             cmds = [ command_line + " -o " + file_pdb, 
@@ -382,7 +383,7 @@ class FileManager():
                 log.write("Call for GROMACS was:\n")
                 log.write("%s\n" % cmd)
                 if mycmd == 0:
-                    rm_file = glob.glob("posre_*_chain*") + glob.glob("%s_*_chain*itp" % file_top[:-4]) + [ file_top, "posre.itp" ]
+                    rm_file = glob.glob("posre_*_chain*") + glob.glob("%s_*_chain*itp" % file_top[:-4]) + [ file_top, "*_posre.itp" ]
                     for rmf in rm_file:
                         if os.path.exists(rmf):
                             os.remove(rmf)
@@ -393,9 +394,10 @@ class FileManager():
 
     def runGromacs2(self, log, in_pdb):
         #------CALL GROMACS-------------------------------------------------
-        file_top = in_pdb[:-4] + ".top"
-        file_pdb = in_pdb[:-4] + "_out.pdb"
-        command_line = find_gmx(True) + " pdb2gmx" + " -f " + in_pdb + " -p " + file_top + " -o " + file_pdb + " -ff " + self.args.force_field + " -water " + self.args.water_model + " -ignh -merge all "
+        file_top   = in_pdb[:-4] + ".top"
+        file_pdb   = in_pdb[:-4] + "_out.pdb"
+        file_posre = in_pdb[:-4] + "_posre.itp"
+        command_line = find_gmx(True) + " pdb2gmx" + " -f " + in_pdb + " -p " + file_top + " -o " + file_pdb + " -ff " + self.args.force_field + " -i " + file_posre + " -water " + self.args.water_model + " -ignh -merge all "
     
         if not self.args.verbose:
             command_line += " > /dev/null 2>&1"

@@ -43,7 +43,8 @@ This can be convenient if you don't have GROMACS installation on the machine or/
 
 In both cases you can skip the verbosity flag -v,  which allows you to
 see what is going on when running the script. By default (no -v flag
-is passed) the program does not create any screen output except for
+is passed) the program writes the number of restraints of each type to
+the screen but does not create any other screen output except for
 error messages.
 
 For developers there is a debug flag -d which will provide some error traceback. Use it if you modify the library.
