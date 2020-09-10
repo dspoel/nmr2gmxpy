@@ -88,13 +88,22 @@ There is a simple script that runs tests by downloading pdb files and NMR data f
 ```
 which should give something like:
 ```shell
+728 distance restraints were generated in file '2KYB_distance.itp'.
+63 dihedral restraints were generated in file '2KYB_dihedral.itp'.
 2KYB - Passed
+412 distance restraints were generated in file '1LB0_distance.itp'.
+9 dihedral restraints were generated in file '1LB0_dihedral.itp'.
 1LB0 - Passed
+1070 distance restraints were generated in file '2RQJ_distance.itp'.
 2RQJ - Passed
-1H3H - Passed
-Warning: cannot find the GROMACS name for chain A residue ASP-658 atom H.
-Warning: cannot find the GROMACS name for chain A residue ASP-658 atom H.
-2OD1 - Passed
+<snip>
+Warning: cannot find the GROMACS name for chain D residue HIS-134 atom HD1.
+Warning: cannot find the GROMACS name for chain D residue HIS-134 atom HD1.
+Warning: cannot find the GROMACS name for chain B residue HIS-134 atom HD1.
+Warning: cannot find the GROMACS name for chain B residue HIS-134 atom HD1.
+8230 distance restraints were generated in file '1Y76_distance.itp'.
+356 dihedral restraints were generated in file '1Y76_dihedral.itp'.
+1Y76 - Passed
 <snip>
 ```
 (the warning above is due to a missing atom in the structure). The
