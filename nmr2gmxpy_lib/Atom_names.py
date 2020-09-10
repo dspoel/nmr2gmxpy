@@ -93,19 +93,13 @@ state manually.
     # static method
     @classmethod 
     def replace_name(cls, atom_def):
-        if cls.force_field == ForceField.Amber:
-            return cls.replace_name_amber(atom_def)
-        else:
-            return None, 0
-
-    # static method
-    @classmethod 
-    def replace_name_amber(cls, atom_def):
         ME_group = 1
 
         atom_nm = atom_def.atom_name
         res_nm  = atom_def.res_name
         res_nr  = atom_def.res_id
+        if atom_nm == "H" and cls.force_field == ForceField.Charmm:
+            atom_nm = "HN"
         # N-terminal H: needs debugging.
         if res_nr == 1 and atom_nm == 'H' and False:
             if res_nm == 'PRO':
@@ -271,4 +265,3 @@ state manually.
                 ME_group = 3
     
         return atom_nm, ME_group
-
