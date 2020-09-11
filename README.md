@@ -143,7 +143,7 @@ The package is distributed under Apache License 2.0. Read more in LICENSE file.
 Citations
 =========
 
-A paper about the software is about to be submitted.
+A paper about the software has been submitted.
 
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4019826.svg)](https://doi.org/10.5281/zenodo.4019826)
