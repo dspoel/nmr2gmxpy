@@ -23,9 +23,18 @@ class Dihedral_restraint_list(Restraint_list):
         super().create_data_array_from_pynmrstar_entry(entry)
         
         result_sets = []
-        for loop in entry.get_loops_by_category("_Torsion_angle_constraint") :
-            mylist = [ 'ID' ] + NMRStarNames(1) + NMRStarNames(2) + NMRStarNames(3) + NMRStarNames(4) + [ 'Angle_lower_bound_val', 'Angle_upper_bound_val' ]
-            result_sets.append(loop.get_tag(mylist))
+        mylist = [ 'ID' ] + NMRStarNames(1) + NMRStarNames(2) + NMRStarNames(3) + NMRStarNames(4) + [ 'Angle_lower_bound_val', 'Angle_upper_bound_val' ]
+
+        loops = entry.get_loops_by_category("_Torsion_angle_constraint")
+        if self.verbose and len(loops) > 1:
+            print("There are %d dihres loops" % len(loops))
+        newtags = []
+        for loop in loops[:1]:
+            for tag in loop.get_tag(mylist):
+                # Only add this entry if we found everything we need
+                if len(tag) == len(mylist):
+                    newtags.append(tag)
+        result_sets.append(newtags)
 
         return result_sets
     

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-#   Copyright 2020 David van der Spoel
+#   Copyright 2020-2024 David van der Spoel
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -32,11 +32,13 @@ def compare_topologies(refdir, testdir, verbose):
         reffiles = glob.glob("*")
         os.chdir(mycwd)
     ndifftot = 0
+    nfail    = 0
     for rf in reffiles:
         reffile  = refdir  + "/" + rf
         testfile = testdir + "/" + rf
         if not os.path.exists(testfile):
             print("Failed to create %s" % testfile)
+            nfail += 1
         else:
             ndiff = 0
             with open(reffile, 'r') as ref:
@@ -53,7 +55,7 @@ def compare_topologies(refdir, testdir, verbose):
             if ndiff > 0:
                 print("There were %d differences between reference file %s and test file" % (ndiff, rf) )
                 ndifftot += ndiff
-    return ndifftot
+    return ndifftot+nfail
 
 def run_gromacs(pdb, gmx, verbose, tolerance):
     # Implement running a simulation and running gmxcheck on the edr file.
@@ -75,7 +77,7 @@ def run_gromacs(pdb, gmx, verbose, tolerance):
 
     # Do an energy minimization
     confout = ( "%s_confout.gro" % pdb )
-    os.system(gmx + (" mdrun -s %s -g %s -e %s -c %s %s" % (  emtpr, pdb, pdb, confout, redirect )))
+    os.system(gmx + (" mdrun -nt 1 -s %s -g %s -e %s -c %s %s" % (  emtpr, pdb, pdb, confout, redirect )))
     if not os.path.exists(confout):
         return "mdrun"
 
@@ -143,11 +145,16 @@ def run_one_test(pdbname, force_field, gmx,  test_dir, ref_dir, verbose, toleran
         print(error_msg)
 
 def runArgumentParser():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="""
+    Run tests on a number of protein to verify that the previous results
+    are reproducible. Amber will not work due to the requirement of manually
+    editing terminal protein residues in the input pdb file.
+    Some tests are disabled for a similar reason with charmm27 as well.
+    """)
     parser.add_argument("-n", "--protein", help = "Run test for 4-symbol protein databank identifier. The files corresponding to this pdb ID will be downloaded. and output compared to pre-existing output.",
                         type=str)
-    FORCE_FIELD = "amber99sb-ildn"
-    parser.add_argument("-ff", "--force_field", help="Force field to use. Both Amber and Charmm variants work.", default=FORCE_FIELD)
+    FORCE_FIELD = "charmm27"
+    parser.add_argument("-ff", "--force_field", help="Force field to use. See help text of nmr2gmx.py.", default=FORCE_FIELD)
     parser.add_argument("-l", "--list", help="List the PDB files in the reference data set", action="store_true")
     parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")
     deftoler = 0.02
@@ -168,7 +175,14 @@ if __name__ == "__main__":
         ref_dir += "/Amber"
     elif ff == ForceField.Charmm:
         ref_dir += "/Charmm"
+    # These ones are disabled due to problems generating a topology in GROMACS
+    # which makes it impossible to test the functioning of this script.
+    disabled = [ "2KJF", "2N10" ]
     pdbs = get_pdb_list(ref_dir)
+    for d in disabled:
+        if d in pdbs:
+            pdbs.remove(d)
+            print("Pdb id %s is disabled right now" % d)
     if args.list:
         print("The following PDB files are in the reference data set:")
         string = None

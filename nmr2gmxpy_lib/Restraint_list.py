@@ -57,7 +57,7 @@ class Restraint_list:
         # If number of lines is 0 print warning
         if DR_array.shape == (0,):
             if self.verbose:
-                print("No information for the restraints in the file: '%s'"% mr_file)
+                print("No information for restraints in the file: '%s'"% mr_file)
         else:
             # Take the first (and only one) element 
             DR_array_0 = np.array(DR_array[0,])

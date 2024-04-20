@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 #   Copyright 2020 Anna Sinelnikova
+#   Copyright 2021-2024 Anna Sinelnikova, David van der Spoel
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -29,7 +30,10 @@ distance restraint, dihedral restraint and orientation restraint,
 dependent on the information available in the NMRstar file.
 
 In order to work properly, mode 1 needs an active internet connection.
-Both modes need a working GROMACS installation that is at least version 2019.6.
+Both modes need a working GROMACS installation that is at least version 2022.
+
+Presently, the code works easiest with the CHARMM27 force field since for
+Amber FFs the protein N- and C-terminus need manual modifications.
 """
 # System libraries
 import sys, os, ftplib, glob
@@ -198,8 +202,8 @@ def call_restraint_make_function(restraint_type, mr_file, verbose, debug):
         print("restraint_type %s mr_file %s" % ( restraint_type, mr_file ))
     outf, nwritten, nrestraints = make_restraint_file(restraint_type, mr_file, verbose)
     try:
-        if outf:
-            print("%d out of %d %s restraints were generated in file '%s'." % ( nwritten, nrestraints, restraint_type, outf ) )
+        if outf and verbose:
+            print("%d restraints were generated based on %d %ss in file '%s'." % ( nwritten, nrestraints, restraint_type, outf ) )
         return outf;
     except FormatError as ex:
         if verbose:
@@ -271,8 +275,8 @@ class FileManager():
         parser.add_argument("-q", "--pdbfile", help= "Protein data bank file with .pdb file name extension, corresponding to the NMR star file.",
                          type=str)
 #        parser.add_argument("-p", "--topfile", help= "GROMACS topology consistent with the pdb file", type=str)
-        FORCE_FIELD = "amber99sb-ildn"
-        parser.add_argument("-ff", "--force_field", help="Force field to use. Both Amber and Charmm variants work.", default=FORCE_FIELD)
+        FORCE_FIELD = "charmm27"
+        parser.add_argument("-ff", "--force_field", help="Force field to use. See help text for more information.", default=FORCE_FIELD)
         WATER_MODEL = "tip3p"
         parser.add_argument("-water", "--water_model", help="Water model to use.", default=WATER_MODEL)
         parser.add_argument("-v", "--verbose", help="Print information as we go", action="store_true")

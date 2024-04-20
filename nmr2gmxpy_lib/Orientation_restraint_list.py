@@ -20,9 +20,17 @@ class Orientation_restraint_list(Restraint_list):
 
     def create_data_array_from_pynmrstar_entry(self, entry):
         result_sets = []
-        for loop in entry.get_loops_by_category("_RDC_constraint"):
-            mylist = [ 'ID' ] + NMRStarNames(1) + NMRStarNames(2) + [ 'RDC_val' ]
-            result_sets.append(loop.get_tag(mylist))
+        mylist = [ 'ID' ] + NMRStarNames(1) + NMRStarNames(2) + [ 'RDC_val' ]
+        newtags = []
+        loops = entry.get_loops_by_category("_RDC_constraint")
+        if self.verbose and len(loops) > 1:
+            print("There are %d orires loops" % len(loops))
+        for loop in loops[:1]:
+            for tag in loop.get_tag(mylist):
+                # Only add this entry if we found everything we need
+                if len(tag) == len(mylist):
+                    newtags.append(tag)
+        result_sets.append(newtags)
         
         return result_sets
     
